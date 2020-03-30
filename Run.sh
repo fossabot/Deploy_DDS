@@ -3,7 +3,7 @@ echo 'WELCOME TO THE PREDICTIVE WORLD '
 echo 
 echo
 
-
+cd $HOME
 code_direcotry='./Data_driven_Kinetics/'
 # echo "Current path is : $Initial_location"
 
@@ -13,7 +13,7 @@ curr_location=$(<filelocation.txt)
 cd ./src
 
 error_criteria=0.05 #Tree:erroe based clustering criteria
-sl=0.05 #significance level
+significance_level=0.05 #significance level
 elimination='Flase' #elimination default set as Flase
 
 
@@ -168,13 +168,17 @@ cd ./src
 python coef_tikz_compatible.py "$curr_location/plots/"
 # python Fuel_tikz_compatible.py "$curr_location/plots/"
 
-cd "$curr_location/plots/"
+dir_to_plot="$curr_location/plots/"
+cd $dir_to_plot
 pdflatex coefficient.tex > /dev/null 2>&1
 xdg-open coefficient.pdf
 echo 'Plotting of Coefficients done'
 
 #in plotting dir, deleting all files except .pdf
-# find . ! -name '*.pdf' -delete
+# find $dir_to_plot  -name '*.aux' -delete
+# find $dir_to_plot  -name '*.tex' -delete
+# find $dir_to_plot  -name '*.log' -delete
+
 
 # pdflatex FuelsTrainingTesting.tex > /dev/null 2>&1
 # xdg-open FuelsTrainingTesting.pdf
@@ -200,6 +204,6 @@ echo
 echo "Compilation Successful!!  Keep Smiling :) "
 
 cd 
-cd /home/pragnesh/Git/Data_driven_Kinetics/
+cd $code_direcotry
 #removing file
 rm filelocation.txt

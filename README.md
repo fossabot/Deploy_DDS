@@ -28,7 +28,7 @@ export PATH=$PATH:$CLEANCODE
 
 alias IDprediction="pwd>~/path to/Data_driven_Kinetics/filelocation.txt && Run.sh"
 
-Example:
+Example: - If you kept app in ./home directory
 ##Ignition delay Finder
 
 export CLEANCODE="~/Data_driven_Kinetics/"
