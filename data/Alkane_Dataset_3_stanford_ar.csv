@@ -1,0 +1,296 @@
+,,,,,,,,,,,,,,,,,
+Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source
+CCC,1376,±1,1.19,±1,4,20,76,1,Ar,357,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane /
+CCC,1461,±1,1.15,±1,4,20,76,1,Ar,140,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane /
+CCC,1413,±1,1.16,±1,4,20,76,1,Ar,246,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane /
+CCC,1477,±1,1.12,±1,4,20,76,1,Ar,115,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane /
+CCC,1444,±1,1.26,±1,4,20,76,1,Ar,152,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane /
+CCC,1504,±1,1.14,±1,4,20,76,1,Ar,93,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane /
+CCC,1505,±1,2.21,NaN,0.05,0.25,99.7,1,Ar,534,Species,OH,±5,306.7,15.3,Stanford,n_Alkane_oxidation
+CCC,1547,±1,2.17,NaN,0.05,0.25,99.7,1,Ar,344,Species,OH,±5,306.7,15.3,Stanford,n_Alkane_oxidation
+CCC,1608,±1,2.19,NaN,0.05,0.25,99.7,1,Ar,174,Species,OH,±5,306.7,15.3,Stanford,n_Alkane_oxidation
+CCC,1628,±1,2.24,NaN,0.05,0.25,99.7,1,Ar,156,Species,OH,±5,306.7,15.3,Stanford,n_Alkane_oxidation
+CCC,1687,±1,2.13,NaN,0.05,0.25,99.7,1,Ar,89,Species,OH,±5,306.7,15.3,Stanford,n_Alkane_oxidation
+CCC,1497,±1,2.15,NaN,0.15,0.75,99.1,1,Ar,420,Species,OH,±5,306.7,15.3,Stanford,n_Alkane_oxidation
+CCC,1405,±0.7,5.46,±1,0.8,8,91.2,0.5,Ar,83,Species,OH,±1,306.7,15.3,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1366,±0.7,5.6,±1,0.8,8,91.2,0.5,Ar,170,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1339,±0.7,5.68,±1,0.8,8,91.2,0.5,Ar,230,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1303,±0.7,5.7,±1,0.8,8,91.2,0.5,Ar,400,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1281,±0.7,5.88,±1,0.8,8,91.2,0.5,Ar,590,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1250,±0.7,5.98,±1,0.8,8,91.2,0.5,Ar,890,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1234,±0.7,6.99,±1,0.8,8,91.2,0.5,Ar,940,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1223,±0.7,6.08,±1,0.8,8,91.2,0.5,Ar,1270,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1194,±0.7,6.13,±1,0.8,8,91.2,0.5,Ar,1790,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1189,±0.7,7.17,±1,0.8,8,91.2,0.5,Ar,1810,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1184,±0.7,7.17,±1,0.8,8,91.2,0.5,Ar,1820,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1147,±0.7,7.44,±1,0.8,8,91.2,0.5,Ar,2980,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1125,±0.7,7.29,±1,0.8,8,91.2,0.5,Ar,4260,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1081,±0.7,6.64,±1,0.8,8,91.2,0.5,Ar,6180,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1034,±0.7,7.06,±1,0.8,8,91.2,0.5,Ar,10510,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1006,±0.7,7.16,±1,0.8,8,91.2,0.5,Ar,15660,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,991,±0.7,7.16,±1,0.8,8,91.2,0.5,Ar,17790,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1381,±0.7,5.29,±1,0.8,8,91.2,0.5,Ar,150,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1341,±0.7,5.41,±1,0.8,8,91.2,0.5,Ar,270,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1273,±0.7,6.24,±1,0.8,8,91.2,0.5,Ar,680,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1260,±0.7,6.37,±1,0.8,8,91.2,0.5,Ar,830,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1208,±0.7,6.69,±1,0.8,8,91.2,0.5,Ar,1760,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1202,±0.7,5.26,±1,0.8,8,91.2,0.5,Ar,1750,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1170,±0.7,6.65,±1,0.8,8,91.2,0.5,Ar,2950,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1157,±0.7,5.64,±1,0.8,8,91.2,0.5,Ar,4040,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1141,±0.7,5.65,±1,0.8,8,91.2,0.5,Ar,5450,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1126,±0.7,6.04,±1,0.8,8,91.2,0.5,Ar,5460,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1095,±0.7,6.39,±1,0.8,8,91.2,0.5,Ar,7100,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1069,±0.7,6.77,±1,0.8,8,91.2,0.5,Ar,10190,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1052,±0.7,6.79,±1,0.8,8,91.2,0.5,Ar,12680,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1051,±0.7,6.82,±1,0.8,8,91.2,0.5,Ar,12470,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1044,±0.7,6.67,±1,0.8,8,91.2,0.5,Ar,16380,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1033,±0.7,6.73,±1,0.8,8,91.2,0.5,Ar,17900,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1027,±0.7,6.8,±1,0.8,8,91.2,0.5,Ar,21230,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1021,±0.7,6.59,±1,0.8,8,91.2,0.5,Ar,20940,Species,OH,±1,306.7,14.13,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1289,±0.7,27.1,±1,0.8,8,91.2,0.5,Ar,200,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1260,±0.7,21.9,±1,0.8,8,91.2,0.5,Ar,330,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1221,±0.7,25.2,±1,0.8,8,91.2,0.5,Ar,510,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1189,±0.7,26,±1,0.8,8,91.2,0.5,Ar,680,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1173,±0.7,22.4,±1,0.8,8,91.2,0.5,Ar,960,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1160,±0.7,23.3,±1,0.8,8,91.2,0.5,Ar,1010,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1155,±0.7,26.1,±1,0.8,8,91.2,0.5,Ar,990,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1123,±0.7,28.8,±1,0.8,8,91.2,0.5,Ar,1340,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1114,±0.7,29.5,±1,0.8,8,91.2,0.5,Ar,1430,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1113,±0.7,23.1,±1,0.8,8,91.2,0.5,Ar,1720,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1062,±0.7,22.7,±1,0.8,8,91.2,0.5,Ar,2670,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1053,±0.7,21.1,±1,0.8,8,91.2,0.5,Ar,2990,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1052,±0.7,25.5,±1,0.8,8,91.2,0.5,Ar,2650,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1009,±0.7,22.5,±1,0.8,8,91.2,0.5,Ar,4470,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1005,±0.7,21.9,±1,0.8,8,91.2,0.5,Ar,4290,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1004,±0.7,22,±1,0.8,8,91.2,0.5,Ar,4510,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,975,±0.7,21.4,±1,0.8,8,91.2,0.5,Ar,5540,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,968,±0.7,29.4,±1,0.8,8,91.2,0.5,Ar,4770,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,950,±0.7,21.4,±1,0.8,8,91.2,0.5,Ar,6790,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1273,±0.7,23.6,±1,0.8,8,91.2,0.5,Ar,260,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1254,±0.7,24.4,±1,0.8,8,91.2,0.5,Ar,340,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1247,±0.7,26.8,±1,0.8,8,91.2,0.5,Ar,350,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1206,±0.7,27,±1,0.8,8,91.2,0.5,Ar,600,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1180,±0.7,24.2,±1,0.8,8,91.2,0.5,Ar,900,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1154,±0.7,24.4,±1,0.8,8,91.2,0.5,Ar,1240,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1137,±0.7,26.4,±1,0.8,8,91.2,0.5,Ar,1420,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1114,±0.7,24.3,±1,0.8,8,91.2,0.5,Ar,2100,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1101,±0.7,30.7,±1,0.8,8,91.2,0.5,Ar,1840,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1088,±0.7,29.1,±1,0.8,8,91.2,0.5,Ar,2100,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1086,±0.7,25.8,±1,0.8,8,91.2,0.5,Ar,2950,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1077,±0.7,22.8,±1,0.8,8,91.2,0.5,Ar,3300,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1077,±0.7,27.4,±1,0.8,8,91.2,0.5,Ar,3170,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1060,±0.7,28.1,±1,0.8,8,91.2,0.5,Ar,3700,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1049,±0.7,30.7,±1,0.8,8,91.2,0.5,Ar,3360,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1042,±0.7,31.1,±1,0.8,8,91.2,0.5,Ar,3530,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1009,±0.7,30.9,±1,0.8,8,91.2,0.5,Ar,8490,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,988,±0.7,29.2,±1,0.8,8,91.2,0.5,Ar,9280,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1244,±0.7,66.8,±1,0.8,8,91.2,0.5,Ar,170,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1219,±0.7,59.8,±1,0.8,8,91.2,0.5,Ar,260,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1145,±0.7,64,±1,0.8,8,91.2,0.5,Ar,530,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1093,±0.7,55.4,±1,0.8,8,91.2,0.5,Ar,1000,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1071,±0.7,62.2,±1,0.8,8,91.2,0.5,Ar,1190,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1026,±0.7,57.7,±1,0.8,8,91.2,0.5,Ar,2070,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1022,±0.7,61.2,±1,0.8,8,91.2,0.5,Ar,1950,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,996,±0.7,54.7,±1,0.8,8,91.2,0.5,Ar,2710,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,983,±0.7,56,±1,0.8,8,91.2,0.5,Ar,3140,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,980,±0.7,54.6,±1,0.8,8,91.2,0.5,Ar,3260,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1247,±0.7,59.5,±1,0.8,8,91.2,0.5,Ar,200,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1202,±0.7,55.9,±1,0.8,8,91.2,0.5,Ar,340,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1178,±0.7,63.4,±1,0.8,8,91.2,0.5,Ar,390,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1129,±0.7,67.4,±1,0.8,8,91.2,0.5,Ar,650,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1114,±0.7,60.4,±1,0.8,8,91.2,0.5,Ar,820,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1100,±0.7,63.9,±1,0.8,8,91.2,0.5,Ar,910,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1071,±0.7,65,±1,0.8,8,91.2,0.5,Ar,1370,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1061,±0.7,63.8,±1,0.8,8,91.2,0.5,Ar,1600,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1043,±0.7,67.8,±1,0.8,8,91.2,0.5,Ar,2010,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1035,±0.7,54.1,±1,0.8,8,91.2,0.5,Ar,2610,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1022,±0.7,59.4,±1,0.8,8,91.2,0.5,Ar,2940,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1008,±0.7,53.7,±1,0.8,8,91.2,0.5,Ar,3890,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,994,±0.7,54,±1,0.8,8,91.2,0.5,Ar,4750,Species,OH,±1,306.7,5,Stanford,Lam_2013_thesis / propane_const_V
+CCC,1195,±1,49.8,±1,0.888,4,95.112,1,Ar,1454,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1226,±1,47.4,±1,0.888,4,95.112,1,Ar,1044,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1371,±1,46.4,±1,0.888,4,95.112,1,Ar,251,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1242,±1,43.9,±1,0.888,4,95.112,1,Ar,930,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1175,±1,51.2,±1,0.888,4,95.112,1,Ar,1877,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1327,±1,46.4,±1,0.888,4,95.112,1,Ar,372,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1428,±1,45.6,±1,0.888,4,95.112,1,Ar,134,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1318,±1,47.1,±1,0.888,4,95.112,1,Ar,394,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1302,±1,47.5,±1,0.888,4,95.112,1,Ar,456,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1223,±1,46.2,±1,1.78,4,94.22,2,Ar,1044,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1281,±1,46.4,±1,1.78,4,94.22,2,Ar,555,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1210,±1,46.8,±1,1.78,4,94.22,2,Ar,1300,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1316,±1,44.8,±1,1.78,4,94.22,2,Ar,457,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1371,±1,44,±1,1.78,4,94.22,2,Ar,280,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1200,±1,45.7,±1,1.78,4,94.22,2,Ar,1543,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1432,±1,44.2,±1,1.78,4,94.22,2,Ar,158,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1249,±1,45.2,±1,1.78,4,94.22,2,Ar,910,Species,OH,±3,306.7,5,Stanford,propene_oxidation
+CCC,1554,±0.7,2.08,±1,0.888,4,95.112,1,Ar,268,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1432,±0.7,2.19,±1,0.888,4,95.112,1,Ar,1072,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1597,±0.7,1.94,±1,0.888,4,95.112,1,Ar,159,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1587,±0.7,1.92,±1,0.888,4,95.112,1,Ar,183,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1720,±0.7,1.97,±1,0.888,4,95.112,1,Ar,52,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1656,±0.7,1.95,±1,0.888,4,95.112,1,Ar,95,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1438,±0.7,2.28,±1,0.888,4,95.112,1,Ar,1003,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1408,±0.7,2.26,±1,0.888,4,95.112,1,Ar,1527,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1644,±0.7,2.18,±1,0.444,4,95.556,0.5,Ar,63,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1557,±0.7,2.26,±1,0.444,4,95.556,0.5,Ar,150,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1493,±0.7,2.32,±1,0.444,4,95.556,0.5,Ar,323,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1446,±0.7,2.4,±1,0.444,4,95.556,0.5,Ar,583,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1370,±0.7,2.45,±1,0.444,4,95.556,0.5,Ar,1635,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1360,±0.7,2.49,±1,0.444,4,95.556,0.5,Ar,2002,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1698,±0.7,2.14,±1,0.444,4,95.556,0.5,Ar,37,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1485,±0.7,2.29,±1,1.78,4,94.22,2,Ar,792,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1554,±0.7,2.22,±1,1.78,4,94.22,2,Ar,417,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1660,±0.7,2.14,±1,1.78,4,94.22,2,Ar,164,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1756,±0.7,2.04,±1,1.78,4,94.22,2,Ar,76,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1409,±0.7,2.34,±1,1.78,4,94.22,2,Ar,1809,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1388,±0.7,2.41,±1,1.78,4,94.22,2,Ar,2324,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1566,±0.7,4.35,±1,0.888,4,95.112,1,Ar,163,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1413,±0.7,4.08,±1,0.888,4,95.112,1,Ar,904,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1408,±0.7,4.25,±1,0.888,4,95.112,1,Ar,920,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1465,±0.7,4.74,±1,0.888,4,95.112,1,Ar,438,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1405,±0.7,4.8,±1,0.888,4,95.112,1,Ar,884,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1333,±0.7,4.76,±1,0.888,4,95.112,1,Ar,2472,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1486,±0.7,4.43,±1,1.6,7.2,91.2,1,Ar,227,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1496,±0.7,4.24,±1,1.6,7.2,91.2,1,Ar,205,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1567,±0.7,4.33,±1,1.6,7.2,91.2,1,Ar,86,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1609,±0.7,4.2,±1,1.6,7.2,91.2,1,Ar,62,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCC,1431,±0.7,4.47,±1,1.6,7.2,91.2,1,Ar,404,Species,OH,±1,306.7,15.3,Stanford,propene_oxidation
+CCCCCCCCCCCC,1168,±1,6.37,±9.3,0.7339,21,78.2661,0.65,Ar,484,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1209,±1,4.64,±9.3,0.186,21,78.814,0.16,Ar,926,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1163,±1,4.93,±9.3,0.2534,21,78.7466,0.22,Ar,1800,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1192,±1,5.06,±9.3,0.3437,21,78.6563,0.3,Ar,1110,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1078,±1,4,±9.3,0.2074,21,78.7926,0.18,Ar,5605,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,976,±1,4.87,±9.3,0.4056,21,78.5944,0.36,Ar,6220,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,903,±1,5,±9.3,0.9297,21,78.0703,0.82,Ar,7825,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1241,±1,4.79,±9.3,0.3488,21,78.6512,0.31,Ar,337,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1351,±1,4.51,±9.3,0.2064,21,78.7936,0.18,Ar,233,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,979,±1,5.04,±9.3,2.138,21,76.862,1.88,Ar,306,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1025,±1,6.06,±9.3,1.659,21,77.341,1.46,Ar,543,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,988,±1,6.46,±9.3,1.99,21,77.01,1.75,Ar,260,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1112,±1,5.65,±9.3,0.1905,21,78.8095,0.17,Ar,2281,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,838,±1,6.26,±9.3,1.504,21,77.496,1.32,Ar,5352,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,939,±1,6.31,±9.3,1.802,21,77.198,1.59,Ar,544,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,964,±1,5.82,±9.3,1.289,21,77.711,1.14,Ar,1175,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,932,±1,6.01,±9.3,1.494,21,77.506,1.32,Ar,1559,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1156,±1,5.34,±9.3,0.0558,21,78.9442,0.05,Ar,1526,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1134,±1,5.2,±9.3,0.0662,21,78.9338,0.06,Ar,2006,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1172,±1,6.19,±9.3,0.5336,21,78.4664,0.47,Ar,524,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1191,±1,6.4,±9.3,0.589,21,78.411,0.52,Ar,550,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1249,±1,6.23,±9.3,0.7572,21,78.2428,0.67,Ar,114,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1284,±1,6.42,±9.3,0.8276,21,78.1724,0.73,Ar,80,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1053,±1,6.56,±9.3,0.5649,21,78.4351,0.5,Ar,2105,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1045,±1,6.71,±9.3,0.6098,21,78.3902,0.54,Ar,2753,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1068,±1,6.4,±9.3,0.516,21,78.484,0.45,Ar,2126,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1078,±1,6.32,±9.3,0.5023,21,78.4977,0.44,Ar,1624,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1086,±1,6.32,±9.3,0.5655,21,78.4345,0.5,Ar,1422,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1107,±1,6.25,±9.3,0.5533,21,78.4467,0.49,Ar,1200,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1118,±1,6.18,±9.3,0.5678,21,78.4322,0.5,Ar,1081,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1140,±1,6.07,±9.3,0.576,21,78.424,0.51,Ar,820,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1345,±1,5.92,±9.3,0.6297,21,78.3703,0.55,Ar,123,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1319,±1,5.78,±9.3,0.4595,21,78.5405,0.4,Ar,181,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1117,±1,8.09,±9.3,0.7901,21,78.2099,0.7,Ar,412,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1124,±1,8.24,±9.3,0.6972,21,78.3028,0.61,Ar,702,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,993,±1,4.23,±9.3,0.6795,21,78.3205,0.6,Ar,5732,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,921,±1,4.86,±9.3,1.231,21,77.769,1.08,Ar,6085,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,943,±1,5.21,±9.3,1.28,21,77.72,1.13,Ar,3804,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,932,±1,4.98,±9.3,1.24,21,77.76,1.09,Ar,4627,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,954,±1,5.05,±9.3,1.158,21,77.842,1.02,Ar,4169,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1061,±1,4.1,±9.3,1.116,21,77.884,0.98,Ar,959,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1019,±1,4.36,±9.3,0.9624,21,78.0376,0.85,Ar,1828,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,976,±1,4.49,±9.3,1,21,78,0.88,Ar,2555,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1192,±1,4.57,±9.3,0.875,21,78.125,0.77,Ar,246,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1118,±1,4.88,±9.3,0.8929,21,78.1071,0.79,Ar,587,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1146,±1,4.01,±9.3,0.5656,21,78.4344,0.5,Ar,1027,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1035,±1,4.43,±9.3,0.83,21,78.17,0.73,Ar,1803,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1003,±1,4.68,±9.3,0.742,21,78.258,0.65,Ar,4081,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1147,±1,4.97,±9.3,1.276,21,77.724,1.12,Ar,357,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1220,±1,8.63,±9.3,0.4879,21,78.5121,0.43,Ar,292,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1172,±1,5.33,±9.3,0.7078,21,78.2922,0.62,Ar,663,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1011,±1,6.57,±9.3,1.179,21,77.821,1.04,Ar,1100,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,940,±1,7,±9.3,1.166,21,77.834,1.03,Ar,2599,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,958,±1,6.57,±9.3,1.169,21,77.831,1.03,Ar,2041,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,921,±1,6.25,±9.3,0.9985,21,78.0015,0.88,Ar,5556,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1037,±1,5.69,±9.3,0.5463,21,78.4537,0.48,Ar,2607,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1049,±1,5.76,±9.3,0.5734,21,78.4266,0.51,Ar,2581,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCC,1446,±1,1.15,NaN,0.4,4.8,94.8,0.9,Ar,234,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1381,±1,1.18,NaN,0.4,4.8,94.8,0.9,Ar,488,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1491,±1,1.23,NaN,0.4,4.8,94.8,0.9,Ar,137,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1438,±1,1.22,NaN,0.4,4.8,94.8,0.9,Ar,238,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1492,±1,1.22,NaN,0.36,4.4,95.24,0.9,Ar,141,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1501,±1,1.25,NaN,0.36,4.4,95.24,0.9,Ar,125,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1476,±1,1.25,NaN,0.36,4.4,95.24,0.9,Ar,163,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1486,±1,1.23,NaN,0.4,4.4,95.2,1,Ar,159,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1458,±1,1.27,NaN,0.4,4.4,95.2,1,Ar,208,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1428,±1,1.27,NaN,0.4,4.4,95.2,1,Ar,296,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1455,±1,1.2,NaN,0.4,8.8,90.8,0.5,Ar,86,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1413,±1,1.32,NaN,0.4,8.8,90.8,0.5,Ar,121,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1347,±1,1.3,NaN,0.4,8.8,90.8,0.5,Ar,286,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1676,±1,1.22,NaN,0.4,2.2,97.4,2,Ar,147,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1529,±1,1.26,NaN,0.4,2.2,97.4,2,Ar,442,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1619,±1,1.22,NaN,0.4,2.2,97.4,2,Ar,210,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1396,±1,1.23,NaN,0.4,8.8,90.8,0.5,Ar,161,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1347,±1,1.29,NaN,0.4,8.8,90.8,0.5,Ar,308,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1345,±1,1.34,NaN,0.4,8.8,90.8,0.5,Ar,305,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1432,±1,1.21,NaN,0.4,8.8,90.8,0.5,Ar,110,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1347,±1,1.22,NaN,0.4,8.8,90.8,0.5,Ar,323,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1455,±1,2.13,NaN,0.4,4.4,95.2,1,Ar,165,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1384,±1,2.12,NaN,0.4,4.4,95.2,1,Ar,403,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1434,±1,2.15,NaN,0.4,4.4,95.2,1,Ar,205,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1478,±1,2.08,NaN,0.4,4.4,95.2,1,Ar,131,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1503,±1,2.06,NaN,0.4,4.4,95.2,1,Ar,100,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1412,±1,2.14,NaN,0.4,4.4,95.2,1,Ar,265,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1476,±1,4.03,NaN,0.4,4.4,95.2,1,Ar,90,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1420,±1,4.07,NaN,0.4,4.4,95.2,1,Ar,163,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1394,±1,4.22,NaN,0.4,4.4,95.2,1,Ar,227,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1463,±1,4.11,NaN,0.4,4.4,95.2,1,Ar,103,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1413,±1,4.16,NaN,0.4,4.4,95.2,1,Ar,183,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1378,±1,1.15,NaN,0.8,8.8,90.4,1,Ar,385,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1426,±1,1.17,NaN,0.8,8.8,90.4,1,Ar,208,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1335,±1,1.3,NaN,1.2,13.2,85.6,1,Ar,466,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1455,±1,1.22,NaN,1.2,13.2,85.6,1,Ar,115,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1421,±1,1.19,NaN,1.2,13.2,85.6,1,Ar,163,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1349,±1,1.2,NaN,1.2,13.2,85.6,1,Ar,411,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1409,±1,1.27,NaN,1.2,13.2,85.6,1,Ar,179,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1465,±1,1.14,NaN,1.2,8.8,90,1.5,Ar,189,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1461,±1,1.23,NaN,1.2,8.8,90,1.5,Ar,189,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1409,±1,1.27,NaN,1.2,8.8,90,1.5,Ar,321,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1411,±1,1.29,NaN,1.2,8.8,90,1.5,Ar,311,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1386,±1,1.24,NaN,1.75,19.7,78.55,1,Ar,177,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1329,±1,1.19,NaN,1.75,19.7,78.55,1,Ar,382,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1330,±1,1.16,NaN,1.75,19.7,78.55,1,Ar,382,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1501,±1,2.08,NaN,0.2,2.2,97.6,1,Ar,150,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1468,±1,2.13,NaN,0.2,2.2,97.6,1,Ar,216,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1432,±1,2.15,NaN,0.2,2.2,97.6,1,Ar,345,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1547,±1,2.07,NaN,0.2,2.2,97.6,1,Ar,100,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1375,±1,5.68,NaN,0.4,4.4,95.2,1,Ar,271,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1431,±1,5.71,NaN,0.4,4.4,95.2,1,Ar,120,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1400,±1,5.63,NaN,0.4,4.4,95.2,1,Ar,190,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1421,±1,5.69,NaN,0.4,4.4,95.2,1,Ar,138,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1372,±1,5.57,NaN,0.4,4.4,95.2,1,Ar,279,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1442,±1,5.65,NaN,0.4,4.4,95.2,1,Ar,117,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1419,±1,5.41,NaN,0.4,4.4,95.2,1,Ar,158,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1423,±1,1.2,NaN,1.2,6.6,92.2,2,Ar,486,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1516,±1,1.21,NaN,1.2,6.6,92.2,2,Ar,205,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1456,±1,1.2,NaN,1.2,6.6,92.2,2,Ar,361,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1551,NaN,2.14,NaN,0.03,0.33,99.64,1,Ar,207,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1640,NaN,2.04,NaN,0.03,0.33,99.64,1,Ar,99,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1784,NaN,2.12,NaN,0.03,0.33,99.64,1,Ar,47,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1540,NaN,3.67,NaN,0.03,0.33,99.64,1,Ar,181,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1649,NaN,3.8,NaN,0.03,0.33,99.64,1,Ar,73,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1710,NaN,3.75,NaN,0.03,0.33,99.64,1,Ar,49,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1395,±1,1.72,NaN,0.05,0.55,99.4,1,Ar,878,Species,CH3,NaN,216,15.3,Stanford,iso_octane_heptane
+CCCCCCC,1461,±1,1.67,NaN,0.05,0.55,99.4,1,Ar,366,Species,CH3,NaN,216,15.3,Stanford,iso_octane_heptane
+CCCCCCC,1546,±1,1.61,NaN,0.05,0.55,99.4,1,Ar,162,Species,CH3,NaN,216,15.3,Stanford,iso_octane_heptane
+CCCCCCC,1229,±1,15.13,NaN,0.1,2.2,97.7,0.5,Ar,708,Species,OH,NaN,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1230,±1,15.81,NaN,0.1,2.2,97.7,0.5,Ar,698,Species,OH,NaN,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1236,±1,15.28,NaN,0.1,2.2,97.7,0.5,Ar,652,Species,OH,NaN,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1271,±1,15,NaN,0.1,2.2,97.7,0.5,Ar,377,Species,OH,NaN,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1358,±1,2.436,±1,0.03,0.33,99.64,1,Ar,1280,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1368,±1,2.86,±1,0.03,0.33,99.64,1,Ar,1810,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1375,±1,2.282,±1,0.03,0.33,99.64,1,Ar,1661,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1378,±1,2.326,±1,0.03,0.33,99.64,1,Ar,1330,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1494,±1,2.155,±1,0.03,0.33,99.64,1,Ar,1330,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1494,±1,2.155,±1,0.03,0.33,99.64,1,Ar,308,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1502,±1,2.262,±1,0.03,0.33,99.64,1,Ar,280,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1506,±1,2.36,±1,0.03,0.33,99.64,1,Ar,189,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation
