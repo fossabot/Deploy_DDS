@@ -1381,7 +1381,7 @@ class Ternary_Tree():
         ######################################
         if(filename == 'Testing' or filename=='coefficient' or filename == 'max_rel_error' or filename == 'Training' or filename=='MaxRelError' or filename == 'Datasize' or filename == 'ChildLabel'):
             if(type_of_division == 3) :                     
-                for i in range(self.number_of_levels-1):
+                for i in range(type_of_division-1):
                     f.write(' }\n')
 
         # for i in range(len(latex_supported_array)):
