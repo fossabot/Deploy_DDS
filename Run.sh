@@ -175,9 +175,9 @@ xdg-open coefficient.pdf
 echo 'Plotting of Coefficients done'
 
 #in plotting dir, deleting all files except .pdf
-# find $dir_to_plot  -name '*.aux' -delete
-# find $dir_to_plot  -name '*.tex' -delete
-# find $dir_to_plot  -name '*.log' -delete
+find $dir_to_plot  -name '*.aux' -delete
+find $dir_to_plot  -name '*.tex' -delete
+find $dir_to_plot  -name '*.log' -delete
 
 
 # pdflatex FuelsTrainingTesting.tex > /dev/null 2>&1

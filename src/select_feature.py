@@ -39,7 +39,7 @@ class select_feature():
             df['log_Oxidizer(%)'] = np.log(dataset['Oxidizer(%)'])  # 8  #4
             # df['log_Diluent(%)'] = np.log(dataset['Diluant(%)'])  # 9  #5
             df['T0/S_H__T'] = T_0/(dataset['S_H'] * dataset['T(K)'])# 26 #18
-            df['log_T0/T'] = np.log(T_0/dataset['T(K)'])
+            df['T0/T'] = T_0/dataset['T(K)']
             # df['1/T'] = 1/dataset['T(K)']     
             # df['E_0'] = np.ones(dataset.shape[0]) / dataset['T(K)']     
             # df['P_S'] = dataset['P_S']   # 16 #8 
@@ -88,7 +88,7 @@ class select_feature():
             '''
             For result output column headers will be selected from these features
             '''
-            columns = ['Constant','log_P(atm)','log_Fuel(%)','log_Oxidizer(%)','T0/S_H__T','log_T0/T']
+            columns = ['Constant','log_P(atm)','log_Fuel(%)','log_Oxidizer(%)','T0/S_H__T','T0/T']
             return columns
 
 

@@ -140,14 +140,14 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         ####object is stored
         # f = open(str(curr_directory)+'/result/check_comparisons.txt','a') #file open
 
-        filename_scalar=  str(curr_directory)+'/object_file/scalar/scalar_'+str(cluster_label)+'.sav'
+        filename_scalar=  str(curr_directory)+'/object_file/scalar/scalar_'+str(cluster_label)+'_'+str(child_type)+'.sav'
         joblib.dump(scalar,filename_scalar)  
 
         #saving object for further prediction
-        filename_regressor = str(curr_directory)+'/object_file/regressor/regressor_'+str(cluster_label)+'.sav'
+        filename_regressor = str(curr_directory)+'/object_file/regressor/regressor_'+str(cluster_label)+'_'+str(child_type)+'.sav'
         joblib.dump(regressor_OLS_modified, filename_regressor)
 
-        filename_xnames =  str(curr_directory)+'/object_file/x_names/xname_'+str(cluster_label)+'.sav'
+        filename_xnames =  str(curr_directory)+'/object_file/x_names/xname_'+str(cluster_label)+'_'+str(child_type)+'.sav'
         joblib.dump(X_names_modified,filename_xnames)  
 
         # filename_xnames_without_const =  str(curr_directory)+'/object_file/x_names/xname_without_const'+str(cluster_label)+'.sav'

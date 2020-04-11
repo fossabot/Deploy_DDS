@@ -151,10 +151,9 @@ class Ternary_Tree():
                         SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
 
                         ####object is stored
-                        filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.left_node.child_label)+'.sav'
+                        filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.left_node.child_label)+'_'+str(child_type)+'.sav'
                         joblib.dump(cur_node.left_node.centroid,filename_centroid)  
                         print('Criteria Satisfied')
-                        self.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label,child_type)
 
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
@@ -190,7 +189,7 @@ class Ternary_Tree():
                 # time.sleep(2)
                 #save data of all clusters after regression 
                 SF.check_directory(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type))
-                cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(child_type)+'.csv')
+                cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(cur_node.center_node.child_label)+'_'+str(child_type)+'.csv')
                 
                 if(cur_node.center_node.data.shape[0] > cur_node.center_node.data.shape[1]): #if rows are more than columns
                     cur_node.center_node.max_relerr_train, cur_node.center_node.r2, cur_node.center_node.testing_r2, summary,cur_node.center_node.coefficients_dictionary, cur_node.center_node.data = regression.regression(cur_node.center_node.data,cur_node.center_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.center_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl)    #calculate the r2 of that data 
@@ -210,9 +209,8 @@ class Ternary_Tree():
                     SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
 
                     ####object is stored
-                    filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.center_node.child_label)+'.sav'
+                    filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.center_node.child_label)+'_'+str(child_type)+'.sav'
                     joblib.dump(cur_node.center_node.centroid,filename_centroid) 
-                    self.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label,child_type)
 
                   
                     #final cluster gives stores only those cluster data which are useful fro prediction #as all centroid clusters are final clusters
@@ -281,13 +279,12 @@ class Ternary_Tree():
                         SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
 
                         ####object is stored
-                        filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.right_node.child_label)+'.sav'
+                        filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.right_node.child_label)+'_'+str(child_type)+'.sav'
                         joblib.dump(cur_node.right_node.centroid,filename_centroid)   
-                        self.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label,child_type)
                     
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 
-                        cur_node.right_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(child_type)+'.csv')
+                        cur_node.right_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(cur_node.right_node.child_label)+'_'+str(child_type)+'.csv')
                         
 
                         print('Criteria Satisfied')
@@ -392,9 +389,6 @@ class Ternary_Tree():
         pass
     
     def calculate_centroid(self,data):
-        '''
-        It will calcute the centroid using all the data poins 
-        '''
         #removing y_act , y_pred and constant column to calculate the centroid
         data_centroid = copy.deepcopy(data) #coping the data
         data_centroid = data_centroid.drop(columns=['y_act'])
@@ -412,138 +406,8 @@ class Ternary_Tree():
         except AttributeError:
             if(data_centroid == None):
                 return None
-    
-    def other_reference_point(self,data,centroid,child_label,child_type):
-        '''
-        It will calculate the other reference point apart from centroid.
-        1. farthest point from centroid
-        2. nearest point from centroid
-        3. farthest point from origin
-        4. nearest point from origin
-        5. Other extreme points by mentod find_extreme_point
-        for specific cluster or data passed.
-        return : all four specified points
-        '''
-        if(centroid.all() != None):
-            data_passed = copy.deepcopy(data) #just copy of data points
-            data_passed = data_passed.drop(columns=['y_act'])
-            data_passed = data_passed.drop(columns=['y_pred'])
-            data_passed = data_passed.drop(columns=['Constant'])
-            #resetting index
-            data_passed = data_passed.reset_index(drop=True)
-            distance_from_centroid = []
-            distance_from_origin = []
-            origin = np.zeros(centroid.shape[0]) #origin point defined
-            for i in range(len(data_passed)):
-                #distance from centroid
-                distance_from_centroid.append(self.euclidian_dist(data_passed.loc[i,:],centroid))
-                #distance from origin
-                distance_from_origin.append(self.euclidian_dist(data_passed.loc[i,:],origin))
-
-            #Distance from centroid to point & origin to point----findind index of data 
-            max_distance_from_centroid_PointIndex = np.argmax(distance_from_centroid)
-            min_distance_from_centroid_PointIndex  = np.argmin(distance_from_centroid)
-            max_distance_from_origin_PointIndex    = np.argmax(distance_from_origin)
-            min_distance_from_origin_PointIndex    = np.argmin(distance_from_origin)
-
-
-            #based on index finding the point
-            Point_max_dist_from_centroid = data_passed.loc[max_distance_from_centroid_PointIndex,:]
-            Point_min_dist_from_centroid = data_passed.loc[min_distance_from_centroid_PointIndex,:]
-            Point_max_dist_from_origin = data_passed.loc[max_distance_from_origin_PointIndex,:]
-            Point_min_dist_from_origin = data_passed.loc[min_distance_from_origin_PointIndex,:]
-
-
-            SF.check_directory(str(self.curr_directory)+'/object_file/cluster_reference_points/')
-            ######  Storing above points as object files  ##############
-            #filenames naming convention just for sake of ease
-            filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/cluster_reference_points/maxCentroid_'+str(child_label)+'.sav'
-            filename_min_dist_centroid =  str(self.curr_directory)+'/object_file/cluster_reference_points/minCentroid_'+str(child_label)+'.sav'
-            filename_max_dist_origin  =  str(self.curr_directory)+'/object_file/cluster_reference_points/maxOrigin_'+str(child_label)+'.sav' #
-            filename_min_dist_origin  =  str(self.curr_directory)+'/object_file/cluster_reference_points/minOrigin_'+str(child_label)+'.sav'
-            #dumping object files
-            joblib.dump(Point_max_dist_from_centroid,filename_max_dist_centroid )
-            joblib.dump(Point_min_dist_from_centroid,filename_min_dist_centroid ) 
-            joblib.dump(Point_max_dist_from_origin,filename_max_dist_origin ) 
-            joblib.dump(Point_min_dist_from_origin,filename_min_dist_origin ) 
-
-            #other reference point
-            other_ref_points = self.find_extreme_point(data_passed,Point_max_dist_from_centroid)
-            for i in range(len(other_ref_points)):
-                filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/cluster_reference_points/other_refPoi_'+str(i)+'_'+str(child_label)+'.sav'
-                joblib.dump(other_ref_points[i],filename_max_dist_centroid )
-
-        else:
-            pass
-    
-    def find_extreme_point(self,data_passed,initial_point):
-        '''
-        From supplied points and data it will calculate the farthest point.
-        let's say I want 10 such point and starting point is farthest point-A from 
-        centroid of data and now I want to find out 10 extreme points.
-        so, 
-        1. Calculate the point-B farthest from point-A
-        2. Calculate point-c fathest from point-B and point-A
-        3. repeat the procedure 
-        return all the points
-        '''
-        data =  copy.deepcopy(data_passed)
-        ref_points = []
-        #take first reference point as initial_point
-        ref_points.append(initial_point)
-
-        ## After appending the point purge it
-        data = data.drop(initial_point.name)
-
-        ####how many times run the loop
-        #try with dimension^2 but if less data then consider all the data points
-        if(data.shape[1] > data.shape[1]*2): 
-            num_ref_point = data.shape[1]*2
-
-            for i in range(num_ref_point):
-                dist_sum = 0
-                measured_dist_from_all_ref_point = []
-                for j in range (data.shape[0]): #for all the data points 
-                    for k in range(len(ref_points)): #distance from all the points
-                        dist_sum += self.euclidian_dist(ref_points[k],data.loc[j,:])
-                    #for data point-j distance is measured from all the distance and ref_points
-                    measured_dist_from_all_ref_point.append(dist_sum)
-                #after storing all measures dist. find index of list and locate that data point
-                Point_index = np.argmax(measured_dist_from_all_ref_point)
-                #find data point based on index
-                data_point = data.loc[Point_index,:]
-                data_point = data_point.reset_index(drop=True)
-                #dropping point from the data 
-                data = data.drop(Point_index)
-                #append that data point as reference point
-                ref_points.append(data_point)
-        else:
-            num_ref_point = data.shape[0]
-            data = data.reset_index(drop=True)
-            for i in range(data.shape[0]):
-                data_point = data.loc[i,:]
-                data_point = data_point
-                ref_points.append(data_point)
-
-        return ref_points
-            
-
-
-
-    def euclidian_dist(self,arr_1,arr_2):
-            arr_1 = np.array(arr_1)
-            arr_2 = np.array(arr_2)
-            '''
-            calculating distance by passed row of matrix and centroid 
-            '''
-            distance = np.linalg.norm(arr_1-arr_2)
-            return distance
-
 
     def points_in_range(self,data,defined_relative_error):
-        '''
-        shows how many data points lies within specified realtive error 
-        '''
         counter = 0
         total_data = data.shape[0]
         error_counter = np.sum(data['rel_error'] < defined_relative_error)

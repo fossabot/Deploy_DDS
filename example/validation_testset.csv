@@ -1,0 +1,26 @@
+Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source
+CCCCCCCC,1265,±0.7,2.05,±1,0.32,4,95.68,1,Ar,1569,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
+CCCCCCCC,1289,±0.7,2.01,±1,0.32,4,95.68,1,Ar,1198,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
+CCCCCCCC,1282,±0.7,3.37,±1,0.32,4,95.68,1,Ar,1020,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
+CCCCCCCC,1319,±0.7,3.75,±1,0.32,4,95.68,1,Ar,614,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
+CCCCCCCCCCCC,1209,±1,4.64,±9.3,0.186,21,78.814,0.16,Ar,926,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,838,±1,6.26,±9.3,1.504,21,77.496,1.32,Ar,5352,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1156,±1,5.34,±9.3,0.0558,21,78.9442,0.05,Ar,1526,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1134,±1,5.2,±9.3,0.0662,21,78.9338,0.06,Ar,2006,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1068,±1,6.4,±9.3,0.516,21,78.484,0.45,Ar,2126,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,993,±1,4.23,±9.3,0.6795,21,78.3205,0.6,Ar,5732,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,976,±1,4.49,±9.3,1,21,78,0.88,Ar,2555,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,1118,±1,4.88,±9.3,0.8929,21,78.1071,0.79,Ar,587,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCC,940,±1,7,±9.3,1.166,21,77.834,1.03,Ar,2599,Speceis,CH,NaN,430,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube 
+CCCCCCCCCCCCCCCC,1353,±2,1.71,NaN,0.1565,4,95.8435,0.96,Ar,708,Species,CH,±2,431,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis
+CCCCCCCCC,1288,±0.7,1.68,±1,0.286,4,95.714,1,Ar,1351,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
+CCCCCCCCC,1348,±0.7,3.63,±1,0.286,4,95.714,1,Ar,405,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
+CCCCCC,1407,±0.7,3.43,±1,0.42,4,95.58,1,Ar,263,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
+CCCC,1517,±1,1.16,±1,2,13,85,1,Ar,83,Speceis,CH,±5,431,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCCCCCCCC,1516, ±1.5,1.22,NaN,0.2,3.1,96.7,1,Ar,124,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1501,±1,1.25,NaN,0.36,4.4,95.24,0.9,Ar,125,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1409,±1,1.27,NaN,1.2,8.8,90,1.5,Ar,321,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1411,±1,1.29,NaN,1.2,8.8,90,1.5,Ar,311,Species,CH,±5,431,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1540,NaN,3.67,NaN,0.03,0.33,99.64,1,Ar,181,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1461,±1,1.67,NaN,0.05,0.55,99.4,1,Ar,366,Species,CH3,NaN,216,15.3,Stanford,iso_octane_heptane
+CCCCCCC,1494,±1,2.155,±1,0.03,0.33,99.64,1,Ar,1330,Species,OH,NaN,306.7,15.3,Stanford,n_heptane_oxidation

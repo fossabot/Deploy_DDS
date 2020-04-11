@@ -60,23 +60,16 @@ class external_test():
                 #finding out the straight chain alkanes
                 warnings.warn('Processing only with straight chain Alkanes')
 
-                # print('In finding straight chain alkanes')
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
-                # print('Out finding straight chain alkanes')
 
-                # print('In generating dataset')
                 external_data_full = data_gen(external_data,list_fuel,self.flag_value)     #normal dataset generation
-                # print('Out generating dataset')
 
-                # print('In Select feature')
                 df,tau = select_feature.feature_selection(external_data_full)
-                # print('Out Select feature')
                 
-                # print('In finding total clusters')
                 #finding number of clusters and file names of cluster object 
                 directory_path = str(self.curr_directory)+'/object_file/centroids/'
                 num_of_clusters, cluster_centroid_file_names, cluster_label = self.find_total_clusters(directory_path)
-                # print('Out finding total clusters')
+                print('cluster_label: ', cluster_label)
 
                 #Classifying data based on clusters
                 classified_df = self.assign_clusters_to_testdata(df,num_of_clusters,cluster_centroid_file_names,cluster_label)
@@ -84,13 +77,9 @@ class external_test():
                 #Again joining the dependent value to the df, as it is easy to identify dependent variable when seperated by class
                 df['Time(μs)'] = tau
 
-                ###################################################################################
-                ##################  For generating relative error in prediction ###################
-                ###################################################################################
-                error_result =[]
-
                 ###linear regression
                 for i in range(num_of_clusters):
+                        print('num_of_clusters: ', num_of_clusters)
                         #clustering process
                         #seperating data by class or cluster
                         cluster_dataframe = df[df['Class']  == cluster_label[i]] #cluster dataframe is obtained by single class
@@ -154,7 +143,7 @@ class external_test():
                                 pass
                         
                         ###printing result
-                        print('\n\n\n\nResult for cluster-',str(cluster_label[i]),':\n')
+                        print('Result for cluster-',str(cluster_label[i]),':\n')
                         f.write('\n Result for cluster-'+str(cluster_label[i])+':\n')
                         print('\n Index','          ','Y_actual','            ','Y_Predicted','                ','Relative Error')
                         f.write('\n Index'+'          '+'Y_actual'+'            '+'Y_Predicted'+'                '+'Relative Error')
@@ -174,31 +163,6 @@ class external_test():
                         f.write('\n\n Maximum Relative Error in external data for cluster-'+str(cluster_label[i])+' :'+str(maximum_relative_error_external))
                         f.close()
 
-                        ###################
-                        # ERROR PLOTTING  #
-                        ###################
-
-                        '''
-                        plot of external test set result 
-                        '''
-                        rel_error_gt_15 = ID_comparison[ID_comparison['Relative Error'] <= 0.15].shape[0]
-                        print('rel_error_gt_15: ', rel_error_gt_15)
-                        rel_error_btn_15_20 = ID_comparison[(ID_comparison['Relative Error'] > 0.15) & (ID_comparison['Relative Error'] <= 0.20)].shape[0]
-                        rel_error_btn_20_30 = ID_comparison[(ID_comparison['Relative Error'] > 0.20) & (ID_comparison['Relative Error'] <= 0.30)].shape[0]
-                        rel_error_gt_30 = ID_comparison[ID_comparison['Relative Error'] > 0.30].shape[0]
-                        x = ['$< 15\%$ ', '$ 15\% < x < 20\%$','$ 20\% < x < 30\%$','$ >30\%$']
-                        y = [rel_error_gt_15,rel_error_btn_15_20,rel_error_btn_20_30,rel_error_gt_30]
-                        SF.check_directory(str(self.curr_directory)+'/external_test_result/error_frequency/') #checking directory
-                        plt.bar(x,y)
-                        plt.rc('text', usetex=True)
-                        plt.grid(which='minor', alpha=0.2)
-                        plt.title('Frequency of relative error in cluster -'+str(cluster_label[i]),fontsize=15)
-                        plt.xlabel('Relative Error',fontsize=15)
-                        plt.ylabel('Frequency of Error',fontsize=15)
-                        plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_'+str(cluster_label[i])+'.jpg', dpi=600)
-                        plt.show()
-                        plt.close()
-
                         #############
                         # PLOTTING  #
                         #############
@@ -212,7 +176,7 @@ class external_test():
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/prediction_comparison_plots/') #checking directory
                         plt.clf()
                         plt.plot(x,x,linestyle='--',color='black')
-                        plt.scatter(y_pred, y_test_external, s=20, cmap='viridis',label= str('Cluster-'+str(cluster_label[i]) +' data points'))
+                        plt.scatter(y_pred, y_test_external, s=20, cmap='viridis',label= str('Cluster-'+str(cluster_label[i]).replace('_',' \{')+' cluster\} data points'))
                         text = "Maximum Relative Error : "+ str(maximum_relative_error_external)
                         plt.xlim([2,11])
                         plt.ylim([2,11])
@@ -224,7 +188,6 @@ class external_test():
                         plt.tight_layout()
                         plt.legend(loc='lower right',handlelength=1, borderpad=1.2, labelspacing=0.5,framealpha=0.5,fontsize=12)
                         plt.savefig(str(self.curr_directory)+'/external_test_result/prediction_comparison_plots/ignition_delay_external_'+str(cluster_label[i])+'.eps', format='eps', dpi=600)
-                        plt.close()
                        
                 # plt.show()
                 plt.close()
@@ -251,6 +214,7 @@ class external_test():
                 return num_of_cluster,file_names,file_name_label
         
         def assign_clusters_to_testdata(self,data,num_of_centroids,cluster_centroid_file_names,cluster_label):
+                time.sleep(10)
                 '''
                 num_of_clusters = num_of_centroids
                 calculating distance of data point from all the available centroid and appending the 
@@ -276,13 +240,18 @@ class external_test():
 
                 #finding distance from the centroid 
 
-                classification_dataframe = pd.DataFrame([]) #converting into pandas DataFrame
-                print('in assinging cluster')
+                centroid_dataframe = pd.DataFrame([]) #converting into pandas DataFrame
+                print('cluster_centroid_file_names: ', cluster_centroid_file_names)
+
                 for i in range(num_of_centroids): #for all clusters
+                        print('num_of_centroids: ', num_of_centroids)
                         #reference points - contains all the data points from which distance has to be measured
                         ref_data_points = []
+                        print( str(self.curr_directory)+'/object_file/centroids/centroid_'+cluster_label[i]+'.sav')
                         centroid = joblib.load(str(self.curr_directory)+'/object_file/centroids/centroid_'+cluster_label[i]+'.sav')
                         
+                        print('cluster_label: ', cluster_label)
+                        print('centroid: ', centroid)
                         ref_data_points.append(centroid)
                         max_distance_from_centroid = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/maxCentroid_'+cluster_label[i]+'.sav')
                         ref_data_points.append(max_distance_from_centroid)
@@ -292,40 +261,38 @@ class external_test():
                         ref_data_points.append(max_distance_from_origin)
                         min_distance_from_origin   = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/minOrigin_'+cluster_label[i]+'.sav')
                         ref_data_points.append(min_distance_from_origin)
-                
 
-                        m = 0
                         while(1):
+                                i = 0
                                 try:
-                                        dist_from_ref = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/other_refPoi_'+str(m)+'_'+cluster_label[i]+'.sav' )  #cluster  label from i and  file sm 
+                                        dist_from_ref = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/other_refPoi_'+str(i)+''+cluster_label[i]+'.sav' )
                                         ref_data_points.append(dist_from_ref)
-                                        m += 1
                                 except FileNotFoundError:
                                         break
 
                         least_dist_from_all_reference = []
                         ########calculating euclidian distacne for all data points from each cluster
                         #distance of all data point from ref data points for one cluster
-                        print('')
                         for j in range(len(data_passed)): #for all data points
                                 distance_from_ref_points =[]
                                 for k in range(len(ref_data_points)):
-                                        distance_from_ref_points.append(self.euclidian_dist(data_passed.loc[j,:],ref_data_points[k]))#calling function
-                                
-                                
+                                        distance_from_ref_points.append(self.euclidian_dist(data_passed.loc[j,:],ref_data_points))#calling function
 
                                 #minimum from above all
                                 min_of_above_all = np.min(distance_from_ref_points)
                                 least_dist_from_all_reference.append(min_of_above_all)
-                        classification_dataframe[cluster_label[i]] = least_dist_from_all_reference
+                        centroid_dataframe[cluster_label[i]] = least_dist_from_all_reference
+
                 #finding index of the minimum values and appending to the main dataframe
-                data_class = classification_dataframe.idxmin(axis=1)
+                data_class = centroid_dataframe.idxmin(axis=1)
                 # print('data_class: ', data_class)
 
                 # Assigning centroid to the data 
                 # note: data class is assigned based on centroid class
                 data['Class'] = data_class #rather than asssigning number centroid name is assigned to the class
-                print('out assinging cluster')
+
+                # data.to_csv('check_testset_clus.csv')
+                
                 return data
 
         def euclidian_dist(self,arr_1,arr_2):
