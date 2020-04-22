@@ -15,7 +15,7 @@ import numpy as np
 from rdkit import Chem as Chem
 import collections
 from search_fileNcreate import search_fileNcreate as SF
-
+from select_feature import select_feature 
 class Bond_Extraction:
 
     def check_ring(m):
@@ -23,8 +23,8 @@ class Bond_Extraction:
         return ri.NumRings()
 
     def Bond_Extract(Unique_fuel_smiles,file_name='Bond_detail.csv'):
-        columns=['Primary_C','Secondary_C','Tertiary_C','Quaternary_C','Other_Atom','P_P','P_S','P_T',
-                                            'P_Q','S_S','S_T','S_Q','T_T','T_Q','Q_Q','P_H','S_H','T_H']
+        #columns
+        columns = select_feature.bond_extraction_cols()
         Bond_detail_dataframe = pd.DataFrame(columns=columns)
         for i in range(len(Unique_fuel_smiles)):
             print('Unique fuel smiles : ', Unique_fuel_smiles[i])

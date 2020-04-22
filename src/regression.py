@@ -45,7 +45,7 @@ def max_relative_error(y_train,y_train_pred):
         return error 
 
 
-def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_size_fraction=0.1,elimination=False,child_type='root',sl=0.05):
+def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_size_fraction=0.1,elimination=False,child_type='root',sl=0.05,process_type ='tree'):
         '''
         This method will generate the dataset from required information so that 
         generated dataset will be compatible to apply machine learning algorithm.
@@ -57,6 +57,8 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         Arguments : (dataset,y,choice(Flag),curr_directory)
         
         Pass the dataset in specified foramt as given in data folder.
+
+        process_type : tree_cluster , optimized_cluster
 
         how to works:
         When data is passed to the method, data gets divided into two parts training and testing sets.
@@ -83,8 +85,6 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
 
 
         ##splitting dataset 
-        X_data = dataset.loc[:,:]
-        # X_train, X_test, y_train, y_test = train_test_split(X_data, y, test_size=0.2, random_state=0)
         X_train, X_test, y_train, y_test = train_test_split(dataset, y, test_size=test_size_fraction,random_state=42)
         # print('X_train: ', X_train.shape)
         X_names = list(dataset.columns) 
@@ -132,22 +132,22 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         Storing Regressor object for testing of external set  
         '''
         #checking directory 
-        SF.check_directory(str(curr_directory)+'/object_file/scalar/')
-        SF.check_directory(str(curr_directory)+'/object_file/regressor/')
-        SF.check_directory(str(curr_directory)+'/object_file/x_names/')
+        SF.check_directory(str(curr_directory)+'/object_file/'+str(process_type)+'/scalar/')
+        SF.check_directory(str(curr_directory)+'/object_file/'+str(process_type)+'/regressor/')
+        SF.check_directory(str(curr_directory)+'/object_file/'+str(process_type)+'/x_names/')
         # SF.check_file_existence(str(curr_directory)+'/result/check_comparisons.txt')
 
         ####object is stored
         # f = open(str(curr_directory)+'/result/check_comparisons.txt','a') #file open
 
-        filename_scalar=  str(curr_directory)+'/object_file/scalar/scalar_'+str(cluster_label)+'.sav'
+        filename_scalar=  str(curr_directory)+'/object_file/'+str(process_type)+'/scalar/scalar_'+str(cluster_label)+'.sav'
         joblib.dump(scalar,filename_scalar)  
 
         #saving object for further prediction
-        filename_regressor = str(curr_directory)+'/object_file/regressor/regressor_'+str(cluster_label)+'.sav'
+        filename_regressor = str(curr_directory)+'/object_file/'+str(process_type)+'/regressor/regressor_'+str(cluster_label)+'.sav'
         joblib.dump(regressor_OLS_modified, filename_regressor)
 
-        filename_xnames =  str(curr_directory)+'/object_file/x_names/xname_'+str(cluster_label)+'.sav'
+        filename_xnames =  str(curr_directory)+'/object_file/'+str(process_type)+'/x_names/xname_'+str(cluster_label)+'.sav'
         joblib.dump(X_names_modified,filename_xnames)  
 
         # filename_xnames_without_const =  str(curr_directory)+'/object_file/x_names/xname_without_const'+str(cluster_label)+'.sav'
@@ -176,11 +176,11 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
 
 
         #checking directory 
-        SF.check_directory(str(curr_directory)+'/result/console_output/'+str(child_type))
-        SF.check_file_existence(str(curr_directory)+'/result/console_output/'+str(child_type)+'/output_result.txt')
+        SF.check_directory(str(curr_directory)+'/result/'+str(process_type)+'/console_output/'+str(child_type))
+        SF.check_file_existence(str(curr_directory)+'/result/'+str(process_type)+'/console_output/'+str(child_type)+'/output_result.txt')
 
 
-        f = open(str(curr_directory)+"/result/console_output/"+str(child_type)+"/output_result.txt", "a")
+        f = open(str(curr_directory)+"/result/"+str(process_type)+"/console_output/"+str(child_type)+"/output_result.txt", "a")
         f.write("\n\n######################################################################################################################")
         f.write("\n\n######################################################################################################################")
         f.write("\n\nCluster Label: "+str(cluster_label))
@@ -191,7 +191,7 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         f.close()
 
         #open and read the file after the appending:
-        f = open(str(curr_directory)+"/result/console_output/"+str(child_type)+"/output_result.txt", "a")
+        f = open(str(curr_directory)+"/result/"+str(process_type)+"/console_output/"+str(child_type)+"/output_result.txt", "a")
 
         
         '''
@@ -216,13 +216,13 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
             f.write('\n'+str(X_names_modified[i])+':'+str(regressor_OLS_modified.params[i])+'\n')
             coefficient_dictionary[X_names_modified[i] ] =  round(regressor_OLS_modified.params[i],4)
 
-        comparison(y_train,y_train_pred,curr_directory,cluster_label,'train_',child_type) #comparing result training set 
+        comparison(y_train,y_train_pred,curr_directory,cluster_label,'train_',child_type,process_type=process_type) #comparing result training set 
         ############################################################################################
         # Predicting for testing dataset so all the data points can be used for further processing #
         ############################################################################################
         X_test_modified = feature_after_elimination(X_test,X_names_modified)
         y_test_pred = regressor_OLS_modified.predict(X_test_modified)
-        comparison(y_test,y_test_pred,curr_directory,cluster_label,'test_',child_type)
+        comparison(y_test,y_test_pred,curr_directory,cluster_label,'test_',child_type,process_type=process_type)
         Testing_Adj_r2 = r2_score(y_test_pred , y_test)
 
         
@@ -237,6 +237,12 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         dataset_modified = feature_after_elimination(dataset,X_names_modified)
         dataset['y_pred'] = regressor_OLS_modified.predict(dataset_modified)
         dataset['y_act'] = y
+        
+        # plt.clf()
+        # plt.scatter(dataset['y_pred'],dataset['y_act'])
+        # plt.xlabel('Actual value of dependent variable')
+        # plt.ylabel('Predicted value of dependent variable')
+        # plt.show()
 
         #writing to the file
         f.write('\n\n Maximum  Relative Error in Training : '+ str(max_relative_error_training))
@@ -254,13 +260,13 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         
         return max_relative_error_training,training_adj_r2,Testing_Adj_r2,summary,coefficient_dictionary,dataset
 
-def comparison(y_act,y_pred,curr_directory,cluster_label,file_name,child_label='root'):
+def comparison(y_act,y_pred,curr_directory,cluster_label,file_name,child_label='root',process_type ='tree_cluster'):
         #comparison of data 
-        SF.check_directory(str(curr_directory)+'/result/ID_comparison/'+str(child_label)+'/ID_comparison_'+str(cluster_label)+'/')
+        SF.check_directory(str(curr_directory)+'/result/'+str(process_type)+'/ID_comparison/'+str(process_type)+'/ID_comparison_'+str(cluster_label)+'/')
         #checking directory 
         ID_comparison = pd.DataFrame()
         y_act = np.array(y_act)
         ID_comparison['y_predicted'] = y_pred
         ID_comparison['y_actual'] = y_act
         ID_comparison['Relative Error'] = np.abs(y_pred - y_act)/np.abs(y_act)
-        ID_comparison.to_csv(str(curr_directory)+'/result/ID_comparison/'+str(child_label)+'/ID_comparison_'+str(cluster_label)+'/ID_comparison_'+str(file_name)+str(cluster_label)+'.csv')
+        ID_comparison.to_csv(str(curr_directory)+'/result/'+str(process_type)+'/ID_comparison/'+str(process_type)+'/ID_comparison_'+str(cluster_label)+'/ID_comparison_'+str(file_name)+str(cluster_label)+'.csv')

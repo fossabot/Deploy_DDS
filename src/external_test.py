@@ -13,9 +13,9 @@ from sklearn.model_selection import train_test_split
 # import seaborn as sns; sns.set()
 import matplotlib.pyplot as plt
 import copy
-from data_gen import data_gen
+# from data_gen import data_gen
 import warnings
-from find_fuel_type import find_fuel_type
+# from find_fuel_type import find_fuel_type
 from select_feature import select_feature
 import subprocess
 from search_fileNcreate import search_fileNcreate  as SF
@@ -60,21 +60,13 @@ class external_test():
                 #finding out the straight chain alkanes
                 warnings.warn('Processing only with straight chain Alkanes')
 
-                # print('In finding straight chain alkanes')
-                list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
-                # print('Out finding straight chain alkanes')
-
-                # print('In generating dataset')
-                external_data_full = data_gen(external_data,list_fuel,self.flag_value)     #normal dataset generation
-                # print('Out generating dataset')
-
                 # print('In Select feature')
-                df,tau = select_feature.feature_selection(external_data_full)
+                df,tau = select_feature.feature_selection(external_data)
                 # print('Out Select feature')
                 
                 # print('In finding total clusters')
                 #finding number of clusters and file names of cluster object 
-                directory_path = str(self.curr_directory)+'/object_file/centroids/'
+                directory_path = str(self.curr_directory)+'/object_file/final_centroid/'
                 num_of_clusters, cluster_centroid_file_names, cluster_label = self.find_total_clusters(directory_path)
                 # print('Out finding total clusters')
 
@@ -88,6 +80,7 @@ class external_test():
                 ##################  For generating relative error in prediction ###################
                 ###################################################################################
                 error_result =[]
+                final_comparision =pd.DataFrame([],columns=['y_actual','y_predicted','Relative Error'])
 
                 ###linear regression
                 for i in range(num_of_clusters):
@@ -100,8 +93,8 @@ class external_test():
                         cluster_dataframe = cluster_dataframe.drop(columns=['Class'])
 
                         #calling object files
-                        regressor_OLS_modified = joblib.load(str(self.curr_directory)+'/object_file/regressor/regressor_'+str(cluster_label[i])+'.sav')
-                        X_names_modified = joblib.load(str(self.curr_directory)+'/object_file/x_names/xname_'+str(cluster_label[i])+'.sav')
+                        regressor_OLS_modified = joblib.load(str(self.curr_directory)+'/object_file/final_regressor/regressor_'+str(cluster_label[i])+'.sav')
+                        X_names_modified = joblib.load(str(self.curr_directory)+'/object_file/optimized_cluster/x_names/xname_'+str(cluster_label[i])+'.sav')
                         # scalar =  joblib.load(str(self.curr_directory)+'/object_file/scalar_'+str(cluster_label[i])+'.sav')
                         
                         #Dropping unnecessary features 
@@ -170,9 +163,14 @@ class external_test():
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/Ignition_delay_comparison/') #checking directory
                         ID_comparison.to_csv(str(self.curr_directory)+'/external_test_result/Ignition_delay_comparison/ID_comparison_external_cluster_'+str(cluster_label[i])+'.csv')
                         maximum_relative_error_external = self.max_relative_error(y_test_external,y_pred)
-                        print('\n\n Maximum Relative Error in external data for cluster-',str(cluster_label[i]),' :',maximum_relative_error_external)
                         f.write('\n\n Maximum Relative Error in external data for cluster-'+str(cluster_label[i])+' :'+str(maximum_relative_error_external))
+                        print('\n\n Maximum Relative Error in external data for cluster-', str(cluster_label[i]),' :',str(maximum_relative_error_external))
+
                         f.close()
+
+
+                        ############## for overall relative error plot #################
+                        final_comparision = pd.concat([final_comparision,ID_comparison],sort=True)
 
                         ###################
                         # ERROR PLOTTING  #
@@ -181,23 +179,25 @@ class external_test():
                         '''
                         plot of external test set result 
                         '''
+                        plt.close()
                         rel_error_gt_15 = ID_comparison[ID_comparison['Relative Error'] <= 0.15].shape[0]
-                        print('rel_error_gt_15: ', rel_error_gt_15)
                         rel_error_btn_15_20 = ID_comparison[(ID_comparison['Relative Error'] > 0.15) & (ID_comparison['Relative Error'] <= 0.20)].shape[0]
                         rel_error_btn_20_30 = ID_comparison[(ID_comparison['Relative Error'] > 0.20) & (ID_comparison['Relative Error'] <= 0.30)].shape[0]
                         rel_error_gt_30 = ID_comparison[ID_comparison['Relative Error'] > 0.30].shape[0]
-                        x = ['$< 15\%$ ', '$ 15\% < x < 20\%$','$ 20\% < x < 30\%$','$ >30\%$']
+                        x = ['$< 15\%$ ', '$ 15\% < x <= 20\%$','$ 20\% < x <= 30\%$','$ >30\%$']
                         y = [rel_error_gt_15,rel_error_btn_15_20,rel_error_btn_20_30,rel_error_gt_30]
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/error_frequency/') #checking directory
+                        plt.clf()
                         plt.bar(x,y)
                         plt.rc('text', usetex=True)
                         plt.grid(which='minor', alpha=0.2)
                         plt.title('Frequency of relative error in cluster -'+str(cluster_label[i]),fontsize=15)
                         plt.xlabel('Relative Error',fontsize=15)
                         plt.ylabel('Frequency of Error',fontsize=15)
-                        plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_'+str(cluster_label[i])+'.jpg', dpi=600)
-                        plt.show()
+                        # plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_'+str(cluster_label[i])+'.eps')
+                        # plt.show()
                         plt.close()
+
 
                         #############
                         # PLOTTING  #
@@ -223,9 +223,42 @@ class external_test():
                         plt.text(3,0,text,)
                         plt.tight_layout()
                         plt.legend(loc='lower right',handlelength=1, borderpad=1.2, labelspacing=0.5,framealpha=0.5,fontsize=12)
-                        plt.savefig(str(self.curr_directory)+'/external_test_result/prediction_comparison_plots/ignition_delay_external_'+str(cluster_label[i])+'.eps', format='eps', dpi=600)
+                        # plt.savefig(str(self.curr_directory)+'/external_test_result/prediction_comparison_plots/ignition_delay_external_'+str(cluster_label[i])+'.eps', format='eps', dpi=600)
                         plt.close()
-                       
+                
+                #########################
+                ### whole comparision ###
+                #########################
+
+                '''
+                plot of external test set result 
+                '''
+                rel_error_lt_10 = final_comparision[final_comparision['Relative Error'] <= 0.10].shape[0]
+                rel_error_btn_10_20 = final_comparision[(final_comparision['Relative Error'] > 0.10) & (final_comparision['Relative Error'] <= 0.20)].shape[0]
+                rel_error_btn_20_30 = final_comparision[(final_comparision['Relative Error'] > 0.20) & (final_comparision['Relative Error'] <= 0.30)].shape[0]
+                rel_error_btn_30_40 = final_comparision[(final_comparision['Relative Error'] > 0.30) & (final_comparision['Relative Error'] <= 0.40)].shape[0]
+                rel_error_btn_40_50 = final_comparision[(final_comparision['Relative Error'] > 0.40) & (final_comparision['Relative Error'] <= 0.50)].shape[0]
+                rel_error_btn_50_60 = final_comparision[(final_comparision['Relative Error'] > 0.50) & (final_comparision['Relative Error'] <= 0.60)].shape[0]
+                rel_error_btn_60_70 = final_comparision[(final_comparision['Relative Error'] > 0.60) & (final_comparision['Relative Error'] <= 0.70)].shape[0]
+                rel_error_btn_70_80 = final_comparision[(final_comparision['Relative Error'] > 0.70) & (final_comparision['Relative Error'] <= 0.80)].shape[0]
+                rel_error_btn_80_90 = final_comparision[(final_comparision['Relative Error'] > 0.80) & (final_comparision['Relative Error'] <= 0.90)].shape[0]
+                rel_error_btn_90_100 = final_comparision[(final_comparision['Relative Error'] > 0.90) & (final_comparision['Relative Error'] <= 1.0)].shape[0]
+                rel_error_gt_100 = final_comparision[(final_comparision['Relative Error'] > 1.0)].shape[0]
+
+                # x = ['$<= 10\%$ ', '$ 10\% < x <= 20\%$','$ 20\% < x <= 30\%$','$ 30\% < x <= 40\%$','$ 40\% < x <= 50\%$','$ 50\% < x <= 60\%$','$ 60\% < x <= 70\%$','$ 70\% < x <= 80\%$','$ 80\% < x <= 90\%$','$ 90\% < x <= 100\%$','$ 100\% > x $']
+                x = ['$<= 10\%$ ', '$ <= 20\%$','$ <= 30\%$','$ <= 40\%$','$ <= 50\%$','$ <= 60\%$','$ <= 70\%$','$ <= 80\%$','$ <= 90\%$','$ <= 100\%$','$ 100\% > x $']
+                y = [rel_error_lt_10,rel_error_btn_10_20,rel_error_btn_20_30,rel_error_btn_30_40, rel_error_btn_40_50, rel_error_btn_50_60, rel_error_btn_60_70, rel_error_btn_70_80, rel_error_btn_80_90, rel_error_btn_90_100, rel_error_gt_100]
+                SF.check_directory(str(self.curr_directory)+'/external_test_result/error_frequency/') #checking directory
+                plt.clf()
+                plt.bar(x,y)
+                plt.rc('text', usetex=True)
+                plt.grid(which='minor', alpha=0.2)
+                plt.title('Frequency of relative error for all data',fontsize=15)
+                plt.xlabel('Relative Error',fontsize=15)
+                plt.ylabel('Frequency of Error',fontsize=15)
+                plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_all_data.jpg', dpi=600)
+                # plt.show()
+                plt.close()                       
                 # plt.show()
                 plt.close()
         
@@ -277,27 +310,26 @@ class external_test():
                 #finding distance from the centroid 
 
                 classification_dataframe = pd.DataFrame([]) #converting into pandas DataFrame
-                print('in assinging cluster')
                 for i in range(num_of_centroids): #for all clusters
                         #reference points - contains all the data points from which distance has to be measured
                         ref_data_points = []
-                        centroid = joblib.load(str(self.curr_directory)+'/object_file/centroids/centroid_'+cluster_label[i]+'.sav')
+                        centroid = joblib.load(str(self.curr_directory)+'/object_file/final_centroid/centroid_'+cluster_label[i]+'.sav')
                         
                         ref_data_points.append(centroid)
-                        max_distance_from_centroid = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/maxCentroid_'+cluster_label[i]+'.sav')
-                        ref_data_points.append(max_distance_from_centroid)
-                        min_distance_from_centroid = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/minCentroid_'+cluster_label[i]+'.sav')
-                        ref_data_points.append(min_distance_from_centroid)
-                        max_distance_from_origin   = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/maxOrigin_'+cluster_label[i]+'.sav')
-                        ref_data_points.append(max_distance_from_origin)
-                        min_distance_from_origin   = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/minOrigin_'+cluster_label[i]+'.sav')
-                        ref_data_points.append(min_distance_from_origin)
+                        # max_distance_from_centroid = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/maxCentroid_'+cluster_label[i]+'.sav')
+                        # ref_data_points.append(max_distance_from_centroid)
+                        # min_distance_from_centroid = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/minCentroid_'+cluster_label[i]+'.sav')
+                        # ref_data_points.append(min_distance_from_centroid)
+                        # max_distance_from_origin   = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/maxOrigin_'+cluster_label[i]+'.sav')
+                        # ref_data_points.append(max_distance_from_origin)
+                        # min_distance_from_origin   = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/minOrigin_'+cluster_label[i]+'.sav')
+                        # ref_data_points.append(min_distance_from_origin)
                 
 
                         m = 0
                         while(1):
                                 try:
-                                        dist_from_ref = joblib.load(str(self.curr_directory)+'/object_file/cluster_reference_points/other_refPoi_'+str(m)+'_'+cluster_label[i]+'.sav' )  #cluster  label from i and  file sm 
+                                        dist_from_ref = joblib.load(str(self.curr_directory)+'/object_file/final_cluster_reference_points/other_refPoi_'+str(m)+'_'+cluster_label[i]+'.sav' )  #cluster  label from i and  file sm 
                                         ref_data_points.append(dist_from_ref)
                                         m += 1
                                 except FileNotFoundError:
@@ -306,18 +338,17 @@ class external_test():
                         least_dist_from_all_reference = []
                         ########calculating euclidian distacne for all data points from each cluster
                         #distance of all data point from ref data points for one cluster
-                        print('')
                         for j in range(len(data_passed)): #for all data points
                                 distance_from_ref_points =[]
                                 for k in range(len(ref_data_points)):
                                         distance_from_ref_points.append(self.euclidian_dist(data_passed.loc[j,:],ref_data_points[k]))#calling function
-                                
-                                
-
                                 #minimum from above all
                                 min_of_above_all = np.min(distance_from_ref_points)
                                 least_dist_from_all_reference.append(min_of_above_all)
                         classification_dataframe[cluster_label[i]] = least_dist_from_all_reference
+                        #extra
+                        data[cluster_label[i]] = least_dist_from_all_reference
+                        data.to_csv('data_check.csv')
                 #finding index of the minimum values and appending to the main dataframe
                 data_class = classification_dataframe.idxmin(axis=1)
                 # print('data_class: ', data_class)
@@ -325,7 +356,6 @@ class external_test():
                 # Assigning centroid to the data 
                 # note: data class is assigned based on centroid class
                 data['Class'] = data_class #rather than asssigning number centroid name is assigned to the class
-                print('out assinging cluster')
                 return data
 
         def euclidian_dist(self,arr_1,arr_2):

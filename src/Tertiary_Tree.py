@@ -14,6 +14,7 @@ import copy
 from sklearn.externals import joblib
 import matplotlib.pyplot as plt
 import matplotlib as rc
+from reference_point import reference_point
 dir_path = os.path.dirname(os.path.realpath(__file__))
 # print('dir_path: ', dir_path)
 sys.path.append(dir_path)
@@ -69,16 +70,21 @@ class Ternary_Tree():
         self.number_of_levels = 0
         self.elimination = elimination 
         self.sl = sl
+        self.process_type = 'tree'
+
+        #object of other module
+        self.ref_point = reference_point(self.curr_directory, self.division_error_criteria, self.choice_value)
+
         #root analysis
         self.root =Node(data_X,dependent_y) #root node defined 
         self.root.child_label = cluster_label
-        self.root.max_relerr_train,self.root.r2,self.root.testing_r2,summary,self.root.coefficients_dictionary,self.root.data = regression.regression(self.root.data,self.root.y_dependent,choice_value,curr_directory=self.curr_directory,cluster_label=self.cluster_label,elimination=self.elimination,sl=self.sl)   #calculation of self.R2 of root 
+        self.root.max_relerr_train,self.root.r2,self.root.testing_r2,summary,self.root.coefficients_dictionary,self.root.data = regression.regression(self.root.data,self.root.y_dependent,choice_value,curr_directory=self.curr_directory,cluster_label=self.cluster_label,elimination=self.elimination,sl=self.sl,process_type=self.process_type)   #calculation of self.R2 of root 
         WC(self.root.coefficients_dictionary,self.root.r2,self.root.testing_r2,self.root.child_label,self.curr_directory,'root')
         self.root.data_size = self.root.data.shape[0]       #no of rows in data shows data points
-        self.root.centroid = self.calculate_centroid(self.root.data)
+        self.root.centroid = self.ref_point.calculate_centroid(self.root.data)
         # self.root.uniq_fuel = self.root.data['Fuel'].unique()     #for obtaing unique fuel in node
         self.root.coefficients_dictionary = self.remove_specific_char(self.root.coefficients_dictionary) #removing char for plotting #compatibility
-    
+
 
     def Implement_Tree(self):
 
@@ -88,8 +94,24 @@ class Ternary_Tree():
             #NOTE : root data contains predicted values in the dataset  
             if(self.root.max_relerr_train > self.division_error_criteria):   #if r2 is less than division criteria divide the data
                 self._divide(self.root.data,self.root) #passing the root as current node 
-                pass
-                
+            else:
+                '''
+                Storing centroid of the center nodes as it gives final relation and useful for testing prediction
+                '''
+                child_type = 'root'
+                #checking directory 
+                SF.check_directory(str(self.curr_directory)+'/object_file/')
+                SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
+
+                ####object is stored
+                filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(self.root.child_label)+'.sav'
+                joblib.dump(self.root.centroid,filename_centroid)  
+                print('Criteria Satisfied')
+                self.ref_point.other_reference_point(self.root.data,self.root.centroid,self.root.child_label)
+
+                #final cluster gives stores only those cluster data which are useful fro prediction
+                SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
+                self.root.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(self.root.child_label)+'_'+str(child_type)+'.csv')
             # self.root.data.to_csv(str(self.curr_directory)+'/result/Data_of_Root.csv')
             
         print('Tree structure is implemented!')
@@ -121,7 +143,7 @@ class Ternary_Tree():
                 cur_node.left_node = Node(data_left,y_left)  #assign them dataset
                 cur_node.left_node.data_size = cur_node.left_node.data.shape[0]
                 cur_node.left_node.child_label = self.cluster_label
-                # print('cluster_left_label: ', self.cluster_label)
+                print('\n\n  Cluster Node Label: ', self.cluster_label)
                 # print('cur_node.left_node: ', cur_node.left_node.data.shape)
                 # time.sleep(2)
                 
@@ -130,13 +152,13 @@ class Ternary_Tree():
                 cur_node.left_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(cur_node.left_node.child_label)+'_'+str(child_type)+'.csv')
                 
                 if(cur_node.left_node.data.shape[0] > cur_node.left_node.data.shape[1]): #if rows are more than columns
-                    cur_node.left_node.max_relerr_train, cur_node.left_node.r2, cur_node.left_node.testing_r2, summary,cur_node.left_node.coefficients_dictionary, cur_node.left_node.data = regression.regression(cur_node.left_node.data,cur_node.left_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.left_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl)    #calculate the r2 of that data 
+                    cur_node.left_node.max_relerr_train, cur_node.left_node.r2, cur_node.left_node.testing_r2, summary,cur_node.left_node.coefficients_dictionary, cur_node.left_node.data = regression.regression(cur_node.left_node.data,cur_node.left_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.left_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl,process_type=self.process_type)    #calculate the r2 of that data 
                     # print('max_relerr_train: ',cur_node.left_node.max_relerr_train)
                     WC(cur_node.left_node.coefficients_dictionary,cur_node.left_node.r2,cur_node.left_node.testing_r2,cur_node.left_node.child_label,self.curr_directory,child_type)
                     # time.sleep(1)
                     cur_node.left_node.data_size = cur_node.left_node.data.shape[0]             #for data size
                     # cur_node.left_node.uniq_fuel = cur_node.left_node.data['Fuel'].unique()   #for unique fuel in node                     cur_node.left_node.uniq_fuel = cur_node.left_node.data['Fuel'].unique()
-                    cur_node.left_node.centroid = self.calculate_centroid(cur_node.left_node.data)
+                    cur_node.left_node.centroid = self.ref_point.calculate_centroid(cur_node.left_node.data)
                     #removing certain word from coefficients for printing
                     cur_node.left_node.coefficients_dictionary  = self.remove_specific_char(cur_node.left_node.coefficients_dictionary )
                     
@@ -149,16 +171,24 @@ class Ternary_Tree():
                         #checking directory 
                         SF.check_directory(str(self.curr_directory)+'/object_file/')
                         SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
+                        SF.check_directory(str(self.curr_directory)+'/object_file/leafs/')
 
                         ####object is stored
                         filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.left_node.child_label)+'.sav'
                         joblib.dump(cur_node.left_node.centroid,filename_centroid)  
                         print('Criteria Satisfied')
-                        self.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label,child_type)
+                        
+                        ## commented this part as it is required for final clusters and that we are going to
+                        ## get after optimized cluster so no need to waste computation
+                        # self.ref_point.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label)
 
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
                         cur_node.left_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(cur_node.left_node.child_label)+'_'+str(child_type)+'.csv')
+
+                        ####Storing the whole node
+                        filename_centroid=  str(self.curr_directory)+'/object_file/leafs/leaf_'+str(cur_node.left_node.child_label)+'.sav'
+                        joblib.dump(cur_node.left_node,filename_centroid)  
                 else:
                     print('Less Data')
             else:
@@ -185,7 +215,7 @@ class Ternary_Tree():
                 cur_node.center_node = Node(data_center,y_center)  #assign them dataset
                 cur_node.center_node.data_size = cur_node.center_node.data.shape[0]
                 cur_node.center_node.child_label = self.cluster_label
-                # print('cluster_left_label: ', self.cluster_label)
+                print('\n\n Cluster Node Label: ', self.cluster_label)
                 # print('cur_node.center_node: ', cur_node.center_node.data.shape)
                 # time.sleep(2)
                 #save data of all clusters after regression 
@@ -193,13 +223,13 @@ class Ternary_Tree():
                 cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(child_type)+'.csv')
                 
                 if(cur_node.center_node.data.shape[0] > cur_node.center_node.data.shape[1]): #if rows are more than columns
-                    cur_node.center_node.max_relerr_train, cur_node.center_node.r2, cur_node.center_node.testing_r2, summary,cur_node.center_node.coefficients_dictionary, cur_node.center_node.data = regression.regression(cur_node.center_node.data,cur_node.center_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.center_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl)    #calculate the r2 of that data 
+                    cur_node.center_node.max_relerr_train, cur_node.center_node.r2, cur_node.center_node.testing_r2, summary,cur_node.center_node.coefficients_dictionary, cur_node.center_node.data = regression.regression(cur_node.center_node.data,cur_node.center_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.center_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl,process_type=self.process_type)    #calculate the r2 of that data 
                     WC(cur_node.center_node.coefficients_dictionary,cur_node.center_node.r2,cur_node.center_node.testing_r2,cur_node.center_node.child_label,self.curr_directory,child_type)
                     # print('max_relerr_train: ',cur_node.center_node.max_relerr_train)
                     # time.sleep(1)
                     cur_node.center_node.data_size = cur_node.center_node.data.shape[0]             #for data size
                     # print('calculating centroid of center node ')
-                    cur_node.center_node.centroid = self.calculate_centroid(cur_node.center_node.data)
+                    cur_node.center_node.centroid = self.ref_point.calculate_centroid(cur_node.center_node.data)
                     # print('cur_node.center_node.centroid: ', cur_node.center_node.centroid)
 
                     '''
@@ -208,16 +238,25 @@ class Ternary_Tree():
                     #checking directory 
                     SF.check_directory(str(self.curr_directory)+'/object_file/')
                     SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
+                    SF.check_directory(str(str(self.curr_directory)+'/object_file/leafs/'))
 
                     ####object is stored
                     filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.center_node.child_label)+'.sav'
                     joblib.dump(cur_node.center_node.centroid,filename_centroid) 
-                    self.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label,child_type)
+
+                    # ## commented this part as it is required for final clusters and that we are going to
+                    # ## get after optimized cluster so no need to waste computation
+                    # self.ref_point.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label)
 
                   
-                    #final cluster gives stores only those cluster data which are useful fro prediction #as all centroid clusters are final clusters
+                    #final cluster gives stores only those cluster data which are useful for prediction #as all centroid clusters are final clusters
                     SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 
                     cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(cur_node.center_node.child_label)+'_'+str(child_type)+'.csv')
+
+                    ####Storing the whole node
+                    filename_centroid=  str(self.curr_directory)+'/object_file/leafs/leaf_'+str(cur_node.center_node.child_label)+'.sav'
+                    joblib.dump(cur_node.center_node,filename_centroid)  
+
                     '''
                     Don't delete : useful in case if you want to further classify center nodes
                     '''
@@ -225,13 +264,14 @@ class Ternary_Tree():
             
             #         #removing certain word from coefficients for printing
             #         cur_node.center_node.coefficients_dictionary  = self.remove_specific_char(cur_node.center_node.coefficients_dictionary )
-            #         if(cur_node.center_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
-            #                 # self._divide(cur_node.center_node.data,cur_node.center_node)
-            #                 pass
-            #         else:
-            #             print('Criteria Satisfied')
-            #     else:
-            #         print('Less Data')
+                    if(cur_node.center_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
+                            # self._divide(cur_node.center_node.data,cur_node.center_node)
+                            print('Error has slightly increases due to considering only center cluster data points')
+                            pass
+                    else:
+                        print('Criteria Satisfied')
+                else:
+                    print('Less Data')
             # else:
             #     #if node has data then,
             #     if(self.cur_node.right_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
@@ -251,7 +291,7 @@ class Ternary_Tree():
                 cur_node.right_node = Node(data_right,y_right)  #assign them dataset
                 cur_node.right_node.data_size = cur_node.right_node.data.shape[0]
                 cur_node.right_node.child_label = self.cluster_label
-                # print('cluster_left_label: ', self.cluster_label)
+                print('\n\n Cluster Node Label: ', self.cluster_label)
                 # print('cur_node.right_node: ', cur_node.right_node.data.shape)
                 # time.sleep(2)
                 #save data of all clusters after regression 
@@ -268,7 +308,7 @@ class Ternary_Tree():
             
                     #removing certain word from coefficients for printing
                     cur_node.right_node.coefficients_dictionary  = self.remove_specific_char(cur_node.right_node.coefficients_dictionary )
-                    cur_node.right_node.centroid = self.calculate_centroid(cur_node.right_node.data)
+                    cur_node.right_node.centroid = self.ref_point.calculate_centroid(cur_node.right_node.data)
                     
                     if(cur_node.right_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
                             self._divide(cur_node.right_node.data,cur_node.right_node)
@@ -279,16 +319,24 @@ class Ternary_Tree():
                         #checking directory 
                         SF.check_directory(str(self.curr_directory)+'/object_file/')
                         SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
+                        SF.check_directory(str(str(self.curr_directory)+'/object_file/leafs/'))
 
                         ####object is stored
                         filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.right_node.child_label)+'.sav'
-                        joblib.dump(cur_node.right_node.centroid,filename_centroid)   
-                        self.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label,child_type)
+                        joblib.dump(cur_node.right_node.centroid,filename_centroid) 
+
+                        # ## commented this part as it is required for final clusters and that we are going to
+                        # ## get after optimized cluster so no need to waste computation  
+                        # self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label)
                     
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 
-                        cur_node.right_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(child_type)+'.csv')
+                        cur_node.right_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(cur_node.right_node.child_label)+'_'+str(child_type)+'.csv')
                         
+
+                        ####Storing the whole node
+                        filename_centroid=  str(self.curr_directory)+'/object_file/leafs/leaf_'+str(cur_node.right_node.child_label)+'.sav'
+                        joblib.dump(cur_node.right_node,filename_centroid)  
 
                         print('Criteria Satisfied')
                 else:
@@ -391,155 +439,7 @@ class Ternary_Tree():
         # plt.show()
         pass
     
-    def calculate_centroid(self,data):
-        '''
-        It will calcute the centroid using all the data poins 
-        '''
-        #removing y_act , y_pred and constant column to calculate the centroid
-        data_centroid = copy.deepcopy(data) #coping the data
-        data_centroid = data_centroid.drop(columns=['y_act'])
-        data_centroid = data_centroid.drop(columns=['y_pred'])
-        data_centroid = data_centroid.drop(columns=['Constant'])
-        try:
-            if(data_centroid.empty == True):
-                return None
-            else:
-                # print('calculating centroid')
-                num_data_points = data_centroid.shape[0]
-                centroid = data_centroid.sum(axis=0) / num_data_points  #columnwise sum or along rows sum
-                # print('centroid: ', centroid)
-                return centroid
-        except AttributeError:
-            if(data_centroid == None):
-                return None
-    
-    def other_reference_point(self,data,centroid,child_label,child_type):
-        '''
-        It will calculate the other reference point apart from centroid.
-        1. farthest point from centroid
-        2. nearest point from centroid
-        3. farthest point from origin
-        4. nearest point from origin
-        5. Other extreme points by mentod find_extreme_point
-        for specific cluster or data passed.
-        return : all four specified points
-        '''
-        if(centroid.all() != None):
-            data_passed = copy.deepcopy(data) #just copy of data points
-            data_passed = data_passed.drop(columns=['y_act'])
-            data_passed = data_passed.drop(columns=['y_pred'])
-            data_passed = data_passed.drop(columns=['Constant'])
-            #resetting index
-            data_passed = data_passed.reset_index(drop=True)
-            distance_from_centroid = []
-            distance_from_origin = []
-            origin = np.zeros(centroid.shape[0]) #origin point defined
-            for i in range(len(data_passed)):
-                #distance from centroid
-                distance_from_centroid.append(self.euclidian_dist(data_passed.loc[i,:],centroid))
-                #distance from origin
-                distance_from_origin.append(self.euclidian_dist(data_passed.loc[i,:],origin))
-
-            #Distance from centroid to point & origin to point----findind index of data 
-            max_distance_from_centroid_PointIndex = np.argmax(distance_from_centroid)
-            min_distance_from_centroid_PointIndex  = np.argmin(distance_from_centroid)
-            max_distance_from_origin_PointIndex    = np.argmax(distance_from_origin)
-            min_distance_from_origin_PointIndex    = np.argmin(distance_from_origin)
-
-
-            #based on index finding the point
-            Point_max_dist_from_centroid = data_passed.loc[max_distance_from_centroid_PointIndex,:]
-            Point_min_dist_from_centroid = data_passed.loc[min_distance_from_centroid_PointIndex,:]
-            Point_max_dist_from_origin = data_passed.loc[max_distance_from_origin_PointIndex,:]
-            Point_min_dist_from_origin = data_passed.loc[min_distance_from_origin_PointIndex,:]
-
-
-            SF.check_directory(str(self.curr_directory)+'/object_file/cluster_reference_points/')
-            ######  Storing above points as object files  ##############
-            #filenames naming convention just for sake of ease
-            filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/cluster_reference_points/maxCentroid_'+str(child_label)+'.sav'
-            filename_min_dist_centroid =  str(self.curr_directory)+'/object_file/cluster_reference_points/minCentroid_'+str(child_label)+'.sav'
-            filename_max_dist_origin  =  str(self.curr_directory)+'/object_file/cluster_reference_points/maxOrigin_'+str(child_label)+'.sav' #
-            filename_min_dist_origin  =  str(self.curr_directory)+'/object_file/cluster_reference_points/minOrigin_'+str(child_label)+'.sav'
-            #dumping object files
-            joblib.dump(Point_max_dist_from_centroid,filename_max_dist_centroid )
-            joblib.dump(Point_min_dist_from_centroid,filename_min_dist_centroid ) 
-            joblib.dump(Point_max_dist_from_origin,filename_max_dist_origin ) 
-            joblib.dump(Point_min_dist_from_origin,filename_min_dist_origin ) 
-
-            #other reference point
-            other_ref_points = self.find_extreme_point(data_passed,Point_max_dist_from_centroid)
-            for i in range(len(other_ref_points)):
-                filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/cluster_reference_points/other_refPoi_'+str(i)+'_'+str(child_label)+'.sav'
-                joblib.dump(other_ref_points[i],filename_max_dist_centroid )
-
-        else:
-            pass
-    
-    def find_extreme_point(self,data_passed,initial_point):
-        '''
-        From supplied points and data it will calculate the farthest point.
-        let's say I want 10 such point and starting point is farthest point-A from 
-        centroid of data and now I want to find out 10 extreme points.
-        so, 
-        1. Calculate the point-B farthest from point-A
-        2. Calculate point-c fathest from point-B and point-A
-        3. repeat the procedure 
-        return all the points
-        '''
-        data =  copy.deepcopy(data_passed)
-        ref_points = []
-        #take first reference point as initial_point
-        ref_points.append(initial_point)
-
-        ## After appending the point purge it
-        data = data.drop(initial_point.name)
-
-        ####how many times run the loop
-        #try with dimension^2 but if less data then consider all the data points
-        if(data.shape[1] > data.shape[1]*2): 
-            num_ref_point = data.shape[1]*2
-
-            for i in range(num_ref_point):
-                dist_sum = 0
-                measured_dist_from_all_ref_point = []
-                for j in range (data.shape[0]): #for all the data points 
-                    for k in range(len(ref_points)): #distance from all the points
-                        dist_sum += self.euclidian_dist(ref_points[k],data.loc[j,:])
-                    #for data point-j distance is measured from all the distance and ref_points
-                    measured_dist_from_all_ref_point.append(dist_sum)
-                #after storing all measures dist. find index of list and locate that data point
-                Point_index = np.argmax(measured_dist_from_all_ref_point)
-                #find data point based on index
-                data_point = data.loc[Point_index,:]
-                data_point = data_point.reset_index(drop=True)
-                #dropping point from the data 
-                data = data.drop(Point_index)
-                #append that data point as reference point
-                ref_points.append(data_point)
-        else:
-            num_ref_point = data.shape[0]
-            data = data.reset_index(drop=True)
-            for i in range(data.shape[0]):
-                data_point = data.loc[i,:]
-                data_point = data_point
-                ref_points.append(data_point)
-
-        return ref_points
-            
-
-
-
-    def euclidian_dist(self,arr_1,arr_2):
-            arr_1 = np.array(arr_1)
-            arr_2 = np.array(arr_2)
-            '''
-            calculating distance by passed row of matrix and centroid 
-            '''
-            distance = np.linalg.norm(arr_1-arr_2)
-            return distance
-
-
+   
     def points_in_range(self,data,defined_relative_error):
         '''
         shows how many data points lies within specified realtive error 
@@ -638,9 +538,12 @@ class Ternary_Tree():
     
 
         while(len(copy_Q1) != 0 or len(copy_Q2) != 0):
-            
 
-            level += 1 #Tree level incremented  #stated with -1 so for root it became zero
+            if(len(copy_Q1) != 0):
+                #Level changed and queue also changed
+                level += 1 #Tree level incremented
+                # print('len(copy_Q2): ', len(copy_Q2))
+
 
             ##storing in the copy_Q2
             for i in range(len(copy_Q1)):
@@ -655,15 +558,15 @@ class Ternary_Tree():
                         copy_Q2.append(copy_Q1[i].right_node)
                         # print('copy_Q1[i].right_node: ', copy_Q1[i].right_node)
 
+            if( len(copy_Q2) != 0):
+                #Level changed and queue also changed
+                level += 1 #Tree level incremented
+                # print('len(copy_Q2): ', len(copy_Q2))
+
             #Printing and Poping
             while(len(copy_Q1) != 0):
                 copy_Q1.popleft()
                                
-
-            #Level changed and queue also changed
-            level += 1 #Tree level incremented
-            # print('len(copy_Q2): ', len(copy_Q2))
-
             ##storing in the copy_Q1
             for i in range(len(copy_Q2)):
                 if(copy_Q2[i] is not None):
@@ -679,8 +582,10 @@ class Ternary_Tree():
 
             #Printing and Poping
             while(len(copy_Q2) != 0):
-                i=0 #as after poping the 0th element 1st will become zero
+                # i=0 #as after poping the 0th element 1st will become zero
                 copy_Q2.popleft()
+            
+
 
             '''{'family':'sans-serif','sans-serif':['Helvetica']})
         ## for Palatino and other serif fonts use:
@@ -688,8 +593,8 @@ class Ternary_Tree():
         rc('text', usetex=True)
             just arrangement of numbers as final tree contains all none node and to remove such m\
             '''
-
         print('Total levels in the tree : ', level)
+        level += 1  
         return level
          
 
@@ -1380,9 +1285,18 @@ class Ternary_Tree():
         # please set according to requirement#
         ######################################
         if(filename == 'Testing' or filename=='coefficient' or filename == 'max_rel_error' or filename == 'Training' or filename=='MaxRelError' or filename == 'Datasize' or filename == 'ChildLabel'):
-            if(type_of_division == 3) :                     
-                for i in range(type_of_division-1):
-                    f.write(' }\n')
+            if(type_of_division == 3) :
+                if(self.number_of_levels > 3):
+                    for i in range(type_of_division-1):
+                        f.write(' }\n')
+                elif(self.number_of_levels >= 2):
+                    for i in range(type_of_division-2):
+                        f.write(' }\n')
+                    if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
+                        f.write(' }\n')
+                elif(self.number_of_levels == 1):
+                    if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
+                        f.write(' }\n')
 
         # for i in range(len(latex_supported_array)):
         f.write(';')                   

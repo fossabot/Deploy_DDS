@@ -28,6 +28,7 @@ from Bond_Extraction import Bond_Extraction as BE
 import os
 import time
 import subprocess
+from select_feature import select_feature 
 
 
 def data_gen(Data,list_fuel,choice_value):
@@ -56,8 +57,7 @@ def data_gen(Data,list_fuel,choice_value):
 
         Unique_fuel_name = list_fuel
         #column names
-        columns = ['Primary_C', 'Secondary_C', 'Tertiary_C', 'Quaternary_C', 'Other_Atom', 'P_P', 'P_S', 'P_T',
-                'P_Q', 'S_S', 'S_T', 'S_Q', 'T_T', 'T_Q', 'Q_Q', 'P_H', 'S_H', 'T_H']
+        columns = select_feature.bond_extraction_cols()
 
         #Empty Dataframe
         Extracted_bond_data = pd.DataFrame(columns=columns)

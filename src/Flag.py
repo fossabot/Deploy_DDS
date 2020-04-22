@@ -133,6 +133,8 @@ class Flag():
 
                 from data_gen import data_gen
                 from Tertiary_Tree import Ternary_Tree as TT
+                from combine_clusters import combine_clusters as CC
+
                 #finding out the straight chain alkanes
                 list_fuel = find_fuel_type.find_strightchain_alkanes(Fuel_data)
 
@@ -142,7 +144,10 @@ class Flag():
 
                 Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
                 Tree.Implement_Tree()
-
+                
+                #optimizing cluster
+                final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
+                final_clusters.optimize_cluster()
 
                 print('\n\n Executed Normally! Please check plot Folder')
                 # os.system('sh ./for_ploting.sh')
@@ -151,10 +156,13 @@ class Flag():
                 '''
                 External test-cases
                 '''
+                from data_gen import data_gen
                 from external_test import external_test 
                 external_data = pd.read_csv(dataset_location)
+                list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
+                dataset = data_gen(external_data,list_fuel,Flag_value)     #normal dataset generation
                 testset_obj = external_test(Flag_value,curr_directory)
-                testset_obj.external_testset(external_data)
+                testset_obj.external_testset(dataset)
                 print('\n\n Executed Normally! Please check plot Folder')
                 
         elif(Flag_value == '-p'):

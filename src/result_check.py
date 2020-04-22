@@ -19,6 +19,11 @@ class result_check:
         ###Pairwise plot
         sns.pairplot(data.dropna(), vars = list(data.columns) )
         plt.show()
+
+    def random_color():
+        rgbl=[255,0,0]
+        random.shuffle(rgbl)
+        return tuple(rgbl)
     
     def VIF(df,curr_directory,child_type='root',cluster = 0):
         '''
@@ -34,15 +39,17 @@ class result_check:
         vif = pd.DataFrame()
 
         # vif["features"] = df.columns
+        # try:
         features = list(df.columns)
         del features[0] #removing first feature constant 
         vif["features"] = features
         vif["VIF Factor"] = [variance_inflation_factor(df.values, i) for i in range(1,df.shape[1])]
-
         print(vif.round(1))
         SF.check_directory(str(curr_directory)+'/result/vif/'+str(child_type)) #checking directory
-        vif.to_csv(str(curr_directory)+'/result/vif/'+str(child_type)+'/vif_'+str(cluster+1)+'.csv',index=False)
-        print("\nPlease check ./result/vif/"+str(child_type)+"/vif_"+str(cluster+1)+".csv")
+        vif.to_csv(str(curr_directory)+'/result/vif/'+str(child_type)+'/vif_'+str(cluster)+'.csv',index=False)
+        print("\nPlease check ./result/vif/"+str(child_type)+"/vif_"+str(cluster)+".csv")
+        # except AttributeError or  IndexError :
+        #     pass
 	    
 
     def results_print(model):
