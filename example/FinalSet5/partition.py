@@ -6,6 +6,7 @@ data = pd.read_csv('model_all_data.csv')
 train,test = train_test_split(data,test_size=0.2)
 train.to_csv('train.csv')
 
+
 other_fuel = pd.read_csv('other_fuel.csv')
 test = pd.concat([test,other_fuel])
 test.to_csv('test.csv')

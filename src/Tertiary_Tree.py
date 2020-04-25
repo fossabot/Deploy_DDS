@@ -1292,7 +1292,6 @@ class Ternary_Tree():
                 elif(self.number_of_levels >= 2):
                     for i in range(type_of_division-2):
                         f.write(' }\n')
-                    if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')
                 elif(self.number_of_levels == 1):
                     if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):

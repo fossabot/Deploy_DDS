@@ -92,7 +92,7 @@ class combine_clusters():
 			###storing result 
 			#final cluster gives stores only those cluster data which are useful fro prediction
 			SF.check_directory(str(self.curr_directory)+'/result/final_cluster_result/')
-			nodes[i].data.to_csv(str(self.curr_directory)+'/result/final_cluster_result/end_cluster_'+str(cluster_label[i])+'.csv')
+			nodes[i].data.to_csv(str(self.curr_directory)+'/result/final_cluster_result/end_cluster_'+str(cluster_label[i])+'.csv',index=False)
 		
 
 	def generate_regressor(self,nodes,data,cluster_label, node_index, choice='-o'):

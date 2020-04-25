@@ -1,0 +1,93 @@
+ \documentclass[a4paper,10pt]{article}
+ \usepackage{tikz}
+ \usepackage{fullpage}
+ \usetikzlibrary{positioning,shadows,arrows,trees,shapes,fit}
+ \begin{document}
+ \begin{figure}
+ \begin{tikzpicture}
+ [font=\small, edge from parent fork down, 
+ every node/.style={top color=white, bottom color=blue!25, 
+ 	rectangle,rounded corners, minimum size=5mm, draw=blue!75,
+	very thick, drop shadow, align=center},
+ edge from parent/.style={draw=blue!50,thick},
+ level 1/.style={sibling distance=4cm},
+ level 2/.style={sibling distance=4cm}, 
+ level 3/.style={sibling distance=4cm}, 
+ level 4/.style={sibling distance=4cm}, 
+ level 5/.style={sibling distance=4cm}, 
+ level 6/.style={sibling distance=4cm}, 
+ level distance=2cm,
+ level distance=5cm,
+ ]
+\node {{'Constant': 4.0671, 'x': -0.6077}} %root
+child { node {{'Constant': 13.49, 'x': 0.9165}}  
+child { node {{'Constant': 17.9156, 'x': 1.0854}}  
+child { node {{'Constant': 19.4482, 'x': 1.1324}}  
+child { node {{'Constant': 21.1795, 'x': 1.2911}}  
+ }
+child { node {{'Constant': 19.486, 'x': 1.1077}}  
+ }
+child { node {{'Constant': 18.6879, 'x': 1.0717}}  
+ }
+ }
+child { node {{'Constant': 19.2894, 'x': 0.329}}  
+ }
+child { node {{'Constant': 15.3873, 'x': 1.0224}}  
+child { node {{'Constant': 13.7564, 'x': 2.3702}}  
+ }
+child { node {{'Constant': 14.2143, 'x': 1.1212}}  
+ }
+ }
+ }
+child { node {{'Constant': 10.1853, 'x': 0.6946}}  
+child { node {{'Constant': 11.804, 'x': 0.8263}}  
+child { node {{'Constant': 11.7195, 'x': 0.8356}}  
+ }
+ }
+child { node {{'Constant': 7.8914, 'x': 0.371}}  
+child { node {{'Constant': 9.4173, 'x': 0.6055}}  
+ }
+child { node {{'Constant': 4.5628, 'x': -0.7108}}  
+ }
+ }
+ }
+ }
+child { node {{'Constant': -4.1286, 'x': -1.211}}  
+child { node {{'Constant': 0.3146, 'x': -2.0568}}  
+child { node {{'Constant': 1.6887, 'x': -2.6501}}  
+child { node {{'Constant': 2.5075, 'x': -2.725}}  
+ }
+child { node {{'Constant': 0.4282, 'x': -2.1916}}  
+ }
+ }
+child { node {{'Constant': -1.0431, 'x': -1.7795}}  
+child { node {{'Constant': -0.37, 'x': -2.0181}}  
+child { node {{'Constant': -0.1518, 'x': -2.0755}}  
+child { node {{'Constant': -0.1044, 'x': -2.296}}  
+ }
+ }
+ }
+child { node {{'Constant': -2.7696, 'x': -1.2932}}  
+ }
+ }
+ }
+child { node {{'Constant': -9.2182, 'x': -0.7217}}  
+child { node {{'Constant': -6.6738, 'x': -0.9884}}  
+child { node {{'Constant': -5.204, 'x': -1.0501}}  
+ }
+child { node {{'Constant': -7.7852, 'x': -1.0049}}  
+child { node {{'Constant': -14.9601, 'x': -4.9732}}  
+ }
+ }
+ }
+child { node {{'Constant': -11.3721, 'x': -0.6655}}  
+child { node {{'Constant': -6.8192, 'x': -1.487}}  
+ }
+child { node {{'Constant': -12.7607, 'x': -0.7906}}  
+ }
+ }
+ }
+ }
+;\end{tikzpicture} 
+ \caption{coefficient plot }  \end{figure}
+\end{document} 

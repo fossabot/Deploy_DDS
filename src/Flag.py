@@ -142,6 +142,8 @@ class Flag():
 
                 df,tau = select_feature.feature_selection(dataset)
 
+                # df.to_csv(str(curr_directory)+'/Transformed.csv')
+
                 Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
                 Tree.Implement_Tree()
                 

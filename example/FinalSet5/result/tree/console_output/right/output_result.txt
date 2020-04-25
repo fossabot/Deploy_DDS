@@ -11,29 +11,29 @@ Cluster Label: 3
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.852
-Model:                            OLS   Adj. R-squared:                  0.838
-Method:                 Least Squares   F-statistic:                     64.25
-Date:                Wed, 22 Apr 2020   Prob (F-statistic):           6.01e-22
-Time:                        20:09:16   Log-Likelihood:                -25.664
-No. Observations:                  62   AIC:                             63.33
-Df Residuals:                      56   BIC:                             76.09
+Dep. Variable:                  y_act   R-squared:                       0.829
+Model:                            OLS   Adj. R-squared:                  0.816
+Method:                 Least Squares   F-statistic:                     66.70
+Date:                Sat, 25 Apr 2020   Prob (F-statistic):           4.60e-25
+Time:                        22:44:13   Log-Likelihood:                -22.323
+No. Observations:                  75   AIC:                             56.65
+Df Residuals:                      69   BIC:                             70.55
 Df Model:                           5                                         
 Covariance Type:            nonrobust                                         
 ===================================================================================
                       coef    std err          t      P>|t|      [0.025      0.975]
 -----------------------------------------------------------------------------------
-Constant            0.0267      0.587      0.046      0.964      -1.149       1.202
-log_P(atm)         -0.4922      0.089     -5.548      0.000      -0.670      -0.314
-log_Fuel(%)        -0.1694      0.147     -1.152      0.254      -0.464       0.125
-log_Oxidizer(%)     0.0082      0.130      0.063      0.950      -0.252       0.268
-T0/S_H__T           1.9359      1.647      1.175      0.245      -1.364       5.236
-T0/T                6.6472      0.536     12.413      0.000       5.574       7.720
+Constant            0.4650      0.476      0.977      0.332      -0.484       1.414
+log_P(atm)         -0.5902      0.070     -8.421      0.000      -0.730      -0.450
+log_Fuel(%)        -0.0445      0.127     -0.349      0.728      -0.299       0.210
+log_Oxidizer(%)    -0.0872      0.116     -0.755      0.453      -0.318       0.143
+T0/S_H__T          -0.2098      1.398     -0.150      0.881      -2.999       2.579
+T0/T                7.0574      0.469     15.056      0.000       6.122       7.992
 ==============================================================================
-Omnibus:                        5.432   Durbin-Watson:                   2.300
-Prob(Omnibus):                  0.066   Jarque-Bera (JB):                4.929
-Skew:                          -0.688   Prob(JB):                       0.0851
-Kurtosis:                       3.115   Cond. No.                         94.9
+Omnibus:                       16.637   Durbin-Watson:                   2.084
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               21.193
+Skew:                          -0.986   Prob(JB):                     2.50e-05
+Kurtosis:                       4.701   Cond. No.                         97.7
 ==============================================================================
 
 Warnings:
@@ -42,24 +42,24 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:0.026711635360495256
+Constant:0.46504929078621626
 
-log_P(atm):-0.4921888800938365
+log_P(atm):-0.5902483000219225
 
-log_Fuel(%):-0.16944506573192425
+log_Fuel(%):-0.04450823983468161
 
-log_Oxidizer(%):0.00822219007144287
+log_Oxidizer(%):-0.08724189881333644
 
-T0/S_H__T:1.93586459837601
+T0/S_H__T:-0.2098208709030437
 
-T0/T:6.647218942443033
+T0/T:7.057370169706422
 
 
- Maximum  Relative Error in Training : 0.295609423622698
- Training R2 :0.8515517660746558
-Training Adjusted R2 : 0.8382974594741786
-Testing R2 :-1.5052109274021794
-MSR_testing :0.11361314598505497
+ Maximum  Relative Error in Training : 0.208893029798455
+ Training R2 :0.8285776879466678
+Training Adjusted R2 : 0.8161557812761364
+Testing R2 :0.7474856552995071
+MSR_testing :0.26658289428756177
 
 ######################################################################################################################
 
@@ -72,29 +72,29 @@ Cluster Label: 6
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.997
-Model:                            OLS   Adj. R-squared:                  0.981
-Method:                 Least Squares   F-statistic:                     63.29
-Date:                Wed, 22 Apr 2020   Prob (F-statistic):             0.0951
-Time:                        20:09:16   Log-Likelihood:                 8.1820
-No. Observations:                   7   AIC:                            -4.364
-Df Residuals:                       1   BIC:                            -4.689
+Dep. Variable:                  y_act   R-squared:                       0.980
+Model:                            OLS   Adj. R-squared:                  0.966
+Method:                 Least Squares   F-statistic:                     70.19
+Date:                Sat, 25 Apr 2020   Prob (F-statistic):           7.93e-06
+Time:                        22:44:13   Log-Likelihood:                 6.7087
+No. Observations:                  13   AIC:                            -1.417
+Df Residuals:                       7   BIC:                             1.972
 Df Model:                           5                                         
 Covariance Type:            nonrobust                                         
 ===================================================================================
                       coef    std err          t      P>|t|      [0.025      0.975]
 -----------------------------------------------------------------------------------
-Constant            4.9040      5.818      0.843      0.554     -69.017      78.825
-log_P(atm)         -0.0569      0.264     -0.216      0.865      -3.409       3.295
-log_Fuel(%)         1.0780      1.382      0.780      0.578     -16.483      18.639
-log_Oxidizer(%)    -0.8171      0.938     -0.871      0.544     -12.734      11.099
-T0/S_H__T          -5.3448     11.049     -0.484      0.713    -145.739     135.050
-T0/T                3.3779      2.429      1.391      0.397     -27.486      34.241
+Constant            1.1002      0.871      1.263      0.247      -0.959       3.160
+log_P(atm)         -0.5108      0.117     -4.364      0.003      -0.788      -0.234
+log_Fuel(%)         0.0191      0.202      0.095      0.927      -0.458       0.496
+log_Oxidizer(%)     0.0256      0.166      0.154      0.882      -0.367       0.418
+T0/S_H__T          -0.9166      2.175     -0.421      0.686      -6.060       4.227
+T0/T                5.3099      0.618      8.593      0.000       3.849       6.771
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   2.595
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.168
-Skew:                          -0.161   Prob(JB):                        0.920
-Kurtosis:                       2.314   Cond. No.                         529.
+Omnibus:                        2.041   Durbin-Watson:                   2.276
+Prob(Omnibus):                  0.360   Jarque-Bera (JB):                1.110
+Skew:                          -0.709   Prob(JB):                        0.574
+Kurtosis:                       2.797   Cond. No.                         120.
 ==============================================================================
 
 Warnings:
@@ -103,21 +103,21 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:4.904018274490426
+Constant:1.1001631685508362
 
-log_P(atm):-0.05690696482840618
+log_P(atm):-0.5108117031506432
 
-log_Fuel(%):1.0780471503873201
+log_Fuel(%):0.01911740710723181
 
-log_Oxidizer(%):-0.8171171561530599
+log_Oxidizer(%):0.025616869203010872
 
-T0/S_H__T:-5.344755137732477
+T0/S_H__T:-0.9166249308443993
 
-T0/T:3.377872944736808
+T0/T:5.309873768815953
 
 
- Maximum  Relative Error in Training : 0.03923936756651538
- Training R2 :0.9968499709520068
-Training Adjusted R2 : 0.9810998257120407
-Testing R2 :0.0
-MSR_testing :0.015044514053596329
+ Maximum  Relative Error in Training : 0.0789772518749084
+ Training R2 :0.9804436284889635
+Training Adjusted R2 : 0.966474791695366
+Testing R2 :0.05785574965741169
+MSR_testing :0.06665947298278377
