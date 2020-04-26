@@ -1,0 +1,53 @@
+ \documentclass[a4paper,10pt]{article}
+ \usepackage{tikz}
+ \usepackage{fullpage}
+ \usetikzlibrary{positioning,shadows,arrows,trees,shapes,fit}
+ \begin{document}
+ \begin{figure}
+ \begin{tikzpicture}
+ [font=\small, edge from parent fork down, 
+ every node/.style={top color=white, bottom color=blue!25, 
+ 	rectangle,rounded corners, minimum size=5mm, draw=blue!75,
+	very thick, drop shadow, align=center},
+ edge from parent/.style={draw=blue!50,thick},
+ level 1/.style={sibling distance=4cm},
+ level 2/.style={sibling distance=4cm}, 
+ level 3/.style={sibling distance=4cm}, 
+ level 4/.style={sibling distance=4cm}, 
+ level 5/.style={sibling distance=4cm}, 
+ level 6/.style={sibling distance=4cm}, 
+ level distance=2cm,
+ level distance=5cm,
+ ]
+\node {{'Constant': 0.0036, 'x': 2.4952}} %root
+child { node {{'Constant': 0.3263, 'x': 2.0231}}  
+child { node {{'Constant': 1.0043, 'x': 2.5003}}  
+child { node {{'Constant': 0.7786, 'x': 1.9473}}  
+ }
+ }
+child { node {{'Constant': 0.2369, 'x': 2.0175}}  
+ }
+child { node {{'Constant': 0.1157, 'x': 2.1891}}  
+child { node {{'Constant': 0.1361, 'x': 2.4669}}  
+ }
+ }
+ }
+child { node {{'Constant': -0.0535, 'x': 2.9786}}  
+ }
+child { node {{'Constant': -0.4851, 'x': 2.0319}}  
+child { node {{'Constant': -0.1654, 'x': 2.1638}}  
+child { node {{'Constant': -0.1753, 'x': 2.1799}}  
+ }
+ }
+child { node {{'Constant': -0.4382, 'x': 2.0299}}  
+ }
+child { node {{'Constant': -1.361, 'x': 2.4179}}  
+child { node {{'Constant': -0.9094, 'x': 2.1941}}  
+ }
+child { node {{'Constant': -0.1173, 'x': 3.1418}}  
+ }
+ }
+ }
+;\end{tikzpicture} 
+ \caption{coefficient plot }  \end{figure}
+\end{document} 

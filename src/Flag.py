@@ -159,10 +159,17 @@ class Flag():
                 External test-cases
                 '''
                 from data_gen import data_gen
-                from external_test import external_test 
                 external_data = pd.read_csv(dataset_location)
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
                 dataset = data_gen(external_data,list_fuel,Flag_value)     #normal dataset generation
+
+                #old
+                from old_external_test import old_external_test
+                testset_obj_old = old_external_test(Flag_value,curr_directory)
+                testset_obj_old.external_testset(dataset)
+
+                #new
+                from external_test import external_test 
                 testset_obj = external_test(Flag_value,curr_directory)
                 testset_obj.external_testset(dataset)
                 print('\n\n Executed Normally! Please check plot Folder')

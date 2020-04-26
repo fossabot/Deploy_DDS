@@ -1,0 +1,37 @@
+,Unnamed: 0,Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source,Primary_C,Secondary_C,Tertiary_C,Quaternary_C,Other_Atom,P_P,P_S,P_T,P_Q,S_S,S_T,S_Q,T_T,T_Q,Q_Q,P_H,S_H,T_H,label
+212,346,CCCCCCCCCCCC,1156,±1,5.34,±9.3,0.0558,21.0,78.9442,0.05,Ar,1526,Speceis,CH,,430.0,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube ,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+213,347,CCCCCCCCCCCC,1134,±1,5.2,±9.3,0.0662,21.0,78.9338,0.06,Ar,2006,Speceis,CH,,430.0,15.3,Stanford,aerosol_shock_tube / aerosol_shock_tube_low pressure / Second_generation_confo / Second_Generation_shock_tube ,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+335,469,CCCCCCCCCCCC,1230,±1,16.73,,0.1,3.596,96.304,0.5,N2,429,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+336,470,CCCCCCCCCCCC,1217,±1,16.07,,0.1,3.596,96.304,0.5,N2,508,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+337,471,CCCCCCCCCCCC,1196,±1,15.77,,0.1,3.596,96.304,0.5,N2,701,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+338,472,CCCCCCCCCCCC,1186,±1,15.38,,0.1,3.596,96.304,0.5,N2,822,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+339,473,CCCCCCCCCCCC,1158,±1,15.19,,0.1,3.596,96.304,0.5,N2,1181,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+340,474,CCCCCCCCCCCC,1322,±1,15.52,,0.051460000000000006,1.911,98.03754,0.5,N2,293,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+341,475,CCCCCCCCCCCC,1258,±1,15.31,,0.051460000000000006,1.911,98.03754,0.5,N2,682,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+342,476,CCCCCCCCCCCC,1252,±1,15.08,,0.051460000000000006,1.911,98.03754,0.5,N2,713,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+343,477,CCCCCCCCCCCC,1219,±1,16.1,,0.1,3.725,96.175,0.5,N2,485,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+344,478,CCCCCCCCCCCC,1211,±1,16.13,,0.1,3.725,96.175,0.5,N2,534,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+345,479,CCCCCCCCCCCC,1179,±1,15.93,,0.1,3.725,96.175,0.5,N2,847,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+346,480,CCCCCCCCCCCC,1222,±1,15.84,,0.075,2.786,97.139,0.5,N2,625,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+347,481,CCCCCCCCCCCC,1221,±1,15.45,,0.075,2.786,97.139,0.5,N2,685,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+348,482,CCCCCCCCCCCC,1192,±1,14.98,,0.075,2.786,97.139,0.5,N2,1056,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+349,483,CCCCCCCCCCCC,1422,±1,15.5,,0.1,3.7,96.2,0.5,N2,30,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+350,484,CCCCCCCCCCCC,1280,±1,16.57,,0.1,3.7,96.2,0.5,N2,195,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,3
+366,500,CCCCCCCCCCCCCCCC,1267,±2,6.54,,0.0497,1.0,98.9503,1.22,Ar,1902,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+367,501,CCCCCCCCCCCCCCCC,1172,±2,4.44,,0.0312,1.0,98.9688,0.76,Ar,4577,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+368,502,CCCCCCCCCCCCCCCC,1170,±2,4.6,,0.0326,1.0,98.9674,0.8,Ar,5022,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+369,503,CCCCCCCCCCCCCCCC,1333,±2,6.77,,0.0493,1.0,98.9507,1.21,Ar,917,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+370,504,CCCCCCCCCCCCCCCC,1327,±2,6.46,,0.1832,4.0,95.8168,1.12,Ar,360,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+371,505,CCCCCCCCCCCCCCCC,1355,±2,4.19,,0.1023,4.0,95.8977,0.63,Ar,212,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+372,506,CCCCCCCCCCCCCCCC,1183,±2,2.05,,0.1207,4.0,95.8793,0.74,Ar,4264,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+373,507,CCCCCCCCCCCCCCCC,1159,±2,2.06,,0.092,4.0,95.90799999999999,0.56,Ar,3870,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+374,508,CCCCCCCCCCCCCCCC,1181,±2,2.13,,0.1776,4.0,95.8224,1.09,Ar,5536,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+375,509,CCCCCCCCCCCCCCCC,1266,±2,1.94,,0.1168,4.0,95.8832,0.72,Ar,1122,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+376,510,CCCCCCCCCCCCCCCC,1212,±2,1.91,,0.0909,4.0,95.9091,0.56,Ar,2270,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+377,511,CCCCCCCCCCCCCCCC,1247,±2,1.83,,0.1485,4.0,95.8515,0.91,Ar,2060,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+378,512,CCCCCCCCCCCCCCCC,1285,±2,1.89,,0.1582,4.0,95.8418,0.97,Ar,1386,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+379,513,CCCCCCCCCCCCCCCC,1353,±2,1.71,,0.1565,4.0,95.8435,0.96,Ar,708,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+380,514,CCCCCCCCCCCCCCCC,1165,±2,2.08,,0.129,4.0,95.87100000000001,0.79,Ar,4548,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+381,515,CCCCCCCCCCCCCCCC,1177,±2,2.03,,0.1571,4.0,95.8429,0.96,Ar,4778,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+382,516,CCCCCCCCCCCCCCCC,1218,±2,1.96,,0.1165,4.0,95.8835,0.71,Ar,2657,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3
+383,517,CCCCCCCCCCCCCCCC,1231,±2,1.86,,0.1254,4.0,95.8746,0.77,Ar,2137,Species,CH,±2,431.0,15.3,Stanford,n_hexadecane / hexadecane_diesel/Haylett_2011_thesis,2,14,,,,0,2,0,0,13,0,0,0,0,0,6,28,0,3

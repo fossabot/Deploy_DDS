@@ -32,7 +32,7 @@ def after_tree_plot():
             data = pd.read_csv(path_)
             cluster_label = files_[i].split('_')[-2]
             plt.plot(data['x'],data['y_pred'],label='No of data:'+str(len(data))+' cluster: '+str(cluster_label) ,marker='x',c=color)
-            plt.scatter(data['x'],np.zeros(data.shape[0]),marker='.',c=color)
+            # plt.scatter(data['x'],np.zeros(data.shape[0]),marker='.',c=color)
             plt.xlabel('X variable')
             plt.ylabel('Y variable')
             # plt.legend()
@@ -48,7 +48,7 @@ def after_tree_plot():
         color = "#%06x" % random.randint(0, 0xFFFFFF)
         centroid = joblib.load(centroid_dir+str(i))
         label = i[:-4].split('_')[-1] #centroid cluster label
-        plt.scatter(centroid,0,marker='s',c=color,s=100,label='Centroid of cluster'+str(label))
+        # plt.scatter(centroid,0,marker='s',c=color,s=100,label='Centroid of cluster'+str(label))
 
     # ref_dir = './object_file/cluster_reference_points/'
     # ref_files = find_dir_n_files(ref_dir)

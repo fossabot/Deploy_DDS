@@ -1,0 +1,48 @@
+,Unnamed: 0,Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source,Primary_C,Secondary_C,Tertiary_C,Quaternary_C,Other_Atom,P_P,P_S,P_T,P_Q,S_S,S_T,S_Q,T_T,T_Q,Q_Q,P_H,S_H,T_H,label
+335,469,CCCCCCCCCCCC,1230,±1,16.73,,0.1,3.596,96.304,0.5,N2,429,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+336,470,CCCCCCCCCCCC,1217,±1,16.07,,0.1,3.596,96.304,0.5,N2,508,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+337,471,CCCCCCCCCCCC,1196,±1,15.77,,0.1,3.596,96.304,0.5,N2,701,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+338,472,CCCCCCCCCCCC,1186,±1,15.38,,0.1,3.596,96.304,0.5,N2,822,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+339,473,CCCCCCCCCCCC,1158,±1,15.19,,0.1,3.596,96.304,0.5,N2,1181,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+340,474,CCCCCCCCCCCC,1322,±1,15.52,,0.051460000000000006,1.911,98.03754,0.5,N2,293,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+341,475,CCCCCCCCCCCC,1258,±1,15.31,,0.051460000000000006,1.911,98.03754,0.5,N2,682,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+342,476,CCCCCCCCCCCC,1252,±1,15.08,,0.051460000000000006,1.911,98.03754,0.5,N2,713,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+343,477,CCCCCCCCCCCC,1219,±1,16.1,,0.1,3.725,96.175,0.5,N2,485,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+344,478,CCCCCCCCCCCC,1211,±1,16.13,,0.1,3.725,96.175,0.5,N2,534,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+345,479,CCCCCCCCCCCC,1179,±1,15.93,,0.1,3.725,96.175,0.5,N2,847,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+346,480,CCCCCCCCCCCC,1222,±1,15.84,,0.075,2.786,97.139,0.5,N2,625,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+347,481,CCCCCCCCCCCC,1221,±1,15.45,,0.075,2.786,97.139,0.5,N2,685,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+348,482,CCCCCCCCCCCC,1192,±1,14.98,,0.075,2.786,97.139,0.5,N2,1056,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+349,483,CCCCCCCCCCCC,1422,±1,15.5,,0.1,3.7,96.2,0.5,N2,30,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+350,484,CCCCCCCCCCCC,1280,±1,16.57,,0.1,3.7,96.2,0.5,N2,195,Species,OH,±5,306.0,5.0,Stanford,n_Dodecane / Vasu_2010_thesis,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,4
+384,518,CCCCCCCCC,1204,±0.7,31.84,±1,0.4,4.0,95.6,1.0,Ar,205,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+385,519,CCCCCCCCC,1133,±0.7,33.85,±1,0.4,4.0,95.6,1.0,Ar,416,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+386,520,CCCCCCCCC,1194,±0.7,38.71,±1,0.4,4.0,95.6,1.0,Ar,201,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+387,521,CCCCCCCCC,1249,±0.7,41.76,±1,0.4,4.0,95.6,1.0,Ar,98,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+388,522,CCCCCCCCC,1077,±0.7,15.63,±1,0.4,4.0,95.6,1.0,Ar,1339,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+389,523,CCCCCCCCC,1160,±0.7,14.81,±1,0.4,4.0,95.6,1.0,Ar,534,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+390,524,CCCCCCCCC,1278,±0.7,14.5,±1,0.4,4.0,95.6,1.0,Ar,122,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+391,525,CCCCCCCCC,1107,±0.7,14.8,±1,0.4,4.0,95.6,1.0,Ar,965,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+392,526,CCCCCCCCC,1233,±0.7,14.94,±1,0.4,4.0,95.6,1.0,Ar,216,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+393,527,CCCCCCCCC,1207,±0.7,15.19,±1,0.4,4.0,95.6,1.0,Ar,306,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+394,528,CCCCCCCCC,1055,±0.7,15.41,±1,0.4,4.0,95.6,1.0,Ar,1787,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+395,529,CCCCCCCCC,1243,±0.7,13.52,±1,0.4,4.0,95.6,1.0,Ar,197,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+396,530,CCCCCCCCC,1203,±0.7,15.11,±1,0.2,4.0,95.8,0.5,Ar,322,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+397,531,CCCCCCCCC,1137,±0.7,15.31,±1,0.2,4.0,95.8,0.5,Ar,855,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+398,532,CCCCCCCCC,1145,±0.7,15.3,±1,0.2,4.0,95.8,0.5,Ar,776,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+399,533,CCCCCCCCC,1186,±0.7,15.09,±1,0.2,4.0,95.8,0.5,Ar,442,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+400,534,CCCCCCCCC,1199,±0.7,15.2,±1,0.2,4.0,95.8,0.5,Ar,335,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+401,535,CCCCCCCCC,1301,±0.7,14.25,±1,0.2,4.0,95.8,0.5,Ar,89,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+402,536,CCCCCCCCC,1272,±0.7,14.41,±1,0.2,4.0,95.8,0.5,Ar,134,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+403,537,CCCCCCCCC,1221,±0.7,14.8,±1,0.2,4.0,95.8,0.5,Ar,283,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+404,538,CCCCCCCCC,1217,±0.7,14.79,±1,0.4,4.0,95.6,2.0,Ar,281,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+405,539,CCCCCCCCC,1164,±0.7,15.31,±1,0.4,4.0,95.6,2.0,Ar,456,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+406,540,CCCCCCCCC,1129,±0.7,15.7,±1,0.4,4.0,95.6,2.0,Ar,638,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+407,541,CCCCCCCCC,1290,±0.7,14.88,±1,0.4,4.0,95.6,2.0,Ar,117,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+408,542,CCCCCCCCC,1051,±0.7,15.39,±1,0.4,4.0,95.6,2.0,Ar,1341,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+409,543,CCCCCCCCC,1053,±0.7,14.88,±1,0.4,4.0,95.6,2.0,Ar,1318,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+410,544,CCCCCCCCC,1075,±0.7,15.14,±1,0.4,4.0,95.6,2.0,Ar,1007,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,4
+605,739,CCCCCCC,1229,±1,15.13,,0.1,2.2,97.7,0.5,Ar,708,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,4
+606,740,CCCCCCC,1230,±1,15.81,,0.1,2.2,97.7,0.5,Ar,698,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,4
+607,741,CCCCCCC,1236,±1,15.28,,0.1,2.2,97.7,0.5,Ar,652,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,4
+608,742,CCCCCCC,1271,±1,15.0,,0.1,2.2,97.7,0.5,Ar,377,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,4

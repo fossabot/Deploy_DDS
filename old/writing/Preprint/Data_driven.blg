@@ -1,0 +1,101 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Data_driven.aux
+The style file: ieeetr.bst
+Database file #1: biblio.bib.bib
+I was expecting a `,' or a `}'---line 99 of file biblio.bib.bib
+ : 
+ : @article{butanemech,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 104 of file biblio.bib.bib
+ : 
+ : @article{pentanemech,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 109 of file biblio.bib.bib
+ : 
+ : @article{hexanemech,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 123 of file biblio.bib.bib
+ : 
+ : @article{c8toc16mech,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 129 of file biblio.bib.bib
+ : 
+ : @book{modernbook,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 490 of file biblio.bib.bib
+ : 
+ : @inproceedings{statsmodels,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in horning
+Warning--empty journal in goldsborough2009chemical
+Warning--empty year in goldsborough2009chemical
+Warning--empty author in propanemech
+Warning--empty journal in propanemech
+Warning--empty year in propanemech
+Warning--empty author in butanemech
+Warning--empty journal in butanemech
+Warning--empty year in butanemech
+Warning--empty author in pentanemech
+Warning--empty journal in pentanemech
+Warning--empty year in pentanemech
+Warning--empty journal in hexanemech
+Warning--empty year in hexanemech
+Warning--empty journal in heptanemech
+Warning--empty year in heptanemech
+Name 1 in "Westbrook, C. K., W. J. Pitz, O. Herbinet, H. J. Curran, and E. J. Silke" has a comma at the end for entry c8toc16mech
+while executing---line 969 of file ieeetr.bst
+Too many commas in name 1 of "Westbrook, C. K., W. J. Pitz, O. Herbinet, H. J. Curran, and E. J. Silke" for entry c8toc16mech
+while executing---line 969 of file ieeetr.bst
+Too many commas in name 1 of "Westbrook, C. K., W. J. Pitz, O. Herbinet, H. J. Curran, and E. J. Silke" for entry c8toc16mech
+while executing---line 969 of file ieeetr.bst
+Warning--empty journal in c8toc16mech
+Warning--empty year in c8toc16mech
+You've used 17 entries,
+            1876 wiz_defined-function locations,
+            564 strings with 6808 characters,
+and the built_in function-call counts, 4080 in all, are:
+= -- 393
+> -- 173
+< -- 0
++ -- 65
+- -- 48
+* -- 309
+:= -- 582
+add.period$ -- 17
+call.type$ -- 17
+change.case$ -- 17
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 208
+empty$ -- 382
+format.name$ -- 48
+if$ -- 968
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 17
+newline$ -- 61
+num.names$ -- 14
+pop$ -- 69
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 116
+stack$ -- 0
+substring$ -- 232
+swap$ -- 66
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 18
+while$ -- 35
+width$ -- 19
+write$ -- 153
+(There were 9 error messages)

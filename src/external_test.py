@@ -348,7 +348,6 @@ class external_test():
                         classification_dataframe[cluster_label[i]] = least_dist_from_all_reference
                         #extra
                         data[cluster_label[i]] = least_dist_from_all_reference
-                        data.to_csv('data_check.csv')
                 #finding index of the minimum values and appending to the main dataframe
                 data_class = classification_dataframe.idxmin(axis=1)
                 # print('data_class: ', data_class)

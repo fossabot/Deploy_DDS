@@ -92,7 +92,7 @@ class combine_clusters():
 			###storing result 
 			#final cluster gives stores only those cluster data which are useful fro prediction
 			SF.check_directory(str(self.curr_directory)+'/result/final_cluster_result/')
-			nodes[i].data.to_csv(str(self.curr_directory)+'/result/final_cluster_result/end_cluster_'+str(cluster_label[i])+'.csv',index=False)
+			nodes[i].data.to_csv(str(self.curr_directory)+'/result/final_cluster_result/end_cluster_'+str(cluster_label[i])+'.csv')
 		
 
 	def generate_regressor(self,nodes,data,cluster_label, node_index, choice='-o'):
@@ -354,7 +354,7 @@ class combine_clusters():
 					Dump those data and delete the node
 					'''
 					#extra data added to left out dataframe
-					left_out_data = pd.concat([left_out_data,data_outside_range],sort=False) #data added to leftout dataframe
+					left_out_data = copy.deepcopy(data_outside_range)  #data added to leftout dataframe
 					print('left_out_data: ', left_out_data.shape)
 
 					nodes.pop(j) #deleting
@@ -417,12 +417,45 @@ class combine_clusters():
 				print('new_node_count: ', new_node_count)
 				# time.sleep(3)
 				print('optimized_nodes: ',len(self.optimized_nodes))
-				time.sleep(2)
+				# time.sleep(2)
 	
 		return self.optimized_nodes, self.optimized_regressor, self.optimized_file_name_label, new_node_count
 			
-			
-				
+		
+	def dist_calculate_centroid(self,nodes,file_name):
+		'''
+		This method will calculate distance from centroid
+		'''
+		i_val = []
+		j_val = []
+		dist_val =[]
+		
+		data = pd.DataFrame([])
+		for i in range(len(nodes)):
+			i_centroid = nodes[i].centroid
+			for j in range(i,len(nodes)):
+				j_centroid = nodes[j].centroid
+				dist = self.ref_point.euclidian_dist(i_centroid,j_centroid)
+				print('dist: ', dist)
+
+				#APPENDING
+				i_val.append(i)
+				j_val.append(j)
+				dist_val.append(dist)
+		print('dist_val: ', dist_val)
+		print('trying data frame ')
+		data['from'] = i_val
+		print('from done')
+		data['to'] = j_val
+		print('to done')
+		data['distance'] = dist_val
+		print('dist done')
+		
+		print('dataframe done')
+
+		SF.check_directory(str(self.curr_directory)+'/result/centroid_dist/')
+		data.to_csv(str(self.curr_directory)+'/result/centroid_dist/'+str(file_name)+'.csv')
+		print('data sucks')
 
 			
 	def optimize_cluster(self):
@@ -447,6 +480,11 @@ class combine_clusters():
 		#sorted regressor and nodes based on size
 		nodes, regressor, file_name_label = self.sort_by_reg_error(load_nodes,load_regressor,file_name_label)
 
+		#old_nodes centroid distance
+		self.dist_calculate_centroid(nodes,'after_tree')
+		print('out pf dist')
+
+
 		'''
 		Initial total clusters
 		'''
@@ -463,6 +501,7 @@ class combine_clusters():
 		# Recursively run till number of clusters won't get change 
 		'''
 		cluster_size = []
+		
 		cluster_size.append(initial_clusters)
 		
 
@@ -476,6 +515,7 @@ class combine_clusters():
 		'''
 		# index
 		m=0
+		print('before_loop')
 		while(True):
 			nodes, regressor, file_name_label , new_node_count = self.reduce_nodes(nodes, regressor, file_name_label) #doing it kind of recursively 
 			print('file_name_label: ', file_name_label)
@@ -489,8 +529,13 @@ class combine_clusters():
 			print('optimized_nodes: ',len(nodes))
 			print('first loop done')
 		
+
+		#old_nodes centroid distance
+		self.dist_calculate_centroid(nodes,'after_optimize')
+		
 		#writing result
 		self.save_object_file(nodes,regressor,file_name_label)
+		print('cluster_size: ', cluster_size)
 
 
 	

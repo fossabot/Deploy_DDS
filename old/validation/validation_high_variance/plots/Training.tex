@@ -1,0 +1,104 @@
+ \documentclass[a4paper,10pt]{article}
+ \usepackage{tikz}
+ \usepackage{fullpage}
+ \usetikzlibrary{positioning,shadows,arrows,trees,shapes,fit}
+ \begin{document}
+ \begin{figure}
+ \begin{tikzpicture}
+ [font=\small, edge from parent fork down, 
+ every node/.style={top color=white, bottom color=blue!25, 
+ 	rectangle,rounded corners, minimum size=5mm, draw=blue!75,
+	very thick, drop shadow, align=center},
+ edge from parent/.style={draw=blue!50,thick},
+ level 1/.style={sibling distance=4cm},
+ level 2/.style={sibling distance=3cm}, 
+ level 3/.style={sibling distance=3cm}, 
+ level 4/.style={sibling distance=2.5cm}, 
+ level 5/.style={sibling distance=2.5cm}, 
+ level 6/.style={sibling distance=2cm}, 
+ level 7/.style={sibling distance=2cm}, 
+ level 8/.style={sibling distance=2cm}, 
+ level distance=2cm,
+ ]
+\node {0.8505} %root
+child { node {0.9333}  
+child { node {0.9534}  
+child { node {0.9932}  
+child { node {nan}  
+ }
+child { node {0.995}  
+ }
+ }
+child { node {0.9823}  
+ }
+child { node {0.9769}  
+child { node {nan}  
+ }
+child { node {0.9946}  
+ }
+child { node {nan}  
+ }
+ }
+ }
+child { node {0.9895}  
+ }
+child { node {0.9691}  
+child { node {0.9752}  
+child { node {0.9918}  
+ }
+ }
+child { node {0.9953}  
+ }
+child { node {0.9676}  
+child { node {nan}  
+ }
+child { node {0.992}  
+ }
+child { node {nan}  
+ }
+ }
+ }
+ }
+child { node {0.9902}  
+ }
+child { node {0.9447}  
+child { node {0.9699}  
+child { node {0.9509}  
+child { node {nan}  
+ }
+child { node {0.9994}  
+ }
+ }
+child { node {0.9935}  
+ }
+child { node {0.9182}  
+child { node {nan}  
+ }
+child { node {nan}  
+ }
+ }
+ }
+child { node {0.9899}  
+ }
+child { node {0.951}  
+child { node {0.9558}  
+child { node {nan}  
+ }
+child { node {0.9972}  
+ }
+child { node {nan}  
+ }
+ }
+child { node {0.9908}  
+ }
+child { node {0.8729}  
+child { node {0.881}  
+ }
+child { node {nan}  
+ }
+ }
+ }
+ }
+;\end{tikzpicture} 
+ \caption{Training plot }  \end{figure}
+\end{document} 

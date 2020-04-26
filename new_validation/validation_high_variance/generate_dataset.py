@@ -1,3 +1,4 @@
+
 '''
 This module is develope to test and verify accuracy of 
 error based clustering model.
@@ -18,36 +19,36 @@ def mixed_datapoint_cluster(data_points,no_clusters):
     '''
     data = pd.DataFrame([],columns=['x','y'])
 
-    for i in range(2):
-        data1 = pd.DataFrame([])
-        start_num = random.randint(0, 10)
-        slope = random.randint(-10,10)
-        intercept = random.randint(-10,10)
-        x1 = np.linspace(-1*start_num,start_num,data_points)
-        delta1 = np.random.normal(0,1,x1.size)
-        y1 = intercept + slope * x1 + delta1
-        plt.plot(x1,y1-delta1) #actual fit
-        plt.scatter(x1,y1)
-        data1['x'] = x1
-        data1['y'] = y1
-        data = pd.concat([data,data1])
+    # for i in range(2):
+    #     data1 = pd.DataFrame([])
+    #     start_num = random.randint(0, 10)
+    #     slope = random.randint(-10,10)
+    #     intercept = random.randint(-10,10)
+    #     x1 = np.linspace(-1*start_num,start_num,data_points)
+    #     delta1 = np.random.normal(0,1,x1.size)
+    #     y1 = intercept + slope * x1 + delta1
+    #     plt.plot(x1,y1-delta1) #actual fit
+    #     plt.scatter(x1,y1)
+    #     data1['x'] = x1
+    #     data1['y'] = y1
+    #     data = pd.concat([data,data1])
 
-    # #cluster-1
-    # data1 = pd.DataFrame([])
-    # x1 = np.linspace(-20,20,data_points)
-    # delta1 = np.random.normal(0,3,x1.size)
-    # y1 = x1* 2+ delta1
-    # plt.plot(x1,y1-delta1) #actual fit
-    # plt.scatter(x1,y1)
-    # data1['x'] = x1
-    # data1['y'] = y1
-    # data = pd.concat([data,data1])
+    #cluster-1
+    data1 = pd.DataFrame([])
+    x1 = np.linspace(-20,20,data_points)
+    delta1 = np.random.normal(0,0.1,x1.size)
+    y1 = x1* 2+ delta1
+    plt.plot(x1,y1-delta1) #actual fit
+    plt.scatter(x1,y1)
+    data1['x'] = x1
+    data1['y'] = y1
+    data = pd.concat([data,data1])
 
     # #cluster-1
     # data2 = pd.DataFrame([])
-    # x2 = np.linspace(-20,20,data_points)
-    # delta2 = np.random.normal(0,3,x2.size)
-    # y2 = x2 * 9 + delta2
+    # x2 = np.linspace(-10,40,data_points)
+    # delta2 = np.random.normal(0,0,x2.size)
+    # y2 =  x2 * 2.1 + delta2
     # plt.plot(x2,y2-delta2) #actual fit
     # plt.scatter(x2,y2)
     # data2['x'] = x2
@@ -74,6 +75,6 @@ def mixed_datapoint_cluster(data_points,no_clusters):
     data.to_csv('dataset.csv',index=False)
     test.to_csv('testset.csv',index=False)
 
-data_points = 50 #data points in each cluster
+data_points = 100 #data points in each cluster
 mixed_datapoint_cluster(data_points,1)
 print('done')

@@ -1,0 +1,41 @@
+,Unnamed: 0,Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source,Primary_C,Secondary_C,Tertiary_C,Quaternary_C,Other_Atom,P_P,P_S,P_T,P_Q,S_S,S_T,S_Q,T_T,T_Q,Q_Q,P_H,S_H,T_H,label
+265,399,CCCCCCCCCCCC,1330,,2.25,,0.0445,0.75,99.2055,1.0,N2,1592,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+266,400,CCCCCCCCCCCC,1403,,2.41,,0.0445,0.75,99.2055,1.0,N2,586,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+267,401,CCCCCCCCCCCC,1406,,2.37,,0.047,0.75,99.20299999999999,1.0,N2,571,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+268,402,CCCCCCCCCCCC,1430,,2.33,,0.0445,0.75,99.2055,1.0,N2,349,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+269,403,CCCCCCCCCCCC,1477,,2.25,,0.05,0.75,99.2,1.0,N2,216,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+270,404,CCCCCCCCCCCC,1528,,2.24,,0.047,0.75,99.20299999999999,1.0,N2,116,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+271,405,CCCCCCCCCCCC,1585,,2.23,,0.04,0.75,99.21,1.0,N2,58,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+272,406,CCCCCCCCCCCC,1637,,2.26,,0.043,0.75,99.20700000000001,1.0,N2,36,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+273,407,CCCCCCCCCCCC,1652,,2.23,,0.0371,0.75,99.2129,1.0,N2,27,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+274,408,CCCCCCCCCCCC,1536,,2.17,,0.044000000000000004,0.75,99.206,1.0,N2,140,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+275,409,CCCCCCCCCCCC,1657,,2.12,,0.0485,0.75,99.2015,1.0,N2,56,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+276,410,CCCCCCCCCCCC,1418,,2.35,,0.047,0.75,99.20299999999999,1.0,N2,614,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+277,411,CCCCCCCCCCCC,1607,,2.17,,0.046,0.75,99.204,1.0,N2,84,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+278,412,CCCCCCCCCCCC,1583,,2.14,,0.045,0.75,99.205,1.0,N2,90,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+279,413,CCCCCCCCCCCC,1612,,2.09,,0.047,0.75,99.20299999999999,1.0,N2,80,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+280,414,CCCCCCCCCCCC,1450,,2.26,,0.0475,0.75,99.2025,1.0,N2,461,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+281,415,CCCCCCCCCCCC,1496,,2.22,,0.048,0.75,99.20200000000001,1.0,N2,242,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+282,416,CCCCCCCCCCCC,1381,,2.32,,0.0485,0.75,99.2015,1.0,N2,1020,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+283,417,CCCCCCCCCCCC,1553,,2.25,,0.05,0.7776,99.1724,1.0,N2,276,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+284,418,CCCCCCCCCCCC,1407,,2.28,,0.046,0.7617,99.1923,1.0,N2,791,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+285,419,CCCCCCCCCCCC,1387,,2.34,,0.05,0.7489,99.2011,1.0,N2,1197,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+286,420,CCCCCCCCCCCC,1466,,2.26,,0.0476,0.7525,99.1999,1.0,N2,438,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+287,421,CCCCCCCCCCCC,1427,,2.07,,0.051,0.7572,99.1918,1.0,N2,655,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+288,422,CCCCCCCCCCCC,1545,,2.07,,0.0505,0.7427,99.2068,1.0,N2,262,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+289,423,CCCCCCCCCCCC,1645,,2.13,,0.0428,0.7452,99.212,1.0,N2,91,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+290,424,CCCCCCCCCCCC,1618,,2.14,,0.048,0.7635,99.1885,1.0,N2,96,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+291,425,CCCCCCCCCCCC,1394,,2.3,,0.043,0.731,99.226,1.0,N2,1463,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+292,426,CCCCCCCCCCCC,1415,,2.47,,0.0456,0.7657,99.1887,1.0,N2,790,Speceis,CH,,430.0,15.3,Stanford,n_Dodecane_Nano,2,10,,,,0,2,0,0,9,0,0,0,0,0,6,20,0,6
+491,625,CCCCCCCCCC,1479, ±1.5,2.19,,0.03,0.465,99.505,1.0,Ar,375,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+492,626,CCCCCCCCCC,1525, ±1.5,2.21,,0.03,0.465,99.505,1.0,Ar,154,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+493,627,CCCCCCCCCC,1574, ±1.5,2.12,,0.03,0.465,99.505,1.0,Ar,119,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+494,628,CCCCCCCCCC,1661, ±1.5,2.08,,0.03,0.465,99.505,1.0,Ar,87,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+495,629,CCCCCCCCCC,1706, ±1.5,2.15,,0.03,0.465,99.505,1.0,Ar,37,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+496,630,CCCCCCCCCC,1462, ±1.5,2.11,,0.03,0.5817,99.3883,0.8,Ar,206,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+497,631,CCCCCCCCCC,1526, ±1.5,2.03,,0.03,0.5817,99.3883,0.8,Ar,83,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+498,632,CCCCCCCCCC,1602, ±1.5,2.25,,0.03,0.3875,99.5825,1.2,Ar,124,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+499,633,CCCCCCCCCC,1706, ±1.5,2.17,,0.03,0.3875,99.5825,1.2,Ar,43,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+502,636,CCCCCCCCCC,1327, ±1.5,1.69,,0.0334,0.813,99.1536,0.64,Ar,1099,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+503,637,CCCCCCCCCC,1382, ±1.5,1.68,,0.0358,0.813,99.1512,0.68,Ar,621,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6
+504,638,CCCCCCCCCC,1524, ±1.5,1.61,,0.0365,0.813,99.1505,0.7,Ar,144,Species,CH,±5,431.0,8.9,Stanford,n_Alkane_Oxidation,2,8,,,,0,2,0,0,7,0,0,0,0,0,6,16,0,6

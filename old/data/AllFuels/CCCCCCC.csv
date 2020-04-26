@@ -1,0 +1,108 @@
+Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source
+CCCCCCC,1446.0,±1,1.15,,0.4,4.8,94.8,0.9,Ar,234.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1381.0,±1,1.18,,0.4,4.8,94.8,0.9,Ar,488.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1491.0,±1,1.23,,0.4,4.8,94.8,0.9,Ar,137.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1438.0,±1,1.22,,0.4,4.8,94.8,0.9,Ar,238.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1492.0,±1,1.22,,0.36,4.4,95.24,0.9,Ar,141.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1501.0,±1,1.25,,0.36,4.4,95.24,0.9,Ar,125.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1476.0,±1,1.25,,0.36,4.4,95.24,0.9,Ar,163.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1486.0,±1,1.23,,0.4,4.4,95.2,1.0,Ar,159.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1458.0,±1,1.27,,0.4,4.4,95.2,1.0,Ar,208.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1428.0,±1,1.27,,0.4,4.4,95.2,1.0,Ar,296.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1455.0,±1,1.2,,0.4,8.8,90.8,0.5,Ar,86.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1413.0,±1,1.32,,0.4,8.8,90.8,0.5,Ar,121.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1347.0,±1,1.3,,0.4,8.8,90.8,0.5,Ar,286.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1676.0,±1,1.22,,0.4,2.2,97.4,2.0,Ar,147.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1529.0,±1,1.26,,0.4,2.2,97.4,2.0,Ar,442.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1619.0,±1,1.22,,0.4,2.2,97.4,2.0,Ar,210.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1396.0,±1,1.23,,0.4,8.8,90.8,0.5,Ar,161.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1347.0,±1,1.29,,0.4,8.8,90.8,0.5,Ar,308.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1345.0,±1,1.34,,0.4,8.8,90.8,0.5,Ar,305.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1432.0,±1,1.21,,0.4,8.8,90.8,0.5,Ar,110.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1347.0,±1,1.22,,0.4,8.8,90.8,0.5,Ar,323.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1455.0,±1,2.13,,0.4,4.4,95.2,1.0,Ar,165.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1384.0,±1,2.12,,0.4,4.4,95.2,1.0,Ar,403.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1434.0,±1,2.15,,0.4,4.4,95.2,1.0,Ar,205.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1478.0,±1,2.08,,0.4,4.4,95.2,1.0,Ar,131.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1503.0,±1,2.06,,0.4,4.4,95.2,1.0,Ar,100.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1412.0,±1,2.14,,0.4,4.4,95.2,1.0,Ar,265.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1476.0,±1,4.03,,0.4,4.4,95.2,1.0,Ar,90.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1420.0,±1,4.07,,0.4,4.4,95.2,1.0,Ar,163.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1394.0,±1,4.22,,0.4,4.4,95.2,1.0,Ar,227.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1463.0,±1,4.11,,0.4,4.4,95.2,1.0,Ar,103.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1413.0,±1,4.16,,0.4,4.4,95.2,1.0,Ar,183.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1378.0,±1,1.15,,0.8,8.8,90.4,1.0,Ar,385.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1426.0,±1,1.17,,0.8,8.8,90.4,1.0,Ar,208.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1335.0,±1,1.3,,1.2,13.2,85.6,1.0,Ar,466.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1455.0,±1,1.22,,1.2,13.2,85.6,1.0,Ar,115.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1421.0,±1,1.19,,1.2,13.2,85.6,1.0,Ar,163.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1349.0,±1,1.2,,1.2,13.2,85.6,1.0,Ar,411.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1409.0,±1,1.27,,1.2,13.2,85.6,1.0,Ar,179.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1465.0,±1,1.14,,1.2,8.8,90.0,1.5,Ar,189.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1461.0,±1,1.23,,1.2,8.8,90.0,1.5,Ar,189.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1409.0,±1,1.27,,1.2,8.8,90.0,1.5,Ar,321.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1411.0,±1,1.29,,1.2,8.8,90.0,1.5,Ar,311.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1386.0,±1,1.24,,1.75,19.7,78.55,1.0,Ar,177.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1329.0,±1,1.19,,1.75,19.7,78.55,1.0,Ar,382.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1330.0,±1,1.16,,1.75,19.7,78.55,1.0,Ar,382.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1501.0,±1,2.08,,0.2,2.2,97.6,1.0,Ar,150.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1468.0,±1,2.13,,0.2,2.2,97.6,1.0,Ar,216.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1432.0,±1,2.15,,0.2,2.2,97.6,1.0,Ar,345.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1547.0,±1,2.07,,0.2,2.2,97.6,1.0,Ar,100.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1375.0,±1,5.68,,0.4,4.4,95.2,1.0,Ar,271.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1431.0,±1,5.71,,0.4,4.4,95.2,1.0,Ar,120.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1400.0,±1,5.63,,0.4,4.4,95.2,1.0,Ar,190.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1421.0,±1,5.69,,0.4,4.4,95.2,1.0,Ar,138.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1372.0,±1,5.57,,0.4,4.4,95.2,1.0,Ar,279.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1442.0,±1,5.65,,0.4,4.4,95.2,1.0,Ar,117.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1419.0,±1,5.41,,0.4,4.4,95.2,1.0,Ar,158.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1423.0,±1,1.2,,1.2,6.6,92.2,2.0,Ar,486.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1516.0,±1,1.21,,1.2,6.6,92.2,2.0,Ar,205.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1456.0,±1,1.2,,1.2,6.6,92.2,2.0,Ar,361.0,Species,CH,±5,431.0,15.3,Stanford,Horning_2001_thesis / Autoignition_ n_Alkane
+CCCCCCC,1551.0,,2.14,,0.03,0.33,99.64,1.0,Ar,207.0,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1640.0,,2.04,,0.03,0.33,99.64,1.0,Ar,99.0,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1784.0,,2.12,,0.03,0.33,99.64,1.0,Ar,47.0,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1540.0,,3.67,,0.03,0.33,99.64,1.0,Ar,181.0,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1649.0,,3.8,,0.03,0.33,99.64,1.0,Ar,73.0,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1710.0,,3.75,,0.03,0.33,99.64,1.0,Ar,49.0,Species,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCCCCC,1249.0,±1.8,1.97,,1.874,20.6,77.52600000000001,1.0,N2,298.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1299.0,±1.8,1.89,,1.874,20.6,77.52600000000001,1.0,N2,311.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1358.0,±1.8,1.85,,1.874,20.6,77.52600000000001,1.0,N2,152.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1378.0,±1.8,1.99,,1.874,20.6,77.52600000000001,1.0,N2,117.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1305.0,±1.8,10.62,,1.874,20.6,77.52600000000001,1.0,N2,117.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1236.0,±1.8,11.24,,1.874,20.6,77.52600000000001,1.0,N2,207.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1299.0,±1.8,10.25,,1.874,20.6,77.52600000000001,1.0,N2,122.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1344.0,±1.8,10.27,,1.874,20.6,77.52600000000001,1.0,N2,85.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1290.0,±1.8,11.8,,1.874,20.6,77.52600000000001,1.0,N2,118.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,806.0,±1.8,20.0,,1.874,20.6,77.52600000000001,1.0,N2,1377.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,850.0,±1.8,19.92,,1.874,20.6,77.52600000000001,1.0,N2,1653.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,906.0,±1.8,19.87,,1.874,20.6,77.52600000000001,1.0,N2,1836.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1012.0,±1.8,18.13,,1.874,20.6,77.52600000000001,1.0,N2,944.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1048.0,±1.8,16.72,,1.874,20.6,77.52600000000001,1.0,N2,854.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,909.0,±1.8,53.9,,1.874,20.6,77.52600000000001,1.0,N2,254.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,923.0,±1.8,60.0,,1.874,20.6,77.52600000000001,1.0,N2,244.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,926.0,±1.8,60.6,,1.874,20.6,77.52600000000001,1.0,N2,233.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,932.0,±1.8,55.4,,1.874,20.6,77.52600000000001,1.0,N2,323.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,985.0,±1.8,48.6,,1.874,20.6,77.52600000000001,1.0,N2,364.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1007.0,±1.8,57.7,,1.874,20.6,77.52600000000001,1.0,N2,232.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1013.0,±1.8,53.6,,1.874,20.6,77.52600000000001,1.0,N2,292.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1023.0,±1.8,54.2,,1.874,20.6,77.52600000000001,1.0,N2,261.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1027.0,±1.8,59.1,,1.874,20.6,77.52600000000001,1.0,N2,237.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1057.0,±1.8,50.0,,1.874,20.6,77.52600000000001,1.0,N2,194.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1063.0,±1.8,53.1,,1.874,20.6,77.52600000000001,1.0,N2,179.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1115.0,±1.8,52.3,,1.874,20.6,77.52600000000001,1.0,N2,102.0,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels
+CCCCCCC,1395.0,±1,1.72,,0.05,0.55,99.4,1.0,Ar,878.0,Species,CH3,,216.0,15.3,Stanford,iso_octane_heptane
+CCCCCCC,1461.0,±1,1.67,,0.05,0.55,99.4,1.0,Ar,366.0,Species,CH3,,216.0,15.3,Stanford,iso_octane_heptane
+CCCCCCC,1546.0,±1,1.61,,0.05,0.55,99.4,1.0,Ar,162.0,Species,CH3,,216.0,15.3,Stanford,iso_octane_heptane
+CCCCCCC,1229.0,±1,15.13,,0.1,2.2,97.7,0.5,Ar,708.0,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1230.0,±1,15.81,,0.1,2.2,97.7,0.5,Ar,698.0,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1236.0,±1,15.28,,0.1,2.2,97.7,0.5,Ar,652.0,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1271.0,±1,15.0,,0.1,2.2,97.7,0.5,Ar,377.0,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane
+CCCCCCC,1358.0,±1,2.436,±1,0.03,0.33,99.64,1.0,Ar,1280.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1368.0,±1,2.86,±1,0.03,0.33,99.64,1.0,Ar,1810.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1375.0,±1,2.282,±1,0.03,0.33,99.64,1.0,Ar,1661.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1378.0,±1,2.326,±1,0.03,0.33,99.64,1.0,Ar,1330.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1494.0,±1,2.155,±1,0.03,0.33,99.64,1.0,Ar,1330.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1494.0,±1,2.155,±1,0.03,0.33,99.64,1.0,Ar,308.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1502.0,±1,2.262,±1,0.03,0.33,99.64,1.0,Ar,280.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation
+CCCCCCC,1506.0,±1,2.36,±1,0.03,0.33,99.64,1.0,Ar,189.0,Species,OH,,306.7,15.3,Stanford,n_heptane_oxidation

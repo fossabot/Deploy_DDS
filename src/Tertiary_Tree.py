@@ -178,9 +178,9 @@ class Ternary_Tree():
                         joblib.dump(cur_node.left_node.centroid,filename_centroid)  
                         print('Criteria Satisfied')
                         
-                        ## commented this part as it is required for final clusters and that we are going to
-                        ## get after optimized cluster so no need to waste computation
-                        # self.ref_point.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label)
+                        # commented this part as it is required for final clusters and that we are going to
+                        # get after optimized cluster so no need to waste computation
+                        self.ref_point.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label,'tree_ref')
 
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
@@ -244,9 +244,9 @@ class Ternary_Tree():
                     filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.center_node.child_label)+'.sav'
                     joblib.dump(cur_node.center_node.centroid,filename_centroid) 
 
-                    # ## commented this part as it is required for final clusters and that we are going to
-                    # ## get after optimized cluster so no need to waste computation
-                    # self.ref_point.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label)
+                    ## commented this part as it is required for final clusters and that we are going to
+                    ## get after optimized cluster so no need to waste computation
+                    self.ref_point.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label,'tree_ref')
 
                   
                     #final cluster gives stores only those cluster data which are useful for prediction #as all centroid clusters are final clusters
@@ -325,9 +325,9 @@ class Ternary_Tree():
                         filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.right_node.child_label)+'.sav'
                         joblib.dump(cur_node.right_node.centroid,filename_centroid) 
 
-                        # ## commented this part as it is required for final clusters and that we are going to
-                        # ## get after optimized cluster so no need to waste computation  
-                        # self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label)
+                        ## commented this part as it is required for final clusters and that we are going to
+                        ## get after optimized cluster so no need to waste computation  
+                        self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label,'tree_ref')
                     
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 

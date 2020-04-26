@@ -1,0 +1,54 @@
+,Unnamed: 0,Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source,Primary_C,Secondary_C,Tertiary_C,Quaternary_C,Other_Atom,P_P,P_S,P_T,P_Q,S_S,S_T,S_Q,T_T,T_Q,Q_Q,P_H,S_H,T_H,label
+384,518,CCCCCCCCC,1204,±0.7,31.84,±1,0.4,4.0,95.6,1.0,Ar,205,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+385,519,CCCCCCCCC,1133,±0.7,33.85,±1,0.4,4.0,95.6,1.0,Ar,416,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+386,520,CCCCCCCCC,1194,±0.7,38.71,±1,0.4,4.0,95.6,1.0,Ar,201,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+387,521,CCCCCCCCC,1249,±0.7,41.76,±1,0.4,4.0,95.6,1.0,Ar,98,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+388,522,CCCCCCCCC,1077,±0.7,15.63,±1,0.4,4.0,95.6,1.0,Ar,1339,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+389,523,CCCCCCCCC,1160,±0.7,14.81,±1,0.4,4.0,95.6,1.0,Ar,534,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+390,524,CCCCCCCCC,1278,±0.7,14.5,±1,0.4,4.0,95.6,1.0,Ar,122,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+391,525,CCCCCCCCC,1107,±0.7,14.8,±1,0.4,4.0,95.6,1.0,Ar,965,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+392,526,CCCCCCCCC,1233,±0.7,14.94,±1,0.4,4.0,95.6,1.0,Ar,216,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+393,527,CCCCCCCCC,1207,±0.7,15.19,±1,0.4,4.0,95.6,1.0,Ar,306,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+394,528,CCCCCCCCC,1055,±0.7,15.41,±1,0.4,4.0,95.6,1.0,Ar,1787,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+395,529,CCCCCCCCC,1243,±0.7,13.52,±1,0.4,4.0,95.6,1.0,Ar,197,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+396,530,CCCCCCCCC,1203,±0.7,15.11,±1,0.2,4.0,95.8,0.5,Ar,322,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+397,531,CCCCCCCCC,1137,±0.7,15.31,±1,0.2,4.0,95.8,0.5,Ar,855,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+398,532,CCCCCCCCC,1145,±0.7,15.3,±1,0.2,4.0,95.8,0.5,Ar,776,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+399,533,CCCCCCCCC,1186,±0.7,15.09,±1,0.2,4.0,95.8,0.5,Ar,442,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+400,534,CCCCCCCCC,1199,±0.7,15.2,±1,0.2,4.0,95.8,0.5,Ar,335,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+401,535,CCCCCCCCC,1301,±0.7,14.25,±1,0.2,4.0,95.8,0.5,Ar,89,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+402,536,CCCCCCCCC,1272,±0.7,14.41,±1,0.2,4.0,95.8,0.5,Ar,134,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+403,537,CCCCCCCCC,1221,±0.7,14.8,±1,0.2,4.0,95.8,0.5,Ar,283,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+404,538,CCCCCCCCC,1217,±0.7,14.79,±1,0.4,4.0,95.6,2.0,Ar,281,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+405,539,CCCCCCCCC,1164,±0.7,15.31,±1,0.4,4.0,95.6,2.0,Ar,456,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+406,540,CCCCCCCCC,1129,±0.7,15.7,±1,0.4,4.0,95.6,2.0,Ar,638,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+407,541,CCCCCCCCC,1290,±0.7,14.88,±1,0.4,4.0,95.6,2.0,Ar,117,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+408,542,CCCCCCCCC,1051,±0.7,15.39,±1,0.4,4.0,95.6,2.0,Ar,1341,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+409,543,CCCCCCCCC,1053,±0.7,14.88,±1,0.4,4.0,95.6,2.0,Ar,1318,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+410,544,CCCCCCCCC,1075,±0.7,15.14,±1,0.4,4.0,95.6,2.0,Ar,1007,Species,OH,±3,306.0,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates,2,7,,,,0,2,0,0,6,0,0,0,0,0,6,14,0,6
+580,714,CCCCCCC,1305,±1.8,10.62,,1.874,20.6,77.52600000000001,1.0,N2,117,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+581,715,CCCCCCC,1236,±1.8,11.24,,1.874,20.6,77.52600000000001,1.0,N2,207,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+582,716,CCCCCCC,1299,±1.8,10.25,,1.874,20.6,77.52600000000001,1.0,N2,122,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+583,717,CCCCCCC,1344,±1.8,10.27,,1.874,20.6,77.52600000000001,1.0,N2,85,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+584,718,CCCCCCC,1290,±1.8,11.8,,1.874,20.6,77.52600000000001,1.0,N2,118,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+585,719,CCCCCCC,806,±1.8,20.0,,1.874,20.6,77.52600000000001,1.0,N2,1377,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+586,720,CCCCCCC,850,±1.8,19.92,,1.874,20.6,77.52600000000001,1.0,N2,1653,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+587,721,CCCCCCC,906,±1.8,19.87,,1.874,20.6,77.52600000000001,1.0,N2,1836,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+588,722,CCCCCCC,1012,±1.8,18.13,,1.874,20.6,77.52600000000001,1.0,N2,944,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+589,723,CCCCCCC,1048,±1.8,16.72,,1.874,20.6,77.52600000000001,1.0,N2,854,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+590,724,CCCCCCC,909,±1.8,53.9,,1.874,20.6,77.52600000000001,1.0,N2,254,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+591,725,CCCCCCC,923,±1.8,60.0,,1.874,20.6,77.52600000000001,1.0,N2,244,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+592,726,CCCCCCC,926,±1.8,60.6,,1.874,20.6,77.52600000000001,1.0,N2,233,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+593,727,CCCCCCC,932,±1.8,55.4,,1.874,20.6,77.52600000000001,1.0,N2,323,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+594,728,CCCCCCC,985,±1.8,48.6,,1.874,20.6,77.52600000000001,1.0,N2,364,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+595,729,CCCCCCC,1007,±1.8,57.7,,1.874,20.6,77.52600000000001,1.0,N2,232,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+596,730,CCCCCCC,1013,±1.8,53.6,,1.874,20.6,77.52600000000001,1.0,N2,292,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+597,731,CCCCCCC,1023,±1.8,54.2,,1.874,20.6,77.52600000000001,1.0,N2,261,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+598,732,CCCCCCC,1027,±1.8,59.1,,1.874,20.6,77.52600000000001,1.0,N2,237,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+599,733,CCCCCCC,1057,±1.8,50.0,,1.874,20.6,77.52600000000001,1.0,N2,194,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+600,734,CCCCCCC,1063,±1.8,53.1,,1.874,20.6,77.52600000000001,1.0,N2,179,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+601,735,CCCCCCC,1115,±1.8,52.3,,1.874,20.6,77.52600000000001,1.0,N2,102,Species,OH,,306.7,5.0,Stanford,blend_surrogate_fuels,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+605,739,CCCCCCC,1229,±1,15.13,,0.1,2.2,97.7,0.5,Ar,708,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+606,740,CCCCCCC,1230,±1,15.81,,0.1,2.2,97.7,0.5,Ar,698,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+607,741,CCCCCCC,1236,±1,15.28,,0.1,2.2,97.7,0.5,Ar,652,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6
+608,742,CCCCCCC,1271,±1,15.0,,0.1,2.2,97.7,0.5,Ar,377,Species,OH,,306.7,7.5,Stanford,n_heptane_methylcyclohexane,2,5,,,,0,2,0,0,4,0,0,0,0,0,6,10,0,6

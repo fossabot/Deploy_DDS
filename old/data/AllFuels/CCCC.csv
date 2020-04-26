@@ -1,0 +1,59 @@
+Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source
+CCCC,1405.0,±1,1.19,±1,1.0,6.5,92.5,1.0,Ar,415.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1405.0,±1,1.18,±1,1.0,6.5,92.5,1.0,Ar,420.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1409.0,±1,1.17,±1,1.0,6.5,92.5,1.0,Ar,390.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1447.0,±1,1.14,±1,1.0,6.5,92.5,1.0,Ar,244.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1478.0,±1,1.2,±1,1.0,6.5,92.5,1.0,Ar,171.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1483.0,±1,1.32,±1,1.0,6.5,92.5,1.0,Ar,161.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1407.0,±1,1.99,±1,1.0,6.5,92.5,1.0,Ar,297.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1400.0,±1,2.03,±1,1.0,6.5,92.5,1.0,Ar,335.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1445.0,±1,2.02,±1,1.0,6.5,92.5,1.0,Ar,186.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1454.0,±1,2.0,±1,1.0,6.5,92.5,1.0,Ar,170.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1415.0,±1,3.8,±1,1.0,6.5,92.5,1.0,Ar,189.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1399.0,±1,3.81,±1,1.0,6.5,92.5,1.0,Ar,243.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1433.0,±1,3.75,±1,1.0,6.5,92.5,1.0,Ar,151.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1468.0,±1,1.97,±1,1.0,6.5,92.5,1.0,Ar,150.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1499.0,±1,1.14,±1,1.0,6.5,92.5,1.0,Ar,151.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1505.0,±1,1.12,±1,1.0,6.5,92.5,1.0,Ar,140.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1557.0,±1,1.13,±1,1.0,6.5,92.5,1.0,Ar,87.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1561.0,±1,1.17,±1,0.5,3.25,96.25,1.0,Ar,131.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1513.0,±1,1.18,±1,0.5,3.25,96.25,1.0,Ar,186.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1478.0,±1,1.2,±1,0.5,3.25,96.25,1.0,Ar,275.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1532.0,±1,1.33,±1,0.5,3.25,96.25,1.0,Ar,156.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1546.0,±1,1.37,±1,0.5,3.25,96.25,1.0,Ar,136.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1433.0,±1,1.27,±1,0.5,3.25,96.25,1.0,Ar,475.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1432.0,±1,1.17,±1,2.0,13.0,85.0,1.0,Ar,179.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1490.0,±1,1.19,±1,2.0,13.0,85.0,1.0,Ar,100.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1385.0,±1,1.18,±1,2.0,13.0,85.0,1.0,Ar,353.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1434.0,±1,1.15,±1,2.0,13.0,85.0,1.0,Ar,180.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1455.0,±1,1.15,±1,2.0,13.0,85.0,1.0,Ar,149.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1517.0,±1,1.16,±1,2.0,13.0,85.0,1.0,Ar,83.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1389.0,±1,1.12,±1,1.0,13.0,86.0,0.5,Ar,204.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1422.0,±1,1.08,±1,1.0,13.0,86.0,0.5,Ar,131.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1385.0,±1,1.11,±1,1.0,13.0,86.0,0.5,Ar,206.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1412.0,±1,1.11,±1,1.0,13.0,86.0,0.5,Ar,149.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1453.0,±1,1.07,±1,1.0,13.0,86.0,0.5,Ar,96.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1352.0,±1,1.14,±1,1.0,13.0,86.0,0.5,Ar,307.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1666.0,±1,1.03,±1,1.0,3.25,95.75,2.0,Ar,177.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1627.0,±1,1.06,±1,1.0,3.25,95.75,2.0,Ar,220.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1541.0,±1,1.07,±1,1.0,3.25,95.75,2.0,Ar,441.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1734.0,±1,1.08,±1,1.0,3.25,95.75,2.0,Ar,105.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1618.0,±1,1.13,±1,1.0,3.25,95.75,2.0,Ar,218.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1577.0,±1,1.13,±1,1.0,3.25,95.75,2.0,Ar,304.0,Speceis,CH,±5,431.0,15.3,Stanford,Autoignition_ n_Alkane / Horning_2001_thesis
+CCCC,1531.0,,2.16,,0.05,0.325,99.625,1.0,Ar,260.0,Speceis,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCC,1598.0,,2.06,,0.05,0.325,99.625,1.0,Ar,144.0,Speceis,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCC,1761.0,,2.02,,0.05,0.325,99.625,1.0,Ar,40.0,Speceis,OH,±5,306.7,8.9,Stanford,n_Alkane_Oxidation
+CCCC,1253.0,±3,1.25,,0.95,6.19,92.86,1.0,Ar,1791.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1332.0,±3,1.39,,0.95,6.19,92.86,1.0,Ar,797.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1386.0,±3,1.49,,0.95,6.19,92.86,1.0,Ar,485.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1450.0,±3,1.24,,0.95,6.19,92.86,1.0,Ar,267.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1511.0,±3,1.23,,0.95,6.19,92.86,1.0,Ar,155.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1585.0,±3,1.24,,0.95,6.19,92.86,1.0,Ar,70.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1250.0,±3,1.24,,0.95,6.19,92.86,1.0,Ar,1898.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1276.0,±3,1.23,,0.95,6.19,92.86,1.0,Ar,1432.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1281.0,±3,5.46,,0.95,6.19,92.86,1.0,Ar,814.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1355.0,±3,5.5,,0.95,6.19,92.86,1.0,Ar,322.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1400.0,±3,5.3,,0.95,6.19,92.86,1.0,Ar,199.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1477.0,±3,5.32,,0.95,6.19,92.86,1.0,Ar,93.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1543.0,±3,5.42,,0.95,6.19,92.86,1.0,Ar,46.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes
+CCCC,1230.0,±3,5.44,,0.95,6.19,92.86,1.0,Ar,1457.0,Speceis,CH,±2.36,430.0,11.5,Xi’an_Jiaotong,C1_C4_Alkanes

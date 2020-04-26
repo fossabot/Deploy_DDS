@@ -1,0 +1,247 @@
+\begin{thebibliography}{10}
+
+\bibitem{computation}
+T.~Lu and C.~K. Law, ``Toward accommodating realistic fuel chemistry in
+  large-scale computations,'' {\em Progress in Energy and Combustion Science},
+  vol.~35, no.~2, pp.~192--215, 2009.
+
+\bibitem{horning}
+D.~C. Horning, ``A study of the high-temperature auto-ignition and thermal
+  decomposition of hydrocarbons,'' vol.~Report No. TSD-135, 2001.
+
+\bibitem{khaled2019universality}
+F.~Khaled and A.~Farooq, ``On the universality of ignition delay times of
+  distillate fuels at high temperatures: A statistical approach,'' {\em
+  Combustion and Flame}, vol.~210, pp.~145--158, 2019.
+
+\bibitem{goldsborough2009chemical}
+S.~S. Goldsborough, ``A chemical kinetically based ignition delay correlation
+  for iso-octane covering a wide range of conditions including the ntc
+  region,''
+
+\bibitem{zhao2011correlations}
+Z.~Zhao, Z.~Chen, and S.~Chen, ``Correlations for the ignition delay times of
+  hydrogen/air mixtures,'' {\em Chinese science bulletin}, vol.~56, no.~2,
+  pp.~215--221, 2011.
+
+\bibitem{ji2016controlling}
+W.~Ji, P.~Zhao, T.~He, X.~He, A.~Farooq, and C.~K. Law, ``On the controlling
+  mechanism of the upper turnover states in the ntc regime,'' {\em Combustion
+  and Flame}, vol.~164, pp.~294--302, 2016.
+
+\bibitem{shah2019prediction}
+N.~Shah, P.~Zhao, D.~DelVescovo, and H.~Ge, ``Prediction of autoignition and
+  flame properties for multicomponent fuels using machine learning
+  techniques,'' tech. rep., SAE Technical Paper, 2019.
+
+\bibitem{dussan2019chemical}
+K.~Dussan, S.~H. Won, A.~D. Ure, F.~L. Dryer, and S.~Dooley, ``Chemical
+  functional group descriptor for ignition propensity of large hydrocarbon
+  liquid fuels,'' {\em Proceedings of the Combustion Institute}, vol.~37,
+  no.~4, pp.~5083--5093, 2019.
+
+\bibitem{chinta2019prediction}
+S.~Chinta, A.~Sivaram, and R.~Rengaswamy, ``Prediction error-based clustering
+  approach for multiple-model learning using statistical testing,'' {\em
+  Engineering Applications of Artificial Intelligence}, vol.~77, pp.~125--135,
+  2019.
+
+\bibitem{modernbook}
+E.~V. Anslyn and D.~A. Dougherty, {\em Modern physical organic chemistry}.
+\newblock University science books, 2006.
+
+\bibitem{bond_energy}
+S.~J. Blanksby and G.~B. Ellison, ``Bond dissociation energies of organic
+  molecules,'' {\em Accounts of chemical research}, vol.~36, no.~4,
+  pp.~255--263, 2003.
+
+\bibitem{propanemech}
+``Propane mechanism - aramcomech2.0,''
+\newblock Available at
+  \url{http://www.nuigalway.ie/media/researchcentres/combustionchemistrycentre/files/mechanismdownloads/aramcomech2/AramcoMech2.0.mech}.
+
+\bibitem{butanemech}
+``Butane mechanism - aramcomech1.3,''
+\newblock Available at
+  \url{http://www.nuigalway.ie/media/researchcentres/combustionchemistrycentre/files/mechanismdownloads/c4_49.dat}.
+
+\bibitem{pentanemech}
+``Pentane mechanism - aramcomech1.3,''
+\newblock Available at
+  \url{http://www.nuigalway.ie/media/researchcentres/combustionchemistrycentre/files/mechanismdownloads/nuigmech_c5_july2015_1215.chem}.
+
+\bibitem{hexanemech}
+K.~Zhang, C.~Banyon, C.~Togb{\'e}, P.~Dagaut, J.~Bugler, and H.~J. Curran,
+  ``Hexane mechanism,''
+\newblock Available at
+  \url{https://ars.els-cdn.com/content/image/1-s2.0-S0010218015002576-mmc1.zip}.
+
+\bibitem{heptanemech}
+K.~Zhang, C.~Banyon, J.~Bugler, H.~J. Curran, A.~Rodriguez, O.~Herbinet,
+  F.~Battin-Leclerc, C.~B'Chir, and K.~A. Heufer, ``Heptane mechanism,''
+\newblock Available at
+  \url{https://ars.els-cdn.com/content/image/1-s2.0-S0010218016301560-mmc1.zip}.
+
+\bibitem{c8toc16mech}
+W.~J. P. O. H. H. J.~C. Westbrook, C.~K. and E.~J. Silke, ``Octane to
+  hexa-decane mechanisms,''
+\newblock Available at
+  \url{https://combustion.llnl.gov/archived-mechanisms/alkanes/c8c16-nalkanes}.
+
+\bibitem{Horning_2001_thesis}
+D.~C. Horning, D.~Davidson, and R.~Hanson, {\em A study of the high-temperature
+  autoignition and thermal decomposition of hydrocarbons}.
+\newblock PhD thesis, Stanford University Stanford, California, 2001.
+
+\bibitem{Autoignition_n_Alkane}
+D.~C. Horning, D.~Davidson, and R.~Hanson, ``Study of the high-temperature
+  autoignition of n-alkane/o/ar mixtures,'' {\em Journal of Propulsion and
+  Power}, vol.~18, no.~2, pp.~363--371, 2002.
+
+\bibitem{n_Alkane_oxidation}
+D.~Davidson, J.~Herbon, D.~Horning, and R.~Hanson, ``Oh concentration time
+  histories in n-alkane oxidation,'' {\em International journal of chemical
+  kinetics}, vol.~33, no.~12, pp.~775--783, 2001.
+
+\bibitem{Lam_2013_thesis}
+K.~Y. Lam, {\em Shock tube measurements of oxygenated fuel combustion using
+  laser absorption spectroscopy}.
+\newblock PhD thesis, Stanford University, 2013.
+
+\bibitem{propane_const_V}
+K.-Y. Lam, Z.~Hong, D.~Davidson, and R.~Hanson, ``Shock tube ignition delay
+  time measurements in propane/o2/argon mixtures at near-constant-volume
+  conditions,'' {\em Proceedings of the Combustion Institute}, vol.~33, no.~1,
+  pp.~251--258, 2011.
+
+\bibitem{propene_oxidation}
+S.~M. Burke, U.~Burke, R.~Mc~Donagh, O.~Mathieu, I.~Osorio, C.~Keesee,
+  A.~Morones, E.~L. Petersen, W.~Wang, T.~A. DeVerter, {\em et~al.}, ``An
+  experimental and modeling study of propene oxidation. part 2: Ignition delay
+  time and flame speed measurements,'' {\em Combustion and Flame}, vol.~162,
+  no.~2, pp.~296--314, 2015.
+
+\bibitem{Normal_Alkanes_and_Simple_Oxygenates}
+D.~Davidson, S.~Ranganath, K.-Y. Lam, M.~Liaw, and Z.~Hong, ``Ignition delay
+  time measurements of normal alkanes and simple oxygenates,'' {\em Journal of
+  Propulsion and Power}, vol.~26, no.~2, pp.~280--287, 2010.
+
+\bibitem{blend_surrogate_fuels}
+B.~Gauthier, D.~F. Davidson, and R.~K. Hanson, ``Shock tube determination of
+  ignition delay times in full-blend and surrogate fuel mixtures,'' {\em
+  Combustion and Flame}, vol.~139, no.~4, pp.~300--311, 2004.
+
+\bibitem{iso_octane_heptane}
+D.~Davidson, M.~Oehlschlaeger, and R.~Hanson, ``Methyl concentration
+  time-histories during iso-octane and n-heptane oxidation and pyrolysis,''
+  {\em Proceedings of the Combustion Institute}, vol.~31, no.~1, pp.~321--328,
+  2007.
+
+\bibitem{n_heptane_methylcyclohexane}
+S.~S. Vasu, D.~F. Davidson, and R.~K. Hanson, ``Oh time-histories during
+  oxidation of n-heptane and methylcyclohexane at high pressures and
+  temperatures,'' {\em Combustion and Flame}, vol.~156, no.~4, pp.~736--749,
+  2009.
+
+\bibitem{n_heptane_oxidation}
+D.~Davidson, Z.~Hong, G.~Pilla, A.~Farooq, R.~Cook, and R.~Hanson,
+  ``Multi-species time-history measurements during n-heptane oxidation behind
+  reflected shock waves,'' {\em Combustion and flame}, vol.~157, no.~10,
+  pp.~1899--1905, 2010.
+
+\bibitem{Haylett_2011_thesis}
+D.~R. Haylett, {\em The development and application of aerosol shock tube
+  methods for the study of low-vapor-pressure fuels}.
+\newblock Stanford University, 2011.
+
+\bibitem{aerosol_shock_tube}
+D.~Davidson, D.~Haylett, and R.~Hanson, ``Development of an aerosol shock tube
+  for kinetic studies of low-vapor-pressure fuels,'' {\em Combustion and
+  Flame}, vol.~155, no.~1-2, pp.~108--117, 2008.
+
+\bibitem{aerosol_shock_tube_low_pressure}
+D.~R. Haylett, D.~F. Davidson, and R.~K. Hanson, ``Ignition delay times of
+  low-vapor-pressure fuels measured using an aerosol shock tube,'' {\em
+  Combustion and Flame}, vol.~159, no.~2, pp.~552--561, 2012.
+
+\bibitem{Second_generation_confo}
+D.~Haylett, D.~Davidson, and R.~Hanson, ``Second-generation aerosol shock tube:
+  an improved design,'' {\em Shock Waves}, vol.~22, no.~6, pp.~483--493, 2012.
+
+\bibitem{Second_Generation_shock_tube}
+D.~Haylett, D.~Davidson, and R.~Hanson, ``A second-generation aerosol shock
+  tube for combustion research,'' in {\em 48th AIAA Aerospace Sciences Meeting
+  Including the New Horizons Forum and Aerospace Exposition}, p.~196, 2010.
+
+\bibitem{n_Dodecane_Nano}
+D.~Jackson, D.~Davidson, and R.~Hanson, ``Application of an aerosol shock tube
+  for the kinetic studies of n-dodecane/nano-aluminum slurries,'' in {\em 44th
+  AIAA/ASME/SAE/ASEE joint propulsion conference \& exhibit}, p.~4767, 2008.
+
+\bibitem{n_Dodecane}
+S.~S. Vasu, D.~F. Davidson, Z.~Hong, V.~Vasudevan, and R.~K. Hanson,
+  ``n-dodecane oxidation at high-pressures: Measurements of ignition delay
+  times and oh concentration time-histories,'' {\em Proceedings of the
+  Combustion Institute}, vol.~32, no.~1, pp.~173--180, 2009.
+
+\bibitem{Vasu_2010_thesis}
+S.~S. Vasu, {\em Measurements of ignition times, OH time-histories, and
+  reaction rates in jet fuel and surrogate oxidation systems}.
+\newblock PhD thesis, PhD Thesis, Stanford University, California, United
+  States, 2010.
+
+\bibitem{n_hexadecane}
+D.~Haylett, D.~Davidson, R.~Cook, Z.~Hong, W.~Ren, S.~Pyun, and R.~Hanson,
+  ``Multi-species time-history measurements during n-hexadecane oxidation
+  behind reflected shock waves,'' {\em Proceedings of the Combustion
+  Institute}, vol.~34, no.~1, pp.~369--376, 2013.
+
+\bibitem{hexadecane_diesel}
+D.~Haylett, R.~Cook, D.~Davidson, and R.~Hanson, ``Oh and c2h4 species
+  time-histories during hexadecane and diesel ignition behind reflected shock
+  waves,'' {\em Proceedings of the Combustion Institute}, vol.~33, no.~1,
+  pp.~167--173, 2011.
+
+\bibitem{weininger1988smiles}
+D.~Weininger, ``Smiles, a chemical language and information system. 1.
+  introduction to methodology and encoding rules,'' {\em Journal of chemical
+  information and computer sciences}, vol.~28, no.~1, pp.~31--36, 1988.
+
+\bibitem{rdkit}
+G.~Landrum, ``Rdkit: Open-source cheminformatics,''
+
+\bibitem{clustering}
+G.~Ogbuabor and F.~Ugwoke, ``Clustering algorithm for a healthcare dataset
+  using silhouette score value,'' {\em International Journal of Computer
+  Science \& Information Technology}, vol.~10, no.~2, pp.~27--37, 2018.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay, ``Scikit-learn:
+  Machine learning in {P}ython,'' {\em Journal of Machine Learning Research},
+  vol.~12, pp.~2825--2830, 2011.
+
+\bibitem{Silhouettes}
+P.~J. Rousseeuw, ``Silhouettes: a graphical aid to the interpretation and
+  validation of cluster analysis,'' {\em Journal of computational and applied
+  mathematics}, vol.~20, pp.~53--65, 1987.
+
+\bibitem{recovering}
+R.~C. de~Amorim and C.~Hennig, ``Recovering the number of clusters in data sets
+  with noise features using feature rescaling factors,'' {\em Information
+  Sciences}, vol.~324, pp.~126--145, 2015.
+
+\bibitem{chawla2009data}
+N.~V. Chawla, ``Data mining for imbalanced datasets: An overview,'' in {\em
+  Data mining and knowledge discovery handbook}, pp.~875--886, Springer, 2009.
+
+\bibitem{statsmodels}
+S.~Seabold and J.~Perktold, ``statsmodels: Econometric and statistical modeling
+  with python,'' in {\em 9th Python in Science Conference}, 2010.
+
+\bibitem{handbook}
+J.~H. McDonald, {\em Handbook of biological statistics}, vol.~2.
+\newblock 2009.
+
+\end{thebibliography}

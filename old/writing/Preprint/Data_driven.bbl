@@ -1,0 +1,91 @@
+\begin{thebibliography}{10}
+
+\bibitem{computation}
+T.~Lu and C.~K. Law, ``Toward accommodating realistic fuel chemistry in
+  large-scale computations,'' {\em Progress in Energy and Combustion Science},
+  vol.~35, no.~2, pp.~192--215, 2009.
+
+\bibitem{horning}
+D.~C. Horning, ``A study of the high-temperature auto-ignition and thermal
+  decomposition of hydrocarbons,'' vol.~Report No. TSD-135, 2001.
+
+\bibitem{khaled2019universality}
+F.~Khaled and A.~Farooq, ``On the universality of ignition delay times of
+  distillate fuels at high temperatures: A statistical approach,'' {\em
+  Combustion and Flame}, vol.~210, pp.~145--158, 2019.
+
+\bibitem{goldsborough2009chemical}
+S.~S. Goldsborough, ``A chemical kinetically based ignition delay correlation
+  for iso-octane covering a wide range of conditions including the ntc
+  region,''
+
+\bibitem{zhao2011correlations}
+Z.~Zhao, Z.~Chen, and S.~Chen, ``Correlations for the ignition delay times of
+  hydrogen/air mixtures,'' {\em Chinese science bulletin}, vol.~56, no.~2,
+  pp.~215--221, 2011.
+
+\bibitem{ji2016controlling}
+W.~Ji, P.~Zhao, T.~He, X.~He, A.~Farooq, and C.~K. Law, ``On the controlling
+  mechanism of the upper turnover states in the ntc regime,'' {\em Combustion
+  and Flame}, vol.~164, pp.~294--302, 2016.
+
+\bibitem{shah2019prediction}
+N.~Shah, P.~Zhao, D.~DelVescovo, and H.~Ge, ``Prediction of autoignition and
+  flame properties for multicomponent fuels using machine learning
+  techniques,'' tech. rep., SAE Technical Paper, 2019.
+
+\bibitem{dussan2019chemical}
+K.~Dussan, S.~H. Won, A.~D. Ure, F.~L. Dryer, and S.~Dooley, ``Chemical
+  functional group descriptor for ignition propensity of large hydrocarbon
+  liquid fuels,'' {\em Proceedings of the Combustion Institute}, vol.~37,
+  no.~4, pp.~5083--5093, 2019.
+
+\bibitem{chinta2019prediction}
+S.~Chinta, A.~Sivaram, and R.~Rengaswamy, ``Prediction error-based clustering
+  approach for multiple-model learning using statistical testing,'' {\em
+  Engineering Applications of Artificial Intelligence}, vol.~77, pp.~125--135,
+  2019.
+
+\bibitem{modernbook}
+E.~V. Anslyn and D.~A. Dougherty, {\em Modern physical organic chemistry}.
+\newblock University science books, 2006.
+
+\bibitem{bond_energy}
+S.~J. Blanksby and G.~B. Ellison, ``Bond dissociation energies of organic
+  molecules,'' {\em Accounts of chemical research}, vol.~36, no.~4,
+  pp.~255--263, 2003.
+
+\bibitem{propanemech}
+``Propane mechanism - aramcomech2.0,''
+\newblock Available at
+  \url{http://www.nuigalway.ie/media/researchcentres/combustionchemistrycentre/files/mechanismdownloads/aramcomech2/AramcoMech2.0.mech}.
+
+\bibitem{butanemech}
+``Butane mechanism - aramcomech1.3,''
+\newblock Available at
+  \url{http://www.nuigalway.ie/media/researchcentres/combustionchemistrycentre/files/mechanismdownloads/c4_49.dat}.
+
+\bibitem{pentanemech}
+``Pentane mechanism - aramcomech1.3,''
+\newblock Available at
+  \url{http://www.nuigalway.ie/media/researchcentres/combustionchemistrycentre/files/mechanismdownloads/nuigmech_c5_july2015_1215.chem}.
+
+\bibitem{hexanemech}
+K.~Zhang, C.~Banyon, C.~Togb{\'e}, P.~Dagaut, J.~Bugler, and H.~J. Curran,
+  ``Hexane mechanism,''
+\newblock Available at
+  \url{https://ars.els-cdn.com/content/image/1-s2.0-S0010218015002576-mmc1.zip}.
+
+\bibitem{heptanemech}
+K.~Zhang, C.~Banyon, J.~Bugler, H.~J. Curran, A.~Rodriguez, O.~Herbinet,
+  F.~Battin-Leclerc, C.~B'Chir, and K.~A. Heufer, ``Heptane mechanism,''
+\newblock Available at
+  \url{https://ars.els-cdn.com/content/image/1-s2.0-S0010218016301560-mmc1.zip}.
+
+\bibitem{c8toc16mech}
+W.~J. P. O. H. H. J.~C. Westbrook, C.~K. and E.~J. Silke, ``Octane to
+  hexa-decane mechanisms,''
+\newblock Available at
+  \url{https://combustion.llnl.gov/archived-mechanisms/alkanes/c8c16-nalkanes}.
+
+\end{thebibliography}

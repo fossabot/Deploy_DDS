@@ -1,0 +1,110 @@
+% Sample file for KONA
+% For ASCII pLaTeX2e
+% This file requires article.cls
+% 2017.01.13 by Nakanishi Printing Co., Ltd
+% 2017.06.26 modified by Hao Shi, MSM, University of Twente, the Netherlands
+% 2019.01.10 modified by Nakanishi Printing Co., Ltd
+
+\documentclass[twocolumn, 10pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[format=hang,labelfont=bf,textfont=small,singlelinecheck=false,justification=raggedright,margin={12pt,12pt},figurename=Fig.]{caption}
+\usepackage{titlesec}
+\usepackage{textcomp}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\affiliation#1{\gdef\@affiliation{#1}}
+\def\abstract#1{\gdef\@abstract{#1}}
+\def\graphabst#1{\gdef\@graphabst{#1}}
+\def\keywords#1{\gdef\@keywords{#1}}
+\def\corresp#1{\gdef\@corresp{#1}}
+\def\bioauthor#1#2{\centerline{\textbf{#1}}\par #2}
+\newcommand{\MakeTitle}{
+  \newpage
+  \null
+  \vskip 2em%
+  \begin{center}%
+  \Large \@title\par
+  \vskip 1em%
+  \large \@author
+  \end{center}
+  \noindent\@affiliation\par
+  \vskip 1em%
+  \noindent\@corresp\par
+  \vskip 1em%
+  \noindent\@abstract\par
+  \noindent\@graphabst\par
+  \vskip 1em%
+  \noindent\@keywords\par
+}
+\makeatother
+
+\setlength{\columnsep}{0.8cm}
+
+\newcommand*{\TitleFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{}{n}%
+      \fontsize{18}{12}%
+      \selectfont}
+
+\titleformat{\section}
+  {\normalfont\fontsize{10}{11}\bfseries}{\thesection.}{2pt}{}
+  \titlespacing*{\section}{0pt}{12pt}{6pt}
+
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{10}{10}\bfseries}{\thesubsection.}{2pt}{}
+  \titlespacing*{\subsection}{0pt}{6pt}{0pt}
+  
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{10}{10}\bfseries}{\thesubsubsection.}{2pt}{}
+  \titlespacing*{\subsubsection}{0pt}{6pt}{0pt}
+  
+\renewcommand{\baselinestretch}{1.10}\normalsize
+
+
+\graphicspath{ {./images/}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\TitleFont Results}
+\author{Pragnesh}
+\affiliation{$^{1}$IITM MECH \\
+$^{2}$IITM Maths}
+\corresp{$^{\ast }$correspopnding author pragenshrana244@gmail.com, Tel.: 9033976977}
+
+\abstract{\textbf{Abstract:}  Contains different results}
+
+\graphabst{
+\begin{center}
+%%%%\includegraphics[scale=0.65,angle=0]{Graphical_Abstract/KONA_graphical_abstract_v4.pdf}
+\end{center}
+}
+\keywords{\textbf{Keywords:} results}
+
+
+\begin{document}
+
+\onecolumn
+\MakeTitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model with linear combinationskri of fuel }
+
+\begin{equation}
+\tau = A T^{n} P^{m} \chi_F^{n_F} \chi_O^{n_O} \chi_D^{n_D} \exp \bigg( \frac{\tilde{E}_0 + \tilde{E}_{PS}n_{PS} + \tilde{E}_{SS}n_{SS} + \tilde{E}_{PH}n_{PH} + \tilde{E}_{SH}n_{SH}}{T}\bigg)
+\end{equation}
+
+
+\subsection{Format}
+something
+
+
+
+\end{document}
+
+
+

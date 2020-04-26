@@ -44,7 +44,7 @@ class reference_point():
 			if(data_centroid == None):
 				return None
 
-	def other_reference_point(self,data,centroid,child_label):
+	def other_reference_point(self,data,centroid,child_label,dir_name='final_cluster_reference_points'):
 		'''
 		It will calculate the other reference point apart from centroid.
 		1. farthest point from centroid
@@ -54,6 +54,8 @@ class reference_point():
 		5. Other extreme points by mentod find_extreme_point
 		for specific cluster or data passed.
 		return : all four specified points
+
+		dir_name = if default --- generate for optimized nodes if passed then can work
 		'''
 		if(centroid.all() != None):
 		    data_passed = copy.deepcopy(data) #just copy of data points
@@ -86,13 +88,13 @@ class reference_point():
 		    Point_min_dist_from_origin = data_passed.loc[min_distance_from_origin_PointIndex,:]
 
 
-		    SF.check_directory(str(self.curr_directory)+'/object_file/final_cluster_reference_points/')
+		    SF.check_directory(str(self.curr_directory)+'/object_file/'+str(dir_name)+'/')
 		    ######  Storing above points as object files  ##############
 		    #filenames naming convention just for sake of ease
-		    filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/final_cluster_reference_points/maxCentroid_'+str(child_label)+'.sav'
-		    filename_min_dist_centroid =  str(self.curr_directory)+'/object_file/final_cluster_reference_points/minCentroid_'+str(child_label)+'.sav'
-		    filename_max_dist_origin  =  str(self.curr_directory)+'/object_file/final_cluster_reference_points/maxOrigin_'+str(child_label)+'.sav' #
-		    filename_min_dist_origin  =  str(self.curr_directory)+'/object_file/final_cluster_reference_points/minOrigin_'+str(child_label)+'.sav'
+		    filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/'+str(dir_name)+'/maxCentroid_'+str(child_label)+'.sav'
+		    filename_min_dist_centroid =  str(self.curr_directory)+'/object_file/'+str(dir_name)+'/minCentroid_'+str(child_label)+'.sav'
+		    filename_max_dist_origin  =  str(self.curr_directory)+'/object_file/'+str(dir_name)+'/maxOrigin_'+str(child_label)+'.sav' #
+		    filename_min_dist_origin  =  str(self.curr_directory)+'/object_file/'+str(dir_name)+'/minOrigin_'+str(child_label)+'.sav'
 		    #dumping object files
 		    # joblib.dump(Point_max_dist_from_centroid,filename_max_dist_centroid )
 		    # joblib.dump(Point_min_dist_from_centroid,filename_min_dist_centroid ) 
@@ -102,7 +104,7 @@ class reference_point():
 		    #other reference point
 		    other_ref_points = self.find_extreme_point(data_passed,Point_max_dist_from_centroid,centroid)
 		    for i in range(len(other_ref_points)):
-		        filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/final_cluster_reference_points/other_refPoi_'+str(i)+'_'+str(child_label)+'.sav'
+		        filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/'+str(dir_name)+'/other_refPoi_'+str(i)+'_'+str(child_label)+'.sav'
 		        joblib.dump(other_ref_points[i],filename_max_dist_centroid )
 		else:
 		    pass

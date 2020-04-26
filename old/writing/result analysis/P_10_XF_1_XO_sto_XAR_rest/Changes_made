@@ -1,0 +1,16 @@
+chemkin_all : folder contains all the data 
+chemkin : data with 0 ignition delay is removed for bettter plotting 
+10_BAR_result folder contains all the result 
+
+changes::::
+some result files are deleted as they old mechanism are used and they give bad results
+list of such file and name changed:
+'Useful to find actual mechanism'
+detailed_heptane_10_export.csv  - deleted
+Updated_Heptane_10_export.csv - C7_10_export.csv
+updatd_hexane_10_export.csv - C6_10_export.csv
+
+Major chnage:
+It was founnd that update_hexane was wrongly simulated with heptae mechanism so, update_hexane folder name is replaced with updated_heptane_NOT_hexane.
+
+and updated_hexane mechanism is correctly simulated 

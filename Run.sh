@@ -142,23 +142,23 @@ cd "$curr_location/plots/"
 #gnerating pdf from tex file 
 pdflatex Training.tex > /dev/null 2>&1  #to not print output 
 #opeing the pdf file 
-xdg-open Training.pdf
+# xdg-open Training.pdf
 echo 'Plotting of Training done'
 
 pdflatex Testing.tex > /dev/null 2>&1
-xdg-open Testing.pdf
+# xdg-open Testing.pdf
 echo 'Plotting of Testing done'
 
 pdflatex Datasize.tex > /dev/null 2>&1
-xdg-open Datasize.pdf
+# xdg-open Datasize.pdf
 echo 'Plotting of Datasize done'
 
 pdflatex MaxRelError.tex > /dev/null 2>&1
-xdg-open MaxRelError.pdf
+# xdg-open MaxRelError.pdf
 echo 'Plotting of MaxRelError done'
 
 pdflatex ChildLabel.tex > /dev/null 2>&1
-xdg-open ChildLabel.pdf
+# xdg-open ChildLabel.pdf
 echo 'Plotting of Labels done'
 
 cd 
@@ -171,7 +171,7 @@ python coef_tikz_compatible.py "$curr_location/plots/"
 dir_to_plot="$curr_location/plots/"
 cd $dir_to_plot
 pdflatex coefficient.tex > /dev/null 2>&1
-xdg-open coefficient.pdf
+# xdg-open coefficient.pdf
 echo 'Plotting of Coefficients done'
 
 #in plotting dir, deleting all files except .pdf
