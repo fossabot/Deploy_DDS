@@ -147,9 +147,9 @@ class Flag():
                 Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
                 Tree.Implement_Tree()
                 
-                #optimizing cluster
-                final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
-                final_clusters.optimize_cluster()
+                # #optimizing cluster
+                # final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
+                # final_clusters.optimize_cluster()
 
                 print('\n\n Executed Normally! Please check plot Folder')
                 # os.system('sh ./for_ploting.sh')
@@ -169,10 +169,10 @@ class Flag():
                 testset_obj_old.external_testset(dataset)
 
                 #new
-                from external_test import external_test 
-                testset_obj = external_test(Flag_value,curr_directory)
-                testset_obj.external_testset(dataset)
-                print('\n\n Executed Normally! Please check plot Folder')
+                # from external_test import external_test 
+                # testset_obj = external_test(Flag_value,curr_directory)
+                # testset_obj.external_testset(dataset)
+                # print('\n\n Executed Normally! Please check plot Folder')
                 
         elif(Flag_value == '-p'):
                 '''

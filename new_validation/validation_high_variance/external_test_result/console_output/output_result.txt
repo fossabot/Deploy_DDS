@@ -1,0 +1,163 @@
+
+ Result for cluster-10:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-10 :nan
+ Result for cluster-12:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -14.355454312511402      -14.290145844877355    0.00454938354525832
+
+1: -50.778256246671745      -36.00458770009506    0.2909447790961712
+
+
+ Maximum Relative Error in external data for cluster-12 :0.2909447790961712
+ Result for cluster-13:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -13.420573671488855      -9.692703671180901    0.2777727757068667
+
+
+ Maximum Relative Error in external data for cluster-13 :0.2777727757068667
+ Result for cluster-14:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -17.221437347201565      -7.236049168047482    0.5798231574890397
+
+
+ Maximum Relative Error in external data for cluster-14 :0.5798231574890397
+ Result for cluster-15:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-15 :nan
+ Result for cluster-17:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -25.41725297787797      -16.006724731097645    0.3702417509465253
+
+1: -10.052140411218744      -15.832101328627973    0.5749980283759738
+
+
+ Maximum Relative Error in external data for cluster-17 :0.5749980283759738
+ Result for cluster-19:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-19 :nan
+ Result for cluster-20:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-20 :nan
+ Result for cluster-21:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-21 :nan
+ Result for cluster-22:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-22 :nan
+ Result for cluster-23:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -172.4332446854841      -142.60067258958824    0.17300939937835116
+
+1: -104.08666765064686      -96.18773414988414    0.07588804290742067
+
+2: -158.15800651369773      -144.00712526957923    0.08947306276835827
+
+
+ Maximum Relative Error in external data for cluster-23 :0.17300939937835116
+ Result for cluster-24:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-24 :nan
+ Result for cluster-25:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -17.754373410079264      -12.191006361116518    0.3133519229580014
+
+1: -49.221973938598786      -26.98244866251899    0.45182107698123114
+
+
+ Maximum Relative Error in external data for cluster-25 :0.45182107698123114
+ Result for cluster-26:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -44.16807160248386      -32.20113718133702    0.2709408399997673
+
+
+ Maximum Relative Error in external data for cluster-26 :0.2709408399997673
+ Result for cluster-27:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-27 :nan
+ Result for cluster-28:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -61.589475842955025      -45.97324599255056    0.2535535436317688
+
+
+ Maximum Relative Error in external data for cluster-28 :0.2535535436317688
+ Result for cluster-29:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -50.57665391522521      23.04875894888078    1.4557193322340836
+
+1: -157.133556012749      -135.34038442434505    0.13869202824275026
+
+2: -161.20097658726817      -136.24805859840365    0.1547938388286125
+
+3: -54.03142504455136      23.72951457942471    1.4391798765229429
+
+4: -46.79073622456273      -80.879933980829    0.7285458726843284
+
+
+ Maximum Relative Error in external data for cluster-29 :1.4557193322340836
+ Result for cluster-30:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+
+ Maximum Relative Error in external data for cluster-30 :nan
+ Result for cluster-31:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -16.82376114543047      -25.7307207455669    0.5294273690134779
+
+1: -36.547632218945715      -25.971855732632346    0.2893696757961533
+
+2: -53.97545092158064      -41.40449490482081    0.2329013616768817
+
+
+ Maximum Relative Error in external data for cluster-31 :0.5294273690134779
+ Result for cluster-32:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -59.714563468815534      -31.455012758852988    0.4732438632783509
+
+
+ Maximum Relative Error in external data for cluster-32 :0.4732438632783509
+ Result for cluster-33:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -41.69626950980074      -49.22551454530654    0.18057358905299764
+
+1: -48.08024762214034      -65.89595600531501    0.3705411112519056
+
+
+ Maximum Relative Error in external data for cluster-33 :0.3705411112519056
+ Result for cluster-35:
+
+ Index          Y_actual            Y_Predicted                Relative Error
+0: -48.223193932788135      -41.85469907356881    0.13206290043947563
+
+1: -53.11274983108426      -42.40732464596782    0.20156036392698848
+
+
+ Maximum Relative Error in external data for cluster-35 :0.20156036392698848

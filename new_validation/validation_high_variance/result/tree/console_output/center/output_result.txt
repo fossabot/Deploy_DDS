@@ -4,32 +4,32 @@
 
 ######################################################################################################################
 
-Cluster Label: 7
+Cluster Label: 14
 
 ####################################################################
 ########################       OUTPUT     ##########################
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       1.000
-Model:                            OLS   Adj. R-squared:                    nan
-Method:                 Least Squares   F-statistic:                     0.000
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):                nan
-Time:                        17:39:57   Log-Likelihood:                 63.586
-No. Observations:                   2   AIC:                            -123.2
-Df Residuals:                       0   BIC:                            -125.8
+Dep. Variable:                  y_act   R-squared:                       0.995
+Model:                            OLS   Adj. R-squared:                  0.991
+Method:                 Least Squares   F-statistic:                     210.7
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):             0.0438
+Time:                        20:41:39   Log-Likelihood:                 1.7165
+No. Observations:                   3   AIC:                            0.5669
+Df Residuals:                       1   BIC:                            -1.236
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant       9.3230        inf          0        nan         nan         nan
-x              1.5581        inf          0        nan         nan         nan
+Constant     -10.3880      0.143    -72.587      0.009     -12.206      -8.570
+x              0.6459      0.044     14.516      0.044       0.081       1.211
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   1.000
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.333
-Skew:                           0.000   Prob(JB):                        0.846
-Kurtosis:                       1.000   Cond. No.                         155.
+Omnibus:                          nan   Durbin-Watson:                   2.546
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.283
+Skew:                           0.057   Prob(JB):                        0.868
+Kurtosis:                       1.500   Cond. No.                         3.40
 ==============================================================================
 
 Warnings:
@@ -38,47 +38,47 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:9.322952718816275
+Constant:-10.387980335003345
 
-x:1.558122102299758
+x:0.6458727157652364
 
 
- Maximum  Relative Error in Training : 7.917879356888934e-16
- Training R2 :1.0
-Training Adjusted R2 : nan
+ Maximum  Relative Error in Training : 0.01552766613133391
+ Training R2 :0.9952765652704576
+Training Adjusted R2 : 0.9905531305409152
 Testing R2 :0.0
-MSR_testing :44.021556988902866
+MSR_testing :1.4514660181468741
 
 ######################################################################################################################
 
 ######################################################################################################################
 
-Cluster Label: 9
+Cluster Label: 17
 
 ####################################################################
 ########################       OUTPUT     ##########################
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.999
-Model:                            OLS   Adj. R-squared:                  0.998
-Method:                 Least Squares   F-statistic:                     2631.
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):           1.63e-05
-Time:                        17:39:57   Log-Likelihood:                -6.8101
-No. Observations:                   5   AIC:                             17.62
-Df Residuals:                       3   BIC:                             16.84
+Dep. Variable:                  y_act   R-squared:                       0.989
+Model:                            OLS   Adj. R-squared:                  0.983
+Method:                 Least Squares   F-statistic:                     173.5
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):            0.00571
+Time:                        20:41:40   Log-Likelihood:                -1.8970
+No. Observations:                   4   AIC:                             7.794
+Df Residuals:                       2   BIC:                             6.567
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant       9.6903      0.571     16.960      0.000       7.872      11.509
-x              1.8470      0.036     51.295      0.000       1.732       1.962
+Constant     -14.2605      0.278    -51.331      0.000     -15.456     -13.065
+x              0.8644      0.066     13.172      0.006       0.582       1.147
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   3.155
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.507
-Skew:                           0.032   Prob(JB):                        0.776
-Kurtosis:                       1.442   Cond. No.                         16.6
+Omnibus:                          nan   Durbin-Watson:                   2.359
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.249
+Skew:                           0.360   Prob(JB):                        0.883
+Kurtosis:                       2.012   Cond. No.                         4.28
 ==============================================================================
 
 Warnings:
@@ -87,22 +87,316 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:9.69028536193168
+Constant:-14.260490706400919
 
-x:1.8470255598997773
+x:0.8643858422248786
 
 
- Maximum  Relative Error in Training : 0.07694935660458975
- Training R2 :0.9988611110275724
-Training Adjusted R2 : 0.9984814813700965
+ Maximum  Relative Error in Training : 0.03910589291182965
+ Training R2 :0.9886032743346721
+Training Adjusted R2 : 0.9829049115020081
 Testing R2 :0.0
-MSR_testing :1.6173920020206745
+MSR_testing :0.330920283081317
 
 ######################################################################################################################
 
 ######################################################################################################################
 
-Cluster Label: 15
+Cluster Label: 19
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.952
+Model:                            OLS   Adj. R-squared:                  0.944
+Method:                 Least Squares   F-statistic:                     119.3
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           3.50e-05
+Time:                        20:41:40   Log-Likelihood:                -13.204
+No. Observations:                   8   AIC:                             30.41
+Df Residuals:                       6   BIC:                             30.57
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -19.7304      0.528    -37.389      0.000     -21.022     -18.439
+x              1.2035      0.110     10.921      0.000       0.934       1.473
+==============================================================================
+Omnibus:                        0.262   Durbin-Watson:                   2.242
+Prob(Omnibus):                  0.877   Jarque-Bera (JB):                0.393
+Skew:                           0.212   Prob(JB):                        0.822
+Kurtosis:                       2.001   Cond. No.                         4.92
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-19.730418577474175
+
+x:1.2035263005810268
+
+
+ Maximum  Relative Error in Training : 0.09559692090898114
+ Training R2 :0.9521061078950352
+Training Adjusted R2 : 0.9441237925442078
+Testing R2 :0.0
+MSR_testing :0.15411607664283114
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 22
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.967
+Model:                            OLS   Adj. R-squared:                  0.964
+Method:                 Least Squares   F-statistic:                     266.6
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           5.39e-08
+Time:                        20:41:41   Log-Likelihood:                -19.379
+No. Observations:                  11   AIC:                             42.76
+Df Residuals:                       9   BIC:                             43.55
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -26.6075      0.480    -55.406      0.000     -27.694     -25.521
+x              1.4907      0.091     16.329      0.000       1.284       1.697
+==============================================================================
+Omnibus:                        0.881   Durbin-Watson:                   1.862
+Prob(Omnibus):                  0.644   Jarque-Bera (JB):                0.676
+Skew:                           0.252   Prob(JB):                        0.713
+Kurtosis:                       1.895   Cond. No.                         5.39
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-26.60745398197475
+
+x:1.49068058873446
+
+
+ Maximum  Relative Error in Training : 0.10273858009954467
+ Training R2 :0.9673468625706377
+Training Adjusted R2 : 0.9637187361895975
+Testing R2 :0.9855284252043226
+MSR_testing :0.8039425123910942
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 24
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.971
+Model:                            OLS   Adj. R-squared:                  0.969
+Method:                 Least Squares   F-statistic:                     401.8
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.36e-10
+Time:                        20:41:41   Log-Likelihood:                -29.763
+No. Observations:                  14   AIC:                             63.53
+Df Residuals:                      12   BIC:                             64.80
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -35.1114      0.587    -59.859      0.000     -36.389     -33.833
+x              1.8899      0.094     20.045      0.000       1.685       2.095
+==============================================================================
+Omnibus:                        0.506   Durbin-Watson:                   2.442
+Prob(Omnibus):                  0.776   Jarque-Bera (JB):                0.576
+Skew:                           0.297   Prob(JB):                        0.750
+Kurtosis:                       2.203   Cond. No.                         6.23
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-35.11143370634935
+
+x:1.8899343306111396
+
+
+ Maximum  Relative Error in Training : 0.10464183457502625
+ Training R2 :0.9710018186925439
+Training Adjusted R2 : 0.9685853035835892
+Testing R2 :-1.138227801883608
+MSR_testing :1.5621627084195113
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 28
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.990
+Model:                            OLS   Adj. R-squared:                  0.989
+Method:                 Least Squares   F-statistic:                     1031.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           2.02e-11
+Time:                        20:41:42   Log-Likelihood:                -21.059
+No. Observations:                  12   AIC:                             46.12
+Df Residuals:                      10   BIC:                             47.09
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -40.6363      0.446    -91.082      0.000     -41.630     -39.642
+x              2.0372      0.063     32.103      0.000       1.896       2.179
+==============================================================================
+Omnibus:                        1.453   Durbin-Watson:                   2.985
+Prob(Omnibus):                  0.484   Jarque-Bera (JB):                1.032
+Skew:                          -0.652   Prob(JB):                        0.597
+Kurtosis:                       2.398   Cond. No.                         7.09
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-40.636315540402066
+
+x:2.0371639928932144
+
+
+ Maximum  Relative Error in Training : 0.07257897966962217
+ Training R2 :0.9903903791408551
+Training Adjusted R2 : 0.9894294170549407
+Testing R2 :0.8996046647524524
+MSR_testing :0.8101871282894995
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 30
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.971
+Model:                            OLS   Adj. R-squared:                  0.969
+Method:                 Least Squares   F-statistic:                     693.5
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.44e-17
+Time:                        20:41:42   Log-Likelihood:                -58.772
+No. Observations:                  23   AIC:                             121.5
+Df Residuals:                      21   BIC:                             123.8
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -49.8199      0.682    -73.026      0.000     -51.239     -48.401
+x              2.1619      0.082     26.334      0.000       1.991       2.333
+==============================================================================
+Omnibus:                        0.278   Durbin-Watson:                   2.094
+Prob(Omnibus):                  0.870   Jarque-Bera (JB):                0.176
+Skew:                          -0.187   Prob(JB):                        0.916
+Kurtosis:                       2.789   Cond. No.                         8.34
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-49.81993918020868
+
+x:2.1618594557167707
+
+
+ Maximum  Relative Error in Training : 0.1012805941987897
+ Training R2 :0.9706083532874941
+Training Adjusted R2 : 0.969208751063089
+Testing R2 :0.9700617008023616
+MSR_testing :9.385836607098048
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 32
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.978
+Model:                            OLS   Adj. R-squared:                  0.978
+Method:                 Least Squares   F-statistic:                     1666.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           2.25e-32
+Time:                        20:41:43   Log-Likelihood:                -113.83
+No. Observations:                  39   AIC:                             231.7
+Df Residuals:                      37   BIC:                             235.0
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -67.1739      0.745    -90.173      0.000     -68.683     -65.665
+x              2.7480      0.067     40.819      0.000       2.612       2.884
+==============================================================================
+Omnibus:                        0.287   Durbin-Watson:                   1.881
+Prob(Omnibus):                  0.866   Jarque-Bera (JB):                0.385
+Skew:                          -0.183   Prob(JB):                        0.825
+Kurtosis:                       2.680   Cond. No.                         11.2
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-67.1739446717105
+
+x:2.7479621667072434
+
+
+ Maximum  Relative Error in Training : 0.10250920880295877
+ Training R2 :0.9782764761735729
+Training Adjusted R2 : 0.9776893539079938
+Testing R2 :0.9145671359577429
+MSR_testing :46.91656028029651
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 36
 
 ####################################################################
 ########################       OUTPUT     ##########################
@@ -110,24 +404,24 @@ Cluster Label: 15
                             OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                  y_act   R-squared:                       0.996
-Model:                            OLS   Adj. R-squared:                  0.995
-Method:                 Least Squares   F-statistic:                     1239.
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):           3.48e-07
-Time:                        17:39:59   Log-Likelihood:                -12.079
-No. Observations:                   7   AIC:                             28.16
-Df Residuals:                       5   BIC:                             28.05
+Model:                            OLS   Adj. R-squared:                  0.996
+Method:                 Least Squares   F-statistic:                     6389.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.28e-33
+Time:                        20:41:44   Log-Likelihood:                -65.743
+No. Observations:                  29   AIC:                             135.5
+Df Residuals:                      27   BIC:                             138.2
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant       4.6541      0.766      6.077      0.002       2.685       6.623
-x              1.8888      0.054     35.201      0.000       1.751       2.027
+Constant     -81.8178      0.465   -176.018      0.000     -82.772     -80.864
+x              2.7631      0.035     79.931      0.000       2.692       2.834
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   2.994
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.607
-Skew:                           0.146   Prob(JB):                        0.738
-Kurtosis:                       1.587   Cond. No.                         18.0
+Omnibus:                        1.484   Durbin-Watson:                   1.684
+Prob(Omnibus):                  0.476   Jarque-Bera (JB):                1.254
+Skew:                          -0.336   Prob(JB):                        0.534
+Kurtosis:                       2.234   Cond. No.                         13.9
 ==============================================================================
 
 Warnings:
@@ -136,16 +430,114 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:4.654118700937018
+Constant:-81.81781068388824
 
-x:1.8887890777669067
+x:2.7631012096495517
 
 
- Maximum  Relative Error in Training : 0.10007518101117722
- Training R2 :0.9959809594100992
-Training Adjusted R2 : 0.995177151292119
-Testing R2 :0.0
-MSR_testing :3.554927712414767
+ Maximum  Relative Error in Training : 0.08408884211550931
+ Training R2 :0.9957917356421478
+Training Adjusted R2 : 0.9956358739992645
+Testing R2 :0.9907480980946967
+MSR_testing :10.071539543363558
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 38
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.978
+Model:                            OLS   Adj. R-squared:                  0.978
+Method:                 Least Squares   F-statistic:                     2446.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           2.79e-47
+Time:                        20:41:44   Log-Likelihood:                -193.93
+No. Observations:                  57   AIC:                             391.9
+Df Residuals:                      55   BIC:                             395.9
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -99.7659      1.030    -96.822      0.000    -101.831     -97.701
+x              3.0601      0.062     49.457      0.000       2.936       3.184
+==============================================================================
+Omnibus:                        1.673   Durbin-Watson:                   1.743
+Prob(Omnibus):                  0.433   Jarque-Bera (JB):                1.466
+Skew:                           0.249   Prob(JB):                        0.481
+Kurtosis:                       2.392   Cond. No.                         17.5
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-99.76589732117664
+
+x:3.0601432643309874
+
+
+ Maximum  Relative Error in Training : 0.1245766974488623
+ Training R2 :0.9780090482457716
+Training Adjusted R2 : 0.9776092127593311
+Testing R2 :0.981767877873685
+MSR_testing :45.958280093975205
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 41
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.998
+Model:                            OLS   Adj. R-squared:                  0.998
+Method:                 Least Squares   F-statistic:                     7944.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.09e-20
+Time:                        20:41:45   Log-Likelihood:                -36.426
+No. Observations:                  16   AIC:                             76.85
+Df Residuals:                      14   BIC:                             78.40
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant    -115.3397      0.675   -170.968      0.000    -116.787    -113.893
+x              3.1387      0.035     89.130      0.000       3.063       3.214
+==============================================================================
+Omnibus:                        2.194   Durbin-Watson:                   2.652
+Prob(Omnibus):                  0.334   Jarque-Bera (JB):                1.043
+Skew:                          -0.151   Prob(JB):                        0.593
+Kurtosis:                       1.786   Cond. No.                         20.5
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-115.33970551896928
+
+x:3.1386890683906334
+
+
+ Maximum  Relative Error in Training : 0.07149722764856438
+ Training R2 :0.9982408046757566
+Training Adjusted R2 : 0.998115147866882
+Testing R2 :0.9991411903615103
+MSR_testing :3.3460250947083683
 
 ######################################################################################################################
 
@@ -159,24 +551,24 @@ Cluster Label: 17
                             OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                  y_act   R-squared:                       1.000
-Model:                            OLS   Adj. R-squared:                  1.000
-Method:                 Least Squares   F-statistic:                     9542.
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):            0.00652
-Time:                        17:39:59   Log-Likelihood:                 1.4990
-No. Observations:                   3   AIC:                             1.002
-Df Residuals:                       1   BIC:                           -0.8007
+Model:                            OLS   Adj. R-squared:                    nan
+Method:                 Least Squares   F-statistic:                     0.000
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):                nan
+Time:                        20:55:28   Log-Likelihood:                 63.363
+No. Observations:                   2   AIC:                            -122.7
+Df Residuals:                       0   BIC:                            -125.3
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant       2.5386      0.151     16.835      0.038       0.623       4.455
-x              1.8486      0.019     97.683      0.007       1.608       2.089
+Constant     -10.3460        inf         -0        nan         nan         nan
+x              1.0518        inf          0        nan         nan         nan
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   1.023
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.306
-Skew:                          -0.222   Prob(JB):                        0.858
-Kurtosis:                       1.500   Cond. No.                         8.19
+Omnibus:                          nan   Durbin-Watson:                   0.200
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.333
+Skew:                           0.000   Prob(JB):                        0.846
+Kurtosis:                       1.000   Cond. No.                         5.29
 ==============================================================================
 
 Warnings:
@@ -185,47 +577,47 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:2.538648389928984
+Constant:-10.34599664555432
 
-x:1.84860516540546
+x:1.0517690468287877
 
 
- Maximum  Relative Error in Training : 0.026351048962137028
- Training R2 :0.9998952115611945
-Training Adjusted R2 : 0.9997904231223891
+ Maximum  Relative Error in Training : 6.442607554645955e-16
+ Training R2 :1.0
+Training Adjusted R2 : nan
 Testing R2 :0.0
-MSR_testing :0.4749248397049017
+MSR_testing :4.641748370067369
 
 ######################################################################################################################
 
 ######################################################################################################################
 
-Cluster Label: 19
+Cluster Label: 21
 
 ####################################################################
 ########################       OUTPUT     ##########################
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.996
-Model:                            OLS   Adj. R-squared:                  0.996
-Method:                 Least Squares   F-statistic:                     1835.
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):           9.86e-10
-Time:                        17:39:59   Log-Likelihood:                -13.224
-No. Observations:                   9   AIC:                             30.45
-Df Residuals:                       7   BIC:                             30.84
+Dep. Variable:                  y_act   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                    nan
+Method:                 Least Squares   F-statistic:                     0.000
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):                nan
+Time:                        20:55:28   Log-Likelihood:                 63.456
+No. Observations:                   2   AIC:                            -122.9
+Df Residuals:                       0   BIC:                            -125.5
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant      -0.0120      0.465     -0.026      0.980      -1.111       1.087
-x              1.8781      0.044     42.840      0.000       1.774       1.982
+Constant     -17.5045        inf         -0        nan         nan         nan
+x              1.5409        inf          0        nan         nan         nan
 ==============================================================================
-Omnibus:                        0.595   Durbin-Watson:                   2.174
-Prob(Omnibus):                  0.743   Jarque-Bera (JB):                0.551
-Skew:                           0.277   Prob(JB):                        0.759
-Kurtosis:                       1.921   Cond. No.                         12.4
+Omnibus:                          nan   Durbin-Watson:                   0.024
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.333
+Skew:                           0.000   Prob(JB):                        0.846
+Kurtosis:                       1.000   Cond. No.                         6.53
 ==============================================================================
 
 Warnings:
@@ -234,16 +626,16 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:-0.01202184136830975
+Constant:-17.504528447725782
 
-x:1.8780737581101967
+x:1.5409044611384384
 
 
- Maximum  Relative Error in Training : 0.08528091851126998
- Training R2 :0.9962003436390044
-Training Adjusted R2 : 0.9956575355874336
+ Maximum  Relative Error in Training : 8.070667907409601e-16
+ Training R2 :1.0
+Training Adjusted R2 : nan
 Testing R2 :0.0
-MSR_testing :0.9155512258184224
+MSR_testing :5.862019936275468
 
 ######################################################################################################################
 
@@ -256,25 +648,25 @@ Cluster Label: 24
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.999
-Model:                            OLS   Adj. R-squared:                  0.999
-Method:                 Least Squares   F-statistic:                     3971.
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):           8.80e-06
-Time:                        17:40:01   Log-Likelihood:                -1.8925
-No. Observations:                   5   AIC:                             7.785
-Df Residuals:                       3   BIC:                             7.004
+Dep. Variable:                  y_act   R-squared:                       0.954
+Model:                            OLS   Adj. R-squared:                  0.950
+Method:                 Least Squares   F-statistic:                     208.0
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           5.10e-08
+Time:                        20:55:29   Log-Likelihood:                -19.352
+No. Observations:                  12   AIC:                             42.70
+Df Residuals:                      10   BIC:                             43.67
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant      -3.7056      0.244    -15.171      0.001      -4.483      -2.928
-x              1.9225      0.031     63.018      0.000       1.825       2.020
+Constant     -24.0249      0.426    -56.351      0.000     -24.975     -23.075
+x              1.5239      0.106     14.422      0.000       1.288       1.759
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   1.069
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.488
-Skew:                           0.740   Prob(JB):                        0.784
-Kurtosis:                       2.613   Cond. No.                         9.63
+Omnibus:                        1.342   Durbin-Watson:                   1.817
+Prob(Omnibus):                  0.511   Jarque-Bera (JB):                1.031
+Skew:                          -0.615   Prob(JB):                        0.597
+Kurtosis:                       2.261   Cond. No.                         4.54
 ==============================================================================
 
 Warnings:
@@ -283,47 +675,96 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:-3.7055872429980408
+Constant:-24.024861949846972
 
-x:1.922537080130747
+x:1.5239104918989355
 
 
- Maximum  Relative Error in Training : 0.049398454267393616
- Training R2 :0.9992451546148229
-Training Adjusted R2 : 0.9989935394864305
-Testing R2 :0.0
-MSR_testing :0.1994870690863989
-
-######################################################################################################################
+ Maximum  Relative Error in Training : 0.07023070395109128
+ Training R2 :0.9541269835240278
+Training Adjusted R2 : 0.9495396818764306
+Testing R2 :0.7340443054659528
+MSR_testing :0.6877975881469742
 
 ######################################################################################################################
 
-Cluster Label: 25
+######################################################################################################################
+
+Cluster Label: 26
 
 ####################################################################
 ########################       OUTPUT     ##########################
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.995
+Dep. Variable:                  y_act   R-squared:                       0.981
+Model:                            OLS   Adj. R-squared:                  0.980
+Method:                 Least Squares   F-statistic:                     774.5
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           2.52e-14
+Time:                        20:55:29   Log-Likelihood:                -35.972
+No. Observations:                  17   AIC:                             75.94
+Df Residuals:                      15   BIC:                             77.61
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -35.6777      0.519    -68.802      0.000     -36.783     -34.572
+x              2.1857      0.079     27.830      0.000       2.018       2.353
+==============================================================================
+Omnibus:                        0.689   Durbin-Watson:                   1.692
+Prob(Omnibus):                  0.708   Jarque-Bera (JB):                0.699
+Skew:                           0.375   Prob(JB):                        0.705
+Kurtosis:                       2.349   Cond. No.                         6.60
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-35.67774264524272
+
+x:2.1856727350335925
+
+
+ Maximum  Relative Error in Training : 0.10426327256319497
+ Training R2 :0.9810003223304316
+Training Adjusted R2 : 0.9797336771524603
+Testing R2 :-10.546616751396005
+MSR_testing :16.85404845499069
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 30
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.994
 Model:                            OLS   Adj. R-squared:                  0.994
-Method:                 Least Squares   F-statistic:                     865.2
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):           7.95e-06
-Time:                        17:40:01   Log-Likelihood:                -9.6680
-No. Observations:                   6   AIC:                             23.34
-Df Residuals:                       4   BIC:                             22.92
+Method:                 Least Squares   F-statistic:                     2608.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           3.07e-18
+Time:                        20:55:30   Log-Likelihood:                -25.472
+No. Observations:                  17   AIC:                             54.94
+Df Residuals:                      15   BIC:                             56.61
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant      -5.8628      0.712     -8.229      0.001      -7.841      -3.885
-x              1.8594      0.063     29.415      0.000       1.684       2.035
+Constant     -41.6228      0.308   -135.179      0.000     -42.279     -40.967
+x              2.1042      0.041     51.070      0.000       2.016       2.192
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   2.213
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.562
-Skew:                           0.562   Prob(JB):                        0.755
-Kurtosis:                       2.009   Cond. No.                         13.3
+Omnibus:                        1.118   Durbin-Watson:                   1.206
+Prob(Omnibus):                  0.572   Jarque-Bera (JB):                0.995
+Skew:                          -0.447   Prob(JB):                        0.608
+Kurtosis:                       2.223   Cond. No.                         8.26
 ==============================================================================
 
 Warnings:
@@ -332,65 +773,16 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:-5.862823490983052
+Constant:-41.62282400123185
 
-x:1.8593765643904145
-
-
- Maximum  Relative Error in Training : 0.0701120712238755
- Training R2 :0.995398323008134
-Training Adjusted R2 : 0.9942479037601675
-Testing R2 :0.0
-MSR_testing :2.9627861887248725
-
-######################################################################################################################
-
-######################################################################################################################
-
-Cluster Label: 29
-
-####################################################################
-########################       OUTPUT     ##########################
-####################################################################
-                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.998
-Model:                            OLS   Adj. R-squared:                  0.998
-Method:                 Least Squares   F-statistic:                     2021.
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):           1.46e-06
-Time:                        17:40:02   Log-Likelihood:                -6.6775
-No. Observations:                   6   AIC:                             17.35
-Df Residuals:                       4   BIC:                             16.94
-Df Model:                           1                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P>|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-Constant     -10.0038      0.518    -19.302      0.000     -11.443      -8.565
-x              1.7648      0.039     44.959      0.000       1.656       1.874
-==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   2.862
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.745
-Skew:                          -0.438   Prob(JB):                        0.689
-Kurtosis:                       1.511   Cond. No.                         18.6
-==============================================================================
-
-Warnings:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-        ########################
-        # RESULT  COEFFICIENT: #
-        ########################
-        
-Constant:-10.00383612808291
-
-x:1.7648193167384227
+x:2.1041940899655036
 
 
- Maximum  Relative Error in Training : 0.1115062634874061
- Training R2 :0.9980250325434618
-Training Adjusted R2 : 0.9975312906793272
-Testing R2 :0.0
-MSR_testing :1.9356079645479491
+ Maximum  Relative Error in Training : 0.08414710180366512
+ Training R2 :0.9942817647631574
+Training Adjusted R2 : 0.9939005490807012
+Testing R2 :0.9902072803824983
+MSR_testing :2.3019970601734467
 
 ######################################################################################################################
 
@@ -403,25 +795,25 @@ Cluster Label: 32
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                  y_act   R-squared:                       0.999
-Model:                            OLS   Adj. R-squared:                  0.999
-Method:                 Least Squares   F-statistic:                     2174.
-Date:                Sun, 26 Apr 2020   Prob (F-statistic):           0.000460
-Time:                        17:40:03   Log-Likelihood:                -4.7990
-No. Observations:                   4   AIC:                             13.60
-Df Residuals:                       2   BIC:                             12.37
+Dep. Variable:                  y_act   R-squared:                       0.976
+Model:                            OLS   Adj. R-squared:                  0.975
+Method:                 Least Squares   F-statistic:                     1006.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.03e-21
+Time:                        20:55:30   Log-Likelihood:                -70.076
+No. Observations:                  27   AIC:                             144.2
+Df Residuals:                      25   BIC:                             146.7
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P>|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-Constant     -17.7935      0.604    -29.455      0.001     -20.393     -15.194
-x              1.8635      0.040     46.630      0.000       1.692       2.035
+Constant     -49.4269      0.651    -75.926      0.000     -50.768     -48.086
+x              2.3927      0.075     31.715      0.000       2.237       2.548
 ==============================================================================
-Omnibus:                          nan   Durbin-Watson:                   2.397
-Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.733
-Skew:                           0.959   Prob(JB):                        0.693
-Kurtosis:                       2.151   Cond. No.                         16.1
+Omnibus:                        0.188   Durbin-Watson:                   1.948
+Prob(Omnibus):                  0.910   Jarque-Bera (JB):                0.216
+Skew:                           0.166   Prob(JB):                        0.898
+Kurtosis:                       2.715   Cond. No.                         8.66
 ==============================================================================
 
 Warnings:
@@ -430,13 +822,748 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:-17.793460788158157
+Constant:-49.426919769617484
 
-x:1.8634630197759108
+x:2.392718873297393
 
 
- Maximum  Relative Error in Training : 0.0362766815925129
- Training R2 :0.9990810332811881
-Training Adjusted R2 : 0.9986215499217822
+ Maximum  Relative Error in Training : 0.11593503338913948
+ Training R2 :0.9757475543394628
+Training Adjusted R2 : 0.9747774565130414
+Testing R2 :0.9322155681652874
+MSR_testing :15.79789182860012
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 35
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.991
+Model:                            OLS   Adj. R-squared:                  0.990
+Method:                 Least Squares   F-statistic:                     1131.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.28e-11
+Time:                        20:55:31   Log-Likelihood:                -24.358
+No. Observations:                  12   AIC:                             52.72
+Df Residuals:                      10   BIC:                             53.69
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -57.3695      0.692    -82.952      0.000     -58.911     -55.829
+x              2.4673      0.073     33.634      0.000       2.304       2.631
+==============================================================================
+Omnibus:                        0.422   Durbin-Watson:                   2.444
+Prob(Omnibus):                  0.810   Jarque-Bera (JB):                0.488
+Skew:                           0.034   Prob(JB):                        0.784
+Kurtosis:                       2.015   Cond. No.                         11.2
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-57.36954576551059
+
+x:2.467311500279483
+
+
+ Maximum  Relative Error in Training : 0.10419998173014927
+ Training R2 :0.9912376374130223
+Training Adjusted R2 : 0.9903614011543245
+Testing R2 :0.9711293549797437
+MSR_testing :13.436829197615769
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 37
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.972
+Model:                            OLS   Adj. R-squared:                  0.971
+Method:                 Least Squares   F-statistic:                     925.9
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.97e-22
+Time:                        20:55:31   Log-Likelihood:                -89.477
+No. Observations:                  29   AIC:                             183.0
+Df Residuals:                      27   BIC:                             185.7
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -68.2465      1.052    -64.896      0.000     -70.404     -66.089
+x              2.8277      0.093     30.429      0.000       2.637       3.018
+==============================================================================
+Omnibus:                        1.837   Durbin-Watson:                   1.919
+Prob(Omnibus):                  0.399   Jarque-Bera (JB):                1.082
+Skew:                           0.023   Prob(JB):                        0.582
+Kurtosis:                       2.055   Cond. No.                         11.7
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-68.24652079953827
+
+x:2.8276587623903335
+
+
+ Maximum  Relative Error in Training : 0.11032011363883694
+ Training R2 :0.9716662223473402
+Training Adjusted R2 : 0.9706168231750195
+Testing R2 :0.9824509966484883
+MSR_testing :18.505993323598272
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 41
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.997
+Model:                            OLS   Adj. R-squared:                  0.997
+Method:                 Least Squares   F-statistic:                     8320.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           8.85e-29
+Time:                        20:55:32   Log-Likelihood:                -48.684
+No. Observations:                  23   AIC:                             101.4
+Df Residuals:                      21   BIC:                             103.6
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -81.3828      0.441   -184.710      0.000     -82.299     -80.467
+x              2.9440      0.032     91.213      0.000       2.877       3.011
+==============================================================================
+Omnibus:                        3.281   Durbin-Watson:                   2.211
+Prob(Omnibus):                  0.194   Jarque-Bera (JB):                2.790
+Skew:                          -0.789   Prob(JB):                        0.248
+Kurtosis:                       2.350   Cond. No.                         13.7
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-81.38284099857404
+
+x:2.9439679372649934
+
+
+ Maximum  Relative Error in Training : 0.08579884963987999
+ Training R2 :0.9974822436137647
+Training Adjusted R2 : 0.9973623504525154
+Testing R2 :0.9907037874217076
+MSR_testing :16.29584454169022
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 43
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.956
+Model:                            OLS   Adj. R-squared:                  0.955
+Method:                 Least Squares   F-statistic:                     955.2
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.78e-31
+Time:                        20:55:33   Log-Likelihood:                -162.16
+No. Observations:                  46   AIC:                             328.3
+Df Residuals:                      44   BIC:                             332.0
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -97.1552      1.652    -58.803      0.000    -100.485     -93.825
+x              3.1029      0.100     30.906      0.000       2.901       3.305
+==============================================================================
+Omnibus:                        4.399   Durbin-Watson:                   2.224
+Prob(Omnibus):                  0.111   Jarque-Bera (JB):                1.860
+Skew:                          -0.025   Prob(JB):                        0.395
+Kurtosis:                       2.016   Cond. No.                         22.0
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-97.15522754418721
+
+x:3.102902607931177
+
+
+ Maximum  Relative Error in Training : 0.10979590915519516
+ Training R2 :0.9559643597053484
+Training Adjusted R2 : 0.9549635496986518
+Testing R2 :0.9854487334893922
+MSR_testing :33.53056884251772
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 46
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.997
+Model:                            OLS   Adj. R-squared:                  0.997
+Method:                 Least Squares   F-statistic:                     8306.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           7.36e-30
+Time:                        20:55:33   Log-Likelihood:                -59.516
+No. Observations:                  24   AIC:                             123.0
+Df Residuals:                      22   BIC:                             125.4
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant    -115.8397      0.646   -179.263      0.000    -117.180    -114.500
+x              3.2204      0.035     91.136      0.000       3.147       3.294
+==============================================================================
+Omnibus:                        1.880   Durbin-Watson:                   2.303
+Prob(Omnibus):                  0.391   Jarque-Bera (JB):                1.144
+Skew:                          -0.535   Prob(JB):                        0.564
+Kurtosis:                       3.007   Cond. No.                         19.2
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-115.8396653981704
+
+x:3.2203562099022394
+
+
+ Maximum  Relative Error in Training : 0.10247087799799613
+ Training R2 :0.9973582489065248
+Training Adjusted R2 : 0.9972381693113669
+Testing R2 :0.9990873158369906
+MSR_testing :2.775492246833867
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 9
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                    nan
+Method:                 Least Squares   F-statistic:                     0.000
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):                nan
+Time:                        20:56:20   Log-Likelihood:                 62.690
+No. Observations:                   2   AIC:                            -121.4
+Df Residuals:                       0   BIC:                            -124.0
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -16.0150        inf         -0        nan         nan         nan
+x              1.7961        inf          0        nan         nan         nan
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   0.229
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.333
+Skew:                           0.000   Prob(JB):                        0.846
+Kurtosis:                       1.000   Cond. No.                         6.41
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-16.015038639044537
+
+x:1.7960790296756333
+
+
+ Maximum  Relative Error in Training : 3.13468750306482e-15
+ Training R2 :1.0
+Training Adjusted R2 : nan
 Testing R2 :0.0
-MSR_testing :0.001223204964161466
+MSR_testing :0.1461783931667088
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 10
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.645
+Model:                            OLS   Adj. R-squared:                  0.468
+Method:                 Least Squares   F-statistic:                     3.637
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):              0.197
+Time:                        20:56:20   Log-Likelihood:                -6.7704
+No. Observations:                   4   AIC:                             17.54
+Df Residuals:                       2   BIC:                             16.31
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -18.9846      2.302     -8.248      0.014     -28.889      -9.081
+x              1.5592      0.818      1.907      0.197      -1.958       5.077
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   2.160
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.495
+Skew:                          -0.636   Prob(JB):                        0.781
+Kurtosis:                       1.835   Cond. No.                         7.72
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-18.984559367958685
+
+x:1.559154734098505
+
+
+ Maximum  Relative Error in Training : 0.07923493017268553
+ Training R2 :0.6452187429862987
+Training Adjusted R2 : 0.46782811447944805
+Testing R2 :0.0
+MSR_testing :3.749419698279712
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 13
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.995
+Model:                            OLS   Adj. R-squared:                  0.992
+Method:                 Least Squares   F-statistic:                     374.4
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):            0.00266
+Time:                        20:56:21   Log-Likelihood:                -5.4694
+No. Observations:                   4   AIC:                             14.94
+Df Residuals:                       2   BIC:                             13.71
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -29.4296      0.675    -43.628      0.001     -32.332     -26.527
+x              2.2145      0.114     19.349      0.003       1.722       2.707
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   3.391
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.452
+Skew:                           0.137   Prob(JB):                        0.798
+Kurtosis:                       1.376   Cond. No.                         5.92
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-29.42962680003243
+
+x:2.2145447806848426
+
+
+ Maximum  Relative Error in Training : 0.04590764483609103
+ Training R2 :0.994686282682304
+Training Adjusted R2 : 0.992029424023456
+Testing R2 :0.0
+MSR_testing :1.6838462488338348
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 15
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.983
+Model:                            OLS   Adj. R-squared:                  0.981
+Method:                 Least Squares   F-statistic:                     637.4
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           4.34e-11
+Time:                        20:56:21   Log-Likelihood:                -27.879
+No. Observations:                  13   AIC:                             59.76
+Df Residuals:                      11   BIC:                             60.89
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -38.6837      0.625    -61.885      0.000     -40.059     -37.308
+x              2.4063      0.095     25.246      0.000       2.196       2.616
+==============================================================================
+Omnibus:                        1.177   Durbin-Watson:                   1.808
+Prob(Omnibus):                  0.555   Jarque-Bera (JB):                0.162
+Skew:                          -0.252   Prob(JB):                        0.922
+Kurtosis:                       3.216   Cond. No.                         6.58
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-38.6836776364897
+
+x:2.4062759978586117
+
+
+ Maximum  Relative Error in Training : 0.07874722433385245
+ Training R2 :0.9830343640205365
+Training Adjusted R2 : 0.9814920334769489
+Testing R2 :0.8564422892441348
+MSR_testing :1.9082247802472463
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 19
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.999
+Model:                            OLS   Adj. R-squared:                  0.999
+Method:                 Least Squares   F-statistic:                     1573.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):             0.0160
+Time:                        20:56:22   Log-Likelihood:                -2.1134
+No. Observations:                   3   AIC:                             8.227
+Df Residuals:                       1   BIC:                             6.424
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -45.7519      0.537    -85.217      0.007     -52.574     -38.930
+x              2.7218      0.069     39.666      0.016       1.850       3.594
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   2.544
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.283
+Skew:                           0.055   Prob(JB):                        0.868
+Kurtosis:                       1.500   Cond. No.                         8.61
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-45.75190881872018
+
+x:2.721768632394428
+
+
+ Maximum  Relative Error in Training : 0.026119864041911696
+ Training R2 :0.9993648210921924
+Training Adjusted R2 : 0.9987296421843848
+Testing R2 :0.0
+MSR_testing :2.650670319731989
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 21
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.988
+Model:                            OLS   Adj. R-squared:                  0.987
+Method:                 Least Squares   F-statistic:                     1585.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.60e-20
+Time:                        20:56:22   Log-Likelihood:                -53.608
+No. Observations:                  22   AIC:                             111.2
+Df Residuals:                      20   BIC:                             113.4
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -53.1958      0.625    -85.172      0.000     -54.499     -51.893
+x              2.7525      0.069     39.814      0.000       2.608       2.897
+==============================================================================
+Omnibus:                        1.908   Durbin-Watson:                   1.762
+Prob(Omnibus):                  0.385   Jarque-Bera (JB):                0.657
+Skew:                           0.326   Prob(JB):                        0.720
+Kurtosis:                       3.540   Cond. No.                         9.12
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-53.19583469202779
+
+x:2.7525381374653963
+
+
+ Maximum  Relative Error in Training : 0.0990003478793478
+ Training R2 :0.9875404021248803
+Training Adjusted R2 : 0.9869174222311242
+Testing R2 :0.9204848881566332
+MSR_testing :1.118709594910735
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 23
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.970
+Model:                            OLS   Adj. R-squared:                  0.967
+Method:                 Least Squares   F-statistic:                     357.6
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           9.74e-10
+Time:                        20:56:22   Log-Likelihood:                -39.952
+No. Observations:                  13   AIC:                             83.90
+Df Residuals:                      11   BIC:                             85.03
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -71.7607      1.830    -39.212      0.000     -75.789     -67.733
+x              2.9477      0.156     18.910      0.000       2.605       3.291
+==============================================================================
+Omnibus:                        1.375   Durbin-Watson:                   2.066
+Prob(Omnibus):                  0.503   Jarque-Bera (JB):                1.092
+Skew:                           0.562   Prob(JB):                        0.579
+Kurtosis:                       2.132   Cond. No.                         13.7
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-71.76067870059677
+
+x:2.9477379581779766
+
+
+ Maximum  Relative Error in Training : 0.1004336869710384
+ Training R2 :0.9701552237120541
+Training Adjusted R2 : 0.9674420622313318
+Testing R2 :0.9950474356594189
+MSR_testing :6.1916260892573
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 27
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.998
+Model:                            OLS   Adj. R-squared:                  0.998
+Method:                 Least Squares   F-statistic:                     7385.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.82e-20
+Time:                        20:56:24   Log-Likelihood:                -32.021
+No. Observations:                  16   AIC:                             68.04
+Df Residuals:                      14   BIC:                             69.59
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -82.9953      0.483   -171.683      0.000     -84.032     -81.958
+x              3.0223      0.035     85.935      0.000       2.947       3.098
+==============================================================================
+Omnibus:                        0.357   Durbin-Watson:                   2.049
+Prob(Omnibus):                  0.836   Jarque-Bera (JB):                0.458
+Skew:                          -0.277   Prob(JB):                        0.795
+Kurtosis:                       2.384   Cond. No.                         13.9
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-82.99526016453392
+
+x:3.022336231668138
+
+
+ Maximum  Relative Error in Training : 0.09098059674869649
+ Training R2 :0.9981077865795375
+Training Adjusted R2 : 0.9979726284780759
+Testing R2 :0.9904117607344168
+MSR_testing :15.102217940874711
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 29
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.982
+Model:                            OLS   Adj. R-squared:                  0.981
+Method:                 Least Squares   F-statistic:                     1142.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           8.56e-20
+Time:                        20:56:24   Log-Likelihood:                -74.715
+No. Observations:                  23   AIC:                             153.4
+Df Residuals:                      21   BIC:                             155.7
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant     -98.3187      1.477    -66.564      0.000    -101.390     -95.247
+x              3.0379      0.090     33.799      0.000       2.851       3.225
+==============================================================================
+Omnibus:                        1.570   Durbin-Watson:                   2.382
+Prob(Omnibus):                  0.456   Jarque-Bera (JB):                0.952
+Skew:                          -0.007   Prob(JB):                        0.621
+Kurtosis:                       2.003   Cond. No.                         17.9
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-98.31874124228128
+
+x:3.037944477058576
+
+
+ Maximum  Relative Error in Training : 0.085314595893504
+ Training R2 :0.9819494404775418
+Training Adjusted R2 : 0.9810898900240914
+Testing R2 :-1.9976056749764406
+MSR_testing :29.35601607420534
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 32
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.996
+Model:                            OLS   Adj. R-squared:                  0.995
+Method:                 Least Squares   F-statistic:                     2194.
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           4.62e-12
+Time:                        20:56:24   Log-Likelihood:                -29.906
+No. Observations:                  11   AIC:                             63.81
+Df Residuals:                       9   BIC:                             64.61
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Constant    -117.1070      1.262    -92.761      0.000    -119.963    -114.251
+x              3.1675      0.068     46.837      0.000       3.015       3.321
+==============================================================================
+Omnibus:                        1.672   Durbin-Watson:                   1.532
+Prob(Omnibus):                  0.434   Jarque-Bera (JB):                1.214
+Skew:                          -0.682   Prob(JB):                        0.545
+Kurtosis:                       2.112   Cond. No.                         19.3
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-117.10703837581387
+
+x:3.1675448263816977
+
+
+ Maximum  Relative Error in Training : 0.10376201851298864
+ Training R2 :0.9959140643181346
+Training Adjusted R2 : 0.9954600714645939
+Testing R2 :0.9885911722375305
+MSR_testing :45.3261285436297

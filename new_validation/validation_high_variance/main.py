@@ -12,6 +12,7 @@ data  = pd.read_csv('dataset.csv')
 x = data['x']
 y = data['y']
 rel_error_criteria = 0.1
+opt_criteria = 0.05
 flag  = '-t'
 curr_directory = dir_path
 elimination = False
@@ -26,7 +27,7 @@ from original_verify_result import *
 after_tree_plot()
 
 #optimizing cluster
-opt_cluster = CC(dir_path,rel_error_criteria,flag,)
+opt_cluster = CC(dir_path,opt_criteria,flag,)
 opt_cluster.optimize_cluster()
 
 #generating plot after tree

@@ -9,6 +9,7 @@ from search_fileNcreate import search_fileNcreate as SF
 import copy
 import sys 
 from reference_point import reference_point
+import math
 
 class combine_clusters():
 	'''
@@ -136,6 +137,73 @@ class combine_clusters():
 		nodes[node_index].centroid = centroid
 
 		return nodes,regre
+
+
+	def sort_by_reg_error_n_data(self,load_nodes,load_regressor,file_name_label):
+		
+		reg_error = []
+		for i in range(len(load_nodes)):
+			reg_error.append(load_nodes[i].max_relerr_train)
+		
+		nodes, regressor, cluster_label = self.sort_by_reg_error(load_nodes,load_regressor,file_name_label)
+		print('cluster_label: ', cluster_label)
+
+		##### sorting is now based on data size and bin-wise relative error
+		## separate into two bins
+		
+		# #if greater than -8
+		# node_gt_8 = []
+		# regressor_gt_8 = []
+		# cluster_label_gt_8 = []
+		import math
+
+		order_of_rel_error = []
+		for i in range(len(reg_error)):
+				order_of_rel_error.append(math.floor(math.log10(reg_error[i])))
+		print('order_of_rel_error: ', order_of_rel_error)
+
+
+		#if less than specified criteria
+		node_lt = []
+		regressor_lt = []
+		cluster_label_lt = []
+		
+		'''
+		Find the index till we get relative error more than 
+
+		'''
+		for i in range(len(reg_error)):
+			if(order_of_rel_error[i] > -10):
+				seperating_index = i 
+				break
+		
+		#separate by index
+		for i in range(seperating_index):
+			node_lt.append(nodes[i])
+			regressor_lt.append(regressor[i])
+			cluster_label_lt.append(cluster_label[i])
+		
+		print('cluster_label_lt_8: ', cluster_label_lt)
+		
+		# #separate by index
+		# for i in range(seperating_index,len(reg_error)):
+		# 	node_gt_8.append(nodes[i])
+		# 	regressor_gt_8.append(regressor[i])
+		# 	cluster_label_gt_8.append(cluster_label[i])
+		
+		node_result,regressor_result, cluster_label_result = self.sort_by_data_size(node_lt ,regressor_lt ,cluster_label_lt)
+
+		#final_output - adding rest of the nodes
+		for i in range(seperating_index,len(reg_error)):
+			node_result.append(nodes[i])
+			regressor_result.append(regressor[i])
+			cluster_label_result.append(cluster_label[i])
+		
+		print('cluster_label_result: ', cluster_label_result)
+
+		# time.sleep(5)
+		return node_result, regressor_result, cluster_label_result
+
 	
 	def sort_by_data_size(self,load_nodes,load_regressor,file_name_label):
 		'''
@@ -429,27 +497,33 @@ class combine_clusters():
 		i_val = []
 		j_val = []
 		dist_val =[]
-
+		
+		data = pd.DataFrame([])
 		for i in range(len(nodes)):
 			i_centroid = nodes[i].centroid
 			for j in range(i,len(nodes)):
 				j_centroid = nodes[j].centroid
 				dist = self.ref_point.euclidian_dist(i_centroid,j_centroid)
+				print('dist: ', dist)
 
 				#APPENDING
 				i_val.append(i)
 				j_val.append(j)
-				dist_val.append(dist_val)
-
-		data = pd.DataFrame([],columns=['from','to','dist'])
+				dist_val.append(dist)
+		print('dist_val: ', dist_val)
+		print('trying data frame ')
 		data['from'] = i_val
+		print('from done')
 		data['to'] = j_val
-		data['dist'] = dist_val
+		print('to done')
+		data['distance'] = dist_val
+		print('dist done')
 		
+		print('dataframe done')
+
 		SF.check_directory(str(self.curr_directory)+'/result/centroid_dist/')
 		data.to_csv(str(self.curr_directory)+'/result/centroid_dist/'+str(file_name)+'.csv')
-		pass
-				
+		print('data sucks')
 
 			
 	def optimize_cluster(self):
@@ -476,6 +550,8 @@ class combine_clusters():
 
 		#old_nodes centroid distance
 		self.dist_calculate_centroid(nodes,'after_tree')
+		print('out pf dist')
+
 
 		'''
 		Initial total clusters
@@ -493,6 +569,7 @@ class combine_clusters():
 		# Recursively run till number of clusters won't get change 
 		'''
 		cluster_size = []
+		
 		cluster_size.append(initial_clusters)
 		
 
@@ -506,6 +583,7 @@ class combine_clusters():
 		'''
 		# index
 		m=0
+		print('before_loop')
 		while(True):
 			nodes, regressor, file_name_label , new_node_count = self.reduce_nodes(nodes, regressor, file_name_label) #doing it kind of recursively 
 			print('file_name_label: ', file_name_label)
@@ -525,7 +603,7 @@ class combine_clusters():
 		
 		#writing result
 		self.save_object_file(nodes,regressor,file_name_label)
-
+		print('cluster_size: ', cluster_size)
 
 
 	

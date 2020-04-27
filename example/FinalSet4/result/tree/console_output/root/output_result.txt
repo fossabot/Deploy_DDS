@@ -11,29 +11,29 @@ Cluster Label: 0
 ####################################################################
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:               Time(μs)   R-squared:                       0.614
-Model:                            OLS   Adj. R-squared:                  0.609
-Method:                 Least Squares   F-statistic:                     122.3
-Date:                Wed, 22 Apr 2020   Prob (F-statistic):           3.66e-77
-Time:                        13:27:53   Log-Likelihood:                -404.50
-No. Observations:                 390   AIC:                             821.0
-Df Residuals:                     384   BIC:                             844.8
+Dep. Variable:               Time(μs)   R-squared:                       0.611
+Model:                            OLS   Adj. R-squared:                  0.604
+Method:                 Least Squares   F-statistic:                     92.36
+Date:                Mon, 27 Apr 2020   Prob (F-statistic):           3.45e-58
+Time:                        23:35:52   Log-Likelihood:                -310.26
+No. Observations:                 300   AIC:                             632.5
+Df Residuals:                     294   BIC:                             654.7
 Df Model:                           5                                         
 Covariance Type:            nonrobust                                         
 ===================================================================================
                       coef    std err          t      P>|t|      [0.025      0.975]
 -----------------------------------------------------------------------------------
-Constant           -1.4691      0.377     -3.900      0.000      -2.210      -0.728
-log_P(atm)         -0.6338      0.051    -12.509      0.000      -0.733      -0.534
-log_Fuel(%)        -0.4763      0.078     -6.137      0.000      -0.629      -0.324
-log_Oxidizer(%)     0.1569      0.078      2.006      0.046       0.003       0.311
-T0/S_H__T           2.8650      1.140      2.514      0.012       0.625       5.105
-T0/T                9.2777      0.434     21.357      0.000       8.424      10.132
+Constant           -1.3696      0.431     -3.178      0.002      -2.218      -0.522
+log_P(atm)         -0.6281      0.057    -10.932      0.000      -0.741      -0.515
+log_Fuel(%)        -0.5370      0.088     -6.094      0.000      -0.710      -0.364
+log_Oxidizer(%)     0.2161      0.087      2.491      0.013       0.045       0.387
+T0/S_H__T           3.1787      1.288      2.468      0.014       0.644       5.713
+T0/T                8.8835      0.477     18.636      0.000       7.945       9.822
 ==============================================================================
-Omnibus:                       38.256   Durbin-Watson:                   1.750
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               54.260
-Skew:                          -0.686   Prob(JB):                     1.65e-12
-Kurtosis:                       4.207   Cond. No.                         97.7
+Omnibus:                       26.652   Durbin-Watson:                   1.997
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               32.974
+Skew:                          -0.678   Prob(JB):                     6.92e-08
+Kurtosis:                       3.895   Cond. No.                         98.1
 ==============================================================================
 
 Warnings:
@@ -42,21 +42,21 @@ Warnings:
         # RESULT  COEFFICIENT: #
         ########################
         
-Constant:-1.4690754289951162
+Constant:-1.3696356750782424
 
-log_P(atm):-0.6338481209454037
+log_P(atm):-0.6280858712089114
 
-log_Fuel(%):-0.4762848239876301
+log_Fuel(%):-0.537005499425484
 
-log_Oxidizer(%):0.15693685410256858
+log_Oxidizer(%):0.21608114600923722
 
-T0/S_H__T:2.8649703154164285
+T0/S_H__T:3.17870664256429
 
-T0/T:9.277748811724644
+T0/T:8.883465363015116
 
 
- Maximum  Relative Error in Training : 0.592663908378274
- Training R2 :0.6142399931441407
-Training Adjusted R2 : 0.609217076388205
-Testing R2 :0.1531569210463356
-MSR_testing :0.4828579888343901
+ Maximum  Relative Error in Training : 0.47049965607963834
+ Training R2 :0.6109956990323562
+Training Adjusted R2 : 0.6043799796281446
+Testing R2 :0.6391944690309864
+MSR_testing :0.34762512619249497
