@@ -33,12 +33,14 @@ for i in range(len(dir_split)):
 
 ########################Change the data here #########################
 arguments_len = len(sys.argv)
+print('arguments_len: ', arguments_len)
 flag = sys.argv[1]
 if(flag == '-b'):
     smile = sys.argv[2]
 else:
     dataset_location = sys.argv[2]
 curr_directory = sys.argv[3]
+print('curr_directory: ', curr_directory)
 ######################################################################
 
 #cleaning output file

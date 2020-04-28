@@ -153,6 +153,18 @@ class Flag():
 
                 print('\n\n Executed Normally! Please check plot Folder')
                 # os.system('sh ./for_ploting.sh')
+
+        elif(Flag_value == '-d'):
+                '''
+                gives Transformed data
+                '''
+                from data_gen import data_gen
+                external_data = pd.read_csv(dataset_location)
+                list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
+                dataset = data_gen(external_data,list_fuel,Flag_value)     #normal dataset generation
+                df,tau = select_feature.feature_selection(dataset)
+                df['Time'] = tau
+                df.to_csv(str(curr_directory)+'/tranformed_data.csv',index=False)
    
         elif(Flag_value == '-e'):
                 '''

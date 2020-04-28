@@ -19,7 +19,7 @@ elimination='Flase' #elimination default set as Flase
 
 #ALL OPTARG is file name 
 #it is useful to initialize variable based on the flag passed
-while getopts "c:b:a:h:m:t:e:p:r:s:" arg; do
+while getopts "c:b:a:h:m:t:e:p:r:s:d:" arg; do
   case $arg in
     c) 
         flag_passed='-c'
@@ -82,6 +82,12 @@ while getopts "c:b:a:h:m:t:e:p:r:s:" arg; do
         echo "Significance level for backward eliminatio : $significance_level"
         echo
         ;;
+    d)
+        flag_passed='-d'
+        echo 'Generating dataset with transformed feature'
+        dataset_location="$curr_location/$OPTARG"
+        echo
+        ;;
     ?)
         echo "Wrong argument passed : "
         echo " -c : Critria for error based clustering"
@@ -105,6 +111,11 @@ done
 if [ $flag_passed == '-a' ]
 then
 python DDS.py -a $dataset_location  $curr_location
+fi
+
+if [ $flag_passed == '-d' ]
+then
+python DDS.py -d $dataset_location  $curr_location
 fi
 
 if [ $flag_passed == '-b' ]

@@ -178,9 +178,9 @@ class Ternary_Tree():
                         joblib.dump(cur_node.left_node.centroid,filename_centroid)  
                         print('Criteria Satisfied')
                         
-                        # commented this part as it is required for final clusters and that we are going to
-                        # get after optimized cluster so no need to waste computation
-                        self.ref_point.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label,'tree_ref')
+                        ## commented this part as it is required for final clusters and that we are going to
+                        ## get after optimized cluster so no need to waste computation
+                        # self.ref_point.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label)
 
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
@@ -244,9 +244,9 @@ class Ternary_Tree():
                     filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.center_node.child_label)+'.sav'
                     joblib.dump(cur_node.center_node.centroid,filename_centroid) 
 
-                    ## commented this part as it is required for final clusters and that we are going to
-                    ## get after optimized cluster so no need to waste computation
-                    self.ref_point.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label,'tree_ref')
+                    # ## commented this part as it is required for final clusters and that we are going to
+                    # ## get after optimized cluster so no need to waste computation
+                    # self.ref_point.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label)
 
                   
                     #final cluster gives stores only those cluster data which are useful for prediction #as all centroid clusters are final clusters
@@ -325,9 +325,9 @@ class Ternary_Tree():
                         filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.right_node.child_label)+'.sav'
                         joblib.dump(cur_node.right_node.centroid,filename_centroid) 
 
-                        ## commented this part as it is required for final clusters and that we are going to
-                        ## get after optimized cluster so no need to waste computation  
-                        self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label,'tree_ref')
+                        # ## commented this part as it is required for final clusters and that we are going to
+                        # ## get after optimized cluster so no need to waste computation  
+                        # self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label)
                     
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 
@@ -384,7 +384,7 @@ class Ternary_Tree():
         data_outside_range['error_bifurcation'] =  data['y_act'] - data['y_pred']
         #left side data by positive error  - points on one side of the fit plane  beyond specified error 
         data_left = pd.DataFrame([])
-        data_left =  data_outside_range.loc[data_outside_range['error_bifurcation'] >= 0] #+ve error
+        data_left =  data_outside_range.loc[data_outside_range['error_bifurcation'] > 0] #+ve error
 
         #right side data by negative error  - points on another side of the fit plane beyond specified error 
         data_right = pd.DataFrame([])
@@ -1289,11 +1289,12 @@ class Ternary_Tree():
                 if(self.number_of_levels > 3):
                     for i in range(type_of_division-1):
                         f.write(' }\n')
-                elif(self.number_of_levels >= 2):
+                elif(self.number_of_levels > 2):
                     for i in range(type_of_division-2):
                         f.write(' }\n')
+                    if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')
-                elif(self.number_of_levels == 1):
+                elif(self.number_of_levels > 1):
                     if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')
 
