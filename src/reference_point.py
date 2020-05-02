@@ -128,29 +128,30 @@ class reference_point():
 
 		## After appending the point purge it
 		data = data.drop(max_dist_point.name)
-
 		####how many times run the loop
 		#try with dimension^2 but if less data then consider all the data points
-		if(data.shape[1] >= data.shape[1]*2): 
-		    num_ref_point = data.shape[1]*2
-
-		    for i in range(num_ref_point):
-		        measured_dist_from_all_ref_point = []
-		        for j in range (data.shape[0]): #for all the data points 
-		            dist_sum = 0
-		            for k in range(len(ref_points)): #distance from all the points
-		                dist_sum += self.euclidian_dist(ref_points[k],data.loc[j,:])
-		            #for data point-j distance is measured from all the distance and ref_points
-		            measured_dist_from_all_ref_point.append(dist_sum)
-		        #after storing all measures dist. find index of list and locate that data point
-		        Point_index = np.argmax(measured_dist_from_all_ref_point)
-		        #find data point based on index
-		        data_point = data.loc[Point_index,:]
-		        data_point = data_point.reset_index(drop=True)
-		        #dropping point from the data 
-		        data = data.drop(Point_index)
-		        #append that data point as reference point
-		        ref_points.append(data_point)
+		if(data.shape[0] >= data.shape[1]*2): 
+			num_ref_point = data.shape[1] * 2 
+			print('num_ref_point: ', num_ref_point)
+			time.sleep(2)
+			for i in range(num_ref_point):
+				measured_dist_from_all_ref_point = []
+				for j in range (data.shape[0]): #for all the data points 
+					dist_sum = 0
+					data = data.reset_index(drop=True)
+					for k in range(len(ref_points)): #distance from all the points
+						dist_sum += self.euclidian_dist(ref_points[k],data.loc[j,:])
+					#for data point-j distance is measured from all the distance and ref_points
+					measured_dist_from_all_ref_point.append(dist_sum)
+				#after storing all measures dist. find index of list and locate that data point
+				Point_index = np.argmax(measured_dist_from_all_ref_point)
+				#find data point based on index
+				data_point = data.loc[Point_index,:]
+				data_point = data_point.reset_index(drop=True)
+				#dropping point from the data 
+				data = data.drop(Point_index)
+				#append that data point as reference point
+				ref_points.append(data_point)
 		elif(data.shape[1] == 1):  #for 1D data
 		    # time.sleep(10)
 		    ####two reference point one extreme and centroid is already added  
@@ -187,23 +188,26 @@ class reference_point():
 		        #append that data point as reference point
 		        ref_points.append(data_point)
 		else:
-		    num_ref_point = data.shape[0]
-		    data = data.reset_index(drop=True)
-		    for i in range(data.shape[0]):
-		        data_point = data.loc[i,:]
-		        data_point = data_point
-		        ref_points.append(data_point)
+				num_ref_point = data.shape[0]
+				print('num_ref_point: ', num_ref_point)
+				time.sleep(5)
+				data = data.reset_index(drop=True)
+				for i in range(data.shape[0]):
+					data_point = data.loc[i,:]
+					data_point = data_point
+					ref_points.append(data_point)
 
 		return ref_points
 		    
 	def euclidian_dist(self,arr_1,arr_2):
-	    arr_1 = np.array(arr_1)
-	    arr_2 = np.array(arr_2)
-	    '''
-	    calculating distance by passed row of matrix and centroid 
-	    '''
-	    distance = np.linalg.norm(arr_1-arr_2)
-	    return distance
+		arr_1 = np.array(arr_1)
+		arr_2 = np.array(arr_2)
+
+		'''
+		calculating distance by passed row of matrix and centroid 
+		'''
+		distance = np.linalg.norm(arr_1-arr_2)
+		return distance
 
 
 

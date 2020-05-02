@@ -151,7 +151,7 @@ class Ternary_Tree():
                 SF.check_directory(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type))
                 cur_node.left_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(cur_node.left_node.child_label)+'_'+str(child_type)+'.csv')
                 
-                if(cur_node.left_node.data.shape[0] > cur_node.left_node.data.shape[1]): #if rows are more than columns
+                if(cur_node.left_node.data.shape[0] > cur_node.left_node.data.shape[1]*2): #if rows are more than columns
                     cur_node.left_node.max_relerr_train, cur_node.left_node.r2, cur_node.left_node.testing_r2, summary,cur_node.left_node.coefficients_dictionary, cur_node.left_node.data = regression.regression(cur_node.left_node.data,cur_node.left_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.left_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl,process_type=self.process_type)    #calculate the r2 of that data 
                     # print('max_relerr_train: ',cur_node.left_node.max_relerr_train)
                     WC(cur_node.left_node.coefficients_dictionary,cur_node.left_node.r2,cur_node.left_node.testing_r2,cur_node.left_node.child_label,self.curr_directory,child_type)
@@ -178,9 +178,9 @@ class Ternary_Tree():
                         joblib.dump(cur_node.left_node.centroid,filename_centroid)  
                         print('Criteria Satisfied')
                         
-                        ## commented this part as it is required for final clusters and that we are going to
-                        ## get after optimized cluster so no need to waste computation
-                        # self.ref_point.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label)
+                        # commented this part as it is required for final clusters and that we are going to
+                        # get after optimized cluster so no need to waste computation
+                        self.ref_point.other_reference_point(cur_node.left_node.data,cur_node.left_node.centroid,cur_node.left_node.child_label,'tree_ref')
 
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
@@ -194,7 +194,7 @@ class Ternary_Tree():
             else:
                 #if node has data then,
                 if(self.cur_node.left_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
-                    if(cur_node.left_node.data.shape[0] > cur_node.left_node.data.shape[1]): #if rows are more than columns
+                    if(cur_node.left_node.data.shape[0] > cur_node.left_node.data.shape[1]*2): #if rows are more than columns
                         self._divide(cur_node.left_node.data,cur_node.left_node)
                     else:
                         print('Error is more than given but doesn\'t contain enough data points in the cluster' )
@@ -222,7 +222,7 @@ class Ternary_Tree():
                 SF.check_directory(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type))
                 cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(child_type)+'.csv')
                 
-                if(cur_node.center_node.data.shape[0] > cur_node.center_node.data.shape[1]): #if rows are more than columns
+                if(cur_node.center_node.data.shape[0] > cur_node.center_node.data.shape[1]*2): #if rows are more than columns
                     cur_node.center_node.max_relerr_train, cur_node.center_node.r2, cur_node.center_node.testing_r2, summary,cur_node.center_node.coefficients_dictionary, cur_node.center_node.data = regression.regression(cur_node.center_node.data,cur_node.center_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.center_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl,process_type=self.process_type)    #calculate the r2 of that data 
                     WC(cur_node.center_node.coefficients_dictionary,cur_node.center_node.r2,cur_node.center_node.testing_r2,cur_node.center_node.child_label,self.curr_directory,child_type)
                     # print('max_relerr_train: ',cur_node.center_node.max_relerr_train)
@@ -244,9 +244,9 @@ class Ternary_Tree():
                     filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.center_node.child_label)+'.sav'
                     joblib.dump(cur_node.center_node.centroid,filename_centroid) 
 
-                    # ## commented this part as it is required for final clusters and that we are going to
-                    # ## get after optimized cluster so no need to waste computation
-                    # self.ref_point.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label)
+                    ## commented this part as it is required for final clusters and that we are going to
+                    ## get after optimized cluster so no need to waste computation
+                    self.ref_point.other_reference_point(cur_node.center_node.data,cur_node.center_node.centroid,cur_node.center_node.child_label,'tree_ref')
 
                   
                     #final cluster gives stores only those cluster data which are useful for prediction #as all centroid clusters are final clusters
@@ -298,7 +298,7 @@ class Ternary_Tree():
                 SF.check_directory(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type))
                 cur_node.right_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(cur_node.right_node.child_label)+'_'+str(child_type)+'.csv')
                 
-                if(cur_node.right_node.data.shape[0] > cur_node.right_node.data.shape[1]): #if rows are more than columns
+                if(cur_node.right_node.data.shape[0] > cur_node.right_node.data.shape[1]*2): #if rows are more than columns
                     cur_node.right_node.max_relerr_train, cur_node.right_node.r2, cur_node.right_node.testing_r2, summary,cur_node.right_node.coefficients_dictionary, cur_node.right_node.data = regression.regression(cur_node.right_node.data,cur_node.right_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.right_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl)    #calculate the r2 of that data 
                     WC(cur_node.right_node.coefficients_dictionary,cur_node.right_node.r2,cur_node.right_node.testing_r2,cur_node.right_node.child_label,self.curr_directory,child_type)
                     # print('max_relerr_train: ',cur_node.right_node.max_relerr_train)
@@ -325,9 +325,9 @@ class Ternary_Tree():
                         filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.right_node.child_label)+'.sav'
                         joblib.dump(cur_node.right_node.centroid,filename_centroid) 
 
-                        # ## commented this part as it is required for final clusters and that we are going to
-                        # ## get after optimized cluster so no need to waste computation  
-                        # self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label)
+                        ## commented this part as it is required for final clusters and that we are going to
+                        ## get after optimized cluster so no need to waste computation  
+                        self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label,'tree_ref')
                     
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 
@@ -344,7 +344,7 @@ class Ternary_Tree():
             else:
                 #if node has data then,
                 if(self.cur_node.right_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
-                    if(cur_node.right_node.data.shape[0] > cur_node.right_node.data.shape[1]): #if rows are more than columns
+                    if(cur_node.right_node.data.shape[0] > cur_node.right_node.data.shape[1]*2): #if rows are more than columns
                         self._divide(cur_node.right_node.data,cur_node.right_node)
                     else:
                         print('Error is more than given but doesn\'t contain enough data points in the cluster' )
@@ -384,7 +384,7 @@ class Ternary_Tree():
         data_outside_range['error_bifurcation'] =  data['y_act'] - data['y_pred']
         #left side data by positive error  - points on one side of the fit plane  beyond specified error 
         data_left = pd.DataFrame([])
-        data_left =  data_outside_range.loc[data_outside_range['error_bifurcation'] > 0] #+ve error
+        data_left =  data_outside_range.loc[data_outside_range['error_bifurcation'] >= 0] #+ve error
 
         #right side data by negative error  - points on another side of the fit plane beyond specified error 
         data_right = pd.DataFrame([])
@@ -1289,12 +1289,11 @@ class Ternary_Tree():
                 if(self.number_of_levels > 3):
                     for i in range(type_of_division-1):
                         f.write(' }\n')
-                elif(self.number_of_levels > 2):
+                elif(self.number_of_levels >= 2):
                     for i in range(type_of_division-2):
                         f.write(' }\n')
-                    if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')
-                elif(self.number_of_levels > 1):
+                elif(self.number_of_levels == 1):
                     if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')
 

@@ -14,8 +14,8 @@ Cluster Label: 2
 Dep. Variable:                  y_act   R-squared:                       0.913
 Model:                            OLS   Adj. R-squared:                  0.909
 Method:                 Least Squares   F-statistic:                     288.2
-Date:                Mon, 27 Apr 2020   Prob (F-statistic):           3.55e-71
-Time:                        23:11:49   Log-Likelihood:                 5.9837
+Date:                Sat, 02 May 2020   Prob (F-statistic):           3.55e-71
+Time:                        23:35:35   Log-Likelihood:                 5.9837
 No. Observations:                 144   AIC:                           0.03261
 Df Residuals:                     138   BIC:                             17.85
 Df Model:                           5                                         
@@ -75,8 +75,8 @@ Cluster Label: 5
 Dep. Variable:                  y_act   R-squared:                       0.942
 Model:                            OLS   Adj. R-squared:                  0.937
 Method:                 Least Squares   F-statistic:                     163.3
-Date:                Mon, 27 Apr 2020   Prob (F-statistic):           1.00e-29
-Time:                        23:11:49   Log-Likelihood:                 14.638
+Date:                Sat, 02 May 2020   Prob (F-statistic):           1.00e-29
+Time:                        23:35:42   Log-Likelihood:                 14.638
 No. Observations:                  56   AIC:                            -17.28
 Df Residuals:                      50   BIC:                            -5.124
 Df Model:                           5                                         
@@ -136,8 +136,8 @@ Cluster Label: 8
 Dep. Variable:                  y_act   R-squared:                       0.987
 Model:                            OLS   Adj. R-squared:                  0.974
 Method:                 Least Squares   F-statistic:                     74.65
-Date:                Mon, 27 Apr 2020   Prob (F-statistic):           0.000108
-Time:                        23:11:50   Log-Likelihood:                 7.1502
+Date:                Sat, 02 May 2020   Prob (F-statistic):           0.000108
+Time:                        23:35:47   Log-Likelihood:                 7.1502
 No. Observations:                  11   AIC:                            -2.300
 Df Residuals:                       5   BIC:                           0.08701
 Df Model:                           5                                         

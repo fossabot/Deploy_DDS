@@ -14,8 +14,8 @@ Cluster Label: 3
 Dep. Variable:                  y_act   R-squared:                       0.829
 Model:                            OLS   Adj. R-squared:                  0.816
 Method:                 Least Squares   F-statistic:                     66.70
-Date:                Mon, 27 Apr 2020   Prob (F-statistic):           4.60e-25
-Time:                        23:11:49   Log-Likelihood:                -22.323
+Date:                Sat, 02 May 2020   Prob (F-statistic):           4.60e-25
+Time:                        23:35:42   Log-Likelihood:                -22.323
 No. Observations:                  75   AIC:                             56.65
 Df Residuals:                      69   BIC:                             70.55
 Df Model:                           5                                         
@@ -75,8 +75,8 @@ Cluster Label: 6
 Dep. Variable:                  y_act   R-squared:                       0.980
 Model:                            OLS   Adj. R-squared:                  0.966
 Method:                 Least Squares   F-statistic:                     70.19
-Date:                Mon, 27 Apr 2020   Prob (F-statistic):           7.93e-06
-Time:                        23:11:50   Log-Likelihood:                 6.7087
+Date:                Sat, 02 May 2020   Prob (F-statistic):           7.93e-06
+Time:                        23:35:46   Log-Likelihood:                 6.7087
 No. Observations:                  13   AIC:                            -1.417
 Df Residuals:                       7   BIC:                             1.972
 Df Model:                           5                                         
