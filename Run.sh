@@ -19,7 +19,7 @@ elimination='Flase' #elimination default set as Flase
 
 #ALL OPTARG is file name 
 #it is useful to initialize variable based on the flag passed
-while getopts "c:b:a:h:m:t:e:p:r:s:d:" arg; do
+while getopts "c:b:a:h:m:t:e:p:r:s:d:o:" arg; do
   case $arg in
     c) 
         flag_passed='-c'
@@ -88,6 +88,12 @@ while getopts "c:b:a:h:m:t:e:p:r:s:d:" arg; do
         dataset_location="$curr_location/$OPTARG"
         echo
         ;;
+    o)
+        flag_passed='-o'
+        echo "Generate cluster and Training/Testing the model based on tree NOT FOR DEFAULT FUEL"
+        dataset_location="$curr_location/$OPTARG"
+        echo
+        ;;
     ?)
         echo "Wrong argument passed : "
         echo " -c : Critria for error based clustering"
@@ -100,6 +106,8 @@ while getopts "c:b:a:h:m:t:e:p:r:s:d:" arg; do
         echo " -p : plotting of coefficient to find Average values"
         echo " -r : Backward elimination Activation True/False"
         echo " -s : Significance Level for Backward Elimination"
+        echo " -o : Other Dataset than fuel if dataset is ready"
+        echo " -d : Dataset generation ONLY for fuel contaning SMILES"
   esac
 done
 
@@ -195,11 +203,78 @@ find $dir_to_plot  -name '*.log' -delete
 # xdg-open FuelsTrainingTesting.pdf
 fi
 
+#################################
+#################################
+#other than fuel data set if dataset 
+#ready you just want to generate model
+#feature selection will be different
+
+if [ $flag_passed == '-o' ]
+then
+
+python DDS.py -o $dataset_location $curr_location $error_criteria $elimination $significance_level
+
+
+#####################################################
+###################   Ploting   #####################
+#####################################################
+#moving to plots folder
+
+cd "$curr_location/plots/"
+
+
+#gnerating pdf from tex file 
+pdflatex Training.tex > /dev/null 2>&1  #to not print output 
+#opeing the pdf file 
+# xdg-open Training.pdf
+echo 'Plotting of Training done'
+
+pdflatex Testing.tex > /dev/null 2>&1
+# xdg-open Testing.pdf
+echo 'Plotting of Testing done'
+
+pdflatex Datasize.tex > /dev/null 2>&1
+# xdg-open Datasize.pdf
+echo 'Plotting of Datasize done'
+
+pdflatex MaxRelError.tex > /dev/null 2>&1
+# xdg-open MaxRelError.pdf
+echo 'Plotting of MaxRelError done'
+
+pdflatex ChildLabel.tex > /dev/null 2>&1
+# xdg-open ChildLabel.pdf
+echo 'Plotting of Labels done'
+
+cd 
+cd $code_direcotry
+cd ./src
+
+python coef_tikz_compatible.py "$curr_location/plots/"
+# python Fuel_tikz_compatible.py "$curr_location/plots/"
+
+dir_to_plot="$curr_location/plots/"
+cd $dir_to_plot
+pdflatex coefficient.tex > /dev/null 2>&1
+# xdg-open coefficient.pdf
+echo 'Plotting of Coefficients done'
+
+#in plotting dir, deleting all files except .pdf
+find $dir_to_plot  -name '*.aux' -delete
+find $dir_to_plot  -name '*.tex' -delete
+find $dir_to_plot  -name '*.log' -delete
+
+
+# pdflatex FuelsTrainingTesting.tex > /dev/null 2>&1
+# xdg-open FuelsTrainingTesting.pdf
+fi
+
+####Extrenal test
 if [ $flag_passed == '-e' ]
 then
 python DDS.py -e $dataset_location $curr_location
 echo 'done'
 fi
+
 
 if [ $flag_passed == '-p' ]
 then

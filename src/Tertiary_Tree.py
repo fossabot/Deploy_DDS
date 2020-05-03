@@ -8,7 +8,6 @@ dir_path = './../'
 from write_coef import writing_coefficient as WC
 import sys
 import os 
-from select_feature import select_feature 
 from search_fileNcreate import search_fileNcreate as SF
 import copy
 from sklearn.externals import joblib
@@ -442,7 +441,7 @@ class Ternary_Tree():
    
     def points_in_range(self,data,defined_relative_error):
         '''
-        shows how many data points lies within specified realtive error 
+        shows how many data points lies within specified relative error 
         '''
         counter = 0
         total_data = data.shape[0]
@@ -1311,6 +1310,18 @@ if __name__ == "__main__":
     import pandas as pd
     import numpy as np
 
+    #Adding library 
+    try:
+            '''
+            If  externally features are supplied given more prioritys
+            '''
+            sys.path.append(self.curr_directory)
+            from feature_selection import select_feature as Sel_feat
+    except:
+            from select_feature import select_feature as Sel_feat
+        
+
+
     #Generating Dataset 
     Fuel_data = pd.read_csv('Alkane_Dataset_full.csv')
     criteria = 0.8
@@ -1323,7 +1334,7 @@ if __name__ == "__main__":
     #finding out the straight chain alkanes
     list_fuel = find_fuel_type.find_strightchain_alkanes(Fuel_data)
 
-    dataset = data_gen(Fuel_data,list_fuel,Flag_value)     #normal dataset generation
+    dataset = data_gen(Fuel_data,list_fuel,Flag_value,path)     #normal dataset generation
     df,tau = select_feature.feature_selection(dataset)
     Tree = Ternary_Tree(df,tau,.03,Flag_value,path)
     Tree.Implement_Tree()

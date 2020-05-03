@@ -28,7 +28,7 @@ data = pd.DataFrame(x,columns =  columns)
 print('data: ', data)
 
 
-data, test = train_test_split(data, test_size=0.2)
+data, test = train_test_split(data, test_size=0.1)
 data.to_csv('dataset.csv',index=False)
 test.to_csv('testset.csv',index=False)
 

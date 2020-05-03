@@ -21,6 +21,7 @@ import subprocess
 from search_fileNcreate import search_fileNcreate  as SF
 ##Directory to export the file of combination of different files
 dir_path = './../'
+from statsmodels.tools.eval_measures import rmse
 
 import sys
 import os 
@@ -59,9 +60,21 @@ class old_external_test():
                 '''
                 #finding out the straight chain alkanes
                 warnings.warn('Processing only with straight chain Alkanes')
+                try:
+                        '''
+                        If  externally features are supplied given more priorities
+                        '''
+                        sys.path.append(self.curr_directory)
+                        from feature_selection import select_feature as Sel_feat
+                        print('feature selection passed')
+                        pass
+                except:
+                        from select_feature import select_feature as Sel_feat
+                        print('feature selection not passed')
+                
 
                 # print('In Select feature')
-                df,tau = select_feature.feature_selection(external_data)
+                df,tau = Sel_feat.feature_selection(external_data)
                 # print('Out Select feature')
                 
                 # print('In finding total clusters')
@@ -160,12 +173,14 @@ class old_external_test():
                         ID_comparison['y_predicted'] = y_pred
                         ID_comparison['y_actual'] = y_test_external
                         ID_comparison['Relative Error'] = np.abs(y_pred - y_test_external)/np.abs(y_test_external)
+                        # calc rmse
+                        rmse_val = rmse(y_test_external, y_pred)
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/Ignition_delay_comparison/') #checking directory
                         ID_comparison.to_csv(str(self.curr_directory)+'/external_test_result/Ignition_delay_comparison/ID_comparison_external_cluster_'+str(cluster_label[i])+'.csv')
                         maximum_relative_error_external = self.max_relative_error(y_test_external,y_pred)
                         f.write('\n\n Maximum Relative Error in external data for cluster-'+str(cluster_label[i])+' :'+str(maximum_relative_error_external))
                         print('\n\n Maximum Relative Error in external data for cluster-', str(cluster_label[i]),' :',str(maximum_relative_error_external))
-
+                        print('\n\n Root Mean Square Error :', rmse_val)
                         f.close()
 
 

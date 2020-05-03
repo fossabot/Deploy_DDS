@@ -14,8 +14,8 @@ Cluster Label: 0
 Dep. Variable:               Time(μs)   R-squared:                       0.598
 Model:                            OLS   Adj. R-squared:                  0.591
 Method:                 Least Squares   F-statistic:                     83.76
-Date:                Sat, 02 May 2020   Prob (F-statistic):           1.25e-53
-Time:                        23:35:30   Log-Likelihood:                -293.87
+Date:                Sun, 03 May 2020   Prob (F-statistic):           1.25e-53
+Time:                        15:52:28   Log-Likelihood:                -293.87
 No. Observations:                 287   AIC:                             599.7
 Df Residuals:                     281   BIC:                             621.7
 Df Model:                           5                                         
@@ -58,5 +58,6 @@ T0/T:8.459516328706142
  Maximum  Relative Error in Training : 0.46975662810013274
  Training R2 :0.5984600094161512
 Training Adjusted R2 : 0.591315169726047
+ Root Mean square error :0.4959349668843931
 Testing R2 :0.6260439647380803
 MSR_testing :0.24595149137862407

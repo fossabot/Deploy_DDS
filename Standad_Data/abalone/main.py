@@ -11,10 +11,8 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 data  = pd.read_csv('dataset.csv')
 
 x = data.iloc[:,:-1]
-print('x: ', x)
 y = data.iloc[:,-1]
-print('y: ', y)
-rel_error_criteria = 0.1
+rel_error_criteria = 0.15
 opt_criteria = 0.05
 flag  = '-t'
 curr_directory = dir_path
@@ -37,14 +35,14 @@ Tree.Implement_Tree()
 # from verify_result import *
 # verify_cluster()
 
-#external testing 
-from external_test import external_test
-external_data = pd.read_csv('testset.csv')
+# #external testing 
+# from external_test import external_test
+# external_data = pd.read_csv('testset.csv')
 
-#old
-from old_external_test import old_external_test
-testset_obj = old_external_test('-t',curr_directory)
-testset_obj.external_testset(external_data)
+# #old
+# from old_external_test import old_external_test
+# testset_obj = old_external_test('-t',curr_directory)
+# testset_obj.external_testset(external_data)
 
 # #new
 # # from external_test import external_test 

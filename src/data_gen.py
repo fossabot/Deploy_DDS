@@ -28,10 +28,9 @@ from Bond_Extraction import Bond_Extraction as BE
 import os
 import time
 import subprocess
-from select_feature import select_feature 
 
 
-def data_gen(Data,list_fuel,choice_value):
+def data_gen(Data,list_fuel,choice_value,curr_directory):
         '''
         Based on provided unique fuel choices, this method will ONLY generate the dataset.
         Arguments: (list_fuel)
@@ -41,6 +40,17 @@ def data_gen(Data,list_fuel,choice_value):
         and by appending all sub_dataset it will generate final dataset. It also generated the remaining information like
         Bond information and carbon_type and also append thos columns to the dataset.
         '''
+        #Adding library 
+        try:
+                '''
+                If  externally features are supplied given more prioritys
+                '''
+                sys.path.append(curr_directory)
+                from feature_selection import select_feature as Sel_feat
+        except:
+                from select_feature import select_feature as Sel_feat
+        
+
         # Importing the dataset
         dataset = pd.DataFrame([])
         for i in range(len(list_fuel)):
@@ -51,13 +61,13 @@ def data_gen(Data,list_fuel,choice_value):
         ########## Passing information by Processing on smile file ##########
 
         # Information about  Type of carbon and Bond between Type of Carbon
-        Fuel_Bonds = BE.Bond_Extract(list_fuel)
+        Fuel_Bonds = BE.Bond_Extract(list_fuel,curr_directory)
         # print('Fuel_Bonds: ', Fuel_Bonds)
         # print('Fuel_Bonds: ', list(Fuel_Bonds['Fuel']))
 
         Unique_fuel_name = list_fuel
         #column names
-        columns = select_feature.bond_extraction_cols()
+        columns = Sel_feat.bond_extraction_cols()
 
         #Empty Dataframe
         Extracted_bond_data = pd.DataFrame(columns=columns)

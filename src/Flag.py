@@ -12,7 +12,6 @@ import pandas as pd
 import numpy as np
 from find_fuel_type import find_fuel_type 
 from search_fileNcreate import search_fileNcreate as SF
-from select_feature import select_feature
 dir_path = os.path.dirname(os.path.realpath(__file__))
 # print('dir_path: ', dir_path)
 sys.path.append(dir_path)
@@ -44,6 +43,15 @@ class Flag():
         value is digit of your Flag dislayed in Flag method.
         Here, value is coming from Flag method.
         '''
+        #Adding library 
+        try:
+            '''
+            If  externally features are supplied given more prioritys
+            '''
+            sys.path.append(curr_directory)
+            from feature_selection import select_feature as Sel_feat
+        except:
+            from select_feature import select_feature as Sel_feat
 
         #Calling dataset 
 
@@ -61,7 +69,7 @@ class Flag():
             #importing library 
             from Bond_Extraction import Bond_Extraction as BE
             smile_input = [str(smile)]	#Argument List 
-            Bond_details = BE.Bond_Extract(smile_input)
+            Bond_details = BE.Bond_Extract(smile_input,curr_directory)
             print(Bond_details)
             SF.check_directory(str(curr_directory+'/result/Bond_details/'))
             SF.check_file_existence(str(curr_directory)+'/result/Bond_details/SMILE_result.csv')
@@ -98,8 +106,8 @@ class Flag():
             #finding out the straight chain alkanes
             list_fuel = find_fuel_type.find_strightchain_alkanes(Fuel_data)
 
-            dataset = data_gen(Fuel_data,list_fuel,Flag_value)     #normal dataset generation
-            df,tau = select_feature.feature_selection(dataset)
+            dataset = data_gen(Fuel_data,list_fuel,Flag_value,curr_directory)     #normal dataset generation
+            df,tau = Sel_feat.feature_selection(dataset)
 
             # #######################
             # # generate_data_points#
@@ -138,9 +146,9 @@ class Flag():
                 #finding out the straight chain alkanes
                 list_fuel = find_fuel_type.find_strightchain_alkanes(Fuel_data)
 
-                dataset = data_gen(Fuel_data,list_fuel,Flag_value)     #normal dataset generation
+                dataset = data_gen(Fuel_data,list_fuel,Flag_value,curr_directory)     #normal dataset generation
 
-                df,tau = select_feature.feature_selection(dataset)
+                df,tau = Sel_feat.feature_selection(dataset)
 
                 # df.to_csv(str(curr_directory)+'/Transformed.csv')
 
@@ -161,8 +169,8 @@ class Flag():
                 from data_gen import data_gen
                 external_data = pd.read_csv(dataset_location)
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
-                dataset = data_gen(external_data,list_fuel,Flag_value)     #normal dataset generation
-                df,tau = select_feature.feature_selection(dataset)
+                dataset = data_gen(external_data,list_fuel,Flag_value,curr_directory)     #normal dataset generation
+                df,tau = Sel_Feat.feature_selection(dataset)
                 df['Time'] = tau
                 df.to_csv(str(curr_directory)+'/tranformed_data.csv',index=False)
    
@@ -173,7 +181,7 @@ class Flag():
                 from data_gen import data_gen
                 external_data = pd.read_csv(dataset_location)
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
-                dataset = data_gen(external_data,list_fuel,Flag_value)     #normal dataset generation
+                dataset = data_gen(external_data,list_fuel,Flag_value,curr_directory)     #normal dataset generation
 
                 #old
                 from old_external_test import old_external_test
@@ -195,5 +203,43 @@ class Flag():
                 from coefficient_plotting import coefficient_plotting as CP 
                 weights_mean_n_header = CP.coefficient_mean_result(coef_data,curr_directory)
                 print('\n\n Executed Normally! Please check plot Folder')
+        
+        elif(Flag_value == '-o'):
+                '''
+                This Flag is same as three but before transferring the data to find out R2,
+                Data has to be transferred to tree structure and divide the data in middle way.
+                Add tree module without uncertainty
+                '''
 
+                print("## Tree Structure and data division for alkanes only## \n")
+                dataset = pd.read_csv(dataset_location)
+                
+                from data_gen import data_gen
+                from Tertiary_Tree import Ternary_Tree as TT
+                from combine_clusters import combine_clusters as CC
 
+                df,tau = Sel_feat.feature_selection(dataset)
+                df.to_csv(str(curr_directory)+'/Transformed.csv')
+
+                Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
+                Tree.Implement_Tree()
+                
+                # #optimizing cluster
+                # final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
+                # final_clusters.optimize_cluster()
+
+                #old
+                from data_gen import data_gen
+                external_data = pd.read_csv(str(curr_directory)+'/testset.csv')
+
+                from old_external_test import old_external_test
+                testset_obj_old = old_external_test(Flag_value,curr_directory)
+                testset_obj_old.external_testset(external_data)
+
+                # # new
+                # from external_test import external_test 
+                # testset_obj = external_test(Flag_value,curr_directory)
+                # testset_obj.external_testset(dataset)
+
+                print('\n\n Executed Normally! Please check plot Folder')
+                # os.system('sh ./for_ploting.sh')

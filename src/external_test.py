@@ -16,12 +16,11 @@ import copy
 # from data_gen import data_gen
 import warnings
 # from find_fuel_type import find_fuel_type
-from select_feature import select_feature
 import subprocess
 from search_fileNcreate import search_fileNcreate  as SF
 ##Directory to export the file of combination of different files
 dir_path = './../'
-
+from statsmodels.tools.eval_measures import rmse
 import sys
 import os 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -45,8 +44,7 @@ class external_test():
         def __init__(self,flag_value,curr_directory):
                 self.flag_value = flag_value
                 self.curr_directory = curr_directory
-        
-
+                
 
         def max_relative_error(self,y_train,y_train_pred):
                 error = np.max(np.abs(y_train - y_train_pred)/np.abs(y_train))
@@ -57,11 +55,22 @@ class external_test():
                 '''
                 Adding test set from external source to predict new fuel 
                 '''
+                #Adding library 
+                try:
+                        '''
+                        If  externally features are supplied given more prioritys
+                        '''
+                        sys.path.append(self.curr_directory)
+                        from feature_selection import select_feature as Sel_feat
+                except:
+                        from select_feature import select_feature as Sel_feat
+        
+
                 #finding out the straight chain alkanes
                 warnings.warn('Processing only with straight chain Alkanes')
 
                 # print('In Select feature')
-                df,tau = select_feature.feature_selection(external_data)
+                df,tau = Sel_feat.feature_selection(external_data)
                 # print('Out Select feature')
                 
                 # print('In finding total clusters')
@@ -160,12 +169,14 @@ class external_test():
                         ID_comparison['y_predicted'] = y_pred
                         ID_comparison['y_actual'] = y_test_external
                         ID_comparison['Relative Error'] = np.abs(y_pred - y_test_external)/np.abs(y_test_external)
+                        # calc rmse
+                        rmse_val = rmse(y_test_external, y_pred)
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/Ignition_delay_comparison/') #checking directory
                         ID_comparison.to_csv(str(self.curr_directory)+'/external_test_result/Ignition_delay_comparison/ID_comparison_external_cluster_'+str(cluster_label[i])+'.csv')
                         maximum_relative_error_external = self.max_relative_error(y_test_external,y_pred)
                         f.write('\n\n Maximum Relative Error in external data for cluster-'+str(cluster_label[i])+' :'+str(maximum_relative_error_external))
                         print('\n\n Maximum Relative Error in external data for cluster-', str(cluster_label[i]),' :',str(maximum_relative_error_external))
-
+                        print('\n\n Root Mean Square Error :', rmse_val)
                         f.close()
 
 
@@ -256,7 +267,7 @@ class external_test():
                 plt.title('Frequency of relative error for all data',fontsize=15)
                 plt.xlabel('Relative Error',fontsize=15)
                 plt.ylabel('Frequency of Error',fontsize=15)
-                plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_all_data.jpg', dpi=600)
+                plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_all_data_opt.jpg', dpi=600)
                 # plt.show()
                 plt.close()                       
                 # plt.show()

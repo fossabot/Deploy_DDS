@@ -17,10 +17,10 @@ import statsmodels.api as smapi
 from sklearn.metrics import r2_score,mean_squared_error
 import matplotlib.pyplot as plt
 from result_check import result_check 
-from select_feature import  select_feature 
 from sklearn import metrics
 from search_fileNcreate import search_fileNcreate as SF
 from feature_after_elimination import feature_after_elimination
+from statsmodels.tools.eval_measures import rmse
 ##Directory to export the file of combination of different files
 dir_path = './../'
 
@@ -225,7 +225,6 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         comparison(y_test,y_test_pred,curr_directory,cluster_label,'test_',child_type,process_type=process_type)
         Testing_Adj_r2 = r2_score(y_test_pred , y_test)
 
-        
 
         ##########################################################################################
         # Predicting for whole dataset so all the data points can be used for further processing #
@@ -237,7 +236,10 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         dataset_modified = feature_after_elimination(dataset,X_names_modified)
         dataset['y_pred'] = regressor_OLS_modified.predict(dataset_modified)
         dataset['y_act'] = y
-        
+        # now generate predictions
+        # calc rmse
+        rmse_val = rmse(y_test_pred, y_test)
+        print("\n Root Mean square error :" ,str(rmse_val))
         # plt.clf()
         # plt.scatter(dataset['y_pred'],dataset['y_act'])
         # plt.xlabel('Actual value of dependent variable')
@@ -248,7 +250,7 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         f.write('\n\n Maximum  Relative Error in Training : '+ str(max_relative_error_training))
         f.write("\n Training R2 :"+str(regressor_OLS_modified.rsquared))
         f.write("\nTraining Adjusted R2 : "+ str(regressor_OLS_modified.rsquared_adj))
-
+        f.write("\n Root Mean square error :" + str(rmse_val))
         ##It is for TESTING SET
         f.write('\nTesting R2 :'+str(Testing_Adj_r2))
         # f.write('MSR_training :'+str(mean_squared_error(y_train,y_train_pred)))        

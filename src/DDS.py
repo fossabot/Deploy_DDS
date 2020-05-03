@@ -14,7 +14,6 @@ import sys
 sys.path.insert(0, str(current_directory)+'/src')
 import time
 import os
-from Bond_Extraction import Bond_Extraction as BE
 from Flag import Flag
 from search_fileNcreate import search_fileNcreate as SF
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -52,6 +51,23 @@ f.close()
 
 
 if(flag == '-t'):
+    #arguments passed by Run.sh
+    #error based tree criteria 
+    error_criteria_to_divide = float(sys.argv[4])
+    #elimination criteria 
+    elimination = sys.argv[5]
+    elimination = True if elimination=='True' else False
+    #backward elimination significance criteria 
+    sl = float(sys.argv[6])
+    Flag.switch_func(flag,dataset_location=dataset_location,curr_directory=curr_directory,division_error_criteria=error_criteria_to_divide,elimination=elimination,sl=sl) 
+    pass
+elif(flag == '-o'):
+    '''
+    Dataset other than fuel 
+    if dataset is ready 
+    no SMILE processing 
+    Supply feature selection file seperately
+    '''
     #arguments passed by Run.sh
     #error based tree criteria 
     error_criteria_to_divide = float(sys.argv[4])

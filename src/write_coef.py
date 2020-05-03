@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import regression
 from search_fileNcreate import search_fileNcreate as SF
-from select_feature import select_feature
 ##Directory to export the file of combination of different files
 dir_path = './../'
 import time

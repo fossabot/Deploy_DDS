@@ -8,7 +8,7 @@ from result_check import result_check
 import sys
 import os
 from search_fileNcreate import search_fileNcreate as SF
-from select_feature import select_feature 
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 # print('dir_path: ', dir_path)
 sys.path.append(dir_path)
@@ -38,8 +38,20 @@ class Backward_elimination:
         y_test : Actual result values of testing data.
         X_names : X_names are headers of the dataset. Which is useful to show the feature in result table.  
         '''
+        
+        #Adding library 
+        try:
+            '''
+            If  externally features are supplied given more prioritys
+            '''
+            sys.path.append(curr_directory)
+            from feature_selection import select_feature as Sel_feat
+        except:
+            from select_feature import select_feature as Sel_feat
+
+
         print('\n Statistical significance value for backward elimination is taken as ',str(sl),'or',str(100-float(sl)*100),'% confidence interval \n')
-        headers = select_feature.column_selection()
+        headers = Sel_feat.column_selection()
         headers.append('training_adj_r2')
         headers = pd.Series(np.array(headers))
         

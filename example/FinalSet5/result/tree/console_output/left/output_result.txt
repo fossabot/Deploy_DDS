@@ -14,8 +14,8 @@ Cluster Label: 1
 Dep. Variable:                  y_act   R-squared:                       0.946
 Model:                            OLS   Adj. R-squared:                  0.942
 Method:                 Least Squares   F-statistic:                     214.4
-Date:                Sat, 02 May 2020   Prob (F-statistic):           2.46e-37
-Time:                        23:35:31   Log-Likelihood:                 12.154
+Date:                Sun, 03 May 2020   Prob (F-statistic):           2.46e-37
+Time:                        15:52:31   Log-Likelihood:                 12.154
 No. Observations:                  67   AIC:                            -12.31
 Df Residuals:                      61   BIC:                            0.9202
 Df Model:                           5                                         
@@ -58,5 +58,6 @@ T0/T:9.695375256491264
  Maximum  Relative Error in Training : 0.061766425620707555
  Training R2 :0.9461670600497537
 Training Adjusted R2 : 0.9417545239882581
+ Root Mean square error :0.21650795097715672
 Testing R2 :0.9060846533235329
 MSR_testing :0.04687569283632689

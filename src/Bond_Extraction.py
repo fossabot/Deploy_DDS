@@ -15,16 +15,25 @@ import numpy as np
 from rdkit import Chem as Chem
 import collections
 from search_fileNcreate import search_fileNcreate as SF
-from select_feature import select_feature 
 class Bond_Extraction:
 
     def check_ring(m):
         ri = m.GetRingInfo()
         return ri.NumRings()
 
-    def Bond_Extract(Unique_fuel_smiles,file_name='Bond_detail.csv'):
+    def Bond_Extract(Unique_fuel_smiles,curr_directory,file_name='Bond_detail.csv'):
+        #Adding library 
+        try:
+                '''
+                If  externally features are supplied given more prioritys
+                '''
+                sys.path.append(curr_directory)
+                from feature_selection import select_feature as Sel_feat
+        except:
+                from select_feature import select_feature as Sel_feat
+        
         #columns
-        columns = select_feature.bond_extraction_cols()
+        columns = Sel_feat.bond_extraction_cols()
         Bond_detail_dataframe = pd.DataFrame(columns=columns)
         for i in range(len(Unique_fuel_smiles)):
             print('Unique fuel smiles : ', Unique_fuel_smiles[i])

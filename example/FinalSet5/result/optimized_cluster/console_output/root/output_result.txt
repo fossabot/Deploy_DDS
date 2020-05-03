@@ -14,8 +14,8 @@ Cluster Label: 2
 Dep. Variable:                  y_act   R-squared:                       0.907
 Model:                            OLS   Adj. R-squared:                  0.903
 Method:                 Least Squares   F-statistic:                     266.0
-Date:                Sat, 02 May 2020   Prob (F-statistic):           1.10e-68
-Time:                        23:35:50   Log-Likelihood:                 6.9325
+Date:                Sun, 03 May 2020   Prob (F-statistic):           1.10e-68
+Time:                        15:52:41   Log-Likelihood:                 6.9325
 No. Observations:                 143   AIC:                            -1.865
 Df Residuals:                     137   BIC:                             15.91
 Df Model:                           5                                         
@@ -58,6 +58,7 @@ T0/T:8.631223648831048
  Maximum  Relative Error in Training : 0.08179050548027297
  Training R2 :0.9066252004843628
 Training Adjusted R2 : 0.9032173610859818
+ Root Mean square error :0.2689043858515086
 Testing R2 :0.9148232624036399
 MSR_testing :0.07230956873017703
 
@@ -75,8 +76,8 @@ Cluster Label: 5
 Dep. Variable:                  y_act   R-squared:                       0.960
 Model:                            OLS   Adj. R-squared:                  0.954
 Method:                 Least Squares   F-statistic:                     180.1
-Date:                Sat, 02 May 2020   Prob (F-statistic):           2.24e-25
-Time:                        23:35:50   Log-Likelihood:                 17.839
+Date:                Sun, 03 May 2020   Prob (F-statistic):           2.24e-25
+Time:                        15:52:42   Log-Likelihood:                 17.839
 No. Observations:                  44   AIC:                            -23.68
 Df Residuals:                      38   BIC:                            -12.97
 Df Model:                           5                                         
@@ -119,6 +120,7 @@ T0/T:6.708959771167947
  Maximum  Relative Error in Training : 0.0666978338275118
  Training R2 :0.9595098057898391
 Training Adjusted R2 : 0.9541821486569232
+ Root Mean square error :0.1366954554680457
 Testing R2 :0.7193101034662683
 MSR_testing :0.01868564754561647
 
@@ -136,8 +138,8 @@ Cluster Label: 8
 Dep. Variable:                  y_act   R-squared:                       0.976
 Model:                            OLS   Adj. R-squared:                  0.970
 Method:                 Least Squares   F-statistic:                     154.6
-Date:                Sat, 02 May 2020   Prob (F-statistic):           1.04e-14
-Time:                        23:35:50   Log-Likelihood:                 17.446
+Date:                Sun, 03 May 2020   Prob (F-statistic):           1.04e-14
+Time:                        15:52:42   Log-Likelihood:                 17.446
 No. Observations:                  25   AIC:                            -22.89
 Df Residuals:                      19   BIC:                            -15.58
 Df Model:                           5                                         
@@ -180,6 +182,7 @@ T0/T:5.111523021441908
  Maximum  Relative Error in Training : 0.07256445467295121
  Training R2 :0.9760120944448978
 Training Adjusted R2 : 0.9696994877198709
+ Root Mean square error :0.23038494800688084
 Testing R2 :-1.61149325241725
 MSR_testing :0.05307722426813318
 
@@ -197,8 +200,8 @@ Cluster Label: 2
 Dep. Variable:                  y_act   R-squared:                       0.931
 Model:                            OLS   Adj. R-squared:                  0.928
 Method:                 Least Squares   F-statistic:                     299.0
-Date:                Sat, 02 May 2020   Prob (F-statistic):           2.69e-62
-Time:                        23:35:50   Log-Likelihood:                 16.282
+Date:                Sun, 03 May 2020   Prob (F-statistic):           2.69e-62
+Time:                        15:52:42   Log-Likelihood:                 16.282
 No. Observations:                 116   AIC:                            -20.56
 Df Residuals:                     110   BIC:                            -4.042
 Df Model:                           5                                         
@@ -241,6 +244,7 @@ T0/T:8.728098603501692
  Maximum  Relative Error in Training : 0.0708456101068207
  Training R2 :0.9314672209282044
 Training Adjusted R2 : 0.9283520946067592
+ Root Mean square error :0.2159218440810591
 Testing R2 :0.8912955261502385
 MSR_testing :0.0466222427513652
 
@@ -258,8 +262,8 @@ Cluster Label: 1
 Dep. Variable:                  y_act   R-squared:                       0.939
 Model:                            OLS   Adj. R-squared:                  0.936
 Method:                 Least Squares   F-statistic:                     272.6
-Date:                Sat, 02 May 2020   Prob (F-statistic):           5.83e-52
-Time:                        23:35:50   Log-Likelihood:                 13.830
+Date:                Sun, 03 May 2020   Prob (F-statistic):           5.83e-52
+Time:                        15:52:42   Log-Likelihood:                 13.830
 No. Observations:                  94   AIC:                            -15.66
 Df Residuals:                      88   BIC:                           -0.4006
 Df Model:                           5                                         
@@ -302,6 +306,7 @@ T0/T:10.11341552575968
  Maximum  Relative Error in Training : 0.06536463651120848
  Training R2 :0.939345240936302
 Training Adjusted R2 : 0.9358989478076828
+ Root Mean square error :0.2944321238585546
 Testing R2 :0.8219141131024856
 MSR_testing :0.08669027555985924
 
@@ -319,8 +324,8 @@ Cluster Label: 2
 Dep. Variable:                  y_act   R-squared:                       0.956
 Model:                            OLS   Adj. R-squared:                  0.954
 Method:                 Least Squares   F-statistic:                     366.6
-Date:                Sat, 02 May 2020   Prob (F-statistic):           1.78e-55
-Time:                        23:35:51   Log-Likelihood:                 34.007
+Date:                Sun, 03 May 2020   Prob (F-statistic):           1.78e-55
+Time:                        15:52:42   Log-Likelihood:                 34.007
 No. Observations:                  90   AIC:                            -56.01
 Df Residuals:                      84   BIC:                            -41.02
 Df Model:                           5                                         
@@ -363,6 +368,7 @@ T0/T:8.276448456119986
  Maximum  Relative Error in Training : 0.06156962322112935
  Training R2 :0.9561844634811711
 Training Adjusted R2 : 0.9535763958312409
+ Root Mean square error :0.27977914428817463
 Testing R2 :0.8459083337136406
 MSR_testing :0.07827636957862323
 
@@ -380,8 +386,8 @@ Cluster Label: 5
 Dep. Variable:                  y_act   R-squared:                       0.939
 Model:                            OLS   Adj. R-squared:                  0.934
 Method:                 Least Squares   F-statistic:                     195.5
-Date:                Sat, 02 May 2020   Prob (F-statistic):           2.25e-37
-Time:                        23:35:51   Log-Likelihood:                 28.045
+Date:                Sun, 03 May 2020   Prob (F-statistic):           2.25e-37
+Time:                        15:52:43   Log-Likelihood:                 28.045
 No. Observations:                  70   AIC:                            -44.09
 Df Residuals:                      64   BIC:                            -30.60
 Df Model:                           5                                         
@@ -424,6 +430,7 @@ T0/T:6.193110640034584
  Maximum  Relative Error in Training : 0.07094178328161412
  Training R2 :0.938549392456033
 Training Adjusted R2 : 0.9337485637416605
+ Root Mean square error :0.1952643102486378
 Testing R2 :0.9178645395006131
 MSR_testing :0.03812815085687628
 
@@ -441,8 +448,8 @@ Cluster Label: 2
 Dep. Variable:                  y_act   R-squared:                       0.956
 Model:                            OLS   Adj. R-squared:                  0.954
 Method:                 Least Squares   F-statistic:                     366.6
-Date:                Sat, 02 May 2020   Prob (F-statistic):           1.78e-55
-Time:                        23:35:51   Log-Likelihood:                 34.007
+Date:                Sun, 03 May 2020   Prob (F-statistic):           1.78e-55
+Time:                        15:52:43   Log-Likelihood:                 34.007
 No. Observations:                  90   AIC:                            -56.01
 Df Residuals:                      84   BIC:                            -41.02
 Df Model:                           5                                         
@@ -485,5 +492,6 @@ T0/T:8.276448456119986
  Maximum  Relative Error in Training : 0.06156962322112935
  Training R2 :0.9561844634811711
 Training Adjusted R2 : 0.9535763958312409
+ Root Mean square error :0.27977914428817463
 Testing R2 :0.8459083337136406
 MSR_testing :0.07827636957862323
