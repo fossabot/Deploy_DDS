@@ -1,0 +1,38 @@
+ \documentclass[a4paper,10pt]{article}
+ \usepackage{tikz}
+ \usepackage{fullpage}
+ \usetikzlibrary{positioning,shadows,arrows,trees,shapes,fit}
+ \begin{document}
+ \begin{figure}
+ \begin{tikzpicture}
+ [font=\small, edge from parent fork down, 
+ every node/.style={top color=white, bottom color=blue!25, 
+ 	rectangle,rounded corners, minimum size=5mm, draw=blue!75,
+	very thick, drop shadow, align=center},
+ edge from parent/.style={draw=blue!50,thick},
+ level 1/.style={sibling distance=4cm},
+ level 2/.style={sibling distance=4cm}, 
+ level 3/.style={sibling distance=4cm}, 
+ level 4/.style={sibling distance=4cm}, 
+ level 5/.style={sibling distance=4cm}, 
+ level 6/.style={sibling distance=4cm}, 
+ level distance=2cm,
+ level distance=5cm,
+ ]
+\node {{'Constant': 34.9896, 'CRIM': -0.1011, 'ZN': 0.0395, 'INDUS': 0.0047, 'CHAS': 2.7008, 'NOX': -17.1097, 'RM': 3.7167, 'AGE': -0.0004, 'DIS': -1.4039, 'RAD': 0.2787, 'TAX': -0.0116, 'PTRATIO': -0.8559, 'B': 0.0098, 'LSTAT': -0.5472}} %root
+child { node {{'Constant': 59.8794, 'CRIM': -0.1683, 'ZN': 0.0311, 'INDUS': 0.1184, 'CHAS': 4.0216, 'NOX': -32.8428, 'RM': 3.3852, 'AGE': -0.006, 'DIS': -1.9484, 'RAD': 0.5294, 'TAX': -0.0091, 'PTRATIO': -1.3111, 'B': 0.0126, 'LSTAT': -0.7026}}  
+child { node {{'Constant': 38.1447, 'CRIM': -0.1653, 'ZN': 0.0435, 'INDUS': 0.224, 'CHAS': 2.0699, 'NOX': -24.0446, 'RM': 4.3156, 'AGE': -0.0047, 'DIS': -1.7858, 'RAD': 0.6169, 'TAX': -0.0123, 'PTRATIO': -0.9864, 'B': 0.0229, 'LSTAT': -0.7051}}  
+ }
+child { node {{'Constant': 52.67, 'CRIM': -0.1653, 'ZN': 0.1094, 'INDUS': -0.029, 'CHAS': 2.8798, 'NOX': -17.8538, 'RM': 2.8762, 'AGE': -0.0307, 'DIS': -1.964, 'RAD': 0.3134, 'TAX': -0.0085, 'PTRATIO': -1.0476, 'B': 0.0052, 'LSTAT': -0.5951}}  
+ }
+ }
+child { node {{'Constant': 24.849, 'CRIM': -0.0816, 'ZN': 0.0367, 'INDUS': -0.0131, 'CHAS': 1.7977, 'NOX': -13.4005, 'RM': 4.4155, 'AGE': -0.0049, 'DIS': -1.2886, 'RAD': 0.2532, 'TAX': -0.0098, 'PTRATIO': -0.7441, 'B': 0.0112, 'LSTAT': -0.5035}}  
+ }
+child { node {{'Constant': 38.3815, 'CRIM': -0.0982, 'ZN': 0.0222, 'INDUS': 0.0068, 'CHAS': 1.7914, 'NOX': -16.9327, 'RM': 1.7636, 'AGE': 0.0074, 'DIS': -1.0097, 'RAD': 0.2753, 'TAX': -0.0124, 'PTRATIO': -0.6368, 'B': 0.0075, 'LSTAT': -0.5432}}  
+child { node {{'Constant': 29.4368, 'CRIM': -0.1133, 'ZN': 0.0225, 'INDUS': -0.0004, 'CHAS': 2.2588, 'NOX': -15.6133, 'RM': 2.9085, 'AGE': -0.0103, 'DIS': -1.2519, 'RAD': 0.2419, 'TAX': -0.0099, 'PTRATIO': -0.5862, 'B': 0.0109, 'LSTAT': -0.4789}}  
+ }
+ }
+ }
+;\end{tikzpicture} 
+ \caption{coefficient plot }  \end{figure}
+\end{document} 

@@ -11,7 +11,7 @@ class select_feature():
             #constructing feature for Dataset
             df =pd.DataFrame([])
             try:
-                dataset = dataset.drop(columns=['infant','female','male'])
+                dataset = dataset.drop(columns=['infant'])
             except:
                 pass
 
@@ -58,7 +58,7 @@ class select_feature():
 		'''
 		For result output column headers will be selected from these features
 		'''
-		columns = ['Constant','len','dia','hei','w_wei','sh_wei','v_wei','rings']
+		columns = ['Constant','female','male','len','dia','hei','w_wei','sh_wei','v_wei','rings']
 		return columns
 
 	def bond_extraction_cols():
