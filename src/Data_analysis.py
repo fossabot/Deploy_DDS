@@ -41,6 +41,7 @@ class Data_analysis():
         View and Analyze the data 
         '''
         df = pd.read_csv(str(file_location))
+        print('df: ', df)
         # print('\n\nParameter associated with the dataset are : \n')
         # print(list(df.columns))
 

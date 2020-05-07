@@ -130,8 +130,8 @@ class reference_point():
 		data = data.drop(max_dist_point.name)
 		####how many times run the loop
 		#try with dimension^2 but if less data then consider all the data points
-		if(data.shape[0] >= data.shape[1]): 
-			num_ref_point = data.shape[1] * 2
+		if(data.shape[1] >= data.shape[1]* 3): 
+			num_ref_point = data.shape[1] * 3
 			for i in range(num_ref_point):
 				measured_dist_from_all_ref_point = []
 				for j in range (data.shape[0]): #for all the data points 
@@ -188,8 +188,8 @@ class reference_point():
 		else:
 				num_ref_point = data.shape[0]
 				data = data.reset_index(drop=True)
-				# for i in range(data.shape[0]):
-				for i in range(5):
+				for i in range(data.shape[0]):
+				# for i in range(5):
 					data_point = data.loc[i,:]
 					data_point = data_point
 					ref_points.append(data_point)

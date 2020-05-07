@@ -151,13 +151,14 @@ class Flag():
                 df,tau = Sel_feat.feature_selection(dataset)
 
                 # df.to_csv(str(curr_directory)+'/Transformed.csv')
-
+                print('division_error_criteria: ', division_error_criteria)
                 Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
+                
                 Tree.Implement_Tree()
                 
-                #optimizing cluster
-                final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
-                final_clusters.optimize_cluster()
+                # #optimizing cluster
+                # final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
+                # final_clusters.optimize_cluster()
 
                 print('\n\n Executed Normally! Please check plot Folder')
                 # os.system('sh ./for_ploting.sh')
@@ -170,7 +171,7 @@ class Flag():
                 external_data = pd.read_csv(dataset_location)
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
                 dataset = data_gen(external_data,list_fuel,Flag_value,curr_directory)     #normal dataset generation
-                df,tau = Sel_Feat.feature_selection(dataset)
+                df,tau = Sel_feat.feature_selection(dataset)
                 df['Time'] = tau
                 df.to_csv(str(curr_directory)+'/tranformed_data.csv',index=False)
    
@@ -188,11 +189,11 @@ class Flag():
                 testset_obj_old = old_external_test(Flag_value,curr_directory)
                 testset_obj_old.external_testset(dataset)
 
-                # new
-                from external_test import external_test 
-                testset_obj = external_test(Flag_value,curr_directory)
-                testset_obj.external_testset(dataset)
-                print('\n\n Executed Normally! Please check plot Folder')
+                # # new
+                # from external_test import external_test 
+                # testset_obj = external_test(Flag_value,curr_directory)
+                # testset_obj.external_testset(dataset)
+                # print('\n\n Executed Normally! Please check plot Folder')
                 
         elif(Flag_value == '-p'):
                 '''
@@ -219,7 +220,7 @@ class Flag():
                 from combine_clusters import combine_clusters as CC
 
                 df,tau = Sel_feat.feature_selection(dataset)
-                df.to_csv(str(curr_directory)+'/Transformed.csv')
+                df.to_csv(str(curr_directory)+'/Transformed.csv',index=False)
 
                 Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
                 Tree.Implement_Tree()
@@ -239,7 +240,7 @@ class Flag():
                 # # new
                 # from external_test import external_test 
                 # testset_obj = external_test(Flag_value,curr_directory)
-                # testset_obj.external_testset(dataset)
+                # testset_obj.external_testset(external_data)
 
                 print('\n\n Executed Normally! Please check plot Folder')
                 # os.system('sh ./for_ploting.sh')

@@ -1279,19 +1279,31 @@ class Ternary_Tree():
                     else:
                         #printing brackets
                         f.write(' }\n')
-
+        print('self.cluster_label: ', self.cluster_label)
+        print('self.number_of_levels: ', self.number_of_levels)
         ######################################
         # please set according to requirement#
         ######################################
         if(filename == 'Testing' or filename=='coefficient' or filename == 'max_rel_error' or filename == 'Training' or filename=='MaxRelError' or filename == 'Datasize' or filename == 'ChildLabel'):
             if(type_of_division == 3) :
+                print('!inside')
                 if(self.number_of_levels > 3):
                     for i in range(type_of_division-1):
                         f.write(' }\n')
-                elif(self.number_of_levels >= 2):
+                elif(self.number_of_levels == 3):
                     for i in range(type_of_division-2):
                         f.write(' }\n')
+                    if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')
+                        pass
+                elif(self.number_of_levels == 2 and self.cluster_label < 5):
+                    for i in range(type_of_division-2):
+                        f.write(' }\n')
+                        pass
+                elif(self.number_of_levels == 2 and self.cluster_label == 5):
+                    print('here5')
+                    if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
+                        pass
                 elif(self.number_of_levels == 1):
                     if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')

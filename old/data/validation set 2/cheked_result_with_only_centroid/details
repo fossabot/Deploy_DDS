@@ -1,5 +1,0 @@
-Folder contains only result processed with two cluster.
-and testing hass been done from two centroid points.
-external result files shows some points are exchnaged and marked as CROSSED.
-which shows same point used in train-set, when used for test-set were assigned to wrong cluster.
-check ./external_test_result/Ignition_delay_comparison/*.csv files

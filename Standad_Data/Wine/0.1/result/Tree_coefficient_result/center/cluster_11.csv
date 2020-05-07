@@ -1,0 +1,2 @@
+Constant,fixed_acidity,volatile_acidity,citric_acid,residual_sugar,chlorides,free_sulfur_dioxide,total_sulfur_dioxide,density,pH,sulphates,alcohol,Training_R2,Testing_R2
+0.01,-0.0142,-0.0059,0.0067,0.0054,-0.0445,-0.0327,-0.009,0.461,0.0676,0.0018,-0.0451,0.8601042975510309,-0.1501658454235535

@@ -1,4 +1,0 @@
-Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source
-CCCCCCCC,1325,±0.7,1.95,±1,0.32,4,95.68,1,Ar,859,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCCCC,1265,±0.7,2.05,±1,0.32,4,95.68,1,Ar,1569,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCCCC,1289,±0.7,2.01,±1,0.32,4,95.68,1,Ar,1198,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates

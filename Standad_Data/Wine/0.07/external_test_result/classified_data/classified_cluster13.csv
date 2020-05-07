@@ -1,0 +1,4 @@
+,Constant,fixed_acidity,volatile_acidity,citric_acid,residual_sugar,chlorides,free_sulfur_dioxide,total_sulfur_dioxide,density,pH,sulphates,alcohol,Class,Time(μs)_actual,Time(μs)_predicted
+43,1.0,6.9,4.1,2.2,4.2,3.1,1.0,1.02,9.93,3.0,8.6,11.6,13,4,4.760606731498267
+256,1.0,6.4,1.7999999999999998,7.4,11.9,4.6,5.4,1.68,9.978,3.58,6.800000000000001,10.1,13,5,4.9380292466075755
+262,1.0,7.3,2.1,4.9,1.8,3.8,4.4,1.52,9.911999999999999,3.32,4.4,12.6,13,7,5.127031186890729

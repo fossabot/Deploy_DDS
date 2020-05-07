@@ -6,8 +6,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import os
 import random
 
-data = pd.read_csv('dataset.csv')
-
+data = pd.read_csv('Transformed.csv')
+data = data.drop(columns='Constant')
 # obtain svd
 U, S, V = np.linalg.svd(data)
 
@@ -79,14 +79,14 @@ fig = plt.figure(figsize = (8,8))
 ax = fig.add_subplot(111, projection='3d')
 ax.set_xlabel('Principal Component 1', fontsize = 15)
 ax.set_ylabel('Principal Component 2', fontsize = 15)
-ax.set_ylabel('Principal Component 3', fontsize = 15)
-ax.set_title('2 component PCA', fontsize = 20)
+ax.set_zlabel('Principal Component 3', fontsize = 15)
+ax.set_title('3 component PCA', fontsize = 20)
 ax.scatter(principalDf['principal component 1']
-               , principalDf['principal component 2'],principalDf['principal component 2'])
+               , principalDf['principal component 2'],principalDf['principal component 3'])
 ax.legend()
-ax.grid()   
+ax.grid() 
+plt.savefig('3d_house.eps')  
 plt.show()
-
 plt.close()
 plt.clf()
 
@@ -134,7 +134,7 @@ ax = fig.add_subplot(111,projection='3d')
 ax.set_xlabel('Principal Component 1', fontsize = 15)
 ax.set_ylabel('Principal Component 2', fontsize = 15)
 ax.set_ylabel('Principal Component 3', fontsize = 15)
-ax.set_title('2 component PCA', fontsize = 20)
+ax.set_title('3 component PCA', fontsize = 20)
 ax.legend()
 ax.grid() 
 for i in files:
@@ -154,7 +154,7 @@ for i in files:
     print('explained_variance: ', explained_variance)
 
     #plotting
-    ax.scatter(principalDf['principal component 1'], principalDf['principal component 2'],principalDf['principal component 2'])
+    ax.scatter(principalDf['principal component 1'], principalDf['principal component 2'],principalDf['principal component 3'])
 
   
 plt.show() 

@@ -12,7 +12,17 @@ class select_feature():
             df =pd.DataFrame([])
 
             df = dataset.iloc[:,:-1] # 6  #2
-            
+            df['fixed_acidity'] = df['fixed_acidity'] / 10
+            df['volatile_acidity'] = df['volatile_acidity'] 
+            df['citric_acid'] = df['citric_acid'] 
+            df['residual_sugar'] = df['residual_sugar'] / 100
+            df['chlorides'] = df['chlorides'] * 100
+            df['free_sulfur_dioxide'] = df['free_sulfur_dioxide'] / 100
+            df['total_sulfur_dioxide'] = df['total_sulfur_dioxide'] / 1000
+            df['density'] = df['density'] * 10
+            df['pH'] = df['pH'] / 10
+            df['sulphates'] = df['sulphates'] 
+            df['alcohol'] = df['alcohol'] / 100
 
         
             ################################

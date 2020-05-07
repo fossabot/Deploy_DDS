@@ -26,7 +26,7 @@ import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
 # print('dir_path: ', dir_path)
 sys.path.append(dir_path)
-
+import math
 
 #Obtaining Path of directory 
 dir_split = dir_path.split('/')
@@ -90,6 +90,9 @@ class external_test():
                 ###################################################################################
                 error_result =[]
                 final_comparision =pd.DataFrame([],columns=['y_actual','y_predicted','Relative Error'])
+
+                testdata_points_in_cluster = []  #number of data points of testset in cluster
+                rmse_cluster = [] #associated rmse of that cluster 
 
                 ###linear regression
                 for i in range(num_of_clusters):
@@ -177,7 +180,10 @@ class external_test():
                         f.write('\n\n Maximum Relative Error in external data for cluster-'+str(cluster_label[i])+' :'+str(maximum_relative_error_external))
                         print('\n\n Maximum Relative Error in external data for cluster-', str(cluster_label[i]),' :',str(maximum_relative_error_external))
                         print('\n\n Root Mean Square Error :', rmse_val)
+                        f.write('\n\n Root Mean Square Error :'+str(rmse_val)+'\n\n')
                         f.close()
+                        rmse_cluster.append(rmse_val)
+                        testdata_points_in_cluster.append(len(y_pred))
 
 
                         ############## for overall relative error plot #################
@@ -237,6 +243,24 @@ class external_test():
                         # plt.savefig(str(self.curr_directory)+'/external_test_result/prediction_comparison_plots/ignition_delay_external_'+str(cluster_label[i])+'.eps', format='eps', dpi=600)
                         plt.close()
                 
+
+                #Overall RMSE
+                f = open(str(self.curr_directory)+"/external_test_result/console_output/output_result.txt", "a")
+                '''
+                overall rmse^2 * n = n1 * rmse1^2 + n2 * rmse2^2 +...s
+                '''
+                f.write('rmse:'+str(rmse_cluster))
+                f.write('data points in test cluster:'+str(testdata_points_in_cluster))
+                square_rmse = 0
+                for i in range(len(rmse_cluster)):
+                        square_rmse += (rmse_cluster[i]**2) * testdata_points_in_cluster[i]
+                overall_rmse = math.sqrt(square_rmse / sum(testdata_points_in_cluster))
+                f.write('\n \n Overall RMSE :'+str(overall_rmse))
+                f.close()
+                print('\n RMSE:',str(rmse_cluster))
+                print('\n data points in test cluster:',str(testdata_points_in_cluster))
+                print('\n \n Overall RMSE :',str(overall_rmse))
+
                 #########################
                 ### whole comparision ###
                 #########################
@@ -257,15 +281,18 @@ class external_test():
                 rel_error_gt_100 = final_comparision[(final_comparision['Relative Error'] > 1.0)].shape[0]
 
                 # x = ['$<= 10\%$ ', '$ 10\% < x <= 20\%$','$ 20\% < x <= 30\%$','$ 30\% < x <= 40\%$','$ 40\% < x <= 50\%$','$ 50\% < x <= 60\%$','$ 60\% < x <= 70\%$','$ 70\% < x <= 80\%$','$ 80\% < x <= 90\%$','$ 90\% < x <= 100\%$','$ 100\% > x $']
-                x = ['$<= 10\%$ ', '$ <= 20\%$','$ <= 30\%$','$ <= 40\%$','$ <= 50\%$','$ <= 60\%$','$ <= 70\%$','$ <= 80\%$','$ <= 90\%$','$ <= 100\%$','$ 100\% > x $']
+                x = ['$ 10$ ', '$ 20$','$ 30$','$ 40$','$ 50$','$ 60$','$ 70$','$ 80$','$ 90$','$ 100$','$ >100 $']
                 y = [rel_error_lt_10,rel_error_btn_10_20,rel_error_btn_20_30,rel_error_btn_30_40, rel_error_btn_40_50, rel_error_btn_50_60, rel_error_btn_60_70, rel_error_btn_70_80, rel_error_btn_80_90, rel_error_btn_90_100, rel_error_gt_100]
                 SF.check_directory(str(self.curr_directory)+'/external_test_result/error_frequency/') #checking directory
                 plt.clf()
                 plt.bar(x,y)
                 plt.rc('text', usetex=True)
+                # plt.rc('xtick',labelsize=15)
+                # plt.rc('ytick',labelsize=15)
                 plt.grid(which='minor', alpha=0.2)
+                plt.tick_params(axis='both', which='minor', labelsize=15)
                 plt.title('Frequency of relative error for all data',fontsize=15)
-                plt.xlabel('Relative Error',fontsize=15)
+                plt.xlabel('Relative Error ( <= \%)',fontsize=15)
                 plt.ylabel('Frequency of Error',fontsize=15)
                 plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_all_data_opt.jpg', dpi=600)
                 # plt.show()

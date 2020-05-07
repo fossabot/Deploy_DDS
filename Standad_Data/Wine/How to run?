@@ -1,0 +1,4 @@
+Run algo IDpredition ...
+then to check accuacy,
+-- Change the path name
+-- RUN : python accuracy.py 
