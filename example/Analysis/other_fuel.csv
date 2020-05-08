@@ -1,20 +1,4 @@
 Fuel,T(K),T_Error(%),P(atm),P_Error(%),Fuel(%),Oxidizer(%),Diluant(%),Equv(phi),Diluant Type,Time(μs),Mode_of_measurement,Species_name,Species_measurement_Error,Measured_wavelength(nm),Shocktube_dia(cm),Research_group,Data_Source
-CCCCCC,1284,±0.7,1.92,±1,0.42,4,95.58,1,Ar,1317,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1353,±0.7,1.9,±1,0.42,4,95.58,1,Ar,623,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1358,±0.7,1.76,±1,0.42,4,95.58,1,Ar,688,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1470,±0.7,1.77,±1,0.42,4,95.58,1,Ar,176,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1375,±0.7,1.86,±1,0.42,4,95.58,1,Ar,483,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1237,±0.7,1.93,±1,0.42,4,95.58,1,Ar,2706,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1273,±0.7,3.32,±1,0.42,4,95.58,1,Ar,1046,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1396,±0.7,3.6,±1,0.42,4,95.58,1,Ar,301,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1250,±0.7,3.1,±1,0.42,4,95.58,1,Ar,1805,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1386,±0.7,3.48,±1,0.42,4,95.58,1,Ar,291,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1407,±0.7,3.43,±1,0.42,4,95.58,1,Ar,263,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1475,±0.7,1.77,±1,0.21,4,95.79,0.5,Ar,78,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1274,±0.7,1.76,±1,0.21,4,95.79,0.5,Ar,1225,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1361,±0.7,1.89,±1,0.21,4,95.79,0.5,Ar,303,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1367,±0.7,1.67,±1,0.21,4,95.79,0.5,Ar,308,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
-CCCCCC,1403,±0.7,1.69,±1,0.21,4,95.79,0.5,Ar,196,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
 CCCCCCCCC,1307,±0.7,1.85,±1,0.286,4,95.714,1,Ar,1002,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
 CCCCCCCCC,1288,±0.7,1.68,±1,0.286,4,95.714,1,Ar,1351,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates
 CCCCCCCCC,1384,±0.7,1.8,±1,0.286,4,95.714,1,Ar,382,Species,OH,±3,306,14.13,Stanford,Lam_2013_thesis / Normal_Alkanes_and_Simple_Oxygenates

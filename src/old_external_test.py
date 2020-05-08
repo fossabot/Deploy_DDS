@@ -305,7 +305,19 @@ class old_external_test():
                 plt.close()                       
                 # plt.show()
                 plt.close()
-        
+                
+                #Storing to the file 
+                SF.check_file_existence(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency.csv')
+                header = ['10','20','30','40','50','60','70','80','90','100','>100']
+                try:
+                        error_freq = pd.read_csv(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency.csv')
+                except:
+                        error_freq = pd.DataFrame([],columns=header)
+                new_data = pd.Series(y,index=header) #new error freq row
+                error_freq = error_freq.append(new_data,ignore_index=True)    #appending
+                error_freq.to_csv(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency.csv',index=False)
+
+
         def find_total_clusters(self,directory_path):
                 '''
                 This method will find out number of cluster based on center nodes saved on the 

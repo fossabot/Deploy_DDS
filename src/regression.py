@@ -45,7 +45,7 @@ def max_relative_error(y_train,y_train_pred):
         return error 
 
 
-def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_size_fraction=0.1,elimination=False,child_type='root',sl=0.05,process_type ='tree'):
+def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_size_fraction=0.05,elimination=False,child_type='root',sl=0.05,process_type ='tree'):
         '''
         This method will generate the dataset from required information so that 
         generated dataset will be compatible to apply machine learning algorithm.

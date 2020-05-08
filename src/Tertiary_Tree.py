@@ -274,7 +274,7 @@ class Ternary_Tree():
             # else:
             #     #if node has data then,
             #     if(self.cur_node.right_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
-            #         if(cur_node.right_node.data.shape[0] > cur_node.right_node.data.shape[1]): #if rows are more than columns
+            #         if(cur_node.right_node.data.shape[0] > cur_node.right_node.data.shape[1]*2): #if rows are more than columns
             #             # self._divide(cur_node.right_node.data,cur_node.center_node)
             #             pass
             #         else:
@@ -1279,14 +1279,12 @@ class Ternary_Tree():
                     else:
                         #printing brackets
                         f.write(' }\n')
-        print('self.cluster_label: ', self.cluster_label)
-        print('self.number_of_levels: ', self.number_of_levels)
+                        
         ######################################
         # please set according to requirement#
         ######################################
         if(filename == 'Testing' or filename=='coefficient' or filename == 'max_rel_error' or filename == 'Training' or filename=='MaxRelError' or filename == 'Datasize' or filename == 'ChildLabel'):
             if(type_of_division == 3) :
-                print('!inside')
                 if(self.number_of_levels > 3):
                     for i in range(type_of_division-1):
                         f.write(' }\n')
@@ -1301,7 +1299,6 @@ class Ternary_Tree():
                         f.write(' }\n')
                         pass
                 elif(self.number_of_levels == 2 and self.cluster_label == 5):
-                    print('here5')
                     if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         pass
                 elif(self.number_of_levels == 1):
