@@ -15,12 +15,12 @@ cd ./src
 
 error_criteria=0.05 #Tree:erroe based clustering criteria
 significance_level=0.05 #significance level
-elimination='Flase' #elimination default set as Flase
-
+elimination='False' #elimination default set as Flase
+limited_ref_points='False'
 
 #ALL OPTARG is file name 
 #it is useful to initialize variable based on the flag passed
-while getopts "c:b:a:h:m:t:e:p:r:s:d:o:" arg; do
+while getopts "c:b:a:h:m:t:e:p:r:s:d:o:l:" arg; do
   case $arg in
     c) 
         flag_passed='-c'
@@ -79,6 +79,12 @@ while getopts "c:b:a:h:m:t:e:p:r:s:d:o:" arg; do
         flag_passed='-r'
         echo "Eliminiation of feature set as True"
         elimination=$OPTARG
+        echo
+        ;;
+    l)
+        flag_passed='-l'
+        echo "Refrence Points are limited by features"
+        limited_ref_points=$OPTARG
         echo
         ;;
     s)
@@ -210,7 +216,7 @@ fi
 
 if [ $flag_passed == '-t' ]
 then
-python DDS.py -t $dataset_location $curr_location $error_criteria $elimination $significance_level
+python DDS.py -t $dataset_location $curr_location $error_criteria $elimination $significance_level $limited_ref_points
 plotting_fucntion
 fi
 
@@ -222,7 +228,7 @@ fi
 
 if [ $flag_passed == '-o' ]
 then
-python DDS.py -o $dataset_location $curr_location $error_criteria $elimination $significance_level
+python DDS.py -o $dataset_location $curr_location $error_criteria $elimination $significance_level $limited_ref_points
 plotting_fucntion
 fi
 

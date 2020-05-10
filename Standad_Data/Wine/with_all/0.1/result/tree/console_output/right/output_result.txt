@@ -1,0 +1,165 @@
+
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 6
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.402
+Model:                            OLS   Adj. R-squared:                  0.395
+Method:                 Least Squares   F-statistic:                     57.07
+Date:                Sun, 10 May 2020   Prob (F-statistic):           1.93e-96
+Time:                        21:41:09   Log-Likelihood:                -506.95
+No. Observations:                 945   AIC:                             1038.
+Df Residuals:                     933   BIC:                             1096.
+Df Model:                          11                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+Constant               158.3934     27.794      5.699      0.000     103.847     212.939
+fixed_acidity           -0.0087      0.028     -0.307      0.759      -0.064       0.047
+volatile_acidity        -0.1916      0.015    -12.920      0.000      -0.221      -0.163
+citric_acid              0.0023      0.012      0.194      0.846      -0.021       0.026
+residual_sugar           0.0839      0.010      8.171      0.000       0.064       0.104
+chlorides               -0.0114      0.008     -1.486      0.138      -0.026       0.004
+free_sulfur_dioxide      0.0038      0.009      0.407      0.684      -0.015       0.022
+total_sulfur_dioxide     0.1266      0.046      2.773      0.006       0.037       0.216
+density                -15.6616      2.821     -5.553      0.000     -21.197     -10.126
+pH                       0.3172      0.150      2.120      0.034       0.024       0.611
+sulphates                0.0631      0.013      4.717      0.000       0.037       0.089
+alcohol                  0.0767      0.036      2.160      0.031       0.007       0.146
+==============================================================================
+Omnibus:                      494.347   Durbin-Watson:                   1.945
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3415.618
+Skew:                          -2.335   Prob(JB):                         0.00
+Kurtosis:                      11.059   Cond. No.                     4.13e+04
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.13e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:158.39337288922297
+
+fixed_acidity:-0.008673030163834985
+
+volatile_acidity:-0.1916357189819762
+
+citric_acid:0.0023026524238260633
+
+residual_sugar:0.08389758135854739
+
+chlorides:-0.011417976194155507
+
+free_sulfur_dioxide:0.003811613671702285
+
+total_sulfur_dioxide:0.1265637783370212
+
+density:-15.66158654217769
+
+pH:0.31723517438149873
+
+sulphates:0.06314730837597836
+
+alcohol:0.07668696856255582
+
+
+ Maximum  Relative Error in Training : 0.8212700943180948
+ Training R2 :0.4022188363763711
+Training Adjusted R2 : 0.39517104130685354
+ Root Mean square error :0.37877413158228035
+Testing R2 :-0.12154903862080713
+MSR_testing :0.14346984275591063
+
+######################################################################################################################
+
+######################################################################################################################
+
+Cluster Label: 9
+
+####################################################################
+########################       OUTPUT     ##########################
+####################################################################
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  y_act   R-squared:                       0.182
+Model:                            OLS   Adj. R-squared:                  0.079
+Method:                 Least Squares   F-statistic:                     1.777
+Date:                Sun, 10 May 2020   Prob (F-statistic):             0.0701
+Time:                        21:41:12   Log-Likelihood:                -47.656
+No. Observations:                 100   AIC:                             119.3
+Df Residuals:                      88   BIC:                             150.6
+Df Model:                          11                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+Constant               -26.3339     84.346     -0.312      0.756    -193.953     141.285
+fixed_acidity           -0.1430      0.075     -1.896      0.061      -0.293       0.007
+volatile_acidity        -0.1117      0.048     -2.307      0.023      -0.208      -0.015
+citric_acid              0.0313      0.036      0.862      0.391      -0.041       0.104
+residual_sugar          -0.0004      0.031     -0.013      0.989      -0.061       0.060
+chlorides               -0.0082      0.021     -0.394      0.695      -0.050       0.033
+free_sulfur_dioxide     -0.0179      0.020     -0.905      0.368      -0.057       0.021
+total_sulfur_dioxide    -0.0744      0.127     -0.586      0.559      -0.327       0.178
+density                  3.1610      8.541      0.370      0.712     -13.813      20.135
+pH                      -0.2878      0.435     -0.662      0.509      -1.151       0.576
+sulphates                0.0326      0.043      0.765      0.446      -0.052       0.117
+alcohol                  0.0929      0.113      0.824      0.412      -0.131       0.317
+==============================================================================
+Omnibus:                       24.706   Durbin-Watson:                   2.043
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               34.738
+Skew:                          -1.182   Prob(JB):                     2.86e-08
+Kurtosis:                       4.659   Cond. No.                     3.98e+04
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.98e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+        ########################
+        # RESULT  COEFFICIENT: #
+        ########################
+        
+Constant:-26.333922794269483
+
+fixed_acidity:-0.1430339510120615
+
+volatile_acidity:-0.11169294618369155
+
+citric_acid:0.03133766304182245
+
+residual_sugar:-0.0004057711328183944
+
+chlorides:-0.008230891747790313
+
+free_sulfur_dioxide:-0.017860571094563654
+
+total_sulfur_dioxide:-0.07443350899651491
+
+density:3.1610065658471243
+
+pH:-0.2878028426889232
+
+sulphates:0.03259087976243519
+
+alcohol:0.09290953621193576
+
+
+ Maximum  Relative Error in Training : 0.37908225007518226
+ Training R2 :0.1817560894768534
+Training Adjusted R2 : 0.07947560066146009
+ Root Mean square error :0.5487157259906362
+Testing R2 :-6.371560635470242
+MSR_testing :0.301088947949431

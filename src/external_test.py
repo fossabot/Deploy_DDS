@@ -253,7 +253,8 @@ class external_test():
                 f.write('data points in test cluster:'+str(testdata_points_in_cluster))
                 square_rmse = 0
                 for i in range(len(rmse_cluster)):
-                        square_rmse += (rmse_cluster[i]**2) * testdata_points_in_cluster[i]
+                        if(testdata_points_in_cluster[i] > 0): #if no data points then to avoid nan answer
+                                square_rmse += (rmse_cluster[i]**2) * testdata_points_in_cluster[i]
                 overall_rmse = math.sqrt(square_rmse / sum(testdata_points_in_cluster))
                 f.write('\n \n Overall RMSE :'+str(overall_rmse))
                 f.close()

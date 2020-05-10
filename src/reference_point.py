@@ -16,10 +16,11 @@ class reference_point():
 	other points based on euclidean distance 
 	'''
 
-	def __init__(self,curr_directory,criteria,choice):
+	def __init__(self,curr_directory,criteria,choice,limited_ref_points = False):
 			self.choice = choice
 			self.curr_directory = curr_directory
 			self.criteria = criteria
+			self.limited_ref_points = limited_ref_points
 
  
 	def calculate_centroid(self,data):
@@ -130,26 +131,29 @@ class reference_point():
 		data = data.drop(max_dist_point.name)
 		####how many times run the loop
 		#try with dimension^2 but if less data then consider all the data points
-		if(data.shape[1] >= data.shape[1]* 3): 
-			num_ref_point = data.shape[1] * 3
-			for i in range(num_ref_point):
-				measured_dist_from_all_ref_point = []
-				for j in range (data.shape[0]): #for all the data points 
-					dist_sum = 0
-					data = data.reset_index(drop=True)
-					for k in range(len(ref_points)): #distance from all the points
-						dist_sum += self.euclidian_dist(ref_points[k],data.loc[j,:])
-					#for data point-j distance is measured from all the distance and ref_points
-					measured_dist_from_all_ref_point.append(dist_sum)
-				#after storing all measures dist. find index of list and locate that data point
-				Point_index = np.argmax(measured_dist_from_all_ref_point)
-				#find data point based on index
-				data_point = data.loc[Point_index,:]
-				data_point = data_point.reset_index(drop=True)
-				#dropping point from the data 
-				data = data.drop(Point_index)
-				#append that data point as reference point
-				ref_points.append(data_point)
+		if(self.limited_ref_points == True): ##it will use all the point of fuel as reference point
+			time.sleep(10)
+			if(data.shape[0] >= data.shape[1] * 10): 
+				num_ref_point = data.shape[1] * 10
+				for i in range(num_ref_point):
+					print(i)
+					measured_dist_from_all_ref_point = []
+					for j in range (data.shape[0]): #for all the data points 
+						dist_sum = 0
+						data = data.reset_index(drop=True)
+						for k in range(len(ref_points)): #distance from all the points
+							dist_sum += self.euclidian_dist(ref_points[k],data.loc[j,:])
+						#for data point-j distance is measured from all the distance and ref_points
+						measured_dist_from_all_ref_point.append(dist_sum)
+					#after storing all measures dist. find index of list and locate that data point
+					Point_index = np.argmax(measured_dist_from_all_ref_point)
+					#find data point based on index
+					data_point = data.loc[Point_index,:]
+					data_point = data_point.reset_index(drop=True)
+					#dropping point from the data 
+					data = data.drop(Point_index)
+					#append that data point as reference point
+					ref_points.append(data_point)
 		elif(data.shape[1] == 1):  #for 1D data
 		    # time.sleep(10)
 		    ####two reference point one extreme and centroid is already added  

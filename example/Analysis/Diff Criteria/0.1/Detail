@@ -1,0 +1,6 @@
+Contains all data except propane, hexadecane, hexane.
+Propane is removed.
+ hexadecane, hexane , other 20% random points from train data are in testing set
+
+train : 4,5,7,8,9,10,12 -- 20%
+test : 16,9,6 + 20% data

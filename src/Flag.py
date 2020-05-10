@@ -33,7 +33,7 @@ class Flag():
     '''
  
 
-    def switch_func(Flag_value,dataset_location=None,curr_directory=None,smile=None,division_error_criteria=0.05,elimination=False,sl=0.05):
+    def switch_func(Flag_value,dataset_location=None,curr_directory=None,smile=None,division_error_criteria=0.05,elimination=False,sl=0.05,limited_ref_points=False):
         '''
         This methos works like switch in c++.
         According to your Flag it will divert the code and 
@@ -152,7 +152,7 @@ class Flag():
 
                 # df.to_csv(str(curr_directory)+'/Transformed.csv')
                 print('division_error_criteria: ', division_error_criteria)
-                Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
+                Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points)
                 
                 Tree.Implement_Tree()
                 
@@ -221,8 +221,7 @@ class Flag():
 
                 df,tau = Sel_feat.feature_selection(dataset)
                 df.to_csv(str(curr_directory)+'/Transformed.csv',index=False)
-
-                Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl)
+                Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points)
                 Tree.Implement_Tree()
                 
                 # #optimizing cluster

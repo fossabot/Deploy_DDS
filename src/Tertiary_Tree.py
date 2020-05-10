@@ -55,8 +55,8 @@ class Node():
     
 class Ternary_Tree():
 
-    def __init__(self,data_X,dependent_y,division_error_criteria,choice_value,curr_directory,cluster_label=0,elimination=False,sl=0.05):    #default testing criteria and do ctrl+f for more
-
+    def __init__(self,data_X,dependent_y,division_error_criteria,choice_value,curr_directory,cluster_label=0,elimination=False,sl=0.05,limited_ref_points=False):    #default testing criteria and do ctrl+f for more
+        
         '''
         Constructor with root implementation 
         '''
@@ -72,7 +72,7 @@ class Ternary_Tree():
         self.process_type = 'tree'
 
         #object of other module
-        self.ref_point = reference_point(self.curr_directory, self.division_error_criteria, self.choice_value)
+        self.ref_point = reference_point(self.curr_directory, self.division_error_criteria, self.choice_value,limited_ref_points=limited_ref_points)
 
         #root analysis
         self.root =Node(data_X,dependent_y) #root node defined 

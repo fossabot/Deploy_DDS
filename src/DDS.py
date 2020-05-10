@@ -59,7 +59,10 @@ if(flag == '-t'):
     elimination = True if elimination=='True' else False
     #backward elimination significance criteria 
     sl = float(sys.argv[6])
-    Flag.switch_func(flag,dataset_location=dataset_location,curr_directory=curr_directory,division_error_criteria=error_criteria_to_divide,elimination=elimination,sl=sl) 
+    #If you want to use significance level
+    limited_ref_points = sys.argv[7]
+    limited_ref_points = True if limited_ref_points=='True' else False
+    Flag.switch_func(flag,dataset_location=dataset_location,curr_directory=curr_directory,division_error_criteria=error_criteria_to_divide,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points) 
     pass
 elif(flag == '-o'):
     '''
@@ -76,7 +79,10 @@ elif(flag == '-o'):
     elimination = True if elimination=='True' else False
     #backward elimination significance criteria 
     sl = float(sys.argv[6])
-    Flag.switch_func(flag,dataset_location=dataset_location,curr_directory=curr_directory,division_error_criteria=error_criteria_to_divide,elimination=elimination,sl=sl) 
+    #If you want to use significance level
+    limited_ref_points = sys.argv[7]
+    limited_ref_points = True if limited_ref_points=='True' else False
+    Flag.switch_func(flag,dataset_location=dataset_location,curr_directory=curr_directory,division_error_criteria=error_criteria_to_divide,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points) 
     pass
 elif(flag == '-m'):
     elimination=sys.argv[4]
