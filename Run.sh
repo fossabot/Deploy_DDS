@@ -217,7 +217,7 @@ fi
 if [ $flag_passed == '-t' ]
 then
 python DDS.py -t $dataset_location $curr_location $error_criteria $elimination $significance_level $limited_ref_points
-plotting_fucntion
+# plotting_fucntion
 fi
 
 #################################

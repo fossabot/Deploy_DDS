@@ -14,8 +14,8 @@ Cluster Label: 0
 Dep. Variable:                quality   R-squared:                       0.281
 Model:                            OLS   Adj. R-squared:                  0.279
 Method:                 Least Squares   F-statistic:                     148.3
-Date:                Sun, 10 May 2020   Prob (F-statistic):          5.19e-289
-Time:                        22:09:02   Log-Likelihood:                -4710.0
+Date:                Mon, 11 May 2020   Prob (F-statistic):          5.19e-289
+Time:                        01:15:53   Log-Likelihood:                -4710.0
 No. Observations:                4187   AIC:                             9444.
 Df Residuals:                    4175   BIC:                             9520.
 Df Model:                          11                                         

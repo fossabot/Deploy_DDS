@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import os
 
-path = './0.1/external_test_result/Ignition_delay_comparison/'
+path = './0.07/external_test_result/Ignition_delay_comparison/'
 files = os.listdir(path=path)
 print('files: ', files)
 

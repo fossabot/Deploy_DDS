@@ -1,0 +1,33 @@
+ \documentclass[a4paper,10pt]{article}
+ \usepackage{tikz}
+ \usepackage{fullpage}
+ \usetikzlibrary{positioning,shadows,arrows,trees,shapes,fit}
+ \begin{document}
+ \begin{figure}
+ \begin{tikzpicture}
+ [font=\small, edge from parent fork down, 
+ every node/.style={top color=white, bottom color=blue!25, 
+ 	rectangle,rounded corners, minimum size=5mm, draw=blue!75,
+	very thick, drop shadow, align=center},
+ edge from parent/.style={draw=blue!50,thick},
+ level 1/.style={sibling distance=4cm},
+ level 2/.style={sibling distance=4cm}, 
+ level 3/.style={sibling distance=4cm}, 
+ level 4/.style={sibling distance=4cm}, 
+ level 5/.style={sibling distance=4cm}, 
+ level 6/.style={sibling distance=4cm}, 
+ level distance=2cm,
+ level distance=5cm,
+ ]
+\node {{'Constant': -1.4119, 'logP(atm)': -0.6113, 'logFuel': -0.4625, 'logOxidizer': 0.1639, 'T0/SHT': 2.9466, 'T0/T': 9.1493}} %root
+child { node {{'Constant': -2.3856, 'logP(atm)': -0.6964, 'logFuel': -0.2599, 'logOxidizer': -0.1716, 'T0/SHT': 2.3793, 'T0/T': 12.6735}}  
+ }
+child { node {{'Constant': -1.7805, 'log_P(atm)': -0.6201, 'log_Fuel(%)': -0.5024, 'log_Oxidizer(%)': 0.1548, 'T0/S_H__T': 2.6638, 'T0/T': 9.7131}}  
+ }
+child { node {{'Constant': -0.0074, 'logP(atm)': -0.5317, 'logFuel': -0.0784, 'logOxidizer': -0.1042, 'T0/SHT': 1.4269, 'T0/T': 7.1947}}  
+child { node {{'Constant': -0.4297, 'log_P(atm)': -0.5388, 'log_Fuel(%)': -0.1577, 'log_Oxidizer(%)': -0.1016, 'T0/S_H__T': 2.2503, 'T0/T': 7.6135}}  
+ }
+ }
+;\end{tikzpicture} 
+ \caption{coefficient plot }  \end{figure}
+\end{document} 

@@ -9,6 +9,7 @@ from write_coef import writing_coefficient as WC
 import sys
 import os 
 from search_fileNcreate import search_fileNcreate as SF
+from select_feature import select_feature 
 import copy
 from sklearn.externals import joblib
 import matplotlib.pyplot as plt
@@ -77,6 +78,10 @@ class Ternary_Tree():
         #root analysis
         self.root =Node(data_X,dependent_y) #root node defined 
         self.root.child_label = cluster_label
+        #save data of all clusters after regression 
+        SF.check_directory(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str('root'))
+        self.root.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str('root')+'/cluster_'+str(self.root.child_label)+'_'+str('root')+'.csv')
+        
         self.root.max_relerr_train,self.root.r2,self.root.testing_r2,summary,self.root.coefficients_dictionary,self.root.data = regression.regression(self.root.data,self.root.y_dependent,choice_value,curr_directory=self.curr_directory,cluster_label=self.cluster_label,elimination=self.elimination,sl=self.sl,process_type=self.process_type)   #calculation of self.R2 of root 
         WC(self.root.coefficients_dictionary,self.root.r2,self.root.testing_r2,self.root.child_label,self.curr_directory,'root')
         self.root.data_size = self.root.data.shape[0]       #no of rows in data shows data points
@@ -111,6 +116,7 @@ class Ternary_Tree():
                 #final cluster gives stores only those cluster data which are useful fro prediction
                 SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
                 self.root.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(self.root.child_label)+'_'+str(child_type)+'.csv')
+
             # self.root.data.to_csv(str(self.curr_directory)+'/result/Data_of_Root.csv')
             
         print('Tree structure is implemented!')
@@ -160,7 +166,6 @@ class Ternary_Tree():
                     cur_node.left_node.centroid = self.ref_point.calculate_centroid(cur_node.left_node.data)
                     #removing certain word from coefficients for printing
                     cur_node.left_node.coefficients_dictionary  = self.remove_specific_char(cur_node.left_node.coefficients_dictionary )
-                    
                     if(cur_node.left_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
                             self._divide(cur_node.left_node.data,cur_node.left_node)
                     else:
@@ -184,10 +189,23 @@ class Ternary_Tree():
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type))
                         cur_node.left_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(cur_node.left_node.child_label)+'_'+str(child_type)+'.csv')
+                        cur_node.left_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/end_cluster_'+str(cur_node.left_node.child_label)+'.csv')
 
                         ####Storing the whole node
                         filename_centroid=  str(self.curr_directory)+'/object_file/leafs/leaf_'+str(cur_node.left_node.child_label)+'.sav'
                         joblib.dump(cur_node.left_node,filename_centroid)  
+
+                        ##writing centroid
+                        ####For writing centroid
+                        SF.check_directory(str(self.curr_directory)+'/result/centroids/')
+                        centroid_headers = select_feature.column_selection().remove('Constant')
+                        try:
+                            centroid_out = pd.read_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.left_node.child_label)+'.csv')
+                        except:
+                            centroid_out = pd.DataFrame([],columns=centroid_headers)
+                        centroid_out = centroid_out.append(pd.Series(cur_node.left_node.centroid,index=centroid_headers),ignore_index=True)
+                        centroid_out.to_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.left_node.child_label)+'.csv',index=False)
+
                 else:
                     print('Less Data')
             else:
@@ -219,8 +237,8 @@ class Ternary_Tree():
                 # time.sleep(2)
                 #save data of all clusters after regression 
                 SF.check_directory(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type))
-                cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(child_type)+'.csv')
-                
+                cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/cluster_data_before_regression/'+str(child_type)+'/cluster_'+str(cur_node.center_node.child_label)+'_'+str(child_type)+'.csv')
+
                 if(cur_node.center_node.data.shape[0] > cur_node.center_node.data.shape[1]*2): #if rows are more than columns
                     cur_node.center_node.max_relerr_train, cur_node.center_node.r2, cur_node.center_node.testing_r2, summary,cur_node.center_node.coefficients_dictionary, cur_node.center_node.data = regression.regression(cur_node.center_node.data,cur_node.center_node.y_dependent,self.choice_value,curr_directory=self.curr_directory,cluster_label=cur_node.center_node.child_label,child_type=child_type,elimination=self.elimination,sl=self.sl,process_type=self.process_type)    #calculate the r2 of that data 
                     WC(cur_node.center_node.coefficients_dictionary,cur_node.center_node.r2,cur_node.center_node.testing_r2,cur_node.center_node.child_label,self.curr_directory,child_type)
@@ -229,7 +247,7 @@ class Ternary_Tree():
                     cur_node.center_node.data_size = cur_node.center_node.data.shape[0]             #for data size
                     # print('calculating centroid of center node ')
                     cur_node.center_node.centroid = self.ref_point.calculate_centroid(cur_node.center_node.data)
-                    # print('cur_node.center_node.centroid: ', cur_node.center_node.centroid)
+                    time.sleep(5)
 
                     '''
                     Storing centroid of the center nodes as it gives final relation and useful for testing prediction
@@ -251,10 +269,23 @@ class Ternary_Tree():
                     #final cluster gives stores only those cluster data which are useful for prediction #as all centroid clusters are final clusters
                     SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 
                     cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(cur_node.center_node.child_label)+'_'+str(child_type)+'.csv')
+                    cur_node.center_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/end_cluster_'+str(cur_node.center_node.child_label)+'.csv')
 
                     ####Storing the whole node
                     filename_centroid=  str(self.curr_directory)+'/object_file/leafs/leaf_'+str(cur_node.center_node.child_label)+'.sav'
-                    joblib.dump(cur_node.center_node,filename_centroid)  
+                    joblib.dump(cur_node.center_node,filename_centroid) 
+
+                    ##writing centroid
+                    ####For writing centroid
+                    SF.check_directory(str(self.curr_directory)+'/result/centroids/')
+                    centroid_headers = select_feature.column_selection().remove('Constant')
+                    try:
+                        centroid_out = pd.read_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.center_node.child_label)+'.csv')
+                    except:
+                        centroid_out = pd.DataFrame([],columns=centroid_headers)
+                    centroid_out = centroid_out.append(pd.Series(cur_node.center_node.centroid,index=centroid_headers),ignore_index=True)
+                    centroid_out.to_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.center_node.child_label)+'.csv',index=False)
+
 
                     '''
                     Don't delete : useful in case if you want to further classify center nodes
@@ -265,7 +296,7 @@ class Ternary_Tree():
             #         cur_node.center_node.coefficients_dictionary  = self.remove_specific_char(cur_node.center_node.coefficients_dictionary )
                     if(cur_node.center_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
                             # self._divide(cur_node.center_node.data,cur_node.center_node)
-                            print('Error has slightly increases due to considering only center cluster data points')
+                            print('Error is slightly increased due to consideration of only center cluster data points')
                             pass
                     else:
                         print('Criteria Satisfied')
@@ -324,6 +355,17 @@ class Ternary_Tree():
                         filename_centroid=  str(self.curr_directory)+'/object_file/centroids/centroid_'+str(cur_node.right_node.child_label)+'.sav'
                         joblib.dump(cur_node.right_node.centroid,filename_centroid) 
 
+                        ##writing centroid
+                        ####For writing centroid
+                        SF.check_directory(str(self.curr_directory)+'/result/centroids/')
+                        centroid_headers = select_feature.column_selection().remove('Constant')
+                        try:
+                            centroid_out = pd.read_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.right_node.child_label)+'.csv')
+                        except:
+                            centroid_out = pd.DataFrame([],columns=centroid_headers)
+                        centroid_out = centroid_out.append(pd.Series(cur_node.right_node.centroid,index=centroid_headers),ignore_index=True)
+                        centroid_out.to_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.right_node.child_label)+'.csv')
+
                         ## commented this part as it is required for final clusters and that we are going to
                         ## get after optimized cluster so no need to waste computation  
                         self.ref_point.other_reference_point(cur_node.right_node.data,cur_node.right_node.centroid,cur_node.right_node.child_label,'tree_ref')
@@ -331,7 +373,7 @@ class Ternary_Tree():
                         #final cluster gives stores only those cluster data which are useful fro prediction
                         SF.check_directory(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)) 
                         cur_node.right_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/'+str(child_type)+'/end_cluster_'+str(cur_node.right_node.child_label)+'_'+str(child_type)+'.csv')
-                        
+                        cur_node.right_node.data.to_csv(str(self.curr_directory)+'/result/final_cluster/end_cluster_'+str(cur_node.right_node.child_label)+'.csv',index=False)
 
                         ####Storing the whole node
                         filename_centroid=  str(self.curr_directory)+'/object_file/leafs/leaf_'+str(cur_node.right_node.child_label)+'.sav'

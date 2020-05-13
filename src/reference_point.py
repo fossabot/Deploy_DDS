@@ -132,7 +132,6 @@ class reference_point():
 		####how many times run the loop
 		#try with dimension^2 but if less data then consider all the data points
 		if(self.limited_ref_points == True): ##it will use all the point of fuel as reference point
-			time.sleep(10)
 			if(data.shape[0] >= data.shape[1] * 10): 
 				num_ref_point = data.shape[1] * 10
 				for i in range(num_ref_point):

@@ -46,7 +46,7 @@ class Flag():
         #Adding library 
         try:
             '''
-            If  externally features are supplied given more prioritys
+            If  externally features are supplied given more priority
             '''
             sys.path.append(curr_directory)
             from feature_selection import select_feature as Sel_feat
@@ -147,6 +147,8 @@ class Flag():
                 list_fuel = find_fuel_type.find_strightchain_alkanes(Fuel_data)
 
                 dataset = data_gen(Fuel_data,list_fuel,Flag_value,curr_directory)     #normal dataset generation
+                SF.check_directory(str(curr_directory)+'/result/final_cluster/')
+                dataset.to_csv(str(curr_directory)+'/result/final_cluster/full_data.csv')
 
                 df,tau = Sel_feat.feature_selection(dataset)
 
@@ -202,7 +204,7 @@ class Flag():
                 print(dataset_location)
                 coef_data = pd.read_csv(dataset_location)       
                 from coefficient_plotting import coefficient_plotting as CP 
-                weights_mean_n_header = CP.coefficient_mean_result(coef_data,curr_directory)
+                weights_mean_n_header = CP.coefficient_mean_result_density(coef_data,curr_directory)
                 print('\n\n Executed Normally! Please check plot Folder')
         
         elif(Flag_value == '-o'):
