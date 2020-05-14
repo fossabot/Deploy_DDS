@@ -4,7 +4,7 @@ export IDCODE="~/Data_driven_Kinetics/"
 export PATH=$PATH:$IDCODE
 alias IDprediction="pwd>~/Data_driven_Kinetics/filelocation.txt && Run.sh"
 
-for i in {1..5000}
+for i in {1..1}
 do
 	echo "Run $i th time"
 	python generate_train_test.py

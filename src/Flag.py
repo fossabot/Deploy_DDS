@@ -157,7 +157,10 @@ class Flag():
                 Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points)
                 
                 Tree.Implement_Tree()
-                
+                # genefaring original cluster wise data 
+                from analyze_cluster_data import analyze_cluster_data
+                analyze_cluster_data(curr_dir=curr_directory)
+
                 # #optimizing cluster
                 # final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
                 # final_clusters.optimize_cluster()
