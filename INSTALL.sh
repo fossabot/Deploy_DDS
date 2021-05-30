@@ -23,7 +23,7 @@ sudo apt-get install python3-pandas
 sudo apt-get install python3-regex
 
 #statsModel
-pip install --upgrade --no-deps statsmodels
+pip install --upgrade --no-deps staytsmodels
 
 #conda install statsmodels
 
