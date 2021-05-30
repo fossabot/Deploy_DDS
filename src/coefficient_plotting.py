@@ -127,31 +127,37 @@ class coefficient_plotting():
                     label = str(headers[i])
                     print('label: ', label)
                     if(label == 'log_Fuel(%)'):
-                        label = 'log(Fuel mole fraction)'
+                        label = r'$\log(\chi_{fuel}$)'
                         pass
                     elif(label == 'log_Oxidizer(%)'):
-                        label = 'log(Oxygen mole fraction)'
+                        label = r'$\log(\chi_{oxygen}$)'
                         pass
                     elif(label == 'log_P(atm)'):
-                        label = 'log(Pressure)'
+                        label = r'$\log (P)$'
                         pass
                     elif(label == 'T0_S_H__T'):
-                        label = '${T_{0}}/({C_{SH} \cdot T})$'
+                        label = r'$\frac{T_0}{{C_{SH}} \cdot T}$'
                         pass
                     elif(label == 'T0_T'):
-                        label = '${T_{0}}/{T}$'
+                        label = r'$\frac{T_0}{T}$'
                         pass
                     elif(label == 'training_adj_r2'):
                         label = 'Adjusted $R^2$ (Training)'
                         pass
+
                 sns.distplot(data_col, hist=True, kde=True, color = 'blue',hist_kws={'edgecolor':'black'})
-                plt.xlabel('Range of '+str(label))
-                plt.ylabel('Probability Density')
+                plt.rc('text', usetex=True)
+                fontsize=19
+                plt.xlabel('Range of '+str(label),fontsize=fontsize)
+                plt.ylabel('Probability Density',fontsize=fontsize)
                 plt.axvline(data_col.mean(), color='k', linestyle='dashed', linewidth=1)
                 _, max_ = plt.ylim()
-                plt.text(data_col.mean(),max_/3,'Mean: {:.2f}'.format(data_col.mean()),horizontalalignment='center',verticalalignment='bottom',bbox=dict(facecolor='red', alpha=0.5))
+                plt.text(data_col.mean(),max_/3,'Mean: {:.2f}'.format(data_col.mean()),horizontalalignment='center',verticalalignment='bottom',bbox=dict(facecolor='red', alpha=0.5),fontsize=fontsize)
                 SF.check_directory(str(curr_directory)+'/coefficient_histogram_plots/')
-                plt.savefig(str(curr_directory)+'/coefficient_histogram_plots/'+str(headers[i])+'.png')
+                plt.xticks(fontsize=fontsize, rotation=90)
+                plt.yticks(fontsize=fontsize, rotation=0)
+                plt.tight_layout()
+                plt.savefig(str(curr_directory)+'/coefficient_histogram_plots/'+str(headers[i])+'.eps')
                 # plt.show()
                 # plt.close()
                 

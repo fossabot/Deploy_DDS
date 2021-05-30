@@ -26,6 +26,7 @@ for i in range(len(dir_split)-1):
     Main_folder_dir += dir_split[i] + str('/')
 
 class search_fileNcreate():
+
     def check_file_existence(file_name=None):
         # print('file_name: ', file_name)
         file_dir = str(file_name)
@@ -42,8 +43,32 @@ class search_fileNcreate():
             # print('\n Directory does not exist so, created!\n')
         except FileExistsError:
             # print('\n Directory already exist!\n ')     
-            pass       
+            pass     
 
+    def check_directory_N_AddNum(folder_name=None):
+        '''
+        If directory already exist then it chnage name of directory by adding number
+        ./result
+        ./result_1
+        ./result_2 
+        '''
+        def nextnonexistent(f):
+            fnew = f
+            root, ext = os.path.splitext(f)
+            i = 0
+            while os.path.exists(fnew):
+                i += 1
+                fnew = '%s_%i%s' % (root, i, ext)
+            return fnew
+
+        dir_name = nextnonexistent(folder_name)
+        try:
+                os.makedirs(dir_name)
+        except FileExistError:
+                pass
+        return dir_name
+        
 if __name__ == "__main__":
     print(os.system('pwd'))
     search_fileNcreate.check_file_existence("result/bond_detail.csv")
+    search_fileNcreate.check_directory_N_AddNum("result/app/dir")

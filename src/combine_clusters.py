@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.externals import joblib
+import joblib
 import subprocess
 import pandas as pd
 import time

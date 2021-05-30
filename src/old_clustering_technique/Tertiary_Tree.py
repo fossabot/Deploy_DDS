@@ -11,7 +11,7 @@ import os
 from select_feature import select_feature 
 from search_fileNcreate import search_fileNcreate as SF
 import copy
-from sklearn.externals import joblib
+import joblib
 import matplotlib.pyplot as plt
 import matplotlib as rc
 dir_path = os.path.dirname(os.path.realpath(__file__))

@@ -10,10 +10,9 @@ from Backward_elimination import Backward_elimination as BE
 import time 
 import random
 from sklearn.model_selection import train_test_split
-from sklearn.externals import joblib
+import joblib
 import copy
-import statsmodels.formula.api as sm
-import statsmodels.api as smapi
+import statsmodels.api as sm
 from sklearn.metrics import r2_score,mean_squared_error
 import matplotlib.pyplot as plt
 from result_check import result_check 

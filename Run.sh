@@ -20,7 +20,7 @@ limited_ref_points='False'
 
 #ALL OPTARG is file name 
 #it is useful to initialize variable based on the flag passed
-while getopts "c:b:a:h:m:t:e:p:r:s:d:o:l:" arg; do
+while getopts "c:b:a:h:m:t:e:k:f:p:r:s:d:o:l:" arg; do
   case $arg in
     c) 
         flag_passed='-c'
@@ -65,6 +65,18 @@ while getopts "c:b:a:h:m:t:e:p:r:s:d:o:l:" arg; do
     e)
         flag_passed='-e'
         echo "External Data passsed to predict the Ignition Delay"
+        dataset_location="$curr_location/$OPTARG"
+        echo
+        ;;
+    k)
+        flag_passed='-k'
+        echo "External Data passsed to predict the Ignition Delay and to store result seperately"
+        dataset_location="$curr_location/$OPTARG"
+        echo
+        ;;
+    f)
+        flag_passed='-f'
+        echo "Plotting of all test result"
         dataset_location="$curr_location/$OPTARG"
         echo
         ;;
@@ -117,6 +129,8 @@ while getopts "c:b:a:h:m:t:e:p:r:s:d:o:l:" arg; do
         echo " -m : Multiple linear regression"
         echo " -t : Tree based and regression"
         echo " -e : External fuel analysis"
+        echo " -f : Plot histogram of all the result"
+        echo " -k : External fuel analysis saving all the result"
         echo " -p : plotting of coefficient to find Average values"
         echo " -r : Backward elimination Activation True/False"
         echo " -s : Significance Level for Backward Elimination"
@@ -135,24 +149,24 @@ plotting_fucntion () {
 
 
     #gnerating pdf from tex file 
-    pdflatex Training.tex > /dev/null 2>&1  #to not print output 
+    # pdflatex Training.tex > /dev/null 2>&1  #to not print output 
     #opeing the pdf file 
     # xdg-open Training.pdf
     echo 'Plotting of Training done'
 
-    pdflatex Testing.tex > /dev/null 2>&1
+    # pdflatex Testing.tex > /dev/null 2>&1
     # xdg-open Testing.pdf
-    echo 'Plotting of Testing done'
+    # echo 'Plotting of Testing done'
 
-    pdflatex Datasize.tex > /dev/null 2>&1
+    # pdflatex Datasize.tex > /dev/null 2>&1
     # xdg-open Datasize.pdf
     echo 'Plotting of Datasize done'
 
-    pdflatex MaxRelError.tex > /dev/null 2>&1
+    # pdflatex MaxRelError.tex > /dev/null 2>&1
     # xdg-open MaxRelError.pdf
     echo 'Plotting of MaxRelError done'
 
-    pdflatex ChildLabel.tex > /dev/null 2>&1
+    # pdflatex ChildLabel.tex > /dev/null 2>&1
     # xdg-open ChildLabel.pdf
     echo 'Plotting of Labels done'
 
@@ -165,7 +179,7 @@ plotting_fucntion () {
 
     dir_to_plot="$curr_location/plots/"
     cd $dir_to_plot
-    pdflatex coefficient.tex > /dev/null 2>&1
+    # pdflatex coefficient.tex > /dev/null 2>&1
     # xdg-open coefficient.pdf
     echo 'Plotting of Coefficients done'
 
@@ -236,6 +250,18 @@ fi
 if [ $flag_passed == '-e' ]
 then
 python DDS.py -e $dataset_location $curr_location
+echo 'done'
+fi
+
+if [ $flag_passed == '-k' ]
+then
+python DDS.py -k $dataset_location $curr_location
+echo 'done'
+fi
+
+if [ $flag_passed == '-f' ]
+then
+python DDS.py -f $dataset_location $curr_location
 echo 'done'
 fi
 

@@ -1,13 +1,14 @@
 ######################### External test File  ##############################################
 # This  file will call external testset and based using saved object classify the data 
 # into clusters using centroid and do regression on classified data
+
 #############################################################################################
 
 import numpy as np
 import pandas as pd 
 import time 
 import random
-from sklearn.externals import joblib
+import joblib
 from sklearn.model_selection import train_test_split
  ###Heat Map###
 # import seaborn as sns; sns.set()
@@ -145,6 +146,7 @@ class external_test():
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/classified_data/') #checking directory
                         SF.check_file_existence(str(self.curr_directory)+"/external_test_result/console_output/output_result.txt")
                         cluster_dataframe.to_csv(str(self.curr_directory)+'/external_test_result/classified_data/classified_cluster'+str(cluster_label[i])+'.csv')
+
                         f = open(str(self.curr_directory)+"/external_test_result/console_output/output_result.txt", "a")
                         
                         ##########################################################
@@ -207,11 +209,17 @@ class external_test():
                         plt.clf()
                         plt.bar(x,y)
                         plt.rc('text', usetex=True)
+                        fontsize=19
                         plt.grid(which='minor', alpha=0.2)
-                        plt.title('Frequency of relative error in cluster -'+str(cluster_label[i]),fontsize=15)
-                        plt.xlabel('Relative Error',fontsize=15)
-                        plt.ylabel('Frequency of Error',fontsize=15)
-                        # plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_'+str(cluster_label[i])+'.eps')
+                        plt.title('Count of test-data points having \n relative error less than specified criteria',fontsize=fontsize)
+                        plt.xlabel('Relative Error ( $\le$  \%)',fontsize=fontsize)
+                        plt.ylabel('Count of test-data points',fontsize=fontsize)
+                        plt.xticks(fontsize=fontsize, rotation=0)
+                        plt.yticks(fontsize=fontsize, rotation=0)
+                        plt.tight_layout()
+                        plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_all_data.eps', dpi=600)
+                        # plt.show()
+                        plt.close()                       
                         # plt.show()
                         plt.close()
 

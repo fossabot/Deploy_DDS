@@ -1,0 +1,2 @@
+Constant,log_P(atm),log_Fuel(%),log_Oxidizer(%),T0/S_H__T,T0/T,Training_R2,Testing_R2
+-2.1809,-0.5889,-0.5394,0.0721,4.1604,10.2693,0.8845421197580716,

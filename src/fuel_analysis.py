@@ -99,10 +99,12 @@ class fuel_analysis():
                     print('Data of Fuel  :',uniq_fuel[i])
                     #TEMPERATURE FRQ
                     plt.figure(10*i+0)
+                    plt.rc('text', usetex=True)
+                    fontsize=19 
                     plt.hist(specific_fuel['T(K)'])
-                    plt.ylabel('Frequency')
-                    plt.xlabel('T(K)')
-                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_temp.png')
+                    plt.ylabel('Frequency',fontsize=fontsize)
+                    plt.xlabel('T(K)',fontsize=fontsize)
+                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_temp.eps')
                     print('Maximum Temeprature : ',max(specific_fuel['T(K)']))
                     print('Minimum Temeprature : ',min(specific_fuel['T(K)']))
                     #TEMPERATURE uncertain
@@ -115,9 +117,9 @@ class fuel_analysis():
                     #pressure
                     plt.figure(10*i+1)
                     plt.hist(specific_fuel['P(atm)'])
-                    plt.ylabel('Frequency')
-                    plt.xlabel('P(atm)')
-                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_press.png')
+                    plt.ylabel('Frequency',fontsize=fontsize)
+                    plt.xlabel('P(atm)',fontsize=fontsize)
+                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_press.eps')
                     print('Maximum Pressure : ',max(specific_fuel['P(atm)']))
                     print('Minimum Pressure : ',min(specific_fuel['P(atm)']))
                     #Pressure uncertain
@@ -129,9 +131,9 @@ class fuel_analysis():
                     #Fuel
                     plt.figure(10*i+2)        
                     plt.hist(specific_fuel['Fuel(%)'])
-                    plt.ylabel('Frequency')
-                    plt.xlabel('Fuel(%)')
-                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_fuel.png')
+                    plt.ylabel('Frequency',fontsize=fontsize)
+                    plt.xlabel('Fuel(%)',fontsize=fontsize)
+                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_fuel.eps')
 
                     print('Maximum Fuel% : ',max(specific_fuel['Fuel(%)']))
                     print('Minimum Fuel% :',min(specific_fuel['Fuel(%)']))
@@ -139,9 +141,9 @@ class fuel_analysis():
                     #oxidizer
                     plt.figure(10*i+3)
                     plt.hist(specific_fuel['Oxidizer(%)'])
-                    plt.ylabel('Frequency')
-                    plt.xlabel('Oxidizer(%)')                    
-                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_oxi.png')
+                    plt.ylabel('Frequency',fontsize=fontsize)
+                    plt.xlabel('Oxidizer(%)',fontsize=fontsize)                    
+                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_oxi.eps')
                     print('Maximum Oxidizer% : ',max(specific_fuel['Oxidizer(%)']))
                     print('Minimum Oxidizer% : ',min(specific_fuel['Oxidizer(%)']))
 
@@ -151,9 +153,9 @@ class fuel_analysis():
                     #Equivalecne Ratio
                     plt.figure(10*i+4)
                     plt.hist(specific_fuel['Equv(phi)'])
-                    plt.ylabel('Frequency')
-                    plt.xlabel('Equv(phi)')                    
-                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_equi.png')
+                    plt.ylabel('Frequency',fontsize=fontsize)
+                    plt.xlabel('Equv(phi)',fontsize=fontsize)                    
+                    plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_equi.eps')
                 
                     print('Equv(phi): ',max(specific_fuel['Equv(phi)']))
                     print('Equv(phi) : ',min(specific_fuel['Equv(phi)']))

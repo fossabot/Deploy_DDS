@@ -140,7 +140,7 @@ class Flag():
                 Fuel_data = pd.read_csv(dataset_location)
 
                 from data_gen import data_gen
-                from Tertiary_Tree import Ternary_Tree as TT
+                from Ternary_Tree import Ternary_Tree as TT
                 from combine_clusters import combine_clusters as CC
 
                 #finding out the straight chain alkanes
@@ -160,6 +160,13 @@ class Flag():
                 # genefaring original cluster wise data 
                 from analyze_cluster_data import analyze_cluster_data
                 analyze_cluster_data(curr_dir=curr_directory)
+
+                # #Training Result Analyzer
+                # print('\n\n\ntraining_accuracy')
+                # from training_accuracy_check import training_accuracy_check
+                # train_accu = training_accuracy_check(Flag_value,curr_directory)
+                # train_accu.training_accuracy(dataset)
+
 
                 # #optimizing cluster
                 # final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
@@ -199,6 +206,29 @@ class Flag():
                 # testset_obj = external_test(Flag_value,curr_directory)
                 # testset_obj.external_testset(dataset)
                 # print('\n\n Executed Normally! Please check plot Folder')
+
+        elif(Flag_value == '-k'):
+        	
+                '''
+                External test-cases
+                By this flag can be used to store all the prediction result
+                '''
+                from data_gen import data_gen
+                external_data = pd.read_csv(dataset_location)
+                list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
+                dataset = data_gen(external_data,list_fuel,Flag_value,curr_directory)     #normal feature generation
+
+                #old
+                from old_external_test_cycle import old_external_test_cycle
+                testset_obj_old = old_external_test_cycle(Flag_value,curr_directory)
+                testset_obj_old.external_testset(dataset)
+
+        elif(Flag_value == '-f'):
+
+                from combined_N_analyze_all_test_result import combined_N_analyze_all_test_result
+                combined = combined_N_analyze_all_test_result(curr_directory)
+                combined.process()
+
                 
         elif(Flag_value == '-p'):
                 '''
@@ -217,18 +247,19 @@ class Flag():
                 Add tree module without uncertainty
                 '''
 
-                print("## Tree Structure and data division for alkanes only## \n")
+                print("## Tree Structure and data division for non-fuel data only## \n")
                 dataset = pd.read_csv(dataset_location)
                 
                 from data_gen import data_gen
-                from Tertiary_Tree import Ternary_Tree as TT
+                from Ternary_Tree import Ternary_Tree as TT
                 from combine_clusters import combine_clusters as CC
 
+                
                 df,tau = Sel_feat.feature_selection(dataset)
                 df.to_csv(str(curr_directory)+'/Transformed.csv',index=False)
                 Tree = TT(df,tau,division_error_criteria,Flag_value,curr_directory,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points)
                 Tree.Implement_Tree()
-                
+            
                 # #optimizing cluster
                 # final_clusters = CC(curr_directory,division_error_criteria,Flag_value)
                 # final_clusters.optimize_cluster()

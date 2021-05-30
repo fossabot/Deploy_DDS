@@ -1,7 +1,7 @@
 
 ##Directory to export the file of combination of different files
 dir_path = './../'
-import statsmodels.formula.api as sm
+import statsmodels.api as sm
 import numpy as np
 import pandas as pd
 from result_check import result_check
@@ -24,7 +24,7 @@ for i in range(len(dir_split)-1):
 class Backward_elimination:
 
     # Backward Elimination with p-values only:
-    def BackwardElimination_P(X_train,X_test,y_train,y_test,X_names,cluster_label,curr_directory,child_type='root',sl=0.05,elimination=False):
+    def BackwardElimination_P(X_train,y_train,X_names,cluster_label,curr_directory,child_type='root',sl=0.05,elimination=False):
         
         '''
         Backpropagation is applied here to remove unnecessary feature based on ONlY p-value .

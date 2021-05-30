@@ -61,7 +61,8 @@ if(flag == '-t'):
     sl = float(sys.argv[6])
     #If you want to use significance level
     limited_ref_points = sys.argv[7]
-    limited_ref_points = True if limited_ref_points=='True' else False
+    if(limited_ref_points == 'True' or limited_ref_points == 'False'):
+        limited_ref_points = True if limited_ref_points=='True' else False
     Flag.switch_func(flag,dataset_location=dataset_location,curr_directory=curr_directory,division_error_criteria=error_criteria_to_divide,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points) 
     pass
 elif(flag == '-o'):
@@ -81,7 +82,8 @@ elif(flag == '-o'):
     sl = float(sys.argv[6])
     #If you want to use significance level
     limited_ref_points = sys.argv[7]
-    limited_ref_points = True if limited_ref_points=='True' else False
+    if(limited_ref_points == 'True' or limited_ref_points == 'False'):
+        limited_ref_points = True if limited_ref_points=='True' else False
     Flag.switch_func(flag,dataset_location=dataset_location,curr_directory=curr_directory,division_error_criteria=error_criteria_to_divide,elimination=elimination,sl=sl,limited_ref_points=limited_ref_points) 
     pass
 elif(flag == '-m'):

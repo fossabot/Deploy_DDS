@@ -7,7 +7,8 @@ sudo apt-get install python3
 
 #install RDkit
 sudo apt-get install python3-rdkit
-conda install -c conda-forge rdkit
+conda install -c rdkit rdkit
+#conda install -c conda-forge rdkit
 
 #numpy and scipy
 sudo apt install python3-numpy python3-scipy

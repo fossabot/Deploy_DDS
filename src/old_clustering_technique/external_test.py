@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd 
 import time 
 import random
-from sklearn.externals import joblib
+import joblib
 from sklearn.model_selection import train_test_split
  ###Heat Map###
 # import seaborn as sns; sns.set()

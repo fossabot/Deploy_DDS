@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd 
 import time 
 import random
-from sklearn.externals import joblib
+import joblib
 from sklearn.model_selection import train_test_split
  ###Heat Map###
 # import seaborn as sns; sns.set()
@@ -50,8 +50,11 @@ class old_external_test():
 
 
         def max_relative_error(self,y_train,y_train_pred):
-                error = np.max(np.abs(y_train - y_train_pred)/np.abs(y_train))
-                return error 
+                if(len(y_train) != 0): #if list is empty
+                        error = np.max(np.abs(y_train - y_train_pred)/np.abs(y_train))
+                        return error
+                else:
+                        return 0 
 
 
         def external_testset(self,external_data):
@@ -135,7 +138,7 @@ class old_external_test():
 
                         #As Testing of all data points, all data points are assigned to the X_test_external
                         #testing to make compatible with dataframe 
-                        X_train_external, X_test_external, y_train_external, y_test_external = train_test_split(cluster_dataframe, y_cluster, test_size=0.99999, shuffle=False)
+                        X_test_external, y_test_external = cluster_dataframe.to_numpy() , y_cluster.to_numpy()
                         # print('X_test_external: ', X_test_external)
                         # print(regressor_OLS_modified.params)
 
@@ -209,12 +212,13 @@ class old_external_test():
                         y = [rel_error_gt_15,rel_error_btn_15_20,rel_error_btn_20_30,rel_error_gt_30]
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/error_frequency/') #checking directory
                         plt.clf()
+                        fontsize = 19
                         plt.bar(x,y)
                         plt.rc('text', usetex=True)
                         plt.grid(which='minor', alpha=0.2)
-                        plt.title('Frequency of relative error in cluster -'+str(cluster_label[i]),fontsize=15)
-                        plt.xlabel('Relative Error',fontsize=15)
-                        plt.ylabel('Frequency of Error',fontsize=15)
+                        plt.title('Frequency of relative error in cluster -'+str(cluster_label[i]),fontsize=fontsize)
+                        plt.xlabel('Relative Error',fontsize=fontsize)
+                        plt.ylabel('Frequency of Error',fontsize=fontsize)
                         # plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_'+str(cluster_label[i])+'.eps')
                         # plt.show()
                         plt.close()
@@ -238,12 +242,12 @@ class old_external_test():
                         plt.xlim([2,11])
                         plt.ylim([2,11])
                         plt.rc('text', usetex=True)
-                        plt.xlabel('Predicted IDT ')
-                        plt.ylabel('Actual IDT')
-                        plt.tick_params(axis='both', which='major', labelsize=12)
+                        plt.xlabel('Predicted IDT',fontsize=fontsize)
+                        plt.ylabel('Actual IDT',fontsize=fontsize)
+                        plt.tick_params(axis='both', which='major', labelsize=fontsize)
                         plt.text(3,0,text,)
+                        plt.legend(loc='lower right',handlelength=1, borderpad=1.2, labelspacing=0.5,framealpha=0.5,fontsize=fontsize)
                         plt.tight_layout()
-                        plt.legend(loc='lower right',handlelength=1, borderpad=1.2, labelspacing=0.5,framealpha=0.5,fontsize=12)
                         # plt.savefig(str(self.curr_directory)+'/external_test_result/prediction_comparison_plots/ignition_delay_external_'+str(cluster_label[i])+'.eps', format='eps', dpi=600)
                         plt.close()
         
@@ -285,20 +289,22 @@ class old_external_test():
                 rel_error_gt_100 = final_comparision[(final_comparision['Relative Error'] > 1.0)].shape[0]
 
                 # x = ['$<= 10\%$ ', '$ 10\% < x <= 20\%$','$ 20\% < x <= 30\%$','$ 30\% < x <= 40\%$','$ 40\% < x <= 50\%$','$ 50\% < x <= 60\%$','$ 60\% < x <= 70\%$','$ 70\% < x <= 80\%$','$ 80\% < x <= 90\%$','$ 90\% < x <= 100\%$','$ 100\% > x $']
-                x = ['$ 10$ ', '$ 20$','$ 30$','$ 40$','$ 50$','$ 60$','$ 70$','$ 80$','$ 90$','$ 100$','$ >100 $']
+                x = ['$10$', '$20$','$30$','$40$','$50$','$60$','$70$','$80$','$90$','$100 $',r'${{>}100}$']
                 y = [rel_error_lt_10,rel_error_btn_10_20,rel_error_btn_20_30,rel_error_btn_30_40, rel_error_btn_40_50, rel_error_btn_50_60, rel_error_btn_60_70, rel_error_btn_70_80, rel_error_btn_80_90, rel_error_btn_90_100, rel_error_gt_100]
                 SF.check_directory(str(self.curr_directory)+'/external_test_result/error_frequency/') #checking directory
                 plt.clf()
                 plt.bar(x,y)
-                # plt.rc('text', usetex=True)
-                # plt.rc('xtick',labelsize=15)
-                # plt.rc('ytick',labelsize=15)
+                plt.rc('text', usetex=True)
+                fontsize=19
+                fontsize_ = 19
                 plt.grid(which='minor', alpha=0.2)
-                plt.tick_params(axis='both', which='minor', labelsize=15)
-                plt.title('Frequency of relative error for all data',fontsize=15)
-                plt.xlabel('Relative Error ( $\le$  \%)',fontsize=15)
-                plt.ylabel('Frequency of Error',fontsize=15)
-                plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_all_data.jpg', dpi=600)
+                plt.title('Count of test-data points having \n relative error less than specified criteria',fontsize=fontsize)
+                plt.xlabel('Relative Error ( $\le$  \%)',fontsize=fontsize)
+                plt.ylabel('Count of test-data points',fontsize=fontsize)
+                plt.xticks(fontsize=fontsize_, rotation=0)
+                plt.yticks(fontsize=fontsize_, rotation=0)
+                plt.tight_layout()
+                plt.savefig(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency_all_data.eps', dpi=600)
                 # plt.show()
                 plt.close()                       
                 # plt.show()
