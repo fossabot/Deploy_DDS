@@ -1,24 +1,52 @@
 
-:fire:  Data Driven Simulator is python base script which predicts the ignition delay based on the experimental data. It uses error based clustering technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. It works perfectly fine with data having continious dependent (output) variable.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#system-Requirements">System Requirements<a>
+    </li>
+    <li>
+	<a href="#installation">Installation</a>
+      <ul>
+        <li>    <a href="#add-sourcing-to-find-command">Add sourcing to find command<a></li>
+        <li>    <a href="#Install-dependency">Install dependency<a></li>
+      </ul>
+    </li>
+    <li><a href="#commands-to-run-the-program">Commands to run the program</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <ul>
+        <li>    <a href="#example-1">Example:1<a></li>
+        <li>    <a href="#example-2">Example:2<a></li>
+      </ul>
+    <li><a href="#brought-up-by">Brought up by</a></li>
+  </ol>
+</details>
+
+## About The Project:
+
+:fire:  This repository can be used to develop training models using tree type regression-based clustering. This repository is customized for the ignition delay  data but making few changes it works perfectly fine with any data having continuous dependent (output) variable. . It uses error based technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. Please look at the manual for more information.
+
 
 ---
 ## System Requirements:
 
-:fire:  OS : Ubuntu (This document is written for Ubuntu) 
+:fire:  OS : Linux  
 
 :fire:  Python 3.6+
 
-:fire:  RDKit - an open-source package.
-
----
+--
 ## Installation:
 
-:fire:  Download the solver and add in your './home ' directory.
+:fire:  Clone the repository in your './home ' directory.
 :fire:  Open your ./bashrc file and add Sourcing line at the bottom of file.
 Replace "path to" with your system location
 
 ---
-**Sourcing :**
+**Add sourcing to find command:**
 
 :fire:  Add the following command in your './bashrc' file 
 
@@ -29,6 +57,7 @@ export PATH=$PATH:$CLEANCODE
 alias IDprediction="pwd>~/path to/Data_driven_Kinetics/filelocation.txt && Run.sh"
 
 **Example:**
+
 If you have kept the folder in ./home directory then configure .bashrc with following command:
 
 \#Package command Finder:
@@ -41,7 +70,7 @@ alias IDprediction="pwd>~/Data_driven_Kinetics/filelocation.txt && Run.sh"
 
 
 ---
-**Dependency:**
+**Install dependency:**
 
 :fire:  To install all the dependency use INSTALL.sh file. Run command given below in the terminal
 
@@ -54,11 +83,11 @@ chmod +x INSTALL.sh
 
 ---
 
-## Running the program:
+## Commands to run the program:
 ---
-After initial setup,
+All set!
 
-Open terminal.
+Now, open terminal.
 Type "IDprediction -arguments"
 
 
@@ -67,11 +96,11 @@ Input arguments to 'IDprediction' is specified as below:
 Consider the data file as 'file_name.csv'
 
 
-:fire:  **-a	file name** - To ‘**a**nalyze’ the data-set by selecting range of parameters
+:fire:  **-a	file name** - To ‘**a**nalyze’ the data-set by selecting certain parameters
 
 ex: IDprediction -a  file_name.csv  
 
-:fire:  **-b	FuelSMILE** - To find the '**b**ond’ types in given fuel
+:fire:  **-b	FuelSMILE** - To find types of '**b**ond’ associated with given fuel
 
 ex: IDprediction -b  CCC 
 
@@ -83,7 +112,7 @@ ex: IDprediction -h  file_name.csv
 
 :fire:  **-l 	value** - To ‘**l**imit’ number of reference point
 
-:fire:  **-r	True/False** - To '**r**emove’ feature by backelimination
+:fire:  **-r	True/False** - To '**r**emove’ feature by back-elimination
 
 :fire:  **-s	value** - To specify **s**ignificance level
 
@@ -121,7 +150,25 @@ ex: IDprediction -c 0.05 -l 10 -o anyFile.csv
 file’**
 
 ---
-Brought up by :
+## Examples:
+
+**Example:1**
+:fire:  Run the following command to make predictions:
+cd TryYourself/nAlkaneIDT/
+IDprediction -c 0.1 -t trainset.csv
+IDprediction -e testset.csv
+
+**Example:2**
+:fire:  Run the following command to make predictions:
+cd TryYourself/WineQuality/
+IDprediction -c 0.1 -o trainset.csv
+IDprediction -e testset.csv
+
+Make appropriate changes in ’feature selection.py' file to change feature accordingly to data. (Check manual)
+
+---
+
+##Brought up by :
 ---
 
 <dl>
