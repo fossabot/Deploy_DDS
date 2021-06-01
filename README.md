@@ -1,4 +1,10 @@
 
+
+
+## About The Project:
+
+:fire:  This repository can be used to develop training models using tree type regression-based clustering. This repository is customized for the ignition delay  data but making few changes it works perfectly fine with any data having continuous dependent (output) variable. . It uses error based technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. Please look at the manual for more information.
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -25,11 +31,6 @@
     <li><a href="#brought-up-by">Brought up by</a></li>
   </ol>
 </details>
-
-## About The Project:
-
-:fire:  This repository can be used to develop training models using tree type regression-based clustering. This repository is customized for the ignition delay  data but making few changes it works perfectly fine with any data having continuous dependent (output) variable. . It uses error based technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. Please look at the manual for more information.
-
 
 ---
 ## System Requirements:
