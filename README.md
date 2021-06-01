@@ -37,8 +37,7 @@
 :fire:  OS : Linux  
 
 :fire:  Python 3.6+
-
---
+---
 ## Installation:
 
 :fire:  Clone the repository in your './home ' directory.
@@ -48,48 +47,50 @@ Replace "path to" with your system location
 ---
 **Add sourcing to find command:**
 
-:fire:  Add the following command in your './bashrc' file 
-
+:fire:  Copy the following command in your './bashrc' file 
+```sh
 export CLEANCODE="~/path to/Data_driven_Kinetics/"
 
 export PATH=$PATH:$CLEANCODE
 
 alias IDprediction="pwd>~/path to/Data_driven_Kinetics/filelocation.txt && Run.sh"
-
+```
+--- 
 **Example:**
 
 If you have kept the folder in ./home directory then configure .bashrc with following command:
 
 \#Package command Finder:
-
+```sh
 export CLEANCODE="~/Data_driven_Kinetics/"
 
 export PATH=$PATH:$CLEANCODE
 
 alias IDprediction="pwd>~/Data_driven_Kinetics/filelocation.txt && Run.sh"
-
+```
 
 ---
 **Install dependency:**
 
 :fire:  To install all the dependency use INSTALL.sh file. Run command given below in the terminal
 
-<div class="text-orange mb-2">
+```sh
 chmod +x INSTALL.sh
 
 ./INSTALL.sh
-</div>
+```
  
 
 ---
 
 ## Commands to run the program:
----
+
 All set!
 
-Now, open terminal.
+Now, open terminal type following commands to generate result.
+```sh
 Type "IDprediction -arguments"
-
+```
 
 Input arguments to 'IDprediction' is specified as below:
 
@@ -98,15 +99,23 @@ Consider the data file as 'file_name.csv'
 
 :fire:  **-a	file name** - To ‘**a**nalyze’ the data-set by selecting certain parameters
 
-ex: IDprediction -a  file_name.csv  
+```sh
+IDprediction -a  file_name.csv  
+```
 
 :fire:  **-b	FuelSMILE** - To find types of '**b**ond’ associated with given fuel
+```sh
+IDprediction -b  FuelSMILES
+IDprediction -b CCC
+IDprediction -b CCCCCC
 
-ex: IDprediction -b  CCC 
+```
 
 :fire:  **-h	file name** - To generate '**h**istogram’ plots of parameters for each fuel individually
 
-ex: IDprediction -h  file_name.csv 
+```sh
+IDprediction -h  file_name.csv 
+```
 
 :fire:  **-c	value** - To define the '**c**riteria' for error based clustering
 
@@ -119,33 +128,45 @@ ex: IDprediction -h  file_name.csv
 
 :fire:  **-m	file name** - To find out **m**ultiple linear regression of data 
 
-ex: IDprediction -c 0.05 -l 10 -r True -s 0.05  -m  file_name.csv 
+```sh
+IDprediction -c 0.05 -l 10 -r True -s 0.05  -m  file_name.csv 
+```
 
 :fire: **-t file name** - ‘**T**ree’ type regression based clustering algorithm
 
-ex: IDprediction -c 0.05 -r False -t file_name.csv 
+```sh
+IDprediction -c 0.05 -r False -t file_name.csv 
+```
 
 :fire:  **-e	file name** - '**E**xternal' Dataset used for prediction (Complete above Model generation first)
 
-ex: IDprediction -e  test_data.csv 
+```sh
+IDprediction -e  test_data.csv 
+```
 
 :fire:  **-k	file name** - To run code multiple ‘(**k**)’ times and store all test prediction result in different directory
 
-ex: IDprediction -k testset.csv
+```sh
+IDprediction -k testset.csv
+```
 
 :fire:  **-f	file name** - Probability density ‘**f**unction’ plot of testing result after running code 'k' times
 
-ex: IDprediction -f testset.csv
+```sh
+IDprediction -f testset.csv
+```
 
 
 :fire:  **-p	file name** - **p**lot and obtain of average value of coefficient from coefficient file (If coefficient result obtained many times and there is variation in coefficients)
-
-ex: IDprediction -p  coefficient_3.csv 
+```sh
+IDprediction -p  coefficient_3.csv 
+```
 
 :fire:  **-o	file name** - To run any '**o**ther’ dataset than fuel
 
-ex: IDprediction -c 0.05 -l 10 -o anyFile.csv
-
+```sh
+IDprediction -c 0.05 -l 10 -o anyFile.csv
+```
 **Don’t forget to make changes in ’feature selection.py
 file’**
 
@@ -154,22 +175,25 @@ file’**
 
 **Example:1**
 :fire:  Run the following command to make predictions:
+```sh
 cd TryYourself/nAlkaneIDT/
 IDprediction -c 0.1 -t trainset.csv
 IDprediction -e testset.csv
+```
 
 **Example:2**
 :fire:  Run the following command to make predictions:
+```sh
 cd TryYourself/WineQuality/
 IDprediction -c 0.1 -o trainset.csv
 IDprediction -e testset.csv
+```
 
 Make appropriate changes in ’feature selection.py' file to change feature accordingly to data. (Check manual)
 
 ---
 
 ##Brought up by :
----
 
 <dl>
       <a href="https://krithikasivaram.github.io">
