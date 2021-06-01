@@ -193,7 +193,7 @@ IDprediction -c 0.1 -o trainset.csv
 IDprediction -e testset.csv
 ```
 
-Make appropriate changes in ’feature selection.py' file to change features accordingly to the data. (Check manual)
+Make appropriate changes in **’feature selection.py'** file to change features accordingly to the data. (Check manual)
 
 ---
 
