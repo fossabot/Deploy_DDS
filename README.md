@@ -41,7 +41,8 @@
 ---
 ## Installation:
 
-:fire:  Clone the repository in your './home ' directory.
+:fire:  Clone the repository in your './home ' directory.'
+
 :fire:  Open your ./bashrc file and add Sourcing line at the bottom of file.
 Replace "path to" with your system location
 
@@ -49,6 +50,7 @@ Replace "path to" with your system location
 **Add sourcing to find command:**
 
 :fire:  Copy the following command in your './bashrc' file 
+
 ```sh
 export CLEANCODE="~/path to/Data_driven_Kinetics/"
 
@@ -89,6 +91,7 @@ chmod +x INSTALL.sh
 All set!
 
 Now, open terminal type following commands to generate result.
+
 ```sh
 IDprediction -flag file_name.csv
 ```
