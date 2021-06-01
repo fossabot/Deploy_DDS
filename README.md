@@ -34,9 +34,10 @@
 ---
 ## System Requirements:
 
-:fire:  OS : Linux  
+:fire:  OS : Linux
 
 :fire:  Python 3.6+
+
 ---
 ## Installation:
 
