@@ -59,7 +59,7 @@ alias IDprediction="pwd>~/path to/Data_driven_Kinetics/filelocation.txt && Run.s
 --- 
 **Example:**
 
-If you have kept the folder in ./home directory then configure .bashrc with following command:
+If repo is cloned in the folder ./home directory then configure .bashrc with following command:
 
 \#Package command Finder:
 ```sh
@@ -90,7 +90,7 @@ All set!
 
 Now, open terminal type following commands to generate result.
 ```sh
-Type "IDprediction -arguments"
+IDprediction -flag file_name.csv
 ```
 
 Input arguments to 'IDprediction' is specified as below:
@@ -98,13 +98,13 @@ Input arguments to 'IDprediction' is specified as below:
 Consider the data file as 'file_name.csv'
 
 
-:fire:  **-a	file name** - To ‘**a**nalyze’ the data-set by selecting certain parameters
+:fire:  **-a** : ‘**a**nalyze’ the data-set by selecting certain parameters
 
 ```sh
 IDprediction -a  file_name.csv  
 ```
 
-:fire:  **-b	FuelSMILE** - To find types of '**b**ond’ associated with given fuel
+:fire:  **-b** : find types of '**b**ond’ associated with given fuel
 ```sh
 IDprediction -b  FuelSMILES
 IDprediction -b CCC
@@ -112,58 +112,58 @@ IDprediction -b CCCCCC
 
 ```
 
-:fire:  **-h	file name** - To generate '**h**istogram’ plots of parameters for each fuel individually
+:fire:  **-h** :generates '**h**istogram’ plots of parameters for each fuel individually
 
 ```sh
 IDprediction -h  file_name.csv 
 ```
 
-:fire:  **-c	value** - To define the '**c**riteria' for error based clustering
+:fire:  **-c**  : To define the '**c**riteria' for error based clustering
 
-:fire:  **-l 	value** - To ‘**l**imit’ number of reference point
+:fire:  **-l**   : To ‘**l**imit’ number of reference point
 
-:fire:  **-r	True/False** - To '**r**emove’ feature by back-elimination
+:fire:  **-r**   : To '**r**emove’ feature by back-elimination
 
-:fire:  **-s	value** - To specify **s**ignificance level
+:fire:  **-s**  : To specify **s**ignificance level
 
 
-:fire:  **-m	file name** - To find out **m**ultiple linear regression of data 
+:fire:  **-m** : To find out **m**ultiple linear regression of data 
 
 ```sh
 IDprediction -c 0.05 -l 10 -r True -s 0.05  -m  file_name.csv 
 ```
 
-:fire: **-t file name** - ‘**T**ree’ type regression based clustering algorithm
+:fire: **-t**  : ‘**T**ree’ type regression based clustering algorithm
 
 ```sh
 IDprediction -c 0.05 -r False -t file_name.csv 
 ```
 
-:fire:  **-e	file name** - '**E**xternal' Dataset used for prediction (Complete above Model generation first)
+:fire:  **-e** : '**E**xternal' Dataset used for prediction (Complete above Model generation first)
 
 ```sh
 IDprediction -e  test_data.csv 
 ```
 
-:fire:  **-k	file name** - To run code multiple ‘(**k**)’ times and store all test prediction result in different directory
+:fire:  **-k**  : To run code multiple ‘(**k**)’ times and store all test prediction result in different directory
 
 ```sh
 IDprediction -k testset.csv
 ```
 
-:fire:  **-f	file name** - Probability density ‘**f**unction’ plot of testing result after running code 'k' times
+:fire:  **-f**  : Probability density ‘**f**unction’ plot of testing result after running code 'k' times
 
 ```sh
 IDprediction -f testset.csv
 ```
 
 
-:fire:  **-p	file name** - **p**lot and obtain of average value of coefficient from coefficient file (If coefficient result obtained many times and there is variation in coefficients)
+:fire:  **-p**  : **p**lot and obtain of average value of coefficient from coefficient file (If coefficient result obtained many times and there is variation in coefficients)
 ```sh
 IDprediction -p  coefficient_3.csv 
 ```
 
-:fire:  **-o	file name** - To run any '**o**ther’ dataset than fuel
+:fire:  **-o**  : To run any '**o**ther’ dataset than fuel
 
 ```sh
 IDprediction -c 0.05 -l 10 -o anyFile.csv
@@ -190,7 +190,7 @@ IDprediction -c 0.1 -o trainset.csv
 IDprediction -e testset.csv
 ```
 
-Make appropriate changes in ’feature selection.py' file to change feature accordingly to data. (Check manual)
+Make appropriate changes in ’feature selection.py' file to change features accordingly to the data. (Check manual)
 
 ---
 
