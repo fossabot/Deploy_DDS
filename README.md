@@ -3,7 +3,7 @@
 
 ## About The Project:
 
-:fire:  This repository can be used to develop training models using tree type regression-based clustering. This repository is customized for the ignition delay  data but making few changes it works perfectly fine with any data having continuous dependent (output) variable. . It uses error based technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. Please look at the manual for more information.
+:fire:  This repository can be used to develop training models using tree type regression-based clustering and make prediction using those models. The frame-work is customized for the ignition delay  data but with minor changes it works fine with any data having continuous dependent (output) variable. . The algorithm uses error based technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. Please look at the manual for more information.
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -179,7 +179,7 @@ file’**
 ## Examples:
 
 **Example:1**
-:fire:  Run the following command to make predictions:
+:fire:  Run the following command to generate models and make predictions using Ignition delay data:
 ```sh
 cd TryYourself/nAlkaneIDT/
 IDprediction -c 0.1 -t trainset.csv
@@ -187,7 +187,7 @@ IDprediction -e testset.csv
 ```
 
 **Example:2**
-:fire:  Run the following command to make predictions:
+Run the following command to generate models and make predictions using Wine quality data:
 ```sh
 cd TryYourself/WineQuality/
 IDprediction -c 0.1 -o trainset.csv
