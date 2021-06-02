@@ -3,7 +3,7 @@
 
 ## About The Project:
 
-:fire:  This repository can be used to develop training models using tree type regression-based clustering and make prediction using those models. The frame-work is customized for the ignition delay  data but with minor changes it works fine with any data having continuous dependent (output) variable. . The algorithm uses error based technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. Please look at the manual for more information.
+:fire:  This repository can be used to develop training models using tree type regression-based clustering and make prediction using those models. The frame-work is customized for the ignition delay  data but with minor changes it works fine with any data having continuous dependent (output) variable. The algorithm uses error-based technique to divide the data into three clusters based on relative error in prediction and sign of prediction error to obtain the accurate regression models. Please look at the manual for more information.
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -42,15 +42,16 @@
 ---
 ## Installation:
 
-:fire:  Clone the repository in your './home ' directory.'
+:fire:  Clone the repository in your **./home** directory.
 
-:fire:  Open your ./bashrc file and add Sourcing line at the bottom of file.
+:fire:  Open your **./bashrc** file and add lines given below at the bottom of file.
+
 Replace "path to" with your system location
 
 ---
 **Add sourcing to find command:**
 
-:fire:  Copy the following command in your './bashrc' file 
+:fire:  Copy the following commands in your **./bashrc** file 
 
 ```sh
 export CLEANCODE="~/path to/Data_driven_Kinetics/"
@@ -62,7 +63,7 @@ alias IDprediction="pwd>~/path to/Data_driven_Kinetics/filelocation.txt && Run.s
 --- 
 **Example:**
 
-If repo is cloned in the folder ./home directory then configure .bashrc with following command:
+If repo is cloned in the folder **./home** directory then configure **.bashrc** using following command:
 
 \#Package command Finder:
 ```sh
@@ -76,7 +77,7 @@ alias IDprediction="pwd>~/Data_driven_Kinetics/filelocation.txt && Run.sh"
 ---
 **Install dependency:**
 
-:fire:  To install all the dependency use INSTALL.sh file. Run command given below in the terminal
+:fire:  To install all the dependency use INSTALL.sh file rite command given below in the terminal
 
 ```sh
 chmod +x INSTALL.sh
@@ -91,13 +92,13 @@ chmod +x INSTALL.sh
 
 All set!
 
-Now, open terminal type following commands to generate result.
+Now, open terminal and type following commands to generate result.
 
 ```sh
 IDprediction -flag file_name.csv
 ```
 
-Input arguments to 'IDprediction' is specified as below:
+Input arguments to 'IDprediction' are specified as below:
 
 Consider the data file as 'file_name.csv'
 
@@ -179,7 +180,7 @@ file’**
 ## Examples:
 
 **Example:1**
-:fire:  Run the following command to generate models and make predictions using Ignition delay data:
+Run the following commands to generate models and make predictions using Ignition delay data:
 ```sh
 cd TryYourself/nAlkaneIDT/
 IDprediction -c 0.1 -t trainset.csv
@@ -187,7 +188,7 @@ IDprediction -e testset.csv
 ```
 
 **Example:2**
-Run the following command to generate models and make predictions using Wine quality data:
+Run the following commands to generate models and make predictions using Wine quality data:
 ```sh
 cd TryYourself/WineQuality/
 IDprediction -c 0.1 -o trainset.csv
