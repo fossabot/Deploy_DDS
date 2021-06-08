@@ -64,7 +64,7 @@ Replace "/PathToDir/.../" with your directory location.
 --- 
 **Example:**
 
-If repo is cloned in the folder **./home** directory then configure **.bashrc** using following command:
+If repo is cloned in **./home** directory then configure **.bashrc** using following command:
 
 
 ```sh
