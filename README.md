@@ -42,11 +42,11 @@
 ---
 ## Installation:
 
-:fire:  Clone the repository in your **./home** directory.
+:fire:  Clone the repository in suitable directory.
 
 :fire:  Open your **./bashrc** file and add lines given below at the bottom of file.
 
-Replace "path to" with your system location
+Replace "/PathToDir/.../" with your directory location.
 
 ---
 **Add sourcing to find command:**
@@ -54,11 +54,9 @@ Replace "path to" with your system location
 :fire:  Copy the following commands in your **./bashrc** file 
 
 ```sh
-export CLEANCODE="~/path to/Data_driven_Kinetics/"
-
-export PATH=$PATH:$CLEANCODE
-
-alias IDprediction="pwd>~/path to/Data_driven_Kinetics/filelocation.txt && Run.sh"
+export IDCODE="${HOME}/PathToDir/.../Data_driven_Kinetics/"
+export PATH=$PATH:$IDCODE
+alias IDprediction="pwd>${HOME}/PathToDir/.../Data_driven_Kinetics/filelocation.txt && Run.sh"
 ```
 --- 
 **Example:**
@@ -67,13 +65,19 @@ If repo is cloned in the folder **./home** directory then configure **.bashrc** 
 
 \#Package command Finder:
 ```sh
-export CLEANCODE="~/Data_driven_Kinetics/"
-
-export PATH=$PATH:$CLEANCODE
-
-alias IDprediction="pwd>~/Data_driven_Kinetics/filelocation.txt && Run.sh"
+export IDCODE="${HOME}/Data_driven_Kinetics/"
+export PATH=$PATH:$IDCODE
+alias IDprediction="pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh"
 ```
+---
+**Source the changes:**
 
+:fire:  **(IMPORTANT)** To configure the changes in .bashrc, write following command in terminal.
+
+```sh
+cd
+source .bashrc
+```
 ---
 **Install dependency:**
 
@@ -83,6 +87,15 @@ alias IDprediction="pwd>~/Data_driven_Kinetics/filelocation.txt && Run.sh"
 chmod +x INSTALL.sh
 
 ./INSTALL.sh
+```
+ 
+ ---
+**Make run file executable:**
+
+:fire:  To make run file executable, go to ** ./Data_driven_Kinetics** and write following command.
+
+```sh
+chmod +x Run.sh
 ```
  
 

@@ -4,7 +4,7 @@ echo
 echo
 
 cd $HOME
-code_direcotry='./Data_driven_Kinetics/'
+code_direcotry=$IDCODE
 # echo "Current path is : $Initial_location"
 
 #chnaging and storing path
