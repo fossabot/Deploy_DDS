@@ -92,7 +92,7 @@ chmod +x INSTALL.sh
  ---
 **Make run file executable:**
 
-:fire:  To make run file executable, go to ** ./Data_driven_Kinetics** and write following command.
+:fire:  To make run file executable, go to **./Data_driven_Kinetics** and write following command.
 
 ```sh
 chmod +x Run.sh
