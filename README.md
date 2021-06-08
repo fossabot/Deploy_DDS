@@ -81,7 +81,7 @@ source .bashrc
 ---
 **Install dependency:**
 
-:fire:  To install all the dependency use INSTALL.sh file rite command given below in the terminal
+:fire:  To install all the dependency use INSTALL.sh file. Write the commands given below in the terminal
 
 ```sh
 chmod +x INSTALL.sh
@@ -116,13 +116,13 @@ Input arguments to 'IDprediction' are specified as below:
 Consider the data file as 'file_name.csv'
 
 
-:fire:  **-a** : ‘**a**nalyze’ the data-set by selecting certain parameters
+:fire:  **-a** : ‘**A**nalyze’ the data-set by selecting certain parameters
 
 ```sh
 IDprediction -a  file_name.csv  
 ```
 
-:fire:  **-b** : find types of '**b**ond’ associated with given fuel
+:fire:  **-b** : Find types of '**b**ond’ associated with given fuel
 ```sh
 IDprediction -b  FuelSMILES
 IDprediction -b CCC
@@ -130,7 +130,7 @@ IDprediction -b CCCCCC
 
 ```
 
-:fire:  **-h** :generates '**h**istogram’ plots of parameters for each fuel individually
+:fire:  **-h** : Generates '**h**istogram’ plots of parameters for each fuel individually
 
 ```sh
 IDprediction -h  file_name.csv 
@@ -176,7 +176,7 @@ IDprediction -f testset.csv
 ```
 
 
-:fire:  **-p**  : **p**lot and obtain of average value of coefficient from coefficient file (If coefficient result obtained many times and there is variation in coefficients)
+:fire:  **-p**  : **P**lot and obtain of average value of coefficient from coefficient file (If coefficient result obtained many times and there is variation in coefficients)
 ```sh
 IDprediction -p  coefficient_3.csv 
 ```
