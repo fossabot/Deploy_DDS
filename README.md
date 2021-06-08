@@ -18,8 +18,9 @@
     <li>
 	<a href="#installation">Installation</a>
       <ul>
-        <li>    <a href="#add-sourcing-to-find-command">Add sourcing to find command<a></li>
-        <li>    <a href="#Install-dependency">Install dependency<a></li>
+        <li><a href="#add-sourcing-to-find-command">Add sourcing to find command<a></li>
+        <li><a href="#Install-dependency">Install dependency<a></li>
+        <li><a href="#make-run.sh-file-executable">Make Run.sh file executable<a></li>
       </ul>
     </li>
     <li><a href="#commands-to-run-the-program">Commands to run the program</a></li>
@@ -46,7 +47,6 @@
 
 :fire:  Open your **./bashrc** file and add lines given below at the bottom of file.
 
-Replace "/PathToDir/.../" with your directory location.
 
 ---
 **Add sourcing to find command:**
@@ -54,17 +54,21 @@ Replace "/PathToDir/.../" with your directory location.
 :fire:  Copy the following commands in your **./bashrc** file 
 
 ```sh
+##Package command Finder:
 export IDCODE="${HOME}/PathToDir/.../Data_driven_Kinetics/"
 export PATH=$PATH:$IDCODE
 alias IDprediction="pwd>${HOME}/PathToDir/.../Data_driven_Kinetics/filelocation.txt && Run.sh"
 ```
+Replace "/PathToDir/.../" with your directory location.
+
 --- 
 **Example:**
 
 If repo is cloned in the folder **./home** directory then configure **.bashrc** using following command:
 
-\#Package command Finder:
+
 ```sh
+##Package command Finder:
 export IDCODE="${HOME}/Data_driven_Kinetics/"
 export PATH=$PATH:$IDCODE
 alias IDprediction="pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh"
@@ -90,7 +94,7 @@ chmod +x INSTALL.sh
 ```
  
  ---
-**Make run file executable:**
+**Make Run.sh file executable:**
 
 :fire:  To make run file executable, go to **./Data_driven_Kinetics** and write following command.
 
