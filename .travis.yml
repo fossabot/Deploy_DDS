@@ -1,5 +1,10 @@
-sudo: required
-
+env:
+  global:
+        - IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'
+        
+os:
+  - linux
+  
 language: shell
 
 install:
