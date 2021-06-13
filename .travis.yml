@@ -10,8 +10,7 @@ install:
 script:
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
-  - source INSTALL.sh
-  - cd ~/Data_driven_Kinetics/TryYourself/nAlkaneIDT
+  - cd $IDCODE/TryYourself/nAlkaneIDT
   - IDprediction -b CCC
   - IDprediction -c .1 -t trainset.csv 
 
