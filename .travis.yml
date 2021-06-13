@@ -3,9 +3,9 @@ sudo: required
 language: shell
 
 install:
-  - export IDCODE="$PWD"
-  - export PATH=$PATH:$IDCODE
-  - alias IDprediction="pwd>${IDCODE}/filelocation.txt && Run.sh"
+  - echo "export IDCODE='$PWD'"
+  - echo "export PATH=$PATH:$IDCODE"
+  - echo "alias IDprediction='pwd>${IDCODE}/filelocation.txt && Run.sh'">~/.bashrc
 
 script:
   - chmod +x INSTALL.sh
