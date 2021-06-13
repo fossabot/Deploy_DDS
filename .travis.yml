@@ -6,12 +6,15 @@ install:
   - echo "export IDCODE='$PWD'">~/.bashrc
   - echo "export PATH=$PATH:$IDCODE">~/.bashrc
   - echo "alias IDprediction='pwd>${IDCODE}/filelocation.txt && Run.sh'">~/.bashrc
+  - cd 
+  - sudo source .bashrc
+  - cd $IDCODE
 
 script:
+     
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
   - cd ./TryYourself/nAlkaneIDT
-  - ll
   - IDprediction -b CCC
   - IDprediction -c .1 -t trainset.csv 
 
