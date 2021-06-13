@@ -1,7 +1,8 @@
 env:
   global:
-        - IDprediction='pwd>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
-        
+        - IDCODE="/home/travis/build/pragneshrana/Deploy_DDS/"
+        - PATH=$PATH:$IDCODE
+        - IDprediction='$PWD>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'  
 os:
   - linux
   
@@ -13,6 +14,7 @@ install:
   - ls
   - echo $PWD
   - echo $IDprediction
+  
 script:
   - $IDprediction -b CCCC 
   - $IDprediction -c .1 -t trainset.csv 
