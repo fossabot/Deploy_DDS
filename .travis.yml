@@ -4,9 +4,13 @@ language: shell
 
 script:
   - dirPath=$PWD
+  - alias ll="ls -l"
+  - ll
   - echo $PWD
   - export IDCODE='{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS'
+  - echo $IDCODE
   - export PATH=$PATH:$IDCODE
+  - echo $PATH
   - alias IDprediction='pwd>{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
