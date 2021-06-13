@@ -9,7 +9,8 @@ code_direcotry=$IDCODE
 
 #chnaging and storing path
 cd $code_direcotry
-curr_location=$(<filelocation.txt) 
+echo $IDCODE'filelocation.txt'
+curr_location=$(<$IDCODE/filelocation.txt) 
 cd ./src
 
 
