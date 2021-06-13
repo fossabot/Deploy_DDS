@@ -23,15 +23,11 @@ sudo pip install --upgrade pandas
 sudo apt-get install python3-regex
 
 #statsModel
-pip install --upgrade --no-deps statsmodel
-
+pip install statsmodels
 #conda install statsmodels
 
 #collection
 pip install collections-extended
-
-#os-sys
-pip install os-sys
 
 #random
 pip install random2
@@ -41,6 +37,12 @@ pip3 install seaborn
 
 #sklearn
 pip3 install sklearn
+
+#coverage
+pip install coveralls
+
+#codecov
+pip install codecov
 
 #latex
 sudo pip install latex

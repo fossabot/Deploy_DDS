@@ -1,0 +1,21 @@
+sudo: required
+
+language: shell
+
+install:
+  - export IDCODE="$PWD"
+  - export PATH=$PATH:$IDCODE
+  - alias IDprediction="pwd>${IDCODE}/filelocation.txt && Run.sh"
+
+script:
+  - chmod +x INSTALL.sh
+  - chmod +x Run.sh  
+  - source INSTALL.sh
+  - cd ~/Data_driven_Kinetics/TryYourself/nAlkaneIDT
+  - IDprediction -b CCC
+  - IDprediction -c .1 -t trainset.csv 
+
+after_success:
+  - coveralls
+  - bash <(curl -s https://codecov.io/bash)
+  - codecov
