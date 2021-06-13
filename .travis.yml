@@ -2,7 +2,7 @@ env:
   global:
         - IDCODE="/home/travis/build/pragneshrana/Deploy_DDS/"
         - PATH=$PATH:$IDCODE
-        - IDprediction='$PWD>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'  
+        - IDprediction='pwd>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && /home/travis/build/pragneshrana/Deploy_DDS/Run.sh'  
 os:
   - linux
   
