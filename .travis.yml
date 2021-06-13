@@ -3,23 +3,16 @@ sudo: required
 language: shell
 
 install:
-  - ls
-  - echo $PWD
-  - cd
   - echo -e "##Package command Finder:\nexport IDCODE='${HOME}/Data_driven_Kinetics/' \nexport $PATH:$IDCODE \nalias IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'">>.bashrc
-  - echo $PWD  
-  - cd $IDCODE
-  - echo $PWD  
+  - chmod +x INSTALL.sh
+  - chmod +x Run.sh 
 
 script:
-  - echo $PWD
-  - cd ./TryYourself/nAlkaneIDT 
-  - chmod +x INSTALL.sh
-  - chmod +x Run.sh  
-  - python ./src/DDS.py -b CCCC $PWD 
-  - IDprediction -c .1 -t trainset.csv 
+  - /home/travis/build/pragneshrana/Deploy_DDS/Run.sh -b CCCC 
+  - /home/travis/build/pragneshrana/Deploy_DDS/Run.sh -c .1 -t trainset.csv 
   
 after_success:
   - coveralls
   - bash <(curl -s https://codecov.io/bash)
   - codecov
+  - echo -e "##Package command Finder:\nexport IDCODE='${HOME}/Data_driven_Kinetics/' \nexport $PATH:$IDCODE \nalias IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'">>.bashrc
