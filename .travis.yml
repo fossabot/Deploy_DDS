@@ -10,7 +10,8 @@ install:
 script:
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
-  - cd $IDCODE/TryYourself/nAlkaneIDT
+  - cd ./TryYourself/nAlkaneIDT
+  - ll
   - IDprediction -b CCC
   - IDprediction -c .1 -t trainset.csv 
 
