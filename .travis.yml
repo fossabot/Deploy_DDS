@@ -13,11 +13,11 @@ install:
   - chmod +x Run.sh 
 
 script:
-  - /home/travis/build/pragneshrana/Deploy_DDS/Run.sh -b CCCC 
-  - /home/travis/build/pragneshrana/Deploy_DDS/Run.sh -c .1 -t trainset.csv 
+  - IDprediction -b CCCC 
+  - IDprediction -c .1 -t trainset.csv 
   
 after_success:
   - coveralls
   - bash <(curl -s https://codecov.io/bash)
   - codecov
-  - echo -e "##Package command Finder:\nexport IDCODE='${HOME}/Data_driven_Kinetics/' \nexport $PATH:$IDCODE \nalias IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'">>.bashrc
+
