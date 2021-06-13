@@ -5,9 +5,9 @@ language: shell
 install:
   - dirPath=$PWD
   - echo $PWD
-  - export IDCODE='/home/travis/build/pragneshrana/Deploy_DDS'
+  - export IDCODE='{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS'
   - export PATH=$PATH:$IDCODE
-  - alias IDprediction='pwd>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
+  - alias IDprediction='pwd>{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
 
 script:
   - chmod +x INSTALL.sh
