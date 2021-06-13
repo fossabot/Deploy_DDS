@@ -5,11 +5,12 @@ language: shell
 install:
   - dirPath=$PWD
   - echo $PWD
-  - echo "export IDCODE='$PWD'">~/.bashrc
+  - echo "export IDCODE='/home/travis/build/pragneshrana/Deploy_DDS'">~/.bashrc
   - echo "export PATH=$PATH:$IDCODE">~/.bashrc
-  - echo "alias IDprediction='pwd>${IDCODE}/filelocation.txt && Run.sh'">~/.bashrc
+  - echo "alias IDprediction='pwd>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'">~/.bashrc
   - cd
   - source .bashrc
+  - cat .bashrc
   - cd $dirPath
 
 script:
