@@ -2,24 +2,22 @@ sudo: required
 
 language: shell
 
-script:
-  - dirPath=$PWD
-  - alias ll="ls -l"
+install:
   - ls
-  - ll 
-  - echo $PWD
-  - export IDCODE='/home/travis/build/pragneshrana/Deploy_DDS'
-  - echo $IDCODE
-  - export PATH=$PATH:$IDCODE
-  - echo $PATH
-  - alias IDprediction='pwd>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
+  - echo=$PWD
+  - cd
+  - echo -e "##Package command Finder:\nexport IDCODE='${HOME}/Data_driven_Kinetics/' \nexport $PATH:$IDCODE \nalias IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'">>.bashrc
+  - echo=$PWD  
+  - cd $IDCODE
+  - echo=$PWD  
+
+script:
+  - echo=$PWD
+  - cd ./TryYourself/nAlkaneIDT 
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
   - python ./src/DDS.py -b CCCC $PWD 
   - IDprediction -c .1 -t trainset.csv 
-
-install:
-  - cd ./TryYourself/nAlkaneIDT
   
 after_success:
   - coveralls
