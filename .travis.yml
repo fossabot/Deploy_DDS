@@ -5,22 +5,22 @@ language: shell
 script:
   - dirPath=$PWD
   - alias ll="ls -l"
-  - ll
+  - ls
+  - ll 
   - echo $PWD
-  - export IDCODE='{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS'
+  - export IDCODE='/home/travis/build/pragneshrana/Deploy_DDS'
   - echo $IDCODE
   - export PATH=$PATH:$IDCODE
   - echo $PATH
-  - alias IDprediction='pwd>{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
+  - alias IDprediction='pwd>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
-  - cd ./TryYourself/nAlkaneIDT
-  - IDprediction -b CCC
+  - python ./src/DDS.py -b CCCC $PWD 
   - IDprediction -c .1 -t trainset.csv 
 
 install:
+  - cd ./TryYourself/nAlkaneIDT
   
-
 after_success:
   - coveralls
   - bash <(curl -s https://codecov.io/bash)
