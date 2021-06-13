@@ -14,8 +14,8 @@ install:
   - echo $PWD
   - echo $IDprediction
 script:
-  - pwd>$IDprediction && Run.sh -b CCCC 
-  - pwd>$IDprediction && Run.sh -c .1 -t trainset.csv 
+  - $IDprediction -b CCCC 
+  - $IDprediction -c .1 -t trainset.csv 
   
 after_success:
   - coveralls
