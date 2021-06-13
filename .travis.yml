@@ -4,15 +4,15 @@ language: shell
 
 install:
   - ls
-  - echo=$PWD
+  - echo $PWD
   - cd
   - echo -e "##Package command Finder:\nexport IDCODE='${HOME}/Data_driven_Kinetics/' \nexport $PATH:$IDCODE \nalias IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'">>.bashrc
-  - echo=$PWD  
+  - echo $PWD  
   - cd $IDCODE
-  - echo=$PWD  
+  - echo $PWD  
 
 script:
-  - echo=$PWD
+  - echo $PWD
   - cd ./TryYourself/nAlkaneIDT 
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
