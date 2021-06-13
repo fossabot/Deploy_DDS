@@ -1,6 +1,6 @@
 env:
   global:
-        - IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'
+        - IDprediction='pwd>$PWD/Data_driven_Kinetics/filelocation.txt && Run.sh'
         
 os:
   - linux
@@ -8,13 +8,14 @@ os:
 language: shell
 
 install:
-  - echo -e "##Package command Finder:\nexport IDCODE='${HOME}/Data_driven_Kinetics/' \nexport $PATH:$IDCODE \nalias IDprediction='pwd>${HOME}/Data_driven_Kinetics/filelocation.txt && Run.sh'">>.bashrc
   - chmod +x INSTALL.sh
   - chmod +x Run.sh 
-
+  - ls
+  - echo $PWD
+  - echo $IDprediction
 script:
-  - IDprediction -b CCCC 
-  - IDprediction -c .1 -t trainset.csv 
+  - pwd>$IDprediction && Run.sh -b CCCC 
+  - pwd>$IDprediction && Run.sh -c .1 -t trainset.csv 
   
 after_success:
   - coveralls
