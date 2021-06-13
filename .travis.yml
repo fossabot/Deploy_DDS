@@ -2,19 +2,20 @@ sudo: required
 
 language: shell
 
-install:
+script:
   - dirPath=$PWD
   - echo $PWD
   - export IDCODE='{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS'
   - export PATH=$PATH:$IDCODE
   - alias IDprediction='pwd>{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh'
-
-script:
   - chmod +x INSTALL.sh
   - chmod +x Run.sh  
   - cd ./TryYourself/nAlkaneIDT
-  - IDprediction -b CCC
-  - IDprediction -c .1 -t trainset.csv 
+  - pwd>{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh -b CCC
+  - pwd>{TRAVIS_BUILD_DIR}/pragneshrana/Deploy_DDS/filelocation.txt && Run.sh -c .1 -t trainset.csv 
+
+install:
+  
 
 after_success:
   - coveralls
