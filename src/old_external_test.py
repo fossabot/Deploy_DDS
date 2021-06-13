@@ -16,7 +16,6 @@ import copy
 # from data_gen import data_gen
 import warnings
 # from find_fuel_type import find_fuel_type
-from select_feature import select_feature
 import subprocess
 from search_fileNcreate import search_fileNcreate  as SF
 ##Directory to export the file of combination of different files
@@ -53,8 +52,7 @@ class old_external_test():
                 if(len(y_train) != 0): #if list is empty
                         error = np.max(np.abs(y_train - y_train_pred)/np.abs(y_train))
                         return error
-                else:
-                        return 0 
+                return 0 
 
 
         def external_testset(self,external_data):
@@ -64,14 +62,14 @@ class old_external_test():
                 #finding out the straight chain alkanes
                 warnings.warn('Processing only with straight chain Alkanes')
                 try:
-                        '''
-                        If  externally features are supplied given more priorities
-                        '''
+                        # '''
+                        # If  externally features are supplied given more priorities
+                        # '''
                         sys.path.append(self.curr_directory)
                         from feature_selection import select_feature as Sel_feat
                         print('feature selection passed')
-                        pass
-                except:
+                        
+                except ImportError:
                         from select_feature import select_feature as Sel_feat
                         print('feature selection not passed')
                 
@@ -170,7 +168,7 @@ class old_external_test():
                         f.write('\n Result for cluster-'+str(cluster_label[i])+':\n')
                         print('\n Index','          ','Y_actual','            ','Y_Predicted','                ','Relative Error')
                         f.write('\n Index'+'          '+'Y_actual'+'            '+'Y_Predicted'+'                '+'Relative Error')
-                        for k in range (len(y_pred)):
+                        for k,item in enumerate(y_pred):
                                 # print(fuel_name[k],'            ',np.log(y_given[k]),'  ',y_test_external[k],'      ',y_pred[k],'    ',np.abs(y_test_external[k]-y_pred[k])/y_test_external[k],'\n')
                                 print(k ,': ', y_test_external[k],'      ',y_pred[k],'    ',np.abs(y_test_external[k]-y_pred[k])/np.abs(y_test_external[k]),'\n')
                                 f.write('\n'+str(k) +': '+ str(y_test_external[k])+'      '+str(y_pred[k])+'    '+str(np.abs(y_test_external[k]-y_pred[k])/np.abs(y_test_external[k]))+'\n')                        
@@ -200,9 +198,9 @@ class old_external_test():
                         # ERROR PLOTTING  #
                         ###################
 
-                        '''
-                        plot of external test set result 
-                        '''
+                        # '''
+                        # plot of external test set result 
+                        # '''
                         plt.close()
                         rel_error_gt_15 = ID_comparison[ID_comparison['Relative Error'] <= 0.15].shape[0]
                         rel_error_btn_15_20 = ID_comparison[(ID_comparison['Relative Error'] > 0.15) & (ID_comparison['Relative Error'] <= 0.20)].shape[0]
@@ -231,9 +229,9 @@ class old_external_test():
                         #Drawing line at 45 
                         x = np.arange(-15,15,0.5)
 
-                        '''
-                        plot of external test set result 
-                        '''
+                        # '''
+                        # plot of external test set result 
+                        # '''
                         SF.check_directory(str(self.curr_directory)+'/external_test_result/prediction_comparison_plots/') #checking directory
                         plt.clf()
                         plt.plot(x,x,linestyle='--',color='black')
@@ -253,13 +251,13 @@ class old_external_test():
         
                 #Overall RMSE
                 f = open(str(self.curr_directory)+"/external_test_result/console_output/output_result.txt", "a")
-                '''
-                overall rmse^2 * n = n1 * rmse1^2 + n2 * rmse2^2 +...s
-                '''
+                # '''
+                # overall rmse^2 * n = n1 * rmse1^2 + n2 * rmse2^2 +...s
+                # '''
                 f.write('rmse:'+str(rmse_cluster))
                 f.write('data points in test cluster:'+str(testdata_points_in_cluster))
                 square_rmse = 0
-                for i in range(len(rmse_cluster)):
+                for i,item in enumerate(rmse_cluster):
                         if(testdata_points_in_cluster[i] > 0): #if no data points then to avoid nan answer
                                 square_rmse += (rmse_cluster[i]**2) * testdata_points_in_cluster[i]
                 overall_rmse = math.sqrt(square_rmse / sum(testdata_points_in_cluster))
@@ -273,9 +271,9 @@ class old_external_test():
                 ### whole comparision ###
                 #########################
 
-                '''
-                plot of external test set result 
-                '''
+                # '''
+                # plot of external test set result 
+                # '''
                 rel_error_lt_10 = final_comparision[final_comparision['Relative Error'] <= 0.10].shape[0]
                 rel_error_btn_10_20 = final_comparision[(final_comparision['Relative Error'] > 0.10) & (final_comparision['Relative Error'] <= 0.20)].shape[0]
                 rel_error_btn_20_30 = final_comparision[(final_comparision['Relative Error'] > 0.20) & (final_comparision['Relative Error'] <= 0.30)].shape[0]
@@ -315,7 +313,7 @@ class old_external_test():
                 header = ['10','20','30','40','50','60','70','80','90','100','>100']
                 try:
                         error_freq = pd.read_csv(str(self.curr_directory)+'/external_test_result/error_frequency/error_frequency.csv')
-                except:
+                except FileNotFoundError:
                         error_freq = pd.DataFrame([],columns=header)
                 new_data = pd.Series(y,index=header) #new error freq row
                 error_freq = error_freq.append(new_data,ignore_index=True)    #appending
@@ -329,11 +327,11 @@ class old_external_test():
                 #counting number files in the centroid directory which is total number of centroids
                 cmd_num_of_files = "find "+directory_path+" -type f | wc -l"
                 #check_output return output of bash 
-                num_of_cluster = int(subprocess.check_output(cmd_num_of_files,shell=True, universal_newlines=False))  # returns the exit code in unix
+                num_of_cluster = int(subprocess.check_output(cmd_num_of_files,shell=False, universal_newlines=False))  # returns the exit code in unix
 
                 #finding name of files in the centroid directory
                 cmd_files_name = "ls "+directory_path
-                centroid_file_names = str(subprocess.check_output(cmd_files_name,shell=True, universal_newlines=False),"utf-8").split('\n') #converting output into string and then splitting 
+                centroid_file_names = str(subprocess.check_output(cmd_files_name,shell=False, universal_newlines=False),"utf-8").split('\n') #converting output into string and then splitting 
                 file_names = [] #storing  file names
                 file_name_label = []
                 for i in range(len(centroid_file_names)-1):
@@ -400,7 +398,7 @@ class old_external_test():
                         #distance of all data point from ref data points for one cluster
                         for j in range(len(data_passed)): #for all data points
                                 distance_from_ref_points =[]
-                                for k in range(len(ref_data_points)):
+                                for k,item in enumerate(ref_data_points):
                                         distance_from_ref_points.append(self.euclidian_dist(data_passed.loc[j,:],ref_data_points[k]))#calling function
                                 #minimum from above all
                                 min_of_above_all = np.min(distance_from_ref_points)
@@ -420,9 +418,9 @@ class old_external_test():
         def euclidian_dist(self,arr_1,arr_2):
                 arr_1 = np.array(arr_1)
                 arr_2 = np.array(arr_2)
-                '''
-                calculating distance by passed row of matrix and centroid 
-                '''
+                # '''
+                # calculating distance by passed row of matrix and centroid 
+                # '''
                 distance = np.linalg.norm(arr_1-arr_2)
                 return distance
 

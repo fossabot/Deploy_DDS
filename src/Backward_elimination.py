@@ -41,12 +41,12 @@ class Backward_elimination:
         
         #Adding library 
         try:
-            '''
-            If  externally features are supplied given more prioritys
-            '''
+            # '''
+            # If  externally features are supplied given more prioritys
+            # '''
             sys.path.append(curr_directory)
             from feature_selection import select_feature as Sel_feat
-        except:
+        except ImportError:
             from select_feature import select_feature as Sel_feat
 
 
@@ -60,17 +60,25 @@ class Backward_elimination:
         for i in range(0, numVars):
             regressor_OLS = sm.OLS(y_train, X_train).fit()
             # print(regressor_OLS.summary())
-            if(elimination == True):
+            if(elimination is True):
                 maxVar = max(regressor_OLS.pvalues)#.astype(float)
                 if maxVar > sl:
                     for j in range(1, numVars - i): ###Starting with as don't want to reject Intercept 
                         if (regressor_OLS.pvalues[j].astype(float) == 'nan'): #if p value is nan reject 
-                            X_train = X_train.drop(X_train.columns[j],axis=1)  #pandas array passed
+                            try:
+                                X_train = X_train.drop(X_train.columns[j],axis=1)  #pandas array passed
+                            except AttributeError:
+                                X_train = np.delete(X_train, j, 1)
                             ###if numpy array passes
                             # X_train = np.delete(X_train, j, 1)
                             # X_test = np.delete(X_test, j, 1)
                         if (regressor_OLS.pvalues[j].astype(float) == maxVar): #if p value is more than defined reject 
-                            X_train = X_train.drop(X_train.columns[j],axis=1)  #pandas array passed
+                            # print(X_train)
+                            # print(j)
+                            try:
+                                X_train = X_train.drop(X_train.columns[j],axis=1)  #pandas array passed
+                            except AttributeError:
+                                X_train = np.delete(X_train, j, 1)
                             ###if numpy array passes
                             # X_train = np.delete(X_train, j, 1)
                             # X_test = np.delete(X_test, j, 1)
@@ -159,8 +167,7 @@ class Backward_elimination:
                             x_rollback = np.delete(x_rollback, j, 1)
                             # print (regressor_OLS.summary())
                             return x_rollback
-                        else:
-                            continue
+                        
 
         adj_r2 = regressor_OLS.rsquared_adj
         summary = regressor_OLS.summary(xname=X_names)

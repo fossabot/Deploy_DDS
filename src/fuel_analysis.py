@@ -5,21 +5,21 @@ import shutil
 import os
 
 class fuel_analysis():
-    def makedir(dir,curr_directory):
+    def makedir(dirs,curr_directory):
         '''
         it generates the path 
         '''
         # define the name of the directory to be created
-        path = str(curr_directory)+"/result/Fuel_Parameter_Histogram/"+str(dir)+'/'
+        path = str(curr_directory)+"/result/Fuel_Parameter_Histogram/"+str(dirs)+'/'
         os.makedirs(path)
         return path
     
-    def makedir_cluster(dir,cluster_num,curr_directory):
+    def makedir_cluster(dirs,cluster_num,curr_directory):
         '''
         it generates the path 
         '''
         # define the name of the directory to be created
-        path = str(curr_directory)+"/result/seperated_clusters/cluster"+str(cluster_num)+'/'+str(dir)+'/'
+        path = str(curr_directory)+"/result/seperated_clusters/cluster"+str(cluster_num)+'/'+str(dirs)+'/'
         os.makedirs(path)
         return path
 
@@ -30,10 +30,10 @@ class fuel_analysis():
             '''
             unique_fuels = list(Fuel_Name_data['Fuel'].unique())   #findind out all unique fuels               
             list_fuel = []  #List of fuels to store
-            for i in range(len(unique_fuels)):
+            for i,item in enumerate(unique_fuels):
                 fuel_selected = unique_fuels[i]
                 flag = 0
-                for j in range(len(fuel_selected)):
+                for j,item in enumerate(fuel_selected):
                     if(fuel_selected[j] == 'C'):
                         flag = 0
                     else:
@@ -44,7 +44,7 @@ class fuel_analysis():
             
             Data = copy.deepcopy(Fuel_Name_data)
             dataset = pd.DataFrame([])
-            for i in range(len(list_fuel)):
+            for i,item in enumerate(list_fuel):
                     # print('Data.Fuel == list_fuel[i]: ', Data.Fuel == list_fuel[i])
                     dataset = dataset.append(Data[Data.Fuel == list_fuel[i]]) #filetring dataset according list fuels
             dataset = dataset.reset_index(drop=True)        
@@ -91,7 +91,7 @@ class fuel_analysis():
             os.makedirs(str(curr_directory+'/result/Fuel_Parameter_Histogram'))
 
         #printing data range its histogram
-        for i in range(len(uniq_fuel)):
+        for i,item in enumerate(uniq_fuel):
                     curr_dir = fuel_analysis.makedir(uniq_fuel[i],curr_directory)
                     #removing pm symbol from 
                     specific_fuel = alkanes_data[alkanes_data.Fuel == uniq_fuel[i]]  #filetring dataset according list fuels
@@ -128,11 +128,12 @@ class fuel_analysis():
                     # plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_pressure_err.png')
                     print('Maximum Pressure Error: ',max(specific_fuel['P_Error(%)']))
                     print('Minimum Pressure Error: ',min(specific_fuel['P_Error(%)']))
+                    
                     #Fuel
                     plt.figure(10*i+2)        
                     plt.hist(specific_fuel['Fuel(%)'])
                     plt.ylabel('Frequency',fontsize=fontsize)
-                    plt.xlabel('Fuel(%)',fontsize=fontsize)
+                    plt.xlabel('Fuel($\%$)',fontsize=fontsize)
                     plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_fuel.eps')
 
                     print('Maximum Fuel% : ',max(specific_fuel['Fuel(%)']))
@@ -142,7 +143,7 @@ class fuel_analysis():
                     plt.figure(10*i+3)
                     plt.hist(specific_fuel['Oxidizer(%)'])
                     plt.ylabel('Frequency',fontsize=fontsize)
-                    plt.xlabel('Oxidizer(%)',fontsize=fontsize)                    
+                    plt.xlabel('Oxidizer($\%$)',fontsize=fontsize)                    
                     plt.savefig(str(curr_dir)+str(uniq_fuel[i])+'_oxi.eps')
                     print('Maximum Oxidizer% : ',max(specific_fuel['Oxidizer(%)']))
                     print('Minimum Oxidizer% : ',min(specific_fuel['Oxidizer(%)']))

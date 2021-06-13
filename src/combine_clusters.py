@@ -44,12 +44,12 @@ class combine_clusters():
 		#counting number files in the centroid directory which is total number of centroids
 		cmd_num_of_files = "find "+directory_path+" -type f | wc -l"
 		#check_output return output of bash 
-		num_of_cluster = int(subprocess.check_output(cmd_num_of_files,shell=True, universal_newlines=False))  # returns the exit code in unix
+		num_of_cluster = int(subprocess.check_output(cmd_num_of_files,shell=False, universal_newlines=False))  # returns the exit code in unix
 
 		#finding name of files in the centroid directory
 		cmd_files_name = "ls "+directory_path
 		try:
-			centroid_file_names = str(subprocess.check_output(cmd_files_name,shell=True, universal_newlines=False),"utf-8").split('\n') #converting output into string and then splitting 
+			centroid_file_names = str(subprocess.check_output(cmd_files_name,shell=False, universal_newlines=False),"utf-8").split('\n') #converting output into string and then splitting 
 		except subprocess.CalledProcessError:
 			print('\n\n One cluster exist so nothing to optimize')
 			sys.exit(0)
@@ -62,7 +62,7 @@ class combine_clusters():
 		file_dict = dict(zip(file_name_label,file_names))
 		file_name_label=sorted(file_dict.keys())
 		file_name_sorted = []
-		for i in range(len(file_name_label)):
+		for i,item in enumerate(file_name_label):
 			file_name_sorted.append(file_dict.get(file_name_label[i]))
 
 		# file_names = file_names.sort()
@@ -70,12 +70,12 @@ class combine_clusters():
 
 
 	def save_object_file(self,nodes,regressor,cluster_label):
-		print('nodes: ',len(nodes))
 		'''
 		If traversing over list and checking nodes if final node is encountered
 		and nothing left to see further then first node will be saved and purged 
 		'''
-		for i in range(len(nodes)):
+		# print('nodes: ',len(nodes))
+		for i,item in enumerate(nodes):
 			#dumping centroid
 			filename =  str(self.curr_directory)+'/object_file/final_centroid/centroid_'+str(cluster_label[i])+'.sav'
 			centroid = self.ref_point.calculate_centroid(nodes[i].data)
@@ -102,10 +102,9 @@ class combine_clusters():
 		y = data['y_act']
 		data = data.drop(columns=['y_act'])
 		data = data.drop(columns=['y_pred'])
-		print('data: ', data)
-		'''
-		This method will generate regressor
-		'''
+		# '''
+		# This method will generate regressor
+		# '''
 		#again doing regression
 		max_relative_error_training,training_adj_r2,Testing_Adj_r2,summary,coefficient_dictionary,dataset = regression(data,y,choice,self.curr_directory,cluster_label=cluster_label,elimination=False,child_type='root', process_type=self.process_type)
 		print('dataset: ', dataset.shape)
@@ -122,7 +121,7 @@ class combine_clusters():
 		nodes[node_index].data = dataset    # data
 		nodes[node_index].y_dependent = dataset['y_act'] #dependent variable 
 
-		''' Nodes are updated here '''
+		# ''' Nodes are updated here '''
 		# nodes[node_index].left_node = None  #object left child
 		# nodes[node_index].right_node = None  #object right child
 		# nodes[node_index].center_node = None
@@ -145,7 +144,7 @@ class combine_clusters():
 		data_size = []
 		cluster_label = []
 		nodes = [] #for sorted nodes
-		for i in range(len(load_nodes)):
+		for i,item in enumerate(load_nodes):
 			data_size.append(load_nodes[i].data_size)
 		sorted_by_data_size = sorted(data_size,reverse=True)
 		print('sorted_by_data_size: ', sorted_by_data_size)
@@ -177,7 +176,7 @@ class combine_clusters():
 		reg_error = []
 		cluster_label = []
 		nodes = [] #for sorted nodes
-		for i in range(len(load_nodes)):
+		for i,item in enumerate(load_nodes):
 			reg_error.append(load_nodes[i].max_relerr_train)
 		sorted_by_reg_error = sorted(reg_error,reverse=False)
 		print('reg_error: ', reg_error)
@@ -216,7 +215,7 @@ class combine_clusters():
 		return data_in_range,data_outside_range
 
 	def check_data_shape(self,nodes):
-		for i in range(len(nodes)):
+		for i,item in enumerate(nodes):
 			print('\nshape_ :', nodes[i].data_size)
 		
 
@@ -256,11 +255,11 @@ class combine_clusters():
 
 		new_node_count = 0
 
-		'''
-		Adding dataframe for left-out points
-		Points which are left in the nodes will be collected in this dataframe and will be served as last node
-		This data frame will be added to data2 frame
-		'''
+		# '''
+		# Adding dataframe for left-out points
+		# Points which are left in the nodes will be collected in this dataframe and will be served as last node
+		# This data frame will be added to data2 frame
+		# '''
 		left_out_data = pd.DataFrame([])
 		
 		i = 0 #intialized index
@@ -294,7 +293,6 @@ class combine_clusters():
 				file_name_label.pop(i) #deleting
 				print('file_name_label: ', file_name_label)
 				break
-				print('TATA')
 			
 			
 			#main Algorithm
@@ -349,10 +347,10 @@ class combine_clusters():
 
 
 				if(data_outside_range.shape[0] < data_outside_range.shape[1]):
-					'''
-					if few data points are left which can't generate model
-					Dump those data and delete the node
-					'''
+					# '''
+					# if few data points are left which can't generate model
+					# Dump those data and delete the node
+					# '''
 					#extra data added to left out dataframe
 					left_out_data = copy.deepcopy(data_outside_range)  #data added to leftout dataframe
 					print('left_out_data: ', left_out_data.shape)
@@ -365,9 +363,9 @@ class combine_clusters():
 					self.check_data_shape(nodes)
 
 					if(j  >= (len(nodes) -1)): 	#greater than in case last node may get deleted from list and index will become bigger then node size
-						'''
-						While searching last node encountered
-						'''
+						# '''
+						# While searching last node encountered
+						# '''
 						nodes, regressor, file_name_label  = self.last_node_encountered(data1,nodes,regressor,file_name_label,i)
 						#updating node count
 						new_node_count += 1
@@ -377,10 +375,10 @@ class combine_clusters():
 					continue
 
 				elif(data2.shape[0] != data_outside_range.shape[0]):
-					'''
-					If shape is changed and enough data to generate the model then 
-					update the node parameters as associated data is also changed
-					'''
+					# '''
+					# If shape is changed and enough data to generate the model then 
+					# update the node parameters as associated data is also changed
+					# '''
 					print('j:',j)
 					print('changing the node ')
 					# time.sleep(2)
@@ -396,9 +394,9 @@ class combine_clusters():
 					# print('\n y_act :', y_act )
 				
 				if(j  >= (len(nodes) -1)): 	#greater than in case last node may get deleted from list and index will become bigger then node size
-					'''
-					While searching last node encountered
-					'''
+					# '''
+					# While searching last node encountered
+					# '''
 					nodes, regressor, file_name_label = self.last_node_encountered(data1,nodes,regressor,file_name_label,i)
 					#updating node count
 					new_node_count += 1
@@ -406,7 +404,7 @@ class combine_clusters():
 					break
 
 				j += 1
-				for k in range(len(nodes)):
+				for k,item in enumerate(nodes):
 					print(nodes[k].data.shape)
 
 				print('len(nodes): ', len(nodes))
@@ -431,7 +429,7 @@ class combine_clusters():
 		dist_val =[]
 		
 		data = pd.DataFrame([])
-		for i in range(len(nodes)):
+		for i,item in enumerate(nodes):
 			i_centroid = nodes[i].centroid
 			for j in range(i,len(nodes)):
 				j_centroid = nodes[j].centroid
@@ -470,7 +468,7 @@ class combine_clusters():
 		load_nodes = []
 		load_regressor = [] #objects for prediction
 		#loading and storing node
-		for i in range(len(file_name_label)):
+		for i,item in enumerate(file_name_label):
 			regre = joblib.load(str(self.curr_directory)+'/object_file/tree/regressor/regressor_'+str(file_name_label[i])+'.sav')
 			node = joblib.load(str(cluster_path)+str(file_names[i]))
 			load_nodes.append(node)
@@ -485,9 +483,9 @@ class combine_clusters():
 		print('out pf dist')
 
 
-		'''
-		Initial total clusters
-		'''
+		# '''
+		# Initial total clusters
+		# '''
 		initial_clusters = len(nodes)
 		print('initial_clusters: ', initial_clusters)
 		
@@ -497,22 +495,22 @@ class combine_clusters():
 		SF.check_directory(str(self.curr_directory)+'/object_file/final_regressor/')
 
 		#combine data 
-		'''
-		# Recursively run till number of clusters won't get change 
-		'''
+		# '''
+		# # Recursively run till number of clusters won't get change 
+		# '''
 		cluster_size = []
 		
 		cluster_size.append(initial_clusters)
 		
 
-		'''	
-		load first node-i and then combine data-i with other 
-		node-j and combine data-ij and do regression if error is less then 
-		combine nodes else leave as it and finally purge the node and files
-		from the directory ...
-		store node-i combined with other node to final_leaves 
-		continue till ./leafs directory get emptied
-		'''
+		# '''	
+		# load first node-i and then combine data-i with other 
+		# node-j and combine data-ij and do regression if error is less then 
+		# combine nodes else leave as it and finally purge the node and files
+		# from the directory ...
+		# store node-i combined with other node to final_leaves 
+		# continue till ./leafs directory get emptied
+		# '''
 		# index
 		m=0
 		print('before_loop')
@@ -547,6 +545,3 @@ if __name__ == "__main__":
 	criteria = 0.05
 	combine_cluster = combine_clusters(cwd,criteria,choice)
 	combine_cluster.optimize_cluster()
-
-
-

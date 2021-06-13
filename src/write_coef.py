@@ -57,5 +57,3 @@ def writing_coefficient(coefficient_dict,training_adj_r2,testing_Adj_r2,cluster_
         # coefficient_series = pd.Series(coefficient_series)
         df = df.append(df1)
         df.to_csv(str(curr_directory)+'/result/Tree_coefficient_result/'+str(child_type)+'/cluster_'+str(cluster_label)+'.csv',index = False)    #saving dataframe
-        
-

@@ -6,6 +6,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import random 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 # print('dir_path: ', dir_path)
@@ -37,7 +38,7 @@ class generate_data_points():
         unique_fuel_count = len(unique_fuels)
 
         #fuel_list and number of data points 
-        for i in range(len(unique_fuels)):
+        for i,item in enumerate(unique_fuels):
             unique_fuels_data_count.append(list(data['Fuel']).count(unique_fuels[i]))
 
 
@@ -48,28 +49,28 @@ class generate_data_points():
 
         unique_fuel_zip = zip(unique_fuels,unique_fuels_data_count)
         unique_fuels_dict = dict(unique_fuel_zip)
-        for i in range(len(unique_fuels)):
+        for i,item in enumerate(unique_fuels):
             print(i,':  ',unique_fuels[i], ':' , unique_fuels_data_count[i])
 
-        '''
-        algorithm:
-        1. find out available data points  e.g::  fuel1:200, fuel2:500, fuel3:20, fuel4:70
-        2. Find out max data points in the array e.f max_data_points = 500
-        3. dataset size  =  max_data_points  * no_of_fuels e.g 500 * 4 = 2000
-        or ask them to change  but greater than this
+        # '''
+        # algorithm:
+        # 1. find out available data points  e.g::  fuel1:200, fuel2:500, fuel3:20, fuel4:70
+        # 2. Find out max data points in the array e.f max_data_points = 500
+        # 3. dataset size  =  max_data_points  * no_of_fuels e.g 500 * 4 = 2000
+        # or ask them to change  but greater than this
 
-        4. data to be generated from single data points wil be,
-            datacount_from_single_data  = dataset_size / avialble_data_for_that_fuel 
-            eg . for fuel2 ::: (2000/500) = 4 data points from single point
-            so, number data points generated will be atleast no_of fuel_times from single point
+        # 4. data to be generated from single data points wil be,
+        #     datacount_from_single_data  = dataset_size / avialble_data_for_that_fuel 
+        #     eg . for fuel2 ::: (2000/500) = 4 data points from single point
+        #     so, number data points generated will be atleast no_of fuel_times from single point
 
-        5. generate 2000 data points using uncertanity .....by mean and covariance matrix(diagonal as assumed that pressure and variacne are independent variable)
+        # 5. generate 2000 data points using uncertanity .....by mean and covariance matrix(diagonal as assumed that pressure and variacne are independent variable)
 
-        6. if uncertainity is Nan then take least value from the that SPECIFIC fuel dataset
+        # 6. if uncertainity is Nan then take least value from the that SPECIFIC fuel dataset
 
-        7. pick datacount_from_single_data number of data points from the 
+        # 7. pick datacount_from_single_data number of data points from the 
 
-        '''
+        # '''
 
         #number of data points for eahc fuel 
         no_data_to_generate = max_count_in_unique_fuel * unique_fuel_count * 1
@@ -117,7 +118,7 @@ class generate_data_points():
         extended_dataframe = data[0:0]
 
 
-        for i in range(len(unique_fuels)):
+        for i,item in enumerate(unique_fuels):
             selected_fuel = unique_fuels[i]
             # print('selected_fuel: ', selected_fuel)
 
@@ -195,12 +196,10 @@ class generate_data_points():
         cov = [[T_SD**2, 0,0], [0, P_SD**2,0],[0, 0,tau_SD**2]]  # diagonal covariance
 
         ####module from samapling out of 2000 points
-        import matplotlib.pyplot as plt
         T_gen, P_gen, tau_gen = np.random.multivariate_normal(mean, cov, 2000).T    
         data_point_generated = list(zip(T_gen,P_gen,tau_gen))
 
         #picking up random points 
-        import random 
         sampling = random.choices(data_point_generated, k=data_generation_count)
 
         # import matplotlib.pyplot as plt
@@ -211,7 +210,7 @@ class generate_data_points():
         # import random 
         # sampling = data_point_generated
 
-        for i in range(len(sampling)):
+        for i,item in enumerate(sampling):
             # print(sampling[i])
             generated_data_frame['T(K)'].loc[i] = sampling[i][0]
             generated_data_frame['P(atm)'].loc[i] = sampling[i][1]
@@ -229,11 +228,3 @@ class generate_data_points():
         # plt.show()
 
         return generated_data_frame
-
-
-
-
-
-
-
-

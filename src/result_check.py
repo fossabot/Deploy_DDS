@@ -96,5 +96,3 @@ class result_check:
         print('Jarque-Bera:',jb)
         print('JB Probability:',jbpv)
         print('Durbin-Watson:',dw)
-
-

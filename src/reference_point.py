@@ -32,16 +32,15 @@ class reference_point():
 		data_centroid = data_centroid.drop(columns=['y_pred'])
 		data_centroid = data_centroid.drop(columns=['Constant'])
 		try:
-			if(data_centroid.empty == True):
+			if(data_centroid.empty is True):
 				return None
-			else:
-				# print('calculating centroid')
-				num_data_points = data_centroid.shape[0]
-				centroid = data_centroid.sum(axis=0) / num_data_points  #columnwise sum or along rows sum
-				# print('centroid: ', centroid)
-				return centroid
+			# print('calculating centroid')
+			num_data_points = data_centroid.shape[0]
+			centroid = data_centroid.sum(axis=0) / num_data_points  #columnwise sum or along rows sum
+			# print('centroid: ', centroid)
+			return centroid
 		except AttributeError:
-			if(data_centroid == None):
+			if(data_centroid is None):
 				return None
 
 	def other_reference_point(self,data,centroid,child_label,dir_name='final_cluster_reference_points'):
@@ -57,7 +56,7 @@ class reference_point():
 
 		dir_name = if default --- generate for optimized nodes if passed then can work
 		'''
-		if(centroid.all() != None):
+		if(centroid.all() is not None):
 			data_passed = copy.deepcopy(data) #just copy of data points
 			data_passed = data_passed.drop(columns=['y_act'])
 			data_passed = data_passed.drop(columns=['y_pred'])
@@ -105,7 +104,7 @@ class reference_point():
 			print('Finding extreme points')
 			time.sleep(5)
 			other_ref_points = self.find_extreme_point(data_passed,Point_max_dist_from_centroid,centroid)
-			for i in range(len(other_ref_points)):
+			for i,item in enumerate(other_ref_points):
 				filename_max_dist_centroid =  str(self.curr_directory)+'/object_file/'+str(dir_name)+'/other_refPoi_'+str(i)+'_'+str(child_label)+'.sav'
 				joblib.dump(other_ref_points[i],filename_max_dist_centroid )
 		else:
@@ -132,7 +131,7 @@ class reference_point():
 		data = data.drop(max_dist_point.name)
 		####how many times run the loop
 		#try with dimension^2 but if less data then consider all the data points
-		if(self.limited_ref_points != False and self.limited_ref_points != True): ##it will use limited point of fuel as reference point
+		if(self.limited_ref_points is not False and self.limited_ref_points is not True): ##it will use limited point of fuel as reference point
 				print('All the points are used as reference points')
 				if(data.shape[0] >= data.shape[1] * int(self.limited_ref_points)): 
 					num_ref_point = data.shape[1] * int(self.limited_ref_points)
@@ -141,7 +140,7 @@ class reference_point():
 						for j in range (data.shape[0]): #for all the data points 
 							dist_sum = 0
 							data = data.reset_index(drop=True)
-							for k in range(len(ref_points)): #distance from all the points
+							for k,item in enumerate(ref_points): #distance from all the points
 								dist_sum += self.euclidian_dist(ref_points[k],data.loc[j,:])
 							#for data point-j distance is measured from all the distance and ref_points
 							measured_dist_from_all_ref_point.append(dist_sum)
@@ -168,7 +167,7 @@ class reference_point():
 					# print('ref_points: ', ref_points)
 					dist_sum = 0
 					data = data.reset_index(drop=True)
-					for k in range(len(ref_points)): #distance from all the points
+					for k,item in enumerate(ref_points): #distance from all the points
 						# print('data.loc[j]: ', data.loc[j])
 						# print('ref_points[k]: ', ref_points[k])
 						dist_sum += self.euclidian_dist(ref_points[k],data.loc[j])
@@ -194,7 +193,7 @@ class reference_point():
 			ref_points.append(data_point)
 			return ref_points
 			
-		elif(self.limited_ref_points == True):		
+		elif(self.limited_ref_points is True):		
 			print('All the points are used as reference points')
 			num_ref_point = data.shape[0]
 			data = data.reset_index(drop=True)
@@ -205,18 +204,15 @@ class reference_point():
 				ref_points.append(data_point)
 			return ref_points
 
-		elif(self.limited_ref_points == False):
+		elif(self.limited_ref_points is False):
 			return ref_points
 		    
 	def euclidian_dist(self,arr_1,arr_2):
 		arr_1 = np.array(arr_1)
 		arr_2 = np.array(arr_2)
 
-		'''
-		calculating distance by passed row of matrix and centroid 
-		'''
+		# '''
+		# calculating distance by passed row of matrix and centroid 
+		# '''
 		distance = np.linalg.norm(arr_1-arr_2)
 		return distance
-
-
-

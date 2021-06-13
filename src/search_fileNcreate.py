@@ -7,9 +7,6 @@ current_directory  = os.getcwd()
 import sys
 sys.path.insert(0, str(current_directory)+'/src')
 
-import os
-import rdkit as Chem 
-import numpy as mp
 import matplotlib.pyplot as plt
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -69,6 +66,5 @@ class search_fileNcreate():
         return dir_name
         
 if __name__ == "__main__":
-    print(os.system('pwd'))
     search_fileNcreate.check_file_existence("result/bond_detail.csv")
     search_fileNcreate.check_directory_N_AddNum("result/app/dir")

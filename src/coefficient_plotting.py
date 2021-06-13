@@ -7,15 +7,14 @@ the average coefficient value and its histgram plot.
 It will generate histogram plot for all the coefficients columns.
 '''
 
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
 import sys
 import os 
 import seaborn as sns
 from search_fileNcreate import search_fileNcreate as SF
+# import numpy as np
+
 ##Directory Capture
 dir_path = os.path.dirname(os.path.realpath(__file__))
 # print('dir_path: ', dir_path)
@@ -41,7 +40,7 @@ class coefficient_plotting():
         headers = list(df.columns)
 
         #Headers removed /
-        for i in range(len(headers)):
+        for i,item in enumerate(headers):
             headers[i] = headers[i].replace('/','_')
 
         weights_mean = []
@@ -103,7 +102,7 @@ class coefficient_plotting():
         headers = list(df.columns)
 
         #Headers removed /
-        for i in range(len(headers)):
+        for i,item in enumerate(headers):
             headers[i] = headers[i].replace('/','_')
 
         weights_mean = []
@@ -128,22 +127,22 @@ class coefficient_plotting():
                     print('label: ', label)
                     if(label == 'log_Fuel(%)'):
                         label = r'$\log(\chi_{fuel}$)'
-                        pass
+                        
                     elif(label == 'log_Oxidizer(%)'):
                         label = r'$\log(\chi_{oxygen}$)'
-                        pass
+                        
                     elif(label == 'log_P(atm)'):
                         label = r'$\log (P)$'
-                        pass
+                        
                     elif(label == 'T0_S_H__T'):
                         label = r'$\frac{T_0}{{C_{SH}} \cdot T}$'
-                        pass
+                        
                     elif(label == 'T0_T'):
                         label = r'$\frac{T_0}{T}$'
-                        pass
+                        
                     elif(label == 'training_adj_r2'):
                         label = 'Adjusted $R^2$ (Training)'
-                        pass
+                        
 
                 sns.distplot(data_col, hist=True, kde=True, color = 'blue',hist_kws={'edgecolor':'black'})
                 plt.rc('text', usetex=True)
@@ -197,7 +196,7 @@ class coefficient_plotting():
         headers = list(df.columns)
 
         #Headers removed /
-        for i in range(len(headers)):
+        for i,item in enumerate(headers):
             headers[i] = headers[i].replace('/','_')
 
         weights_max = []
@@ -276,7 +275,3 @@ if __name__ == "__main__":
     # plt.scatter(x_data,np.exp(y_remaining_prediction),marker = '*' ,c='red')
     # plt.scatter(x_data,(y_re_test),marker = '*',c='blue')
     # plt.show()
-
-
-
-

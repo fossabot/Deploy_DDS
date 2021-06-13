@@ -180,9 +180,3 @@ class combined_N_analyze_all_test_result():
 if __name__ == "__main__":
 	combined = combine_N_analyze_all_test_result(dir_path)
 	combined.process()
-
-
-
-
-		
-

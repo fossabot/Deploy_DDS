@@ -22,12 +22,7 @@ for i in range(len(dir_split)-1):
 # Importing the libraries
 import numpy as np
 import pandas as pd
-import time
-import copy
 from Bond_Extraction import Bond_Extraction as BE
-import os
-import time
-import subprocess
 
 
 def data_gen(Data,list_fuel,choice_value,curr_directory):
@@ -42,18 +37,18 @@ def data_gen(Data,list_fuel,choice_value,curr_directory):
         '''
         #Adding library 
         try:
-                '''
-                If  externally features are supplied given more prioritys
-                '''
+                # '''
+                # If  externally features are supplied given more prioritys
+                # '''
                 sys.path.append(curr_directory)
                 from feature_selection import select_feature as Sel_feat
-        except:
+        except ImportError:
                 from select_feature import select_feature as Sel_feat
         
 
         # Importing the dataset
         dataset = pd.DataFrame([])
-        for i in range(len(list_fuel)):
+        for i,item in enumerate(list_fuel):
                 # print('Data.Fuel == list_fuel[i]: ', Data.Fuel == list_fuel[i])
                 dataset = dataset.append(Data[Data.Fuel == list_fuel[i]]) #filetring dataset accordinh list fuels
         dataset = dataset.reset_index(drop=True)        
@@ -65,7 +60,6 @@ def data_gen(Data,list_fuel,choice_value,curr_directory):
         # print('Fuel_Bonds: ', Fuel_Bonds)
         # print('Fuel_Bonds: ', list(Fuel_Bonds['Fuel']))
 
-        Unique_fuel_name = list_fuel
         #column names
         columns = Sel_feat.bond_extraction_cols()
 
@@ -88,7 +82,6 @@ def data_gen(Data,list_fuel,choice_value,curr_directory):
 
         # Merging Two dataset, It will merge automatically by its common
 
-        for i in range(len(columns)):
+        for i,item in enumerate(columns):
                 dataset[columns[i]] = Extracted_bond_data[columns[i]]
         return dataset
-

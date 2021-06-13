@@ -7,19 +7,17 @@
 import numpy as np
 import pandas as pd 
 from Backward_elimination import Backward_elimination as BE
-import time 
-import random
 from sklearn.model_selection import train_test_split
 import joblib
-import copy
 import statsmodels.api as sm
 from sklearn.metrics import r2_score,mean_squared_error
 import matplotlib.pyplot as plt
 from result_check import result_check 
-from sklearn import metrics
 from search_fileNcreate import search_fileNcreate as SF
 from feature_after_elimination import feature_after_elimination
 from statsmodels.tools.eval_measures import rmse
+from sklearn.preprocessing import MinMaxScaler,RobustScaler,StandardScaler
+
 ##Directory to export the file of combination of different files
 dir_path = './../'
 
@@ -68,9 +66,9 @@ def regression_train_test(dataset,y,choice,curr_directory,level = 0,cluster_labe
         '''
 
 
-        '''
-        Checking Pairwise plot 
-        '''
+        # '''
+        # Checking Pairwise plot 
+        # '''
         # result_check.pairwise_plot(dataset)
         SF.check_directory(str(curr_directory)+'/result/')
 
@@ -79,9 +77,9 @@ def regression_train_test(dataset,y,choice,curr_directory,level = 0,cluster_labe
                 VIF checking
         ############################
         ''')
-        '''
-        Variation Inflation factor before data scaled
-        '''
+        # '''
+        # Variation Inflation factor before data scaled
+        # '''
         result_check.VIF(dataset,curr_directory,child_type,cluster_label)
 
 
@@ -92,13 +90,12 @@ def regression_train_test(dataset,y,choice,curr_directory,level = 0,cluster_labe
 
 
         #featrue scaling after adding the ones 
-        '''
-        featurea scaling
-        '''
+        # '''
+        # featurea scaling
+        # '''
         #checking directory 
         SF.check_directory(str(curr_directory)+'/object_file/')
 
-        from sklearn.preprocessing import MinMaxScaler,RobustScaler,StandardScaler
         # scalar = MinMaxScaler().fit(X_train) #scalar object  Mimmax Scalar
         scalar = StandardScaler().fit(X_train) #scalar object  Standard Scalar
         ###if commented means not used
@@ -107,8 +104,6 @@ def regression_train_test(dataset,y,choice,curr_directory,level = 0,cluster_labe
         
 
         # Fitting Multiple Linear Regression to the Training set
-
-        from sklearn import metrics  #To get error metric
         print('''
         ##########################################################
         #     Ordinary Least Square Model And Back Elimination  #
@@ -116,22 +111,22 @@ def regression_train_test(dataset,y,choice,curr_directory,level = 0,cluster_labe
         ''')
 
         #Generating list of headers with first column as constant of ones
-        '''
-        Removing features by back-eliminations and then by statically significant features ae obtained 
-        by which again regressor is obtained for prediction.
-        '''
+        # '''
+        # Removing features by back-eliminations and then by statically significant features ae obtained 
+        # by which again regressor is obtained for prediction.
+        # '''
         # Regression with Backward  Elimination
-        '''
-        Modified as after after back elimination certain columns are removed 
-        '''
+        # '''
+        # Modified as after after back elimination certain columns are removed 
+        # '''
         X_train_modified, training_adj_r2,summary,X_names_modified = BE.BackwardElimination_P(X_train,y_train,X_names,cluster_label,curr_directory,child_type,sl=sl,elimination=elimination)
         
         ##Predictor for testing data 
         regressor_OLS_modified = sm.OLS(endog=y_train, exog=X_train_modified).fit()       #Regressor Obtained for testing 
 
-        '''
-        Storing Regressor object for testing of external set  
-        '''
+        # '''
+        # Storing Regressor object for testing of external set  
+        # '''
         #checking directory 
         SF.check_directory(str(curr_directory)+'/object_file/'+str(process_type)+'/scalar/')
         SF.check_directory(str(curr_directory)+'/object_file/'+str(process_type)+'/regressor/')
@@ -195,9 +190,9 @@ def regression_train_test(dataset,y,choice,curr_directory,level = 0,cluster_labe
         f = open(str(curr_directory)+"/result/"+str(process_type)+"/console_output/"+str(child_type)+"/output_result.txt", "a")
 
         
-        '''
-        Coefficients with names
-        '''
+        # '''
+        # Coefficients with names
+        # '''
         #coefficient with name dictionary 
         f.write('''
         ########################
@@ -230,10 +225,10 @@ def regression_train_test(dataset,y,choice,curr_directory,level = 0,cluster_labe
         ##########################################################################################
         # Predicting for whole dataset so all the data points can be used for further processing #
         ##########################################################################################
-        '''
-        dataset contains two more columns 'y_pred' and 'y_act' that's why returning back and it is also 
-        useful for further analysis like tertiary/binary tree
-        '''
+        # '''
+        # dataset contains two more columns 'y_pred' and 'y_act' that's why returning back and it is also 
+        # useful for further analysis like tertiary/binary tree
+        # '''
         dataset_modified = feature_after_elimination(dataset,X_names_modified)
         dataset['y_pred'] = regressor_OLS_modified.predict(dataset_modified)
         dataset['y_act'] = y
@@ -287,9 +282,9 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         '''
 
 
-        '''
-        Checking Pairwise plot 
-        '''
+        # '''
+        # Checking Pairwise plot 
+        # '''
         # result_check.pairwise_plot(dataset)
         SF.check_directory(str(curr_directory)+'/result/')
 
@@ -298,9 +293,9 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
                 VIF checking
         ############################
         ''')
-        '''
-        Variation Inflation factor before data scaled
-        '''
+        # '''
+        # Variation Inflation factor before data scaled
+        # '''
         result_check.VIF(dataset,curr_directory,child_type,cluster_label)
 
 
@@ -313,13 +308,13 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
 
 
         #featrue scaling after adding the ones 
-        '''
-        featurea scaling
-        '''
+        # '''
+        # featurea scaling
+        # '''
         #checking directory 
         SF.check_directory(str(curr_directory)+'/object_file/')
 
-        from sklearn.preprocessing import MinMaxScaler,RobustScaler,StandardScaler
+        
         # scalar = MinMaxScaler().fit(X_train) #scalar object  Mimmax Scalar
         scalar = StandardScaler().fit(X_train) #scalar object  Standard Scalar
         ###if commented means not used
@@ -328,8 +323,6 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         
 
         # Fitting Multiple Linear Regression to the Training set
-
-        from sklearn import metrics  #To get error metric
         print('''
         ##########################################################
         #     Ordinary Least Square Model And Back Elimination  #
@@ -337,22 +330,22 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         ''')
 
         #Generating list of headers with first column as constant of ones
-        '''
-        Removing features by back-eliminations and then by statically significant features ae obtained 
-        by which again regressor is obtained for prediction.
-        '''
+        # '''
+        # Removing features by back-eliminations and then by statically significant features ae obtained 
+        # by which again regressor is obtained for prediction.
+        # '''
         # Regression with Backward  Elimination
-        '''
-        Modified as after after back elimination certain columns are removed 
-        '''
+        # '''
+        # Modified as after after back elimination certain columns are removed 
+        # '''
         X_train_modified, training_adj_r2,summary,X_names_modified = BE.BackwardElimination_P(X_train,y_train,X_names,cluster_label,curr_directory,child_type,sl=sl,elimination=elimination)
         
         ##Predictor for testing data 
         regressor_OLS_modified = sm.OLS(endog=y_train, exog=X_train_modified).fit()       #Regressor Obtained for testing 
 
-        '''
-        Storing Regressor object for testing of external set  
-        '''
+        # '''
+        # Storing Regressor object for testing of external set  
+        # '''
         #checking directory 
         SF.check_directory(str(curr_directory)+'/object_file/'+str(process_type)+'/scalar/')
         SF.check_directory(str(curr_directory)+'/object_file/'+str(process_type)+'/regressor/')
@@ -416,9 +409,9 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         f = open(str(curr_directory)+"/result/"+str(process_type)+"/console_output/"+str(child_type)+"/output_result.txt", "a")
 
         
-        '''
-        Coefficients with names
-        '''
+        # '''
+        # Coefficients with names
+        # '''
         #coefficient with name dictionary 
         f.write('''
         ########################
@@ -452,10 +445,10 @@ def regression(dataset,y,choice,curr_directory,level = 0,cluster_label=0,test_si
         ##########################################################################################
         # Predicting for whole dataset so all the data points can be used for further processing #
         ##########################################################################################
-        '''
-        dataset contains two more columns 'y_pred' and 'y_act' that's why returning back and it is also 
-        useful for further analysis like tertiary/binary tree
-        '''
+        # '''
+        # dataset contains two more columns 'y_pred' and 'y_act' that's why returning back and it is also 
+        # useful for further analysis like tertiary/binary tree
+        # '''
         dataset_modified = feature_after_elimination(dataset,X_names_modified)
         dataset['y_pred'] = regressor_OLS_modified.predict(dataset_modified)
         dataset['y_act'] = y

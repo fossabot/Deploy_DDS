@@ -24,18 +24,18 @@ class Bond_Extraction:
     def Bond_Extract(Unique_fuel_smiles,curr_directory,file_name='Bond_detail.csv'):
         #Adding library 
         try:
-                '''
-                If  externally features are supplied given more prioritys
-                '''
+                # '''
+                # If  externally features are supplied given more prioritys
+                # '''
                 sys.path.append(curr_directory)
                 from feature_selection import select_feature as Sel_feat
-        except:
+        except ImportError:
                 from select_feature import select_feature as Sel_feat
         
         #columns
         columns = Sel_feat.bond_extraction_cols()
         Bond_detail_dataframe = pd.DataFrame(columns=columns)
-        for i in range(len(Unique_fuel_smiles)):
+        for i,item in enumerate(Unique_fuel_smiles):
             print('Unique fuel smiles : ', Unique_fuel_smiles[i])
             # Molfile object from Smiles
             if (Unique_fuel_smiles[i] == 'C'):
@@ -50,7 +50,7 @@ class Bond_Extraction:
                 m = Chem.MolFromSmiles(Unique_fuel_smiles[i])  # obtaing Object
 
                 # if input is none
-                if (m == None):
+                if (m is None):
                     print(str("\nWrong SMILES...\nCannot process species..."))
                     print(str("\n==========================================\n"))
                     sys.exit(1)
@@ -75,7 +75,7 @@ class Bond_Extraction:
                 Smiles_length = 0  # Initialize
                 Smiles_char = []  # Smiles Character List
                 # checking character is alphabat or not for processing of file
-                for j in range(len(Unique_fuel_smiles[i])):
+                for j,item in enumerate(Unique_fuel_smiles[i]):
                     if (Unique_fuel_smiles[i][j].isalpha()):
                         Smiles_length += 1
                         Smiles_char.append(Unique_fuel_smiles[i][j])
@@ -115,37 +115,37 @@ class Bond_Extraction:
                 # Append list as column
                 Bond_data[3] = First_atoms
                 Bond_data[4] = Second_atoms
-                '''
-                #Bond Data Result
-                ['C', 'C', 'C', 'C', 'O', 'C', 'C']
-                first atom , second atom , no. of bonds , first atom symbol , second atom symbol
-                0  1  2  3  4
-                0  1  2  1  C  C
-                1  2  3  1  C  C
-                2  2  4  1  C  C
-                3  4  5  1  C  C
-                4  5  6  1  C  O
-                5  5  7  1  C  C
-                6  5  8  1  C  C
-                '''
+                # '''
+                # #Bond Data Result
+                # ['C', 'C', 'C', 'C', 'O', 'C', 'C']
+                # first atom , second atom , no. of bonds , first atom symbol , second atom symbol
+                # 0  1  2  3  4
+                # 0  1  2  1  C  C
+                # 1  2  3  1  C  C
+                # 2  2  4  1  C  C
+                # 3  4  5  1  C  C
+                # 4  5  6  1  C  O
+                # 5  5  7  1  C  C
+                # 6  5  8  1  C  C
+                # '''
 
                 Improved_Bond_data = pd.DataFrame(Bond_data)
                 for i in range(Bond_data.shape[0]):
                     if (Bond_data.iloc[i, 3] != 'C' or Bond_data.iloc[i, 4] != 'C'):
                         Improved_Bond_data.drop(
                             Improved_Bond_data.index[i], inplace=True)
-                '''
-                #Improved Data Result
-                ['C', 'C', 'C', 'C', 'O', 'C', 'C']
-                first atom , second atom , no. of bonds , first atom symbol , second atom symbol
-                0  1  2  3  4
-                0  1  2  1  C  C
-                1  2  3  1  C  C
-                2  2  4  1  C  C
-                3  4  5  1  C  C
-                5  5  7  1  C  C
-                6  5  8  1  C  C
-                '''
+                # '''
+                # #Improved Data Result
+                # ['C', 'C', 'C', 'C', 'O', 'C', 'C']
+                # first atom , second atom , no. of bonds , first atom symbol , second atom symbol
+                # 0  1  2  3  4
+                # 0  1  2  1  C  C
+                # 1  2  3  1  C  C
+                # 2  2  4  1  C  C
+                # 3  4  5  1  C  C
+                # 5  5  7  1  C  C
+                # 6  5  8  1  C  C
+                # '''
 
 
                 # DataFrame to Array of first two columns of Improved_Bond_data to find out bond type
@@ -196,18 +196,18 @@ class Bond_Extraction:
                 # Adding column to connection_data at loation 2
                 connection_data[2] = carbon_type_list
 
-                '''
-                central_atom no. based on smile , connection witBond_detail_dataframe
-                0  4  2  S
-                0  5  3  T
-                0  7  1  P
-                0  8  1  P
-                '''
+                # '''
+                # central_atom no. based on smile , connection witBond_detail_dataframe
+                # 0  4  2  S
+                # 0  5  3  T
+                # 0  7  1  P
+                # 0  8  1  P
+                # '''
                 # Dictionary of first col of connection_data and carbon_type_list
                 carbon_atom_posi = list(connection_data.iloc[:, 0])
                 #Dictionary 
                 carbon_posi_type_dict = dict(zip(carbon_atom_posi,carbon_type_list))
-                '''{1: 'P', 2: 'T', 3: 'P', 4: 'S', 5: 'T', 7: 'P', 8: 'P'}'''
+                # '''{1: 'P', 2: 'T', 3: 'P', 4: 'S', 5: 'T', 7: 'P', 8: 'P'}'''
 
                 #Array of Smile atom number by it spostion or length (CCCC)=(1234)
                 Smile_number = list(range(1,Smiles_length+1))
@@ -223,7 +223,7 @@ class Bond_Extraction:
 
                 #Smile Based Dictionary ...Atom postion and its type 
                 Smile_dict= dict(zip(Smile_number,carbon_type))
-                '''{1: 'P', 2: 'T', 3: 'P', 4: 'S', 5: 'T', 6: 'NaN', 7: 'P', 8: 'P'}'''
+                # '''{1: 'P', 2: 'T', 3: 'P', 4: 'S', 5: 'T', 6: 'NaN', 7: 'P', 8: 'P'}'''
                 Smiles_carbon_type = list(Smile_dict.values())  #Carbon type related to smile atom position 
 
                 #Carbon Types
@@ -389,4 +389,3 @@ class Bond_Extraction:
         Bond_detail_dataframe['Fuel'] = Unique_fuel_smiles
 
         return Bond_detail_dataframe
-

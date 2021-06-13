@@ -26,11 +26,11 @@ class find_fuel_type():
         list_fuel = []  #List of fuels to store
 
         # print(unique_fuels)
-        for i in range(len(unique_fuels)):
+        for i,item in enumerate(unique_fuels):
             fuel_selected = unique_fuels[i]
             if('('  in fuel_selected):
                 flag = 0
-                for j in range(len(fuel_selected)):
+                for j,item in enumerate(fuel_selected):
                     if(fuel_selected[j] == 'C' or fuel_selected[j] == '(' or fuel_selected[j] == ')'):
                         flag = 0
                         continue
@@ -50,10 +50,10 @@ class find_fuel_type():
         list_fuel = []  #List of fuels to store
 
         # print(unique_fuels)
-        for i in range(len(unique_fuels)):
+        for i,item in enumerate(unique_fuels):
             fuel_selected = unique_fuels[i]
             flag = 0
-            for j in range(len(fuel_selected)):
+            for j,item in enumerate(fuel_selected):
                 if(fuel_selected[j] == 'C'):
                     flag = 0
                 else:
@@ -80,7 +80,7 @@ class find_fuel_type():
         
         avialable_fuel = Fuel_Name_data['Fuel'].unique()
         print("Avilable Choice: \n",)
-        for i in range(len(avialable_fuel)):
+        for i,item in enumerate(avialable_fuel):
             print(i,':',avialable_fuel[i],'\n')
 
         print("Enter x(SMALL) to end the list \n")
@@ -95,7 +95,7 @@ class find_fuel_type():
             if(int(input_given) > len(avialable_fuel)-1):
                 print('Choice exceeds. Please check avilability')
                 continue
-            if(input_given.isnumeric() == False ):
+            if(input_given.isnumeric() is False ):
                 print('Please Enter Valid Input')
                 continue
             if(input_given in list_choice_number):
@@ -104,7 +104,7 @@ class find_fuel_type():
             list_fuel.append(avialable_fuel[int(input_given)])
             list_choice_number.append(input_given)
             print("Choices selected:")
-            for i in range (len(list_fuel)):
+            for i,item in enumerate(list_fuel):
                 print(i, " :" ,list_fuel[i])#,int(list_fuel[i])])
         
         return list_fuel
@@ -118,10 +118,10 @@ class find_fuel_type():
         list_fuel = []  #List of fuels to store
 
         # print(unique_fuels)
-        for i in range(len(unique_fuels)):
+        for i,item in enumerate(unique_fuels):
             fuel_selected = unique_fuels[i]
             flag = 0
-            for j in range(len(fuel_selected)):
+            for j,item in enumerate(fuel_selected):
                 if(fuel_selected[j] == 'C'):
                     flag = 0
                 else:
@@ -131,11 +131,8 @@ class find_fuel_type():
                 list_fuel.append(fuel_selected)
         another_data = pd.DataFrame()
         data = copy.deepcopy(Fuel_Name_data)
-        for i in range(len(list_fuel)):
+        for i,item in enumerate(list_fuel):
             data_to_append = data[data['Fuel'] == list_fuel[i]]
             another_data = another_data.append(data_to_append)
         
         return another_data
-
-
-

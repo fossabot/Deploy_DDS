@@ -3,7 +3,6 @@ import numpy as np
 import os
 import subprocess
 
-import os
 def analyze_cluster_data(curr_dir):
 	path =str(curr_dir)+'/result/final_cluster/' 
 	files = os.listdir(path)

@@ -10,10 +10,8 @@ class select_feature():
 	def feature_selection(dataset):    		
             #constructing feature for Dataset
             df =pd.DataFrame([])
-            try:
-                dataset = dataset.drop(columns=['sex'])
-            except:
-                pass
+            
+            dataset = dataset.drop(columns=['sex'])
 
             df = dataset.iloc[:,:-1] # 6  #2
 
@@ -27,9 +25,9 @@ class select_feature():
             #################################
             # changing nan values with zeros#
             #################################
-            '''
-            Just to make sure that dataset contains no NAN and Zeros
-            '''
+            # '''
+            # Just to make sure that dataset contains no NAN and Zeros
+            # '''
             #np.sum(df.isnull().sum()) 
             #if any cell is null then generating rowwise sum and then adding sum all rows 
             print('\n')

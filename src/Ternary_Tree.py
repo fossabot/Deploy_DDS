@@ -9,7 +9,6 @@ from write_coef import writing_coefficient as WC
 import sys
 import os 
 from search_fileNcreate import search_fileNcreate as SF
-from select_feature import select_feature 
 import copy
 import joblib
 import matplotlib.pyplot as plt
@@ -41,7 +40,7 @@ class Node():
         self.data = data    # data
         self.y_dependent = y #dependent variable 
 
-        ''' Nodes are defined here where ever you see nodes defined changes accordingly in whole code'''
+        # ''' Nodes are defined here where ever you see nodes defined changes accordingly in whole code'''
         self.left_node = None  #object left child
         self.right_node = None  #object right child
         self.center_node = None
@@ -99,9 +98,9 @@ class Ternary_Tree():
             if(self.root.max_relerr_train > self.division_error_criteria):   #if r2 is less than division criteria divide the data
                 self._divide(self.root.data,self.root) #passing the root as current node 
             else:
-                '''
-                Storing centroid of the center nodes as it gives final relation and useful for testing prediction
-                '''
+                # '''
+                # Storing centroid of the center nodes as it gives final relation and useful for testing prediction
+                # '''
                 child_type = 'root'
                 #checking directory 
                 SF.check_directory(str(self.curr_directory)+'/object_file/')
@@ -127,12 +126,19 @@ class Ternary_Tree():
     def _divide(self,data,cur_node):
         '''
         Recursive division
-        '''
-
-        '''
         Warning : if data points is less than 10 points in any child then it won't calculate 
         '''
         min_data_criterion = 0
+
+        #Adding library 
+        try:
+                # '''
+                # If  externally features are supplied given more prioritys
+                # '''
+                sys.path.append(self.curr_directory)
+                from feature_selection import select_feature as Sel_feat
+        except ImportError:
+                from select_feature import select_feature as Sel_feat
 
         #dividing the data based on error and genearting 3 sets.
 
@@ -169,9 +175,9 @@ class Ternary_Tree():
                     if(cur_node.left_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
                             self._divide(cur_node.left_node.data,cur_node.left_node)
                     else:
-                        '''
-                        Storing centroid of the center nodes as it gives final relation and useful for testing prediction
-                        '''
+                        # '''
+                        # Storing centroid of the center nodes as it gives final relation and useful for testing prediction
+                        # '''
                         #checking directory 
                         SF.check_directory(str(self.curr_directory)+'/object_file/')
                         SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
@@ -198,10 +204,10 @@ class Ternary_Tree():
                         ##writing centroid
                         ####For writing centroid
                         SF.check_directory(str(self.curr_directory)+'/result/centroids/')
-                        centroid_headers = select_feature.column_selection().remove('Constant')
+                        centroid_headers = Sel_feat.column_selection().remove('Constant')
                         try:
                             centroid_out = pd.read_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.left_node.child_label)+'.csv')
-                        except:
+                        except FileNotFoundError:
                             centroid_out = pd.DataFrame([],columns=centroid_headers)
                         centroid_out = centroid_out.append(pd.Series(cur_node.left_node.centroid,index=centroid_headers),ignore_index=True)
                         centroid_out.to_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.left_node.child_label)+'.csv',index=False)
@@ -220,11 +226,11 @@ class Ternary_Tree():
 
                     print('Criteria Satisfied')
         
-        '''
-        If data is assigned to center then further rectification is not required.
-        Maximum relative Error will slightly increase from given criteria because of removal other points from center cluster
-        As removal of the points from reduces the numerator part (y_pred - y_act) reduced
-        '''
+        # '''
+        # If data is assigned to center then further rectification is not required.
+        # Maximum relative Error will slightly increase from given criteria because of removal other points from center cluster
+        # As removal of the points from reduces the numerator part (y_pred - y_act) reduced
+        # '''
         if(data_center.empty is False):   #if data is non-empty
             child_type = 'center'
             self.cluster_label += 1 
@@ -249,9 +255,9 @@ class Ternary_Tree():
                     cur_node.center_node.centroid = self.ref_point.calculate_centroid(cur_node.center_node.data)
                     time.sleep(5)
 
-                    '''
-                    Storing centroid of the center nodes as it gives final relation and useful for testing prediction
-                    '''
+                    # '''
+                    # Storing centroid of the center nodes as it gives final relation and useful for testing prediction
+                    # '''
                     #checking directory 
                     SF.check_directory(str(self.curr_directory)+'/object_file/')
                     SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
@@ -278,18 +284,18 @@ class Ternary_Tree():
                     ##writing centroid
                     ####For writing centroid
                     SF.check_directory(str(self.curr_directory)+'/result/centroids/')
-                    centroid_headers = select_feature.column_selection().remove('Constant')
+                    centroid_headers = Sel_feat.column_selection().remove('Constant')
                     try:
                         centroid_out = pd.read_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.center_node.child_label)+'.csv')
-                    except:
+                    except FileNotFoundError:
                         centroid_out = pd.DataFrame([],columns=centroid_headers)
                     centroid_out = centroid_out.append(pd.Series(cur_node.center_node.centroid,index=centroid_headers),ignore_index=True)
                     centroid_out.to_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.center_node.child_label)+'.csv',index=False)
 
 
-                    '''
-                    Don't delete : useful in case if you want to further classify center nodes
-                    '''
+                    # '''
+                    # Don't delete : useful in case if you want to further classify center nodes
+                    # '''
             #         # cur_node.center_node.uniq_fuel = cur_node.center_node.data['Fuel'].unique()   #for unique fuel in node                     cur_node.center_node.uniq_fuel = cur_node.center_node.data['Fuel'].unique()
             
             #         #removing certain word from coefficients for printing
@@ -297,7 +303,7 @@ class Ternary_Tree():
                     if(cur_node.center_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
                             # self._divide(cur_node.center_node.data,cur_node.center_node)
                             print('Error is slightly increased due to consideration of only center cluster data points')
-                            pass
+                            
                     else:
                         print('Criteria Satisfied')
                 else:
@@ -343,9 +349,9 @@ class Ternary_Tree():
                     if(cur_node.right_node.max_relerr_train > self.division_error_criteria):    #if r2 is less than given criteria than divide further 
                             self._divide(cur_node.right_node.data,cur_node.right_node)
                     else:
-                        '''
-                        Storing centroid of the center nodes as it gives final relation and useful for testing prediction
-                        '''
+                        # '''
+                        # Storing centroid of the center nodes as it gives final relation and useful for testing prediction
+                        # '''
                         #checking directory 
                         SF.check_directory(str(self.curr_directory)+'/object_file/')
                         SF.check_directory(str(self.curr_directory)+'/object_file/centroids/')
@@ -358,10 +364,10 @@ class Ternary_Tree():
                         ##writing centroid
                         ####For writing centroid
                         SF.check_directory(str(self.curr_directory)+'/result/centroids/')
-                        centroid_headers = select_feature.column_selection().remove('Constant')
+                        centroid_headers = Sel_feat.column_selection().remove('Constant')
                         try:
                             centroid_out = pd.read_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.right_node.child_label)+'.csv')
-                        except:
+                        except FileNotFoundError:
                             centroid_out = pd.DataFrame([],columns=centroid_headers)
                         centroid_out = centroid_out.append(pd.Series(cur_node.right_node.centroid,index=centroid_headers),ignore_index=True)
                         centroid_out.to_csv(str(self.curr_directory)+'/result/centroids/centroid_'+str(cur_node.right_node.child_label)+'.csv',index=False)
@@ -482,7 +488,7 @@ class Ternary_Tree():
         plt.tight_layout()
         plt.savefig(str(self.curr_directory)+'/plots/cluster_plot_y/cluster_visulization_'+str(self.cluster_label)+'.eps')
         # plt.show()
-        pass
+        
     
    
     def points_in_range(self,data,defined_relative_error):
@@ -504,7 +510,7 @@ class Ternary_Tree():
             '''
             data_dictionary_values = data_dictionary.values()
             data_dictionary_keys = list(data_dictionary.keys())
-            for k in range(len(data_dictionary_keys)):
+            for k, item in enumerate(data_dictionary_keys):
                 if(data_dictionary_keys[k] is not None):    
                     data_dictionary_keys[k] = data_dictionary_keys[k].replace('(%)','')
                     data_dictionary_keys[k] = data_dictionary_keys[k].replace('_','')
@@ -563,9 +569,9 @@ class Ternary_Tree():
         '''
         level = -1 #Tree level initial level zero
 
-        '''
-        Copy for generating the levels of the tree
-        '''
+        # '''
+        # Copy for generating the levels of the tree
+        # '''
         
         print('''\n ##################### \
         \n # calculating levels# \
@@ -575,9 +581,9 @@ class Ternary_Tree():
         copy_Q1 = copy.deepcopy(Q1) #queue-1 defined 
         copy_Q2 = copy.deepcopy(Q2) #queue-2 defined 
  
-        '''
-        For calculating levels of the tree
-        '''
+        # '''
+        # For calculating levels of the tree
+        # '''
         def append_if_not_None():
             pass
     
@@ -591,15 +597,15 @@ class Ternary_Tree():
 
 
             ##storing in the copy_Q2
-            for i in range(len(copy_Q1)):
+            for i,item in enumerate(copy_Q1):
                 if(copy_Q1[i] is not None):
-                    if(copy_Q1[i].left_node != None):
+                    if(copy_Q1[i].left_node is not None):
                         copy_Q2.append(copy_Q1[i].left_node)
                         # print('copy_Q1[i].left_node: ', copy_Q1[i].left_node)
-                    if(copy_Q1[i].center_node != None):
+                    if(copy_Q1[i].center_node is not None):
                         copy_Q2.append(copy_Q1[i].center_node)
                         # print('copy_Q1[i].center_node: ', copy_Q1[i].center_node)
-                    if(copy_Q1[i].right_node != None):
+                    if(copy_Q1[i].right_node is not None):
                         copy_Q2.append(copy_Q1[i].right_node)
                         # print('copy_Q1[i].right_node: ', copy_Q1[i].right_node)
 
@@ -613,15 +619,15 @@ class Ternary_Tree():
                 copy_Q1.popleft()
                                
             ##storing in the copy_Q1
-            for i in range(len(copy_Q2)):
+            for i,item in enumerate(copy_Q2):
                 if(copy_Q2[i] is not None):
-                    if(copy_Q2[i].left_node != None):
+                    if(copy_Q2[i].left_node is not None):
                         copy_Q1.append(copy_Q2[i].left_node)
                         # print('copy_Q2[i].left_node: ', copy_Q2[i].left_node)
-                    if(copy_Q2[i].center_node != None):
+                    if(copy_Q2[i].center_node is not None):
                         copy_Q1.append(copy_Q2[i].center_node)
                         # print('copy_Q2[i].center_node: ', copy_Q2[i].center_node)
-                    if(copy_Q2[i].right_node != None):
+                    if(copy_Q2[i].right_node is not None):
                         copy_Q1.append(copy_Q2[i].right_node)
                         # print('copy_Q2[i].right_node: ', copy_Q2[i].right_node)
 
@@ -632,12 +638,12 @@ class Ternary_Tree():
             
 
 
-            '''{'family':'sans-serif','sans-serif':['Helvetica']})
-        ## for Palatino and other serif fonts use:
-        #rc('font',**{'family':'serif','serif':['Palatino']})
-        rc('text', usetex=True)
-            just arrangement of numbers as final tree contains all none node and to remove such m\
-            '''
+        #     '''{'family':'sans-serif','sans-serif':['Helvetica']})
+        # ## for Palatino and other serif fonts use:
+        # #rc('font',**{'family':'serif','serif':['Palatino']})
+        # rc('text', usetex=True)
+        #     just arrangement of numbers as final tree contains all none node and to remove such m\
+        #     '''
         print('Total levels in the tree : ', level)
         level += 1  
         return level
@@ -647,21 +653,18 @@ class Ternary_Tree():
     def _print_LevelOrder(self,Q1,Q2):
 
         '''
-        Level Order Printing by Traversings
-        '''
-        import numpy as np
-        
-        '''
+        Level Order Printing by Traversing
         As it is hard write the answer in the file but easy to handle in list as it has indexing :)
         '''
         #Change this value according to division of tree
         #works for any division
         ###############################
         type_of_division = 3
-        '''
-        Whereever you see three nodes defined change it to 
-        total defined nodes in node class
-        '''
+
+        # '''
+        # Whereever you see three nodes defined change it to 
+        # total defined nodes in node class
+        # '''
         ###############################
 
 
@@ -702,16 +705,16 @@ class Ternary_Tree():
             tikz_array_max_relerr_train.append(copy.deepcopy(dictionary_None))  #uniq fuels in training data 
             tikz_array_child_index.append(copy.deepcopy(dictionary_None))
 
-        '''
-        Have more than one data to print can I zip other all data into dictionary 
-        ''' 
+        # '''
+        # Have more than one data to print can I zip other all data into dictionary 
+        # ''' 
         Tree_data_to_print = [] #Tree data to zip in the one part and store as list 
 
         #to keep track of counter
         dictionary_index_counter = 1
 
         def print_shape(node):
-            if(node != None):
+            if(node is not None):
                 print('Node data : ',node.data.shape)
 
 
@@ -727,7 +730,7 @@ class Ternary_Tree():
                     break
 
             ##storing in the Q2
-            for i in range(len(Q1)):
+            for i,item in enumerate(Q1):
                 if(Q1[i] is not None):
                     # print(str(Q1[i].r2))
                     Q2.append(Q1[i].left_node)
@@ -785,8 +788,8 @@ class Ternary_Tree():
 
             ##storing in the Q1
             counter = 0
-            for i in range(len(Q2)):
-                if(Q2[i] != None):
+            for i,item in enumerate(Q2):
+                if(Q2[i] is not None):
                     Q1.append(Q2[i].left_node)
                     # print('Q2[i].left_node: ', Q2[i].left_node)
                     # print_shape(Q2[i].left_node)
@@ -806,7 +809,7 @@ class Ternary_Tree():
             #Printing and Poping
             while(len(Q2) != 0):
                 i=0 #as after poping the 0th element 1st will become zero
-                if(Q2[i] != None):
+                if(Q2[i] is not None):
                     tikz_array_training_r2[level][dictionary_index_counter] = Q2[i].r2
                     tikz_array_testing_r2[level][dictionary_index_counter] = Q2[i].testing_r2
                     tikz_array_coefficient[level][dictionary_index_counter] = Q2[i].coefficients_dictionary
@@ -1110,9 +1113,9 @@ class Ternary_Tree():
         # print('key_list_latex_array: ', key_list_latex_array)
         output_value_list = list(latex_supported_array.values())
         # print('output_value_list: ', output_value_list)
-        '''
-        Don't delete the commented code 
         # '''
+        # Don't delete the commented code 
+        # # '''
         # ##To print just a tree structure  with numbers (uncomment) with "None" values
         # f.write('\\node {'+str(key_list_latex_array[0])+'} %root\n')
         # for i in range(1,len_array):
@@ -1146,9 +1149,9 @@ class Ternary_Tree():
         #         continue
 
 
-        '''
-        To r2 value of training data with "None" values
-        '''
+        # '''
+        # To r2 value of training data with "None" values
+        # '''
         # ##To print just a tree structure with R2 value with "None" values uncomment
         # f.write('\\node {'+str(output_value_list[0])+'} %root\n')
         # for i in range(1,len_array):
@@ -1182,9 +1185,9 @@ class Ternary_Tree():
         #         continue
 
 
-        '''
-        To r2 value of training data
-        '''
+        # '''
+        # To r2 value of training data
+        # '''
         # print('output_value_list[0]: ', type(output_value_list[0]))
         # if (filename == 'FUELS Training + Testing'):
         #     print('output_value_list[0]: ', type(list(output_value_list[0])))
@@ -1204,7 +1207,7 @@ class Ternary_Tree():
         ###For first node
         try:
             f.write('\\node {'+str(round(output_value_list[0],4))+'} %root\n')
-        except: # ExceptioForCoefficient:
+        except TypeError: # ExceptioForCoefficient:
             f.write('\\node {'+str(output_value_list[0])+'} %root\n')
         # except ForFuelsTypes:
 
@@ -1213,11 +1216,10 @@ class Ternary_Tree():
         skip_bracket_counter = 0
         for i in range(1,len_array):  #as starting from  1
             if(output_value_list[i] is not None ):
-                
                 try:    #train, test and data size....for those which have specific value 
                     f.write('child { node {'+ str(round(output_value_list[i],4))+'} ') 
                     # print('child { node {'+ str(round(output_value_list[i],4))+'} ') 
-                except: #for coefficient 
+                except TypeError: #for coefficient 
                     f.write('child { node {'+ str(output_value_list[i])+'} ') 
                     # print('child { node {'+ str(output_value_list[i])+'} ') 
         
@@ -1225,11 +1227,11 @@ class Ternary_Tree():
 
 
             if( i < len_array-type_of_division):
-                '''
-                if two keys are greater than current then do nothing 
-                if first is greater and second is less than one bracket 
-                if both less then two brackets
-                '''
+                # '''
+                # if two keys are greater than current then do nothing 
+                # if first is greater and second is less than one bracket 
+                # if both less then two brackets
+                # '''
 
                 #if two values of index (i and i+1) is greater than new line 
                 if(key_list_latex_array[i+1] > key_list_latex_array[i] and key_list_latex_array[i+2]  > key_list_latex_array[i]):
@@ -1252,25 +1254,25 @@ class Ternary_Tree():
                         f.write(' }\n')
                         # print(' }\n')
                     
-                    j=i; #index defined for another loop
+                    j=i #index defined for another loop
                     end_bracket_counter = 0
 
-                    '''
-                    Pattern:
-                    Every closing bracket correspondence to the (division_type)^(index of closing bracket) in reverse direction
-                    here as binary 
-                    2^(0) = 1
-                    2^(1) = 2 :=2+1 =3                    
-                    2^(2) = 4 :=3+4 =7
-                    so first closing bracket correspondence to 3rd data from last array then 2nd bracket realted to 7th position from last data 
-                    if array size is 100 : 
-                        1st bracket 100-3  = 97
-                        2nd bracket 100-7  = 93
-                        2nd bracket 100-15 = 85
-                        2nd bracket 100-31 = 69
-                        2nd bracket 100-65 = 55
+                    # '''
+                    # Pattern:
+                    # Every closing bracket correspondence to the (division_type)^(index of closing bracket) in reverse direction
+                    # here as binary 
+                    # 2^(0) = 1
+                    # 2^(1) = 2 :=2+1 =3                    
+                    # 2^(2) = 4 :=3+4 =7
+                    # so first closing bracket correspondence to 3rd data from last array then 2nd bracket realted to 7th position from last data 
+                    # if array size is 100 : 
+                    #     1st bracket 100-3  = 97
+                    #     2nd bracket 100-7  = 93
+                    #     2nd bracket 100-15 = 85
+                    #     2nd bracket 100-31 = 69
+                    #     2nd bracket 100-65 = 55
 
-                    '''
+                    # '''
 
                     #calculating closing brackets
                     while(key_list_latex_array[j+1] < key_list_latex_array[i]):
@@ -1339,11 +1341,11 @@ class Ternary_Tree():
                         f.write(' }\n')
                     if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         f.write(' }\n')
-                        pass
+                        
                 elif(self.number_of_levels == 2 and self.cluster_label < 5):
                     for i in range(type_of_division-2):
                         f.write(' }\n')
-                        pass
+                        
                 elif(self.number_of_levels == 2 and self.cluster_label == 5):
                     if(filename == 'Datasize' or filename == 'max_rel_error' or  filename == 'ChildLabel'):
                         pass
@@ -1362,17 +1364,15 @@ class Ternary_Tree():
 
 
 if __name__ == "__main__":
-    import pandas as pd
-    import numpy as np
 
     #Adding library 
     try:
-            '''
-            If  externally features are supplied given more prioritys
-            '''
+            # '''
+            # If  externally features are supplied given more prioritys
+            # '''
             sys.path.append(self.curr_directory)
             from feature_selection import select_feature as Sel_feat
-    except:
+    except ImportError:
             from select_feature import select_feature as Sel_feat
         
 
@@ -1390,6 +1390,6 @@ if __name__ == "__main__":
     list_fuel = find_fuel_type.find_strightchain_alkanes(Fuel_data)
 
     dataset = data_gen(Fuel_data,list_fuel,Flag_value,path)     #normal dataset generation
-    df,tau = select_feature.feature_selection(dataset)
+    df,tau = Sel_feat.feature_selection(dataset)
     Tree = Ternary_Tree(df,tau,.03,Flag_value,path)
     Tree.Implement_Tree()

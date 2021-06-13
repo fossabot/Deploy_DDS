@@ -45,12 +45,12 @@ class Flag():
         '''
         #Adding library 
         try:
-            '''
-            If  externally features are supplied given more priority
-            '''
+            # '''
+            # If  externally features are supplied given more priority
+            # '''
             sys.path.append(curr_directory)
             from feature_selection import select_feature as Sel_feat
-        except:
+        except ImportError:
             from select_feature import select_feature as Sel_feat
 
         #Calling dataset 
@@ -62,9 +62,9 @@ class Flag():
             print('\n\n Check directory ./result/data_analysis/')
 
         elif (Flag_value == '-b'):
-            '''
-            Smile base bond information 
-            '''
+            # '''
+            # Smile base bond information 
+            # '''
             print('Finding the bond details')
             #importing library 
             from Bond_Extraction import Bond_Extraction as BE
@@ -85,19 +85,19 @@ class Flag():
             print('\n\n Check directory ./result/Bond_details/')
 
         elif(Flag_value == '-h'):
-            '''
-            Fuel analysis 
-            This flag will analyze the fuel data and generate histogram plots of properties based on different fuels
-            '''
+            # '''
+            # Fuel analysis 
+            # This flag will analyze the fuel data and generate histogram plots of properties based on different fuels
+            # '''
             print("## You are going to proceed for All straight chain alkanes fuel available in the dataset ## \n")
             Fuel_data = pd.read_csv(dataset_location)
             from fuel_analysis import fuel_analysis #calling fuela analysis part
             fuel_analysis.fuel_data_analysis(Fuel_data,curr_directory)     #passing thw whole dataset to it 
 
         elif(Flag_value == '-m'):
-            '''
-            straight chain alkanes
-            '''
+            # '''
+            # straight chain alkanes
+            # '''
 
             print("## You are going to proceed for All straight chain alkanes fuel available in the dataset ## \n")
             Fuel_data = pd.read_csv(dataset_location)
@@ -130,11 +130,11 @@ class Flag():
             print('\n\n Executed Normally! ')
     
         elif(Flag_value == '-t'):
-                '''
-                This Flag is same as three but before transferring the data to find out R2,
-                Data has to be transferred to tree structure and divide the data in middle way.
-                Add tree module without uncertainty
-                '''
+                # '''
+                # This Flag is same as three but before transferring the data to find out R2,
+                # Data has to be transferred to tree structure and divide the data in middle way.
+                # Add tree module without uncertainty
+                # '''
 
                 print("## Tree Structure and data division for alkanes only## \n")
                 Fuel_data = pd.read_csv(dataset_location)
@@ -176,9 +176,9 @@ class Flag():
                 # os.system('sh ./for_ploting.sh')
 
         elif(Flag_value == '-d'):
-                '''
-                gives Transformed data
-                '''
+                # '''
+                # gives Transformed data
+                # '''
                 from data_gen import data_gen
                 external_data = pd.read_csv(dataset_location)
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
@@ -188,9 +188,9 @@ class Flag():
                 df.to_csv(str(curr_directory)+'/tranformed_data.csv',index=False)
    
         elif(Flag_value == '-e'):
-                '''
-                External test-cases
-                '''
+                # '''
+                # External test-cases
+                # '''
                 from data_gen import data_gen
                 external_data = pd.read_csv(dataset_location)
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
@@ -208,11 +208,10 @@ class Flag():
                 # print('\n\n Executed Normally! Please check plot Folder')
 
         elif(Flag_value == '-k'):
-        	
-                '''
-                External test-cases
-                By this flag can be used to store all the prediction result
-                '''
+                # '''
+                # External test-cases
+                # By this flag can be used to store all the prediction result
+                # '''
                 from data_gen import data_gen
                 external_data = pd.read_csv(dataset_location)
                 list_fuel = find_fuel_type.find_strightchain_alkanes(external_data)
@@ -231,9 +230,9 @@ class Flag():
 
                 
         elif(Flag_value == '-p'):
-                '''
-                Plot of average coefficient value obtained by histogram of coefficients
-                '''
+                # '''
+                # Plot of average coefficient value obtained by histogram of coefficients
+                # '''
                 print(dataset_location)
                 coef_data = pd.read_csv(dataset_location)       
                 from coefficient_plotting import coefficient_plotting as CP 
@@ -241,12 +240,11 @@ class Flag():
                 print('\n\n Executed Normally! Please check plot Folder')
         
         elif(Flag_value == '-o'):
-                '''
-                This Flag is same as three but before transferring the data to find out R2,
-                Data has to be transferred to tree structure and divide the data in middle way.
-                Add tree module without uncertainty
-                '''
-
+                # '''
+                # This Flag is same as three but before transferring the data to find out R2,
+                # Data has to be transferred to tree structure and divide the data in middle way.
+                # Add tree module without uncertainty
+                # '''
                 print("## Tree Structure and data division for non-fuel data only## \n")
                 dataset = pd.read_csv(dataset_location)
                 

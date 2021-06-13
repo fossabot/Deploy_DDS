@@ -52,7 +52,7 @@ def equalize_dataset(dataset,choice_value):
         equal_entries_data = pd.DataFrame()
         #Generating dataset of equal number of fuel entries
         # print('min_fuel_data: ', min_fuel_data)
-        for i in range(len(unique_fuel)):
+        for i,item in enumerate(unique_fuel):
                 sub_dataset = dataset.loc[dataset['Fuel'] == unique_fuel[i]]
                 sub_dataset = sub_dataset.sample(n=min_fuel_data)#, random_state=41)
                 equal_entries_data = equal_entries_data.append(sub_dataset)
@@ -65,7 +65,7 @@ def equalize_dataset(dataset,choice_value):
         #Diff  between two list obtained by converting into set 
         diff_list = list(set(dataset_index_list) - set(equal_entries_data_index_list))  
         # Getting the differences of two Dataframe by index_diff
-        for i in range (len(diff_list)):
+        for i,item in enumerate(diff_list):
                 Diff_dataset = Diff_dataset.append(dataset.loc[diff_list[i],:])
         
         # equal_entries_data.to_csv('equal.csv')
