@@ -3,11 +3,13 @@ sudo: required
 language: shell
 
 install:
+  - echo $PWD
   - echo "export IDCODE='$PWD'">~/.bashrc
   - echo "export PATH=$PATH:$IDCODE">~/.bashrc
   - echo "alias IDprediction='pwd>${IDCODE}/filelocation.txt && Run.sh'">~/.bashrc
   - cd 
   - source .bashrc
+  - echo $IDCODE
   - cd $IDCODE
 
 script:
