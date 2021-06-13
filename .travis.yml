@@ -7,7 +7,7 @@ install:
   - echo "export PATH=$PATH:$IDCODE">~/.bashrc
   - echo "alias IDprediction='pwd>${IDCODE}/filelocation.txt && Run.sh'">~/.bashrc
   - cd 
-  - sudo source .bashrc
+  - source .bashrc
   - cd $IDCODE
 
 script:
