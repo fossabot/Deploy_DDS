@@ -8,9 +8,7 @@ sudo apt-get install python3.6
 
 #install RDkit
 echo 'Installing RDKIT'
-sudo apt-get install python3-rdkit
-conda install -c rdkit rdkit
-#conda install -c conda-forge rdkit
+pip install rdkit-pypi
 
 #numpy
 echo 'Installing NUMPY'
@@ -62,4 +60,5 @@ pip install codecov
 
 #latex
 echo 'Installing texlive'
-sudo apt-get install texlive-full
+sudo pip install latex
+sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
