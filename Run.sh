@@ -9,7 +9,7 @@ echo "Current path is : $Initial_location"
 
 #chnaging and storing path
 cd $code_direcotry
-curr_location=$(<$code_direcotry/filelocation.txt) 
+curr_location=$(<$code_direcotry'filelocation.txt') 
 echo $curr_location
 cd ./src
 
@@ -175,8 +175,8 @@ plotting_fucntion () {
     cd $code_direcotry
     cd ./src
 
-    python coef_tikz_compatible.py "$curr_location/plots/"
-    # python Fuel_tikz_compatible.py "$curr_location/plots/"
+    python3 coef_tikz_compatible.py "$curr_location/plots/"
+    # python3 Fuel_tikz_compatible.py "$curr_location/plots/"
 
     dir_to_plot="$curr_location/plots/"
     cd $dir_to_plot
@@ -197,41 +197,41 @@ plotting_fucntion () {
 
 
 ################################################
-# BASED ON FLAG, IT WILL RUN THE PYTHON SCRIPT #
+# BASED ON FLAG, IT WILL RUN THE PYTHON3 SCRIPT #
 ################################################
 
 ##Analysis of fuel dataset
 if [ $flag_passed == '-a' ]
 then
-python DDS.py -a $dataset_location  $curr_location
+python3 DDS.py -a $dataset_location  $curr_location
 fi
 
 if [ $flag_passed == '-d' ]
 then
-python DDS.py -d $dataset_location  $curr_location
+python3 DDS.py -d $dataset_location  $curr_location
 fi
 
 if [ $flag_passed == '-b' ]
 then
-python DDS.py -b $fuel_SMILE $curr_location #SMILE will passed in place of dataset location
+python3 DDS.py -b $fuel_SMILE $curr_location #SMILE will passed in place of dataset location
 echo 'done'
 fi
 
 ##Histogram plots of data 
 if [ $flag_passed == '-h' ]
 then
-python DDS.py -h $dataset_location $curr_location
+python3 DDS.py -h $dataset_location $curr_location
 fi
 
 ##Multiple regression 
 if [ $flag_passed == '-m' ]
 then
-python DDS.py -m $dataset_location $curr_location $elimination $significance_level
+python3 DDS.py -m $dataset_location $curr_location $elimination $significance_level
 fi
 
 if [ $flag_passed == '-t' ]
 then
-python DDS.py -t $dataset_location $curr_location $error_criteria $elimination $significance_level $limited_ref_points
+python3 DDS.py -t $dataset_location $curr_location $error_criteria $elimination $significance_level $limited_ref_points
 # plotting_fucntion
 fi
 
@@ -243,33 +243,33 @@ fi
 
 if [ $flag_passed == '-o' ]
 then
-python DDS.py -o $dataset_location $curr_location $error_criteria $elimination $significance_level $limited_ref_points
+python3 DDS.py -o $dataset_location $curr_location $error_criteria $elimination $significance_level $limited_ref_points
 plotting_fucntion
 fi
 
 ####Extrenal test
 if [ $flag_passed == '-e' ]
 then
-python DDS.py -e $dataset_location $curr_location
+python3 DDS.py -e $dataset_location $curr_location
 echo 'done'
 fi
 
 if [ $flag_passed == '-k' ]
 then
-python DDS.py -k $dataset_location $curr_location
+python3 DDS.py -k $dataset_location $curr_location
 echo 'done'
 fi
 
 if [ $flag_passed == '-f' ]
 then
-python DDS.py -f $dataset_location $curr_location
+python3 DDS.py -f $dataset_location $curr_location
 echo 'done'
 fi
 
 
 if [ $flag_passed == '-p' ]
 then
-python DDS.py -p $dataset_location $curr_location
+python3 DDS.py -p $dataset_location $curr_location
 echo 'done'
 fi
 
