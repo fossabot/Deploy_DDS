@@ -12,8 +12,6 @@ install:
   - echo $IDprediction
   - chmod +x INSTALL.sh
   - chmod +x Run.sh 
-  - pwd>>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt
-  - cat filelocation.txt
   - ls 
   - echo $PWD
   - IDprediction
