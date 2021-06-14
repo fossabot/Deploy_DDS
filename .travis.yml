@@ -2,7 +2,7 @@ sudo: required
 
 env:
   global:
-  - IDCODE=$TRAVIS_BUILD_DIR/
+  - IDCODE=$TRAVIS_BUILD_DIR
   - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt&&$TRAVIS_BUILD_DIR/Run.sh
 
 language: python
