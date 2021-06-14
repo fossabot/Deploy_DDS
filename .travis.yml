@@ -29,7 +29,7 @@ install:
 
   - sudo apt-get install build-essential
   - sudo apt-get install python3-pip
-  - pip install rdkit-pypi
+  - sudo apt-get install python-rdkit librdkit1 rdkit-data
   - pip install --user numpy
   - pip install --user scipy
   - pip install --user matplotlib

@@ -8,7 +8,7 @@ sudo apt install python3.8
 
 #install RDkit
 echo 'Installing RDKIT'
-pip install rdkit-pypi
+sudo apt-get install python-rdkit librdkit1 rdkit-data
 
 #numpy
 echo 'Installing NUMPY'
