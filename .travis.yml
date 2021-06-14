@@ -41,7 +41,7 @@ install:
   - conda install -c intel scikit-learn
   - conda install -c conda-forge python-coveralls 
   - conda install -c conda-forge codecov 
-  - conda install -c conda-forge miktex 
+  - pip install --user latex
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
   
 python:
