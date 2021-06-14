@@ -4,7 +4,7 @@ language: shell
 
 env:
   global:
-  - IDCODE=$TRAVIS_BUILD_DIR/Deploy_DDS/
+  - IDCODE=$TRAVIS_BUILD_DIR/
   - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt && $TRAVIS_BUILD_DIR/Run.sh
 
 script:
