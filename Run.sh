@@ -5,11 +5,12 @@ echo
 
 cd $HOME
 code_direcotry=$IDCODE
-# echo "Current path is : $Initial_location"
+echo "Current path is : $Initial_location"
 
 #chnaging and storing path
 cd $code_direcotry
-curr_location=$(<filelocation.txt) 
+curr_location=$(<$code_direcotry/filelocation.txt) 
+echo $curr_location
 cd ./src
 
 

@@ -1,27 +1,24 @@
-env:
-  global:
-        - IDCODE="/home/travis/build/pragneshrana/Deploy_DDS/"
-        - PATH=$PATH:$IDCODE
-        - IDprediction='pwd>/home/travis/build/pragneshrana/Deploy_DDS/filelocation.txt && /home/travis/build/pragneshrana/Deploy_DDS/Run.sh'  
-os:
-  - linux
-  
+sudo: required
+
 language: shell
 
-install:
-  - echo $IDprediction
-  - chmod +x INSTALL.sh
-  - chmod +x Run.sh 
-  - ls 
-  - echo $PWD
-  - IDprediction
-  
+env:
+  global:
+  - IDCODE=$TRAVIS_BUILD_DIR/Deploy_DDS/
+  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/Deploy_DDS/filelocation.txt && $TRAVIS_BUILD_DIR/Deploy_DDS/Run.sh
+
 script:
-  - IDprediction -b CCCC 
-  - IDprediction -c .1 -t trainset.csv 
-  
+  - ls
+  - pwd
+  - chmod +x INSTALL.sh
+  - chmod +x Run.sh
+  - source INSTALL.sh
+  - pwd>>$TRAVIS_BUILD_DIR/Deploy_DDS/filelocation.txt
+  - $TRAVIS_BUILD_DIR/Deploy_DDS/Run.sh -b CCC
+  - IDprediction
+  - IDprediction -c .1 -t trainset.csv
+
 after_success:
   - coveralls
   - bash <(curl -s https://codecov.io/bash)
   - codecov
-
