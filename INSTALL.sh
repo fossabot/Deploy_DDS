@@ -21,6 +21,7 @@ pip install scipy
 #matplotlib
 echo 'Installing MATPLOTLIB'
 pip install matplotlib
+python3 -m pip install matplotlib
 
 #pandas
 echo 'Installing PANDAS'
