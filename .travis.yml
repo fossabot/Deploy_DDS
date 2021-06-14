@@ -1,23 +1,40 @@
 sudo: required
 
-language: python
-python:
-  - "3.8"
-
-language: shell
-
 env:
   global:
   - IDCODE=$TRAVIS_BUILD_DIR/
-  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt&&$TRAVIS_BUILD_DIR/Run.sh
+  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt && $TRAVIS_BUILD_DIR/Run.sh
+
+language: python
+
+python:
+  - "3.8"
+  
+cache: pip
+
+install:
+  - pip install rdkit-pypi
+  - pip install numpy
+  - pip install scipy
+  - python3 -m pip install matplotlib
+  - python3 -m pip install pandas
+  - pip install regex
+  - pip install collections-extended
+  - pip install random2
+  - pip install seaborn
+  - pip install -U scikit-learn
+  - pip install coveralls
+  - pip install codecov
+  - sudo pip install latex
+  - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
+
+
+language: shell
 
 script:
   - chmod +x INSTALL.sh
-  - source INSTALL.sh
   - chmod +x Run.sh
-  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt
   - $TRAVIS_BUILD_DIR/Run.sh -b CCC
-  - $IDprediction
   - $IDprediction -c .1 -t trainset.csv
 
 after_success:

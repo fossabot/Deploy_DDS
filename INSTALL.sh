@@ -20,13 +20,11 @@ pip install scipy
 
 #matplotlib
 echo 'Installing MATPLOTLIB'
-pip install matplotlib
 python3 -m pip install matplotlib
 
 #pandas
 echo 'Installing PANDAS'
-sudo python -m pip install pandas
-sudo python3 -m pip install pandas
+python3 -m pip install pandas
 
 #regex
 echo 'Installing REGEX'
