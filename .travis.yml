@@ -30,12 +30,12 @@ install:
   - sudo apt-get install build-essential
   - sudo apt-get install python3-pip
   - sudo apt-get install python-rdkit librdkit1 rdkit-data
-  - sudo apt-get install python3.6-tk
   - sudo apt-get install python3-numpy
   - sudo apt-get install python3-scipy
   - sudo apt-get install python3-matplotlib
   - sudo apt-get install python3-pandas
   - sudo apt-get install python3-regex
+  - sudo apt-get install python3-tk
   - pip install --user collections-extended
   - pip install --user random2
   - sudo apt-get install python3-seaborn
@@ -44,10 +44,7 @@ install:
   - pip install --user codecov
   - pip install --user latex
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
-  - sudo apt-get install update
-  
-python:
-  - "3.8"
+
   
 language: shell
 
