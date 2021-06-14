@@ -12,8 +12,7 @@ script:
   - pwd
   - chmod +x INSTALL.sh
   - chmod +x Run.sh
-  - source INSTALL.sh
-  - pwd>>$TRAVIS_BUILD_DIR/Deploy_DDS/filelocation.txt
+  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt
   - $TRAVIS_BUILD_DIR/Deploy_DDS/Run.sh -b CCC
   - IDprediction
   - IDprediction -c .1 -t trainset.csv
