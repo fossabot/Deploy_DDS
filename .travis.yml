@@ -12,19 +12,19 @@ cache: pip
 before_install:
   - sudo apt-get install build-essential
   - sudo apt-get install python3-pip
-  - sudo pip3 install --user rdkit-pypi
-  - sudo pip3 install --user numpy
-  - sudo pip3 install --user scipy
-  - sudo pip3 install --user matplotlib
-  - sudo pip3 install --user pandas
-  - sudo pip3 install --user regex
-  - sudo pip3 install --user collections-extended
-  - sudo pip3 install --user random2
-  - sudo pip3 install --user seaborn
-  - sudo pip3 install --user scikit-learn
-  - sudo pip3 install --user coveralls
-  - sudo pip3 install --user codecov
-  - sudo pip3 install --user latex
+  - pip install --user rdkit-pypi
+  - pip install --user numpy
+  - pip install --user scipy
+  - pip install --user matplotlib
+  - pip install --user pandas
+  - pip install --user regex
+  - pip install --user collections-extended
+  - pip install --user random2
+  - pip install --user seaborn
+  - pip install --user scikit-learn
+  - pip install --user coveralls
+  - pip install --user codecov
+  - pip install --user latex
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
   
 python:
