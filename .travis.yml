@@ -3,7 +3,7 @@ sudo: required
 env:
   global:
   - IDCODE=$TRAVIS_BUILD_DIR/
-  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt&&$TRAVIS_BUILD_DIR/Run.sh
+  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt&$TRAVIS_BUILD_DIR/Run.sh
 
 language: python
 
@@ -14,33 +14,33 @@ python:
 install:
   # We do this conditionally because it saves us some downloading if the
   # version is the same.
-  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
-      wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
-    else
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-    fi
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - source "$HOME/miniconda/etc/profile.d/conda.sh"
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-  # Useful for debugging any issues with conda
-  - conda info -a
+  # - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+  #     wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+  #   else
+  #     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  #   fi
+  # - bash miniconda.sh -b -p $HOME/miniconda
+  # - source "$HOME/miniconda/etc/profile.d/conda.sh"
+  # - hash -r
+  # - conda config --set always_yes yes --set changeps1 no
+  # - conda update -q conda
+  # # Useful for debugging any issues with conda
+  # - conda info -a
 
   - sudo apt-get install build-essential
   - sudo apt-get install python3-pip
   - sudo apt-get install python-rdkit librdkit1 rdkit-data
-  - conda install numpy
-  - conda install scipy
-  - conda install matplotlib
-  - conda install pandas
-  - conda install regex
+  - pip install --user numpy
+  - pip install --user scipy
+  - pip install --user matplotlib
+  - pip install --user pandas
+  - pip install --user regex
   - pip install --user collections-extended
   - pip install --user random2
-  - conda install seaborn
-  - conda install -c intel scikit-learn
-  - conda install -c conda-forge python-coveralls 
-  - conda install -c conda-forge codecov 
+  - pip install --user seaborn
+  - pip install --user scikit-learn
+  - pip install --user coveralls
+  - pip install --user codecov
   - pip install --user latex
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
   
