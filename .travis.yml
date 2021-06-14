@@ -29,7 +29,7 @@ install:
   - conda install -c rdkit rdkit-postgresql
   - sudo apt-get install build-essential
   - sudo apt-get install python3-pip
-  - sudo apt-get install python3-rdkit librdkit1 rdkit-data
+  - sudo apt-get install python-rdkit librdkit1 rdkit-data
   - sudo apt-get install python3-numpy
   - sudo apt-get install python3-scipy
   - sudo apt-get install python3-matplotlib
