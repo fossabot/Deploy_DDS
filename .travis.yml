@@ -13,19 +13,20 @@ python:
 cache: pip
 
 install:
-  - pip install rdkit-pypi
-  - pip install numpy
-  - pip install scipy
-  - python3 -m pip install matplotlib
-  - python3 -m pip install pandas
-  - pip install regex
-  - pip install collections-extended
-  - pip install random2
-  - pip install seaborn
-  - pip install -U scikit-learn
-  - pip install coveralls
-  - pip install codecov
-  - sudo pip install latex
+  - sudo apt-get install python3-pip
+  - sudo pip3 install rdkit-pypi
+  - sudo pip3 install numpy
+  - sudo pip3 install scipy
+  - sudo pip3 install matplotlib
+  - sudo pip3 install pandas
+  - sudo pip3 install regex
+  - sudo pip3 install collections-extended
+  - sudo pip3 install random2
+  - sudo pip3 install seaborn
+  - sudo pip3 install -U scikit-learn
+  - sudo pip3 install coveralls
+  - sudo pip3 install codecov
+  - sudo pip3 install latex
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
 
 
