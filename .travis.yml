@@ -35,12 +35,14 @@ install:
   - conda install matplotlib
   - conda install pandas
   - conda install regex
-  - conda install collections-extended
+  - pip install --user collections-extended
   - conda install random2
   - conda install seaborn
   - conda install scikit-learn
+  - pip install --user coveralls
   - conda install coveralls
   - conda install codecov
+  - pip install --user codecov
   - conda install latex
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
   
