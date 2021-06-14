@@ -5,7 +5,7 @@ language: shell
 env:
   global:
   - IDCODE=$TRAVIS_BUILD_DIR/Deploy_DDS/
-  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/Deploy_DDS/filelocation.txt && $TRAVIS_BUILD_DIR/Deploy_DDS/Run.sh
+  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt && $TRAVIS_BUILD_DIR/Run.sh
 
 script:
   - ls
@@ -13,7 +13,7 @@ script:
   - chmod +x INSTALL.sh
   - chmod +x Run.sh
   - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt
-  - $TRAVIS_BUILD_DIR/Deploy_DDS/Run.sh -b CCC
+  - $TRAVIS_BUILD_DIR/Run.sh -b CCC
   - IDprediction
   - IDprediction -c .1 -t trainset.csv
 
