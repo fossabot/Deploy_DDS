@@ -5,12 +5,11 @@ language: shell
 env:
   global:
   - IDCODE=$TRAVIS_BUILD_DIR/
-  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt && $TRAVIS_BUILD_DIR/Run.sh
+  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt&&$TRAVIS_BUILD_DIR/Run.sh
 
 script:
-  - ls
-  - pwd
   - chmod +x INSTALL.sh
+  - source INSTALL.sh
   - chmod +x Run.sh
   - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt
   - $TRAVIS_BUILD_DIR/Run.sh -b CCC
