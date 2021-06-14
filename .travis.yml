@@ -3,7 +3,7 @@ sudo: required
 env:
   global:
   - IDCODE=$TRAVIS_BUILD_DIR/
-  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt && $TRAVIS_BUILD_DIR/Run.sh
+  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt&&$TRAVIS_BUILD_DIR/Run.sh
 
 language: python
 
@@ -30,18 +30,18 @@ install:
   - sudo apt-get install build-essential
   - sudo apt-get install python3-pip
   - sudo apt-get install python-rdkit librdkit1 rdkit-data
-  - pip install --user numpy
-  - pip install --user scipy
-  - pip install --user matplotlib
-  - pip install --user pandas
-  - pip install --user regex
-  - pip install --user collections-extended
-  - pip install --user random2
-  - pip install --user seaborn
-  - pip install --user scikit-learn
-  - pip install --user coveralls
-  - pip install --user codecov
-  - pip install --user latex
+  - conda install numpy
+  - conda install scipy
+  - conda install matplotlib
+  - conda install pandas
+  - conda install regex
+  - conda install collections-extended
+  - conda install random2
+  - conda install seaborn
+  - conda install scikit-learn
+  - conda install coveralls
+  - conda install codecov
+  - conda install latex
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
   
 python:
