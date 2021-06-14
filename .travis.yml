@@ -30,14 +30,15 @@ install:
   - sudo apt-get install build-essential
   - sudo apt-get install python3-pip
   - sudo apt-get install python-rdkit librdkit1 rdkit-data
-  - pip install --user numpy
-  - pip install --user scipy
-  - pip install --user matplotlib
-  - pip install --user pandas
-  - pip install --user regex
+  - sudo apt-get install python3-tk
+  - sudo apt-get install python3-numpy
+  - sudo apt-get install python3-scipy
+  - sudo apt-get install python3-matplotlib
+  - sudo apt-get install python3-pandas
+  - sudo apt-get install python3-regex
   - pip install --user collections-extended
   - pip install --user random2
-  - pip install --user seaborn
+  - sudo apt-get install python3-seaborn
   - pip install --user scikit-learn
   - pip install --user coveralls
   - pip install --user codecov
