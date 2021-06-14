@@ -4,7 +4,7 @@ sudo apt-get update
 
 #install python
 echo 'Installing Python'
-sudo apt-get install python3.6
+sudo apt install python3.8
 
 #install RDkit
 echo 'Installing RDKIT'
@@ -24,15 +24,16 @@ pip install matplotlib
 
 #pandas
 echo 'Installing PANDAS'
-pip install pandas
+sudo python -m pip install pandas
+sudo python3 -m pip install pandas
 
 #regex
 echo 'Installing REGEX'
 pip install regex
 
-#statsModel
-echo 'Installing STATMODELS'
-pip install statsmodels
+# #statsModel
+# echo 'Installing STATMODELS'
+# pip install statsmodels
 
 #collection
 echo 'Installing collections-libs'
@@ -58,7 +59,7 @@ pip install coveralls
 echo 'Installing CODECOVERAGE'
 pip install codecov
 
-#latex
-echo 'Installing texlive'
-sudo pip install latex
-sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
+# #latex
+# echo 'Installing texlive'
+# sudo pip install latex
+# sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
