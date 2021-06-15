@@ -32,7 +32,6 @@ install:
   - conda install -n prr -c conda-forge rdkit
   - conda install -n prr numpy
   - conda install -n prr scipy
-  - conda install -n prr matplotlib
   - conda install -n prr pandas
   - conda install -n prr regex
   - conda install -n prr -c conda-forge random2
