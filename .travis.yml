@@ -28,7 +28,7 @@ install:
   - conda env list
   - conda info -a
   - conda create --name prr python=3.7
-  - source activate prr
+  - conda activate prr
   - conda install -n prr -c conda-forge rdkit
   - conda install -n prr numpy
   - conda install -n prr scipy
