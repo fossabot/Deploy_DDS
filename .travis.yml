@@ -49,8 +49,8 @@ script:
   - chmod +x Run.sh
   - cd TryYourself/nAlkaneIDT/
 
-  - echo 'Analyzing Data'
-  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -a trainset.csv
+  # - echo 'Analyzing Data - Need User Input'
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -a trainset.csv
 
   # - echo 'Checking Bond Details for Heptane'
   # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -b CCCCCCC
