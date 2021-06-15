@@ -25,21 +25,22 @@ install:
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   # Useful for debugging any issues with conda
+  - conda env list
   - conda info -a
-  - activate
-  - conda config --env --add channels conda-forge
-  - conda install -c conda-forge rdkit
-  - conda install numpy
-  - conda install scipy
-  - conda install matplotlib
-  - conda install pandas
-  - conda install regex
-  - conda install -c conda-forge random2
-  - conda install python3-seaborn
-  - conda install -c conda-forge scikit-learn
-  - conda install -c conda-forge coveralls
-  - conda install -c conda-forge codecov
-  - conda install -c conda-forge latex
+  - conda create -n prr python=3.6 anaconda
+  - source activate prr
+  - conda install -n prr -c conda-forge rdkit
+  - conda install -n prr numpy
+  - conda install -n prr scipy
+  - conda install -n prr matplotlib
+  - conda install -n prr pandas
+  - conda install -n prr regex
+  - conda install -n prr -c conda-forge random2
+  - conda install -n prr python3-seaborn
+  - conda install -n prr -c conda-forge scikit-learn
+  - conda install -n prr -c conda-forge coveralls
+  - conda install -n prr -c conda-forge codecov
+  - conda install -n prr -c conda-forge latex
   - activate
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
 
