@@ -3,7 +3,7 @@ sudo: required
 env:
   global:
   - IDCODE=$TRAVIS_BUILD_DIR
-  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt; $TRAVIS_BUILD_DIR/Run.sh
+  - IDprediction=pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh
 
 language: python
 
@@ -34,11 +34,12 @@ install:
   - conda install -n prr scipy
   - conda install -n prr pandas
   - conda install -n prr regex
-  # - conda install -n prr seaborn
+  - conda install -n prr -c conda-forge statsmodels
+  - conda install -n prr -c anaconda seaborn 
   - conda install -n prr -c conda-forge scikit-learn
   - conda install -n prr -c conda-forge coveralls
   - conda install -n prr -c conda-forge codecov
-  - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
+  # - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
 
   
 language: shell
