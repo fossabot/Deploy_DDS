@@ -59,13 +59,13 @@ script:
   # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -h trainset.csv
 
   - echo 'Multiple regression'
-  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r False -m alkane.csv
+  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r False -m trainset.csv
 
   # - echo 'Multiple regression with significance and feature elimination'
-  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r True -s 0.05 -m alkane.csv
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r True -s 0.05 -m trainset.csv
 
   # - echo 'Clustering tree based regression'
-  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r False -t alkane.csv
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r False -t trainset.csv
 
   # - echo 'External test'
   # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -e testset.csv
