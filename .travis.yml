@@ -26,23 +26,21 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  - conda install -c rdkit rdkit-postgresql
-  - sudo apt-get install build-essential
-  - sudo apt-get install python3-pip
-  - sudo apt-get install python-rdkit librdkit1 rdkit-data
-  - sudo apt-get install python3-numpy
-  - sudo apt-get install python3-scipy
-  - sudo apt-get install python3-matplotlib
-  - sudo apt-get install python3-pandas
-  - sudo apt-get install python3-regex
-  - sudo apt-get install python3-tk
-  - pip install --user collections-extended
-  - pip install --user random2
-  - sudo apt-get install python3-seaborn
-  - pip install --user scikit-learn
-  - pip install --user coveralls
-  - pip install --user codecov
-  - pip install --user latex
+  - activate
+  - conda config --env --add channels conda-forge
+  - conda install -c conda-forge rdkit
+  - conda install numpy
+  - conda install scipy
+  - conda install matplotlib
+  - conda install pandas
+  - conda install regex
+  - conda install -c conda-forge random2
+  - conda install python3-seaborn
+  - conda install -c conda-forge scikit-learn
+  - conda install -c conda-forge coveralls
+  - conda install -c conda-forge codecov
+  - conda install -c conda-forge latex
+  - activate
   - sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
 
   
@@ -53,7 +51,7 @@ script:
   - chmod +x Run.sh
   - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt
   - $TRAVIS_BUILD_DIR/Run.sh -b CCC
-  - $IDprediction -c .1 -t trainset.csv
+  - $IDprediction -c 0.1 -t trainset.csv
 
 after_success:
   - coveralls
