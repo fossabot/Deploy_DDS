@@ -27,7 +27,7 @@ install:
   # Useful for debugging any issues with conda
   - conda env list
   - conda info -a
-  - conda create -n prr python=3.6 anaconda
+  - conda create --name prr python=3.7
   - source activate prr
   - conda install -n prr -c conda-forge rdkit
   - conda install -n prr numpy
