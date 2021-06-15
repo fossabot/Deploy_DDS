@@ -48,7 +48,7 @@ script:
   - chmod +x Run.sh
   - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt
   - $TRAVIS_BUILD_DIR/Run.sh -b CCC
-  - $IDprediction -c 0.1 -t trainset.csv
+  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.1 -t trainset.csv
 
 after_success:
   - coveralls
