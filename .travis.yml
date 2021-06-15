@@ -34,7 +34,7 @@ install:
   - conda install -n prr scipy
   - conda install -n prr pandas
   - conda install -n prr regex
-  - conda install -n prr seaborn
+  # - conda install -n prr seaborn
   - conda install -n prr -c conda-forge scikit-learn
   - conda install -n prr -c conda-forge coveralls
   - conda install -n prr -c conda-forge codecov
