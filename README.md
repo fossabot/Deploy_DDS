@@ -1,5 +1,3 @@
-
-
 <a href="https://zenodo.org/badge/latestdoi/373245755"><img src="https://zenodo.org/badge/373245755.svg" alt="DOI"></a>
 
 
@@ -230,5 +228,10 @@ Make appropriate changes in **’feature selection.py'** file to change features
          <img alt="SAFRAN Group" src="https://github.com/pragneshrana/logos/blob/master/17197871.png"
          width=100" height="100">
       </a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fpragneshrana%2FDeploy_DDS?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpragneshrana%2FDeploy_DDS.svg?type=shield"/></a>
 </dl>
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpragneshrana%2FDeploy_DDS.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpragneshrana%2FDeploy_DDS?ref=badge_large)
