@@ -3,13 +3,13 @@ sudo: required
 env:
   global:
   - IDCODE=$TRAVIS_BUILD_DIR
-  - IDprediction=$PWD>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh
+  # - IDprediction=$PWD>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh
 
 language: python
 
 python:
   # We don't actually use the Travis Python, but this keeps it organized.
-  - "3.6"
+  - "3.8"
 
 install:
   # We do this conditionally because it saves us some downloading if the
@@ -27,7 +27,7 @@ install:
   # Useful for debugging any issues with conda
   - conda env list
   - conda info -a
-  - conda create --name prr python=3.7
+  - conda create --name prr python=3.8
   - conda activate prr
   - conda install -n prr -c conda-forge rdkit
   - conda install -n prr numpy
@@ -45,10 +45,37 @@ language: shell
 
 script:
   - chmod +x INSTALL.sh
+
   - chmod +x Run.sh
-  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt
-  - $TRAVIS_BUILD_DIR/Run.sh -b CCC
-  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.1 -t trainset.csv
+  - cd TryYourself/nAlkaneIDT/
+
+  - echo 'Analyzing Data'
+  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -a trainset.csv
+
+  # - echo 'Checking Bond Details for Heptane'
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -b CCCCCCC
+
+  # - echo 'Generating Histograms of parameters for each fuel'
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -h trainset.csv
+
+  - echo 'Multiple regression'
+  - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r False -m alkane.csv
+
+  # - echo 'Multiple regression with significance and feature elimination'
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r True -s 0.05 -m alkane.csv
+
+  # - echo 'Clustering tree based regression'
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.05 -r False -t alkane.csv
+
+  # - echo 'External test'
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -e testset.csv
+
+  # - cd ..
+  # - cd BostonHousingPrice/
+
+  # - echo 'Boston Hosing Price Data'
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -c 0.1 -o trainset.csv
+  # - pwd>>$TRAVIS_BUILD_DIR/filelocation.txt;$TRAVIS_BUILD_DIR/Run.sh -e testset.csv
 
 after_success:
   - coveralls

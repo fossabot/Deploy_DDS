@@ -4,35 +4,42 @@ sudo apt-get update
 
 #install python
 echo 'Installing Python'
-sudo apt install python3.8
+wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh -b -p $HOME/miniconda
+source "$HOME/miniconda/etc/profile.d/conda.sh"
+conda update -q conda
+
+#environment
+echo "Creating Environment"
+conda create --name prrana python=3.8
 
 #install RDkit
 echo 'Installing RDKIT'
-sudo apt-get install python-rdkit librdkit1 rdkit-data
+conda install -n prrana -c conda-forge rdkit
 
 #numpy
 echo 'Installing NUMPY'
-pip install numpy
+conda install -n prrana numpy
 
 #scipy
 echo 'Installing SCIPY'
-pip install scipy
+conda install -n prrana scipy
 
-#matplotlib
-echo 'Installing MATPLOTLIB'
-python3 -m pip install matplotlib
+# #matplotlib
+# echo 'Installing MATPLOTLIB'
+# python3 -m pip install matplotlib
 
 #pandas
 echo 'Installing PANDAS'
-python3 -m pip install pandas
+conda install -n prrana pandas
 
 #regex
 echo 'Installing REGEX'
-pip install regex
+conda install -n prrana regex
 
-# #statsModel
-# echo 'Installing STATMODELS'
-# pip install statsmodels
+#statsModel
+echo 'Installing STATMODELS'
+conda install -n prrana -c conda-forge statsmodels
 
 #collection
 echo 'Installing collections-libs'
@@ -44,21 +51,20 @@ pip install random2
 
 #seaborn
 echo 'Installing SEABORN'
-pip install seaborn
+conda install -n prrana -c anaconda seaborn 
 
 #sklearn
 echo 'Installing SKLEARN'
-pip install -U scikit-learn
+conda install -n prrana -c conda-forge scikit-learn
 
 #coverage
 echo 'Installing COVERALL'
-pip install coveralls
+conda install -n prrana -c conda-forge coveralls
 
 #codecov
 echo 'Installing CODECOVERAGE'
-pip install codecov
+conda install -n prrana -c conda-forge codecov
 
-# #latex
-# echo 'Installing texlive'
-# sudo pip install latex
-# sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
+#latex
+echo 'Installing texlive'
+sudo apt-get install -y texlive texlive-latex-extra texlive-latex-recommended
